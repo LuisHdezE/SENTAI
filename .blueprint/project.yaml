@@ -1,0 +1,60 @@
+# Blueprint Project Manifest
+# Consumer: SENTAI
+# Blueprint version: 0.5.4
+# Schema: https://eliasworks.dev/blueprint/0.5.4/project.schema.json
+# Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
+
+project:
+  name: SENTAI
+  repository: LuisHdezE/SENTAI
+  description: >-
+    Warehouse Management & Fulfillment Platform. WMS con fulfillment,
+    Backoffice Web, Customer Portal, cuentas por cobrar y aplicacion
+    operativa Kotlin Multiplatform offline-first para Android e iOS.
+
+blueprint:
+  version: "0.5.4"
+  mode: greenfield
+
+stack:
+  backend: laravel
+  database: mysql
+  frontend: react+typescript
+  styling: tailwind
+  mobile: kotlin_multiplatform
+
+mobile:
+  strategy: cross_platform
+
+capabilities:
+  web: true
+  android: true
+  ios: true
+  mobile_licensing: false
+  saas: false
+  multi_tenant: false
+  offline_mobile: true
+  redis: false
+  docker: false
+
+artifact_locations:
+  status: .blueprint/status.yaml
+  evidence_root: .blueprint/evidence
+  interface_scope_baseline: .blueprint/ui/interface-scope-baseline.json
+  interface_inventory: .blueprint/ui/interface-inventory.json
+  visual_identity: .blueprint/ui/visual-identity.md
+  design_system: .blueprint/ui/design-system.json
+  design_tokens: .blueprint/ui/design-tokens.json
+  mockups_root: .blueprint/mockups
+  client_architecture_root: .blueprint/client-architecture
+  functional_slices_root: .blueprint/functional-slices
+  api_impacts_root: .blueprint/api-impacts
+  openapi: openapi.yaml
+
+skills:
+  profiles:
+    - core
+    - backend
+    - web
+    - android
+    - ios

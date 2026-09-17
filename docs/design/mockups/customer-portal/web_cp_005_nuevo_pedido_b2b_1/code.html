@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-container": "#dae2fd",
+        "tertiary-container": "#48a8ed",
+        "background": "#f8f9ff",
+        "on-secondary-container": "#5c647a",
+        "canvas-bg": "#F8FAFC",
+        "surface-bright": "#f8f9ff",
+        "outline-variant": "#becab9",
+        "error": "#ba1a1a",
+        "on-surface-variant": "#3f4a3d",
+        "surface-container-highest": "#d3e4fe",
+        "text-muted": "#94A3B8",
+        "on-primary": "#ffffff",
+        "inverse-on-surface": "#eaf1ff",
+        "status-reserved": "#2563EB",
+        "status-expired": "#9333EA",
+        "on-primary-fixed-variant": "#005316",
+        "on-primary-container": "#00420f",
+        "surface-container-low": "#eff4ff",
+        "accent-focus": "#53B559",
+        "surface-tint": "#006e20",
+        "on-error": "#ffffff",
+        "on-tertiary-container": "#003b5c",
+        "on-surface": "#0b1c30",
+        "surface-container": "#e5eeff",
+        "status-blocked": "#475569",
+        "tertiary-fixed": "#cce5ff",
+        "tertiary-fixed-dim": "#93ccff",
+        "on-tertiary-fixed-variant": "#004b73",
+        "surface-variant": "#d3e4fe",
+        "border-subtle": "#E2E8F0",
+        "text-secondary": "#475569",
+        "secondary": "#565e74",
+        "inverse-primary": "#79dc7b",
+        "border-strong": "#CBD5E1",
+        "primary-container": "#53b559",
+        "on-error-container": "#93000a",
+        "primary": "#006e20",
+        "on-secondary-fixed-variant": "#3f465c",
+        "tertiary": "#006398",
+        "inverse-surface": "#213145",
+        "on-secondary": "#ffffff",
+        "outline": "#6f7a6c",
+        "text-primary": "#0F172A",
+        "primary-fixed": "#94f994",
+        "on-tertiary": "#ffffff",
+        "surface-container-high": "#dce9ff",
+        "on-background": "#0b1c30",
+        "on-tertiary-fixed": "#001d31",
+        "status-sync-pending": "#F59E0B",
+        "primary-fixed-dim": "#79dc7b",
+        "on-secondary-fixed": "#131b2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary-fixed-dim": "#bec6e0",
+        "error-container": "#ffdad6",
+        "surface": "#f8f9ff",
+        "secondary-fixed": "#dae2fd",
+        "status-damaged": "#DC2626",
+        "status-quarantine": "#D97706",
+        "status-available": "#16A34A",
+        "surface-dim": "#cbdbf5",
+        "surface-card": "#FFFFFF",
+        "on-primary-fixed": "#002205",
+        "status-sync-error": "#E11D48"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin": "1rem",
+        "space-xl": "1.5rem",
+        "space-2xl": "2rem",
+        "margin-desktop": "1.5rem",
+        "gutter": "1rem",
+        "space-sm": "0.5rem",
+        "space-md": "0.75rem",
+        "space-lg": "1rem",
+        "space-2xs": "0.125rem",
+        "gutter-desktop": "1.5rem",
+        "space-3xl": "3rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "metric-stat": ["Inter"],
+        "title-sm": ["Inter"],
+        "caption": ["Inter"],
+        "body-md": ["Inter"],
+        "badge-status": ["JetBrains Mono"],
+        "body-sm": ["Inter"],
+        "code-data": ["JetBrains Mono"],
+        "headline-md": ["Inter"],
+        "display-hero": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+        "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+        "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+        "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex items-center justify-center min-h-screen"><main class="w-full max-w-md mx-auto px-margin"><div class="flex flex-col w-full">
+<!-- Top Technical Identification Strip -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-data text-caption tracking-wider">
+        WEB-CP-005 // NUEVO PEDIDO B2B // CONFIGURACIÓN DE ORDEN Y LOGÍSTICA
+      </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-highest text-primary font-badge-status text-badge-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span>
+        DC-01 MONTEVIDEO
+      </span>
+</div>
+<div class="flex items-center gap-3 text-caption font-caption text-text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+        Auto-guardado: Hace 14s
+      </span>
+<span class="text-text-muted">|</span>
+<span class="font-code-data text-caption">SESIÓN: CLI-884102</span>
+</div>
+</div>
+<!-- Stepper Indicator Rail -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm mb-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-code-data text-body-sm font-bold shadow-sm">
+          01
+        </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-body-sm text-text-primary truncate">Configuración de Productos y Logística</span>
+</div>
+<span class="font-caption text-caption text-primary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            ACTIVO / EN CURSO
+          </span>
+</div>
+</div>
+<!-- Step 2: Inactive -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg bg-surface opacity-80">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-text-secondary font-code-data text-body-sm font-bold">
+          02
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm text-text-secondary truncate">Revisión y Cupo Crediticio</span>
+<span class="font-caption text-caption text-text-muted">Siguiente paso (WEB-CP-006)</span>
+</div>
+</div>
+<!-- Step 3: Inactive -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg bg-surface opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-text-secondary font-code-data text-body-sm font-bold">
+          03
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm text-text-secondary truncate">Confirmación y Emisión al DC</span>
+<span class="font-caption text-caption text-text-muted">Alistamiento y WMS dispatch</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main 2-Column Split Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN (65% on Desktop ~ 8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Card 1: Items Draft Table -->
+<div class="bg-surface-card rounded-xl shadow-sm p-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Ítems en Borrador de Pedido</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Artículos pre-seleccionados con asignación de inventario en tiempo real</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-text-secondary hover:bg-surface-container-high font-body-sm text-body-sm transition">
+<span class="material-symbols-outlined text-base">delete_sweep</span>
+              Vaciar borrador
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-body-sm text-body-sm font-semibold transition shadow-sm">
+<span class="material-symbols-outlined text-base">add</span>
+              Catálogo (WEB-CP-003)
+            </button>
+</div>
+</div>
+<!-- Product Table Responsive Container -->
+<div class="overflow-x-auto rounded-lg bg-surface-container-low/40 p-1">
+<table class="w-full text-left font-body-md text-body-md text-text-primary">
+<thead>
+<tr class="text-caption font-caption text-text-secondary bg-surface-container-low uppercase tracking-wider">
+<th class="py-2.5 px-3 rounded-l-md">Artículo &amp; Referencia</th>
+<th class="py-2.5 px-3">Disponibilidad</th>
+<th class="py-2.5 px-3 text-right">Cant. Bultos</th>
+<th class="py-2.5 px-3 text-right">Precio Unit.</th>
+<th class="py-2.5 px-3 text-right">Subtotal</th>
+<th class="py-2.5 px-3 rounded-r-md text-center">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 space-y-1">
+<!-- Row 1 -->
+<tr class="bg-surface-card hover:bg-surface transition">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-body-sm text-text-primary font-semibold">Suero Fisiológico 0.9% 500ml x24</span>
+<span class="font-code-data text-caption text-text-muted">SKU-100245 · Lote Farma Reg. UY-883</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-primary font-badge-status text-badge-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                    DC-01 INMEDIATO
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-body-sm font-bold">40 cajas</span>
+<span class="font-caption text-caption text-text-muted">960 unidades</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm">$32.00</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm font-bold text-text-primary">$1,280.00</td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-primary hover:bg-surface-container transition" title="Modificar cantidad">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-error hover:bg-surface-container transition" title="Eliminar ítem">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-card hover:bg-surface transition">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-body-sm text-text-primary font-semibold">Guantes de Nitrilo Quirúrgico Talla M x100</span>
+<span class="font-code-data text-caption text-text-muted">SKU-204918 · Grado Médico Estéril</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-primary font-badge-status text-badge-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                    DC-01 INMEDIATO
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-body-sm font-bold">80 cajas</span>
+<span class="font-caption text-caption text-text-muted">8,000 unidades</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm">$18.50</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm font-bold text-text-primary">$1,480.00</td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-primary hover:bg-surface-container transition">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-error hover:bg-surface-container transition">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-card hover:bg-surface transition">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-body-sm text-text-primary font-semibold">Catéter Intravenoso 18G Paq x50</span>
+<span class="font-code-data text-caption text-text-muted">SKU-892110 · Radiopaco Teflón</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-primary font-badge-status text-badge-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                    DC-01 INMEDIATO
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-body-sm font-bold">30 paq</span>
+<span class="font-caption text-caption text-text-muted">1,500 unidades</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm">$24.00</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm font-bold text-text-primary">$720.00</td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-primary hover:bg-surface-container transition">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-error hover:bg-surface-container transition">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-card hover:bg-surface transition">
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-title-sm text-body-sm text-text-primary font-semibold">Jeringas Descartables 10ml Luer Lock x100</span>
+<span class="font-code-data text-caption text-text-muted">SKU-304112 · Triple Contacto Apirógeno</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-primary font-badge-status text-badge-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                    DC-01 INMEDIATO
+                  </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-body-sm font-bold">60 cajas</span>
+<span class="font-caption text-caption text-text-muted">6,000 unidades</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm">$14.20</td>
+<td class="py-3 px-3 text-right font-code-data text-body-sm font-bold text-text-primary">$852.00</td>
+<td class="py-3 px-3 text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-text-secondary hover:text-primary hover:bg-surface-container transition">
+<span class="material-symbols-outlined text-base">edit</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-error hover:bg-surface-container transition">
+<span class="material-symbols-outlined text-base">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pallet and Logistics Volume Indicator -->
+<div class="mt-4 p-3 rounded-lg bg-surface-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-2xl">forklift</span>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-body-sm text-body-sm">
+<span class="text-text-primary font-semibold">Consolidación de Carga:</span>
+<span class="text-text-secondary">4 SKU distintos</span>
+<span class="text-text-muted">•</span>
+<span class="text-text-secondary font-code-data font-bold">210 bultos</span>
+<span class="text-text-muted">•</span>
+<span class="text-text-secondary font-code-data">1,180 kg estimados</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-card text-on-surface font-code-data text-caption font-bold shadow-xs">
+            EQUIVALENCIA: ~2 PALLETS ESTÁNDAR
+          </span>
+</div>
+</div>
+<!-- Card 2: Delivery & Hub Configuration -->
+<div class="bg-surface-card rounded-xl shadow-sm p-5">
+<div class="flex items-center gap-2.5 pb-4">
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">local_shipping</span>
+</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Configuración de Destino y Entrega</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Punto de recepción hospitalaria y prioridad en muelle</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<!-- Destination Branch -->
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold">Punto de Entrega Autorizado (Sucursal Cliente)</label>
+<div class="flex flex-col sm:flex-row gap-2">
+<div class="relative flex-1">
+<select class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-container-low text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-accent-focus appearance-none">
+<option selected="">Casa Central - Depósito Sanitario (Av. 8 de Octubre 3420, Montevideo)</option>
+<option>Sucursal Maldonado - Farmacia Policlínico (Av. Roosevelt Parada 8)</option>
+<option>Centro Logístico Canelones - Ruta 101 Km 24.5</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 pointer-events-none text-text-secondary text-lg">expand_more</span>
+</div>
+<button class="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-lg bg-surface-container text-text-secondary hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-base">add_location_alt</span>
+                Nueva dirección
+              </button>
+</div>
+</div>
+<!-- Shipping Priority Cards -->
+<div class="md:col-span-2 flex flex-col gap-2">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold">Tipo de Despacho y Ventana Operativa</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<!-- Option A: Standard (Selected) -->
+<label class="flex flex-col p-3 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition relative">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-body-sm text-text-primary font-bold">Entrega Programada Estándar</span>
+<input checked="" class="text-primary focus:ring-0" name="dispatch_type" type="radio"/>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-2">24 a 48 hrs hábiles. Flota troncal Sentai.</p>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-status-available/15 text-status-available font-badge-status text-badge-status font-bold w-fit">
+                  FLETE BONIFICADO ($0.00)
+                </span>
+</label>
+<!-- Option B: Express -->
+<label class="flex flex-col p-3 rounded-lg bg-surface hover:bg-surface-container-low cursor-pointer transition relative">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-body-sm text-text-primary font-bold">Muelle Express</span>
+<input class="text-primary focus:ring-0" name="dispatch_type" type="radio"/>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-2">Mismo día (&lt;12 hrs). Sujeto a slot muelle.</p>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status font-bold w-fit">
+                  +$65.00 RECARGO
+                </span>
+</label>
+<!-- Option C: Self-Pickup -->
+<label class="flex flex-col p-3 rounded-lg bg-surface hover:bg-surface-container-low cursor-pointer transition relative">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-body-sm text-text-primary font-bold">Retiro Propio (Gate Pass)</span>
+<input class="text-primary focus:ring-0" name="dispatch_type" type="radio"/>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-2">Pickup en Montevideo DC-01 con orden digital.</p>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status font-bold w-fit">
+                  SIN COSTO
+                </span>
+</label>
+</div>
+</div>
+<!-- Requested Date & Slot -->
+<div class="flex flex-col gap-1.5">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold">Fecha Requerida de Recepción</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-text-primary font-body-md text-body-md">
+<span class="material-symbols-outlined text-text-secondary text-lg mr-2">calendar_today</span>
+<span>Mañana, 25 Oct 2024 (09:00 - 13:00 hs)</span>
+</div>
+</div>
+<!-- Receiver Dock Notes -->
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold">Instrucciones Especiales para Muelle / Recepción Sanitaria</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-low text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-accent-focus resize-none" rows="2">Descargar en muelle 02 con autoelevador. Controlar termógrafo de temperatura y precinto de seguridad del camión antes de la firma del remito.</textarea>
+</div>
+</div>
+</div>
+<!-- Card 3: Client Commercial References -->
+<div class="bg-surface-card rounded-xl shadow-sm p-5">
+<div class="flex items-center gap-2.5 pb-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">description</span>
+</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Referencias Comerciales del Cliente</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Imputación contable interna y validación de compra</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold">N° Orden de Compra Interna (PO)</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low font-code-data text-body-md font-semibold text-text-primary">
+<span class="material-symbols-outlined text-text-secondary text-lg mr-2">tag</span>
+              OC-CENTRAL-2024-1192
+            </div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold">Centro de Costos / Sector Hospitalario</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low font-body-md text-body-md text-text-primary">
+<span class="material-symbols-outlined text-text-secondary text-lg mr-2">domain</span>
+              Farmacia Hospitalaria Central
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (35% on Desktop ~ 4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Economic Summary Card -->
+<div class="bg-surface-card rounded-xl shadow-sm p-5 flex flex-col">
+<div class="flex items-center justify-between pb-3">
+<h3 class="font-headline-md text-headline-md text-text-primary">Resumen del Pedido</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container text-text-secondary font-code-data text-caption font-bold">USD</span>
+</div>
+<div class="flex flex-col gap-2.5 pt-2">
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>Subtotal Neto Mercadería</span>
+<span class="font-code-data text-text-primary font-medium">$4,332.00</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-status-available">
+<span class="flex items-center gap-1">
+              Descuento B2B (-5% vol. &gt; 200 bultos)
+            </span>
+<span class="font-code-data font-bold">-$216.60</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span class="flex items-center gap-1">
+              Flete Troncal Montevideo
+              <span class="material-symbols-outlined text-xs text-status-available">check_circle</span>
+</span>
+<span class="font-code-data text-status-available font-bold">$0.00 (GRATIS)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-text-secondary">
+<span>IVA Salud Ponderado (10%/22%)</span>
+<span class="font-code-data text-text-primary font-medium">$485.40</span>
+</div>
+<div class="h-px bg-surface-container my-1"></div>
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-title-sm text-body-sm text-text-primary font-bold">TOTAL ESTIMADO</span>
+<span class="font-caption text-caption text-text-muted">Impuestos e imputación incluidos</span>
+</div>
+<span class="font-metric-stat text-metric-stat text-text-primary font-bold text-right tracking-tight">
+              $4,600.80
+            </span>
+</div>
+</div>
+</div>
+<!-- Real-time Credit Risk / Underwriting Validation Card -->
+<div class="bg-surface-card rounded-xl shadow-sm p-5 flex flex-col">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-available"></span>
+<h3 class="font-title-sm text-title-sm text-text-primary">Validación Crediticia B2B</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-status-available font-badge-status text-badge-status font-bold">
+            ESTADO ÓPTIMO
+          </span>
+</div>
+<!-- Inline Visual Ratio Bar -->
+<div class="py-2">
+<div class="flex justify-between text-caption font-code-data text-text-secondary mb-1">
+<span>Uso de línea</span>
+<span class="font-bold text-text-primary">85.9% ocupado con orden</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden flex">
+<!-- Consumed Credit -->
+<div class="bg-secondary h-full" style="width: 80.1%;"></div>
+<!-- Current Order Impact -->
+<div class="bg-primary-container h-full animate-pulse" style="width: 5.8%;"></div>
+<!-- Free Remaining -->
+<div class="bg-surface-container-high h-full" style="width: 14.1%;"></div>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-text-muted mt-1">
+<span>$0 USD</span>
+<span>Límite: $80,000 USD</span>
+</div>
+</div>
+<!-- Credit Ledger Breakdown -->
+<div class="flex flex-col gap-2 pt-2 text-body-sm font-body-sm">
+<div class="flex justify-between text-text-secondary">
+<span>Límite de Crédito Otorgado</span>
+<span class="font-code-data text-text-primary font-semibold">$80,000.00 USD</span>
+</div>
+<div class="flex justify-between text-text-secondary">
+<span>Saldo en Cuentas por Pagar (AP)</span>
+<span class="font-code-data text-text-primary">$64,150.00 USD</span>
+</div>
+<div class="flex justify-between text-text-secondary">
+<span>Línea Disponible Actual</span>
+<span class="font-code-data font-bold text-text-primary">$15,850.00 USD</span>
+</div>
+<div class="flex justify-between text-error font-medium">
+<span>Impacto Proyectado Pedido</span>
+<span class="font-code-data">-$4,600.80 USD</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1 mt-1">
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-text-secondary uppercase font-bold">Margen Restante Estimado</span>
+<span class="font-code-data text-body-sm font-bold text-primary">$11,249.20 USD</span>
+</div>
+<p class="font-caption text-caption text-text-secondary leading-snug">
+              ✓ Su línea de crédito cubre holgadamente este pedido. La orden pasará directamente a preparación y reserva de stock en almacén sin demoras administrativas.
+            </p>
+</div>
+</div>
+<!-- Order Flow Trigger CTA -->
+<div class="flex flex-col gap-2.5 pt-5">
+<button class="w-full h-12 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm font-bold shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+<span>Continuar a Revisión (WEB-CP-006)</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<button class="w-full h-10 rounded-lg bg-surface hover:bg-surface-container text-text-secondary font-body-sm text-body-sm font-semibold transition flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">bookmark_add</span>
+            Guardar como plantilla periódica
+          </button>
+</div>
+</div>
+<!-- Live Fulfillment Guarantee Banner -->
+<div class="p-4 rounded-xl bg-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-body-sm text-text-primary font-bold">Reserva Inmediata de Lote WMS</span>
+<p class="font-caption text-caption text-text-secondary">
+            Al avanzar al Paso 2, las 210 unidades quedarán apartadas físicamente en el rack de alta rotación de Montevideo DC-01 durante 45 minutos.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div></main></body></html>

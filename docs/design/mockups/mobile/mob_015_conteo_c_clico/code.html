@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#131b2e","tertiary":"#006398","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","on-tertiary-fixed":"#001d31","inverse-on-surface":"#eaf1ff","secondary-fixed":"#dae2fd","on-tertiary-container":"#003b5c","primary-container":"#53b559","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","primary-fixed-dim":"#79dc7b","canvas-bg":"#F8FAFC","status-damaged":"#DC2626","on-secondary-container":"#5c647a","text-primary":"#0F172A","surface":"#f8f9ff","primary":"#006e20","status-available":"#16A34A","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","secondary":"#565e74","status-sync-pending":"#F59E0B","on-surface":"#0b1c30","status-quarantine":"#D97706","tertiary-container":"#48a8ed","accent-focus":"#53B559","surface-container":"#e5eeff","error":"#ba1a1a","tertiary-fixed":"#cce5ff","surface-card":"#FFFFFF","text-muted":"#94A3B8","status-blocked":"#475569","on-surface-variant":"#3f4a3d","text-secondary":"#475569","on-primary-container":"#00420f","surface-bright":"#f8f9ff","background":"#f8f9ff","on-tertiary-fixed-variant":"#004b73","status-sync-error":"#E11D48","primary-fixed":"#94f994","on-secondary":"#ffffff","surface-dim":"#cbdbf5","on-secondary-fixed-variant":"#3f465c","on-error-container":"#93000a","inverse-primary":"#79dc7b","on-primary-fixed-variant":"#005316","outline-variant":"#becab9","border-strong":"#CBD5E1","border-subtle":"#E2E8F0","on-error":"#ffffff","status-expired":"#9333EA","on-tertiary":"#ffffff","on-primary":"#ffffff","on-background":"#0b1c30","inverse-surface":"#213145","error-container":"#ffdad6","surface-container-lowest":"#ffffff","surface-variant":"#d3e4fe","outline":"#6f7a6c","surface-tint":"#006e20","on-primary-fixed":"#002205","secondary-container":"#dae2fd"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.5rem","space-md":"0.75rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-xl":"1.5rem","space-2xl":"2rem","gutter":"1rem","space-3xl":"3rem","margin":"1rem","margin-desktop":"1.5rem","space-2xs":"0.125rem"},"fontFamily":{"code-data":["JetBrains Mono"],"badge-status":["JetBrains Mono"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"display-hero":["Inter"],"body-md":["Inter"],"metric-stat":["Inter"]},"fontSize":{"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen antialiased select-none"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-24 flex flex-col justify-between px-margin py-space-xs"><div class="flex items-center justify-between h-7"><div class="flex items-center gap-space-sm"><span class="font-code-data text-caption text-text-primary font-bold tracking-tight">09:41</span><div class="flex items-center gap-space-2xs bg-surface-container-high px-space-xs py-0.5 rounded-lg"><span class="w-1.5 h-1.5 rounded-full bg-accent-focus"></span><span class="font-badge-status text-badge-status text-text-primary">DC-01</span></div></div><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-text-primary">wifi</span><div class="flex items-center gap-space-2xs"><span class="font-code-data text-caption text-text-primary">92%</span><span class="material-symbols-outlined text-[16px] text-text-primary">battery_charging_full</span></div><div class="flex items-center gap-space-2xs bg-surface-container-high px-space-xs py-0.5 rounded-lg"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span><span class="font-badge-status text-badge-status text-status-available">ONLINE</span></div></div></div><div class="flex items-center justify-between h-14"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Volver" class="w-11 h-11 -ml-space-xs flex items-center justify-center text-text-primary rounded-lg hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SENTAI Operator" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><div class="flex flex-col min-w-0"><span class="font-caption text-caption text-text-muted uppercase tracking-wider leading-none">SENTAI WMS</span><h1 class="font-headline-md text-headline-md text-text-primary truncate leading-tight">Detalle De Tarea</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="w-11 h-11 flex items-center justify-center text-text-secondary rounded-lg hover:bg-surface-container transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-accent-focus"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-24 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Progress Header Rail -->
+<div class="px-margin pt-space-md pb-space-sm bg-surface flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data text-text-muted">MOB-015</span>
+<span class="text-text-muted text-caption">•</span>
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">Auditoría Cíclica</span>
+</div>
+<div class="inline-flex items-center gap-space-2xs bg-secondary-container text-on-secondary-fixed px-space-xs py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-badge-status text-badge-status">PASILLO B-12 • ROTACIÓN A</span>
+</div>
+</div>
+<!-- Active Task & Progress Stepper Bar -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm mt-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-code-data text-caption text-text-muted">ORDEN #CC-PAS-B12</span>
+<span class="font-title-sm text-title-sm text-text-primary">Conteo Ciego (Blind Count)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-data text-body-sm font-bold text-primary">SLOT 03 / 15</span>
+<span class="font-caption text-caption text-text-muted">20% Completado</span>
+</div>
+</div>
+<!-- Progress Bar Track -->
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="h-full bg-accent-focus transition-all duration-300 rounded-full" style="width: 20%;"></div>
+</div>
+</div>
+</div>
+<!-- Main Scrollable Section -->
+<div class="flex flex-col px-margin gap-space-md pb-space-2xl">
+<!-- Location Banner Card with Confirmed Verification -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase">Slot Físico Asignado</span>
+<span class="inline-flex items-center gap-0.5 text-status-available text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Validado
+            </span>
+</div>
+<span class="font-code-data text-headline-lg-mobile text-text-primary tracking-tight font-bold">B-12-01-02</span>
+<span class="font-caption text-caption text-text-secondary">Nivel 1 • Cara Frontal Izquierda</span>
+</div>
+</div>
+<button aria-label="Re-escanear slot" class="h-9 px-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg text-text-secondary flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span>
+<span class="font-badge-status text-badge-status">SCAN</span>
+</button>
+</div>
+<!-- Product & Batch Profile Card -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex-shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Industrial hospital-grade box of powder-free blue surgical nitrile gloves in sterile warehouse shelving packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgIUyDHvU_7DCLVtrpmBqHJXv3qgyHbL2fXyHPGbHMYr11c04Hh6IKVX4suQy5eqF8kt9Cj2S1dUhXGWx-H8--Itv-v9s1a6ylIIp0brGdsMCBkEp53WX9etaR-mM7EkHS26UA1fFiKbOTp8IK23d_j8qhealOiWwgnDA_3DO8Yeg84IuMglW3Kr1hCMetIifGrw4FJNAVWuNPVV6uVpPFm1FZ-ENSCE53gcn315B6Hp2OP8UYaKjz"/>
+<div class="absolute bottom-0 inset-x-0 bg-text-primary/70 text-surface-card text-[9px] font-code-data py-0.5 text-center">BOX x100</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-caption font-bold text-tertiary">SKU-100341</span>
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+<span class="font-badge-status text-badge-status text-text-muted">ALTA ROTACIÓN</span>
+</div>
+<h2 class="font-title-sm text-title-sm text-text-primary truncate">Guantes Nitrilo Quirúrgico M x100</h2>
+<span class="font-body-sm text-body-sm text-text-secondary">Presentación: Caja máster corrugada</span>
+</div>
+</div>
+<!-- Lot & Expiry Micro Strip -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-muted text-[18px]">label</span>
+<span class="font-caption text-caption text-text-secondary">Lote:</span>
+<span class="font-code-data text-body-sm font-bold text-text-primary">LOT-2025-1102</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-muted text-[18px]">event</span>
+<span class="font-caption text-caption text-text-secondary">Vto:</span>
+<span class="font-code-data text-body-sm font-bold text-text-primary">11/2025</span>
+</div>
+</div>
+</div>
+<!-- Rugged Physical Blind Count Input Module -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-accent-focus text-[20px]">pin</span>
+<span class="font-title-sm text-title-sm text-text-primary">Conteo Físico Real</span>
+</div>
+<span class="font-caption text-caption text-text-muted">Unidad: CAJAS</span>
+</div>
+<!-- Giant Digital Counter -->
+<div class="bg-surface-container-low rounded-xl py-space-md px-space-lg flex flex-col items-center justify-center text-center">
+<div class="flex items-baseline gap-space-xs justify-center">
+<span class="font-code-data text-[52px] leading-none font-bold text-text-primary tracking-tight" id="boxCounterDisplay">80</span>
+<span class="font-code-data text-body-md text-text-secondary uppercase">CAJAS</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs text-text-muted">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span>
+<span class="font-body-sm text-body-sm">Equivalente: <strong class="font-code-data text-text-primary" id="unitCounterDisplay">8,000</strong> unidades</span>
+</div>
+</div>
+<!-- Quick Tapper Controller Bar (Rugged Gloves Friendly) -->
+<div class="grid grid-cols-5 gap-space-xs">
+<button class="h-14 bg-surface-container active:bg-surface-container-highest rounded-xl flex flex-col items-center justify-center text-text-primary transition-transform active:scale-95" id="btnMinus10" type="button">
+<span class="font-code-data text-body-md font-bold">-10</span>
+<span class="font-caption text-[10px] text-text-muted">rápido</span>
+</button>
+<button class="h-14 bg-surface-container active:bg-surface-container-highest rounded-xl flex flex-col items-center justify-center text-text-primary transition-transform active:scale-95" id="btnMinus1" type="button">
+<span class="font-code-data text-headline-md font-bold">-1</span>
+</button>
+<button class="h-14 bg-surface-container-high active:bg-surface-container-highest rounded-xl flex flex-col items-center justify-center text-text-primary transition-transform active:scale-95" id="btnKeypadTrigger" type="button">
+<span class="material-symbols-outlined text-[22px]">keyboard</span>
+<span class="font-caption text-[10px] text-text-secondary">DIGITAR</span>
+</button>
+<button class="h-14 bg-surface-container active:bg-surface-container-highest rounded-xl flex flex-col items-center justify-center text-text-primary transition-transform active:scale-95" id="btnPlus1" type="button">
+<span class="font-code-data text-headline-md font-bold">+1</span>
+</button>
+<button class="h-14 bg-surface-container active:bg-surface-container-highest rounded-xl flex flex-col items-center justify-center text-text-primary transition-transform active:scale-95" id="btnPlus10" type="button">
+<span class="font-code-data text-body-md font-bold">+10</span>
+<span class="font-caption text-[10px] text-text-muted">rápido</span>
+</button>
+</div>
+<!-- WMS Real-Time Blind Match Result Banner -->
+<div class="bg-primary/10 rounded-xl p-space-md flex items-center justify-between" id="reconciliationBanner">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-status-available text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-badge-status text-badge-status text-primary uppercase font-bold">Inventario Conciliado</span>
+<span class="font-caption text-caption text-text-secondary truncate" id="reconciliationText">Coincidencia exacta: 80 cajas teoricas registradas</span>
+</div>
+</div>
+<div class="px-space-xs py-1 rounded bg-surface-card shadow-sm flex items-center gap-1 flex-shrink-0">
+<span class="font-code-data text-caption font-bold text-status-available">Δ 0</span>
+</div>
+</div>
+</div>
+<!-- Secondary Operator Action Triggers -->
+<div class="flex flex-col gap-space-xs">
+<button class="w-full h-12 bg-surface-card hover:bg-surface-container rounded-xl px-space-md flex items-center justify-between text-text-primary shadow-sm transition-colors" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">playlist_add</span>
+<span class="font-title-sm text-body-md">Agregar otro Lote o SKU en este Slot</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px]">chevron_right</span>
+</button>
+<button class="w-full h-12 bg-surface-card hover:bg-surface-container rounded-xl px-space-md flex items-center justify-between text-status-damaged shadow-sm transition-colors" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-status-damaged text-[20px]">warning</span>
+<span class="font-title-sm text-body-md">Reportar avería o SKU no identificado</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Primary Affirmation Button (Industrial 52px Minimum Spec) -->
+<div class="pt-space-xs">
+<button class="w-full h-14 bg-accent-focus active:bg-primary text-surface-card rounded-xl font-headline-md text-title-sm font-bold flex items-center justify-center gap-space-sm shadow-md transition-all active:scale-[0.99]" id="confirmNextSlotBtn" type="button">
+<span>Confirmar y Siguiente Slot (3/15)</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+</div>
+<!-- Audit Footer Metadata -->
+<div class="py-space-sm flex flex-col items-center justify-center text-center gap-0.5">
+<div class="flex items-center gap-space-xs text-text-muted">
+<span class="material-symbols-outlined text-[14px]">badge</span>
+<span class="font-caption text-caption">Operador: <strong class="text-text-secondary">Carlos Techera</strong> (DC-01)</span>
+</div>
+<span class="font-caption text-[11px] text-text-muted">Protocolo WMS Blind Check v4.8 • Turno Mañana</span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    let boxCount = 80;
+    const unitsPerBox = 100;
+    const theoreticalCount = 80;
+
+    const displayBoxes = document.getElementById('boxCounterDisplay');
+    const displayUnits = document.getElementById('unitCounterDisplay');
+    const reconciliationBanner = document.getElementById('reconciliationBanner');
+    const reconciliationText = document.getElementById('reconciliationText');
+    const confirmBtn = document.getElementById('confirmNextSlotBtn');
+
+    function updateView() {
+      if (displayBoxes) displayBoxes.textContent = boxCount;
+      if (displayUnits) displayUnits.textContent = (boxCount * unitsPerBox).toLocaleString();
+      
+      const delta = boxCount - theoreticalCount;
+      if (delta === 0) {
+        reconciliationBanner.className = "bg-primary/10 rounded-xl p-space-md flex items-center justify-between";
+        reconciliationText.innerHTML = "Coincidencia exacta: " + theoreticalCount + " cajas teoricas registradas";
+      } else if (delta > 0) {
+        reconciliationBanner.className = "bg-surface-container-high rounded-xl p-space-md flex items-center justify-between";
+        reconciliationText.innerHTML = "Sobrante detectado: +" + delta + " cajas sobre inventario";
+      } else {
+        reconciliationBanner.className = "bg-error/10 rounded-xl p-space-md flex items-center justify-between";
+        reconciliationText.innerHTML = "Faltante detectado: " + delta + " cajas de inventario";
+      }
+    }
+
+    document.getElementById('btnMinus10')?.addEventListener('click', function() {
+      boxCount = Math.max(0, boxCount - 10);
+      updateView();
+    });
+
+    document.getElementById('btnMinus1')?.addEventListener('click', function() {
+      boxCount = Math.max(0, boxCount - 1);
+      updateView();
+    });
+
+    document.getElementById('btnPlus1')?.addEventListener('click', function() {
+      boxCount += 1;
+      updateView();
+    });
+
+    document.getElementById('btnPlus10')?.addEventListener('click', function() {
+      boxCount += 10;
+      updateView();
+    });
+
+    document.getElementById('btnKeypadTrigger')?.addEventListener('click', function() {
+      const manual = prompt("Ingrese cantidad exacta de cajas:", boxCount.toString());
+      if (manual !== null) {
+        const parsed = parseInt(manual, 10);
+        if (!isNaN(parsed) && parsed >= 0) {
+          boxCount = parsed;
+          updateView();
+        }
+      }
+    });
+
+    confirmBtn?.addEventListener('click', function() {
+      confirmBtn.classList.add('opacity-75');
+      confirmBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[22px]">autorenew</span><span>Sincronizando Slot...</span>';
+      setTimeout(function() {
+        alert("Slot B-12-01-02 validado correctamente. Pasando al slot 4/15.");
+        location.reload();
+      }, 600);
+    });
+  })();
+</script></main></body></html>

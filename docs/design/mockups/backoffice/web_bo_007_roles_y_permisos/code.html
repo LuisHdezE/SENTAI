@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full gap-space-lg pb-space-3xl">
+<!-- Top Context Header -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-data text-[12px] px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">WEB-BO-007</span>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-status-available/10 text-status-available">POLÍTICAS DE SEGURIDAD RBAC</span>
+<span class="font-caption text-caption text-text-muted flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span> Sincronizado con Active Directory &amp; WMS Core
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-card hover:bg-canvas-bg text-text-secondary hover:text-text-primary shadow-sm font-body-sm text-body-sm font-semibold transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">history_toggle_off</span>
+<span>Ver Log de Auditoría</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-card hover:bg-canvas-bg text-text-secondary hover:text-text-primary shadow-sm font-body-sm text-body-sm font-semibold transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span>Duplicar Rol Existente</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>+ Crear Nuevo Rol</span>
+</button>
+</div>
+</div>
+<div class="flex items-end justify-between mt-space-xs">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Roles y Matriz de Permisos</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-3xl mt-0.5">
+          Definición de privilegios granulares por módulo, operaciones físicas de inventario y aprobaciones financieras con trazabilidad criptográfica de cambios.
+        </p>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="flex items-center gap-space-md bg-surface-card px-space-md py-space-xs rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs pr-space-md border-r border-border-subtle">
+<span class="material-symbols-outlined text-primary text-[20px]">admin_panel_settings</span>
+<div class="flex flex-col">
+<span class="font-caption text-[11px] text-text-muted leading-tight">ROLES ACTIVOS</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">6 Perfiles</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pr-space-md border-r border-border-subtle">
+<span class="material-symbols-outlined text-status-reserved text-[20px]">badge</span>
+<div class="flex flex-col">
+<span class="font-caption text-[11px] text-text-muted leading-tight">TOTAL USUARIOS</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">48 Asignados</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-status-quarantine text-[20px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-caption text-[11px] text-text-muted leading-tight">MFA ENFORCED</span>
+<span class="font-code-data text-code-data font-bold text-status-available">100% Cobertura</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Split RBAC Console (35% / 65%) -->
+<div class="grid grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Roles Roster (35% -> col-span-4 or 5) -->
+<div class="col-span-12 lg:col-span-4 xl:col-span-4 flex flex-col gap-space-md">
+<!-- List Filter & Search Toolbar -->
+<div class="bg-surface-card p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Perfiles RBAC Configurados (6)</span>
+<span class="font-code-data text-[11px] text-text-secondary bg-surface-container-low px-1.5 py-0.5 rounded">ENV: PRODUCTION</span>
+</div>
+<div class="relative flex items-center bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" id="role-search" placeholder="Filtrar perfil o responsabilidad..." type="text"/>
+</div>
+</div>
+<!-- Roles Cards Stack -->
+<div class="flex flex-col gap-space-sm" id="roles-container">
+<!-- Role 1: Director de Operaciones (ACTIVE SELECTED) -->
+<div class="role-card relative bg-surface-card p-space-md rounded-xl shadow-sm ring-2 ring-accent-focus cursor-pointer transition-all hover:shadow-md group" data-role-id="role-ops-dir">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container rounded-l-xl"></div>
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight">Director de Operaciones</h3>
+<span class="font-code-data text-[11px] text-primary font-bold mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> SELECCIONADO ACTUALMENTE
+                </span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-bold">
+              3 USUARIOS
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm pl-1 line-clamp-2">
+            Acceso total Backoffice, auditorías, anulación de despachos, overrides financieros y gestión de infraestructura de red.
+          </p>
+<div class="flex items-center justify-between mt-space-sm pl-1 pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-[11px] text-text-muted">Nivel 01 • Privilegio Crítico</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Role 2: Supervisor de WMS / Turno -->
+<div class="role-card relative bg-surface-card p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-border-strong cursor-pointer transition-all hover:shadow-md group" data-role-id="role-wms-sup">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">supervisor_account</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight">Supervisor de WMS / Turno</h3>
+<span class="font-caption text-caption text-text-muted">ID: SEC-ROL-002</span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary font-bold">
+              7 USUARIOS
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm line-clamp-2">
+            Gestión de olas, asignación de picking, balanceo de muelles, conteos cíclicos y supervisión de productividad de turno.
+          </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-[11px] text-text-muted">Nivel 02 • Operaciones Tácticas</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Role 3: Operador de Almacén RF -->
+<div class="role-card relative bg-surface-card p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-border-strong cursor-pointer transition-all hover:shadow-md group" data-role-id="role-rf-op">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight">Operador de Almacén RF</h3>
+<span class="font-caption text-caption text-text-muted">ID: SEC-ROL-003</span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary font-bold">
+              24 USUARIOS
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm line-clamp-2">
+            App Móvil Rugged, confirmación de put-away guiado, lectura de barcode/2D, picking unitario y traslado de estibas.
+          </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-[11px] text-text-muted">Nivel 04 • Terminal RF Móvil</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Role 4: Analista de Control de Inventario -->
+<div class="role-card relative bg-surface-card p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-border-strong cursor-pointer transition-all hover:shadow-md group" data-role-id="role-inv-ana">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight">Analista Control Inventario</h3>
+<span class="font-caption text-caption text-text-muted">ID: SEC-ROL-004</span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary font-bold">
+              5 USUARIOS
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm line-clamp-2">
+            Kardex multi-depósito, ajustes de stock con tolerancia media, gestión de cuarentenas y liberación técnica de lotes.
+          </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-[11px] text-text-muted">Nivel 03 • Aseguramiento Calidad</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Role 5: Fulfillment & Packing Lead -->
+<div class="role-card relative bg-surface-card p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-border-strong cursor-pointer transition-all hover:shadow-md group" data-role-id="role-pack-lead">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">inventory</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight">Fulfillment &amp; Packing Lead</h3>
+<span class="font-caption text-caption text-text-muted">ID: SEC-ROL-005</span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary font-bold">
+              6 USUARIOS
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm line-clamp-2">
+            Validación de cajas máster, impresión de remitos y etiquetas ZPL, consolidación de bultos y precinto de estibas.
+          </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-[11px] text-text-muted">Nivel 03 • Expedición y Empaque</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Role 6: Finanzas & Cuentas por Cobrar -->
+<div class="role-card relative bg-surface-card p-space-md rounded-xl shadow-sm border border-border-subtle hover:border-border-strong cursor-pointer transition-all hover:shadow-md group" data-role-id="role-fin-cxc">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-text-primary group-hover:text-primary transition-colors leading-tight">Finanzas &amp; Cuentas por Cobrar</h3>
+<span class="font-caption text-caption text-text-muted">ID: SEC-ROL-006</span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary font-bold">
+              3 USUARIOS
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-sm line-clamp-2">
+            Facturación de almacenaje, manipuleo, aplicación de Credit Hold financiero y conciliación de cobranzas logísticas.
+          </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-[11px] text-text-muted">Nivel 02 • Gobernanza Financiera</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-text-primary text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Quick Info Callout -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary">Matriz basada en Principio de Menor Privilegio</span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+            Las modificaciones en roles de nivel Crítico requieren validación de token seguro y son registradas en el libro inmutable de auditoría.
+          </span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Granular Permission Matrix for Selected Role (65% -> col-span-8) -->
+<div class="col-span-12 lg:col-span-8 xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Role Identity Pane -->
+<div class="bg-surface-card p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute right-0 top-0 w-72 h-72 bg-gradient-to-bl from-primary-container/10 via-transparent to-transparent pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[28px]">shield_person</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-text-primary">Director de Operaciones</h2>
+<span class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-status-damaged/10 text-status-damaged font-bold tracking-wider">
+                  NIVEL DE PRIVILEGIO: CRÍTICO
+                </span>
+</div>
+<span class="font-code-data text-[12px] text-text-secondary mt-0.5">CLAVE INTERNA: SYS_ROLE_DIRECTOR_OPS_V4 • ID: 001-DIR-CORP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-card hover:bg-canvas-bg border border-border-strong text-text-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Editar Nombre / Clave</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-card hover:bg-canvas-bg border border-border-strong text-text-secondary hover:text-text-primary transition-colors" title="Ver usuarios asignados" type="button">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<div class="bg-canvas-bg p-space-sm rounded-lg flex flex-col">
+<span class="font-caption text-[11px] text-text-muted uppercase font-semibold">Alcance Operativo</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-primary mt-0.5">Multi-Almacén Global</span>
+<span class="font-caption text-[10px] text-text-secondary">Montevideo DC-01, Zonamerica, Punta Carretas Hub</span>
+</div>
+<div class="bg-canvas-bg p-space-sm rounded-lg flex flex-col">
+<span class="font-caption text-[11px] text-text-muted uppercase font-semibold">Tolerancia Override</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-primary mt-0.5">Ilimitada / Sin Aprobador Secundario</span>
+<span class="font-caption text-[10px] text-text-secondary">Ajustes hasta $500,000 USD sin bloqueo</span>
+</div>
+<div class="bg-canvas-bg p-space-sm rounded-lg flex flex-col">
+<span class="font-caption text-[11px] text-text-muted uppercase font-semibold">Sesión &amp; Seguridad</span>
+<span class="font-body-sm text-body-sm font-semibold text-status-available mt-0.5">MFA Hardware Token Obligatorio</span>
+<span class="font-caption text-[10px] text-text-secondary">Tiempo de expiración de sesión: 15 minutos</span>
+</div>
+</div>
+</div>
+<!-- Modules Accordion / Granular Matrix -->
+<div class="flex flex-col gap-space-md">
+<!-- MODULE 1: ALMACÉN & INFRAESTRUCTURA -->
+<div class="module-group bg-surface-card rounded-xl shadow-sm overflow-hidden transition-all">
+<div class="flex items-center justify-between p-space-md bg-canvas-bg cursor-pointer module-toggle" onclick="toggleModule('mod-infra')">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">warehouse</span>
+</span>
+<div>
+<span class="font-badge-status text-badge-status text-text-muted tracking-wider uppercase">MOD-01</span>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-none mt-0.5">ALMACÉN &amp; INFRAESTRUCTURA</h3>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-primary-container/10 text-primary font-bold">3 / 3 ACTIVOS</span>
+<span class="material-symbols-outlined text-text-muted text-[20px] transition-transform duration-200" id="icon-mod-infra">expand_more</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col divide-y divide-border-subtle" id="mod-infra">
+<!-- Perm 1 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Crear / Modificar centros de distribución
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Habilita la creación de nuevos nodos en la red logística, configuración de zonas horarias y reglas de operación física.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">INFRA_DC_MANAGE</span>
+</label>
+<!-- Perm 2 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Configurar layout de racks, pasillos y alturas
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Modificación de coordenadas XYZ, cubicación máxima volumétrica, asignación de pesos de carga y sentidos de flujo vehicular.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">LAYOUT_RACK_WRITE</span>
+</label>
+<!-- Perm 3 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Asignar zonas de cuarentena y frío
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Definición de perímetros especiales de almacenamiento, control de rangos térmicos y segregación de mercancía inflamable/controlada.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">ZONE_QUARANTINE_CFG</span>
+</label>
+</div>
+</div>
+<!-- MODULE 2: INVENTARIO & STOCKS -->
+<div class="module-group bg-surface-card rounded-xl shadow-sm overflow-hidden transition-all">
+<div class="flex items-center justify-between p-space-md bg-canvas-bg cursor-pointer module-toggle" onclick="toggleModule('mod-inv')">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</span>
+<div>
+<span class="font-badge-status text-badge-status text-text-muted tracking-wider uppercase">MOD-02</span>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-none mt-0.5">INVENTARIO &amp; STOCKS</h3>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-primary-container/10 text-primary font-bold">3 / 3 ACTIVOS</span>
+<span class="material-symbols-outlined text-text-muted text-[20px] transition-transform duration-200" id="icon-mod-inv">expand_more</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col divide-y divide-border-subtle" id="mod-inv">
+<!-- Perm 1 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                      Ejecutar ajustes manuales sin límite de importe
+                    </span>
+<span class="font-badge-status text-[10px] px-1.5 py-0.2 rounded bg-status-damaged/10 text-status-damaged font-bold">ALTO IMPACTO</span>
+</div>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Permite variaciones de saldo Kardex hacia positivo o merma sin requerir contra-aprobación del controller financiero.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">STOCK_ADJUST_UNLIMITED</span>
+</label>
+<!-- Perm 2 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Forzar desbloqueo de lotes en cuarentena
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Sobreescribe resoluciones del área de calidad para permitir asignación inmediata de stock a pedidos comerciales urgentes.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">BATCH_QUARANTINE_OVERRIDE</span>
+</label>
+<!-- Perm 3 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Crear y validar conteos ciegos
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Dispara tareas de inventario cíclico sin mostrar cantidades esperadas al operario y consolida la reconciliación final.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">CYCLE_COUNT_BLIND_VAL</span>
+</label>
+</div>
+</div>
+<!-- MODULE 3: FULFILLMENT & DESPACHO -->
+<div class="module-group bg-surface-card rounded-xl shadow-sm overflow-hidden transition-all">
+<div class="flex items-center justify-between p-space-md bg-canvas-bg cursor-pointer module-toggle" onclick="toggleModule('mod-ful')">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</span>
+<div>
+<span class="font-badge-status text-badge-status text-text-muted tracking-wider uppercase">MOD-03</span>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-none mt-0.5">FULFILLMENT &amp; DESPACHO</h3>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-status-sync-pending/10 text-status-sync-pending font-bold">2 / 3 ACTIVOS</span>
+<span class="material-symbols-outlined text-text-muted text-[20px] transition-transform duration-200" id="icon-mod-ful">expand_more</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col divide-y divide-border-subtle" id="mod-ful">
+<!-- Perm 1 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Anular órdenes de picking en curso
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Interrumpe al operador de radiofrecuencia en campo, reintegrando los ítems asignados a stock libre inmediatamente.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">PICK_TASK_REVOKE</span>
+</label>
+<!-- Perm 2 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                      Liberar pedidos con Credit Hold (Override financiero)
+                    </span>
+<span class="font-badge-status text-[10px] px-1.5 py-0.2 rounded bg-status-reserved/10 text-status-reserved font-bold">FINANCIERO</span>
+</div>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Autoriza la expedición física y facturación de carga para cuentas comerciales con saldo vencido en mora superior a 60 días.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">ORDER_CREDIT_OVERRIDE</span>
+</label>
+<!-- Perm 3: INACTIVE / UNCHECKED -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input class="matrix-checkbox w-4 h-4 text-text-muted rounded cursor-pointer border-border-strong" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col opacity-80 group-hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm font-semibold text-text-secondary group-hover:text-text-primary transition-colors">
+                      Despacho directo sin validación de báscula
+                    </span>
+<span class="font-badge-status text-[10px] px-1.5 py-0.2 rounded bg-canvas-bg text-text-muted font-bold">DESACTIVADO</span>
+</div>
+<span class="font-caption text-caption text-text-muted mt-0.5">
+                    Permite salida de camión por muelle sin checkeo de peso bruto en sensores de fosa. Deshabilitado por compliance aduanero ISO 28000.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">DOCK_SCALE_BYPASS</span>
+</label>
+</div>
+</div>
+<!-- MODULE 4: AUDITORÍA & SISTEMA -->
+<div class="module-group bg-surface-card rounded-xl shadow-sm overflow-hidden transition-all">
+<div class="flex items-center justify-between p-space-md bg-canvas-bg cursor-pointer module-toggle" onclick="toggleModule('mod-aud')">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</span>
+<div>
+<span class="font-badge-status text-badge-status text-text-muted tracking-wider uppercase">MOD-04</span>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-none mt-0.5">AUDITORÍA &amp; SISTEMA</h3>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-badge-status text-badge-status px-space-xs py-0.5 rounded bg-primary-container/10 text-primary font-bold">2 / 2 ACTIVOS</span>
+<span class="material-symbols-outlined text-text-muted text-[20px] transition-transform duration-200" id="icon-mod-aud">expand_more</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col divide-y divide-border-subtle" id="mod-aud">
+<!-- Perm 1 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Ver logs de transacciones de usuarios
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Acceso irrestricto al log append-only conteniendo timestamps UTC, IDs de escaneo RF, IPs de origen y payloads modificados.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">SYS_AUDIT_LOG_READ</span>
+</label>
+<!-- Perm 2 -->
+<label class="flex items-start justify-between py-space-sm cursor-pointer group">
+<div class="flex items-start gap-space-md max-w-xl">
+<div class="pt-0.5">
+<input checked="" class="matrix-checkbox w-4 h-4 accent-primary-container rounded cursor-pointer" onchange="onCheckboxChange()" type="checkbox"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors">
+                    Exportar reportes de trazabilidad en CSV/JSON
+                  </span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">
+                    Extracción forense de cadenas de custodia desde recepción de proveedor hasta firma en remito digital de entrega.
+                  </span>
+</div>
+</div>
+<span class="font-code-data text-[11px] text-text-muted bg-canvas-bg px-2 py-1 rounded">TRACE_DATA_EXPORT</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STICKY BOTTOM SAVE ACTION BAR -->
+<div class="fixed bottom-0 left-64 right-0 h-16 bg-surface-card border-t border-border-strong shadow-[0_-4px_20px_rgba(0,0,0,0.06)] z-30 px-space-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-muted text-[20px]">info</span>
+<span class="font-body-sm text-body-sm font-medium text-text-secondary">
+          Modificaciones en rol: <strong class="text-text-primary font-semibold">Director de Operaciones</strong>
+</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-border-strong"></span>
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary" id="unsaved-count">0</span>
+<span class="font-caption text-caption text-text-muted">cambios no guardados</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-card hover:bg-canvas-bg border border-border-strong font-body-sm text-body-sm font-semibold text-text-secondary hover:text-text-primary transition-all" onclick="resetMatrix()" type="button">
+        Restablecer Valores por Defecto
+      </button>
+<button class="flex items-center gap-space-xs px-space-xl py-2 rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-all" id="save-btn" onclick="saveMatrixChanges()" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Guardar Cambios de Matriz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client-side Interactions -->
+<script>
+  // Ensure Sidebar Active Link matches this view
+  (function setActiveSidebar() {
+    const rolesLink = document.querySelector('aside nav a[data-path="roles"]');
+    if (rolesLink) {
+      rolesLink.className = "flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm bg-primary-container text-on-primary font-bold shadow-sm";
+      const codeSpan = rolesLink.querySelector('.font-code-data');
+      if (codeSpan) {
+        codeSpan.className = "font-code-data text-[11px] text-on-primary/80";
+      }
+    }
+  })();
+
+  // Toggle Accordion Modules
+  function toggleModule(moduleId) {
+    const container = document.getElementById(moduleId);
+    const icon = document.getElementById('icon-' + moduleId);
+    if (!container || !icon) return;
+    
+    if (container.classList.contains('hidden')) {
+      container.classList.remove('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      container.classList.add('hidden');
+      icon.style.transform = 'rotate(-90deg)';
+    }
+  }
+
+  // Track Unsaved Changes
+  let modifiedCount = 0;
+  const initialStates = [];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.matrix-checkbox');
+    checkboxes.forEach((cb, idx) => {
+      initialStates[idx] = cb.checked;
+    });
+  });
+
+  function onCheckboxChange() {
+    const checkboxes = document.querySelectorAll('.matrix-checkbox');
+    let diffs = 0;
+    checkboxes.forEach((cb, idx) => {
+      if (cb.checked !== initialStates[idx]) {
+        diffs++;
+      }
+    });
+    modifiedCount = diffs;
+    const countEl = document.getElementById('unsaved-count');
+    const saveBtn = document.getElementById('save-btn');
+    if (countEl) countEl.innerText = modifiedCount;
+    
+    if (modifiedCount > 0) {
+      countEl.classList.add('text-status-sync-pending');
+      countEl.classList.remove('text-text-primary');
+      if (saveBtn) saveBtn.classList.add('animate-pulse');
+    } else {
+      countEl.classList.remove('text-status-sync-pending');
+      countEl.classList.add('text-text-primary');
+      if (saveBtn) saveBtn.classList.remove('animate-pulse');
+    }
+  }
+
+  function resetMatrix() {
+    const checkboxes = document.querySelectorAll('.matrix-checkbox');
+    checkboxes.forEach((cb, idx) => {
+      cb.checked = initialStates[idx];
+    });
+    onCheckboxChange();
+  }
+
+  function saveMatrixChanges() {
+    const checkboxes = document.querySelectorAll('.matrix-checkbox');
+    checkboxes.forEach((cb, idx) => {
+      initialStates[idx] = cb.checked;
+    });
+    onCheckboxChange();
+    
+    // Quick user feedback toast
+    const saveBtn = document.getElementById('save-btn');
+    if (saveBtn) {
+      const originalHtml = saveBtn.innerHTML;
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Matriz Guardada con Éxito</span>';
+      saveBtn.classList.replace('bg-primary-container', 'bg-status-available');
+      setTimeout(() => {
+        saveBtn.innerHTML = originalHtml;
+        saveBtn.classList.replace('bg-status-available', 'bg-primary-container');
+      }, 2000);
+    }
+  }
+
+  // Filter Roles List
+  const searchInput = document.getElementById('role-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      const roleCards = document.querySelectorAll('.role-card');
+      roleCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(query)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  // Role Selection click interaction
+  const roleCards = document.querySelectorAll('.role-card');
+  roleCards.forEach(card => {
+    card.addEventListener('click', () => {
+      roleCards.forEach(c => {
+        c.classList.remove('ring-2', 'ring-accent-focus');
+        const indicator = c.querySelector('.bg-primary-container.rounded-l-xl');
+        if (indicator) indicator.remove();
+      });
+      card.classList.add('ring-2', 'ring-accent-focus');
+      const ind = document.createElement('div');
+      ind.className = 'absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container rounded-l-xl';
+      card.prepend(ind);
+    });
+  });
+</script></div></main></div></body></html>

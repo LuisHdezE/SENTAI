@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full">
+<!-- Header & Context Banner -->
+<div class="flex flex-col gap-space-md mb-space-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded font-badge-status text-badge-status bg-surface-container-high text-text-secondary">WEB-BO-010</span>
+<span class="px-space-sm py-0.5 rounded font-badge-status text-badge-status bg-primary-container/20 text-on-primary-container font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          MONTEVIDEO DC-01
+        </span>
+<span class="font-code-data text-caption text-text-muted">SECCIÓN WMS CORE TOPOLOGY</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded bg-surface-card hover:bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">upload_file</span>
+<span>Importar Layout CAD/CSV</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded bg-surface-card hover:bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">print</span>
+<span>Generar Etiquetas Barcode ZPL</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Nueva Ubicación / Rack</span>
+</button>
+</div>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Zonas, Pasillos, Racks y Ubicaciones</h1>
+<p class="font-body-md text-body-md text-text-secondary mt-1">Configuración de coordenadas volumétricas, límites de peso, reglas de clase ABC y visualizador de rack en tiempo real.</p>
+</div>
+</div>
+<!-- Interactive Hierarchy Drill-down Filter -->
+<div class="bg-surface-card p-space-md rounded-lg shadow-sm mb-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs text-text-secondary">
+<span class="material-symbols-outlined text-[20px] text-primary">account_tree</span>
+<span class="font-caption text-caption uppercase tracking-wider text-text-muted">Filtro Topológico:</span>
+</div>
+<!-- Zona -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary pl-space-md pr-8 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer">
+<option>Zona A - Racks Palletizados</option>
+<option>Zona B - Picking Dinámico</option>
+<option>Zona C - Racks Voladizos</option>
+<option>Zona Q - Cuarentena / Retención</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[16px]">chevron_right</span>
+<!-- Pasillo -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary pl-space-md pr-8 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer">
+<option>Pasillo 03</option>
+<option>Pasillo 01</option>
+<option>Pasillo 02</option>
+<option>Pasillo 04</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[16px]">chevron_right</span>
+<!-- Rack -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary pl-space-md pr-8 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer">
+<option>Rack 02</option>
+<option>Rack 01</option>
+<option>Rack 03</option>
+<option>Rack 04</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[16px]">chevron_right</span>
+<!-- Nivel -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary pl-space-md pr-8 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer">
+<option>Todos los Niveles (1-4)</option>
+<option>Nivel 4 (Altura Superior)</option>
+<option>Nivel 3 (Medio-Alto)</option>
+<option>Nivel 2 (Medio)</option>
+<option>Nivel 1 (Picking / Piso)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-text-secondary">
+<span class="font-code-data text-caption text-text-muted">COORD BASE:</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-code-data text-body-sm font-bold text-on-surface">LOC-A-03-02-XX</span>
+</div>
+</div>
+</div>
+<!-- Metric Summary Tiles -->
+<div class="grid grid-cols-4 gap-space-md mb-space-lg">
+<!-- Tile 1 -->
+<div class="bg-surface-card p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Capacidad de Bahía</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">grid_on</span>
+</div>
+<div class="my-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">64</span>
+<span class="font-body-md text-body-md text-text-secondary ml-1">Ubicaciones</span>
+</div>
+<div class="font-caption text-caption text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>4 Niveles × 8 Columnas (Dual-Pallet)</span>
+</div>
+</div>
+<!-- Tile 2 -->
+<div class="bg-surface-card p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Ocupación Física</span>
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-primary-container/20 text-on-primary-container font-bold">90.6%</span>
+</div>
+<div class="my-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">58 <span class="text-text-muted font-body-md text-body-md">/ 64</span></span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 90.6%;"></div>
+</div>
+</div>
+<!-- Tile 3 -->
+<div class="bg-surface-card p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Carga Estructural</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">scale</span>
+</div>
+<div class="my-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">28,400 <span class="text-text-muted font-body-md text-body-md">kg</span></span>
+</div>
+<div class="font-caption text-caption text-text-secondary flex items-center justify-between">
+<span>Límite: 32,000 kg</span>
+<span class="text-status-available font-semibold">Margen: 3,600 kg</span>
+</div>
+</div>
+<!-- Tile 4 -->
+<div class="bg-surface-card p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Clasificación ABC</span>
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-status-reserved/10 text-status-reserved font-bold">ALTA ROTACIÓN</span>
+</div>
+<div class="my-space-xs flex items-center gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">Clase A</span>
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+</div>
+<div class="font-caption text-caption text-text-secondary">
+<span>Prioridad Alta de Recorrido Pick-Path</span>
+</div>
+</div>
+</div>
+<!-- Interactive 2D Visualizer & Inspector Pane (Split Bento) -->
+<div class="grid grid-cols-12 gap-space-lg mb-space-xl items-start">
+<!-- Visualizer Canvas (8 Cols) -->
+<div class="col-span-8 bg-surface-card p-space-lg rounded-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm mb-space-md bg-surface-container-low/40 p-space-sm rounded">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">view_in_ar</span>
+<span class="font-title-sm text-title-sm text-text-primary">Matriz Visual de Rack: Pasillo 03 - Rack 02</span>
+</div>
+<!-- Leyenda cromática -->
+<div class="flex items-center gap-space-md font-badge-status text-badge-status">
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-sm bg-status-available"></span>
+<span class="text-text-secondary">AVAILABLE</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-sm bg-status-reserved"></span>
+<span class="text-text-secondary">RESERVED</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-sm bg-status-quarantine"></span>
+<span class="text-text-secondary">QUARANTINE</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-sm bg-status-damaged"></span>
+<span class="text-text-secondary">DAMAGED</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-sm bg-surface-container-high"></span>
+<span class="text-text-secondary">VACÍO</span>
+</div>
+</div>
+</div>
+<!-- Rack Grid Matrix -->
+<div class="flex flex-col gap-space-sm bg-canvas-bg p-space-md rounded-lg shadow-inner">
+<!-- Columns Axis Markers -->
+<div class="grid grid-cols-9 gap-space-xs text-center font-code-data text-caption text-text-muted pb-1">
+<div class="text-right pr-2">NIVEL</div>
+<div>POS 01</div>
+<div>POS 02</div>
+<div>POS 03</div>
+<div>POS 04</div>
+<div>POS 05</div>
+<div>POS 06</div>
+<div>POS 07</div>
+<div>POS 08</div>
+</div>
+<!-- Row: Nivel 4 -->
+<div class="grid grid-cols-9 gap-space-xs items-center">
+<div class="font-code-data text-caption text-text-secondary text-right pr-2 font-bold">
+            N4 <span class="text-text-muted text-[10px] block font-normal">+8.0m</span>
+</div>
+<!-- 8 slots -->
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm group" onclick="selectSlot('A-03-02-04-01', 'SKU-89211', 'Pallet Chips AI', '480 UN', 'LOT-901', 'AVAILABLE', '310 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">04-01</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">480 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-04-02', 'SKU-89211', 'Pallet Chips AI', '500 UN', 'LOT-901', 'AVAILABLE', '320 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">04-02</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-reserved text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-04-03', 'SKU-44021', 'Módulos WiFi 6', '240 UN', 'LOT-882', 'RESERVED', '180 kg', '10 Nov 2026')">
+<span class="font-code-data text-[10px] font-bold">04-03</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-44021</span>
+<span class="font-badge-status text-[9px] opacity-80">RESERVED</span>
+</div>
+<!-- Target selected cell A-03-02-04 -->
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer shadow-md transform scale-105 transition-transform relative ring-2 ring-primary-fixed" id="slot-active" onclick="selectSlot('A-03-02-04', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-surface-card text-primary rounded-full flex items-center justify-center text-[10px] shadow">✓</span>
+<span class="font-code-data text-[10px] font-bold">04-04</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-90">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-surface-container-high text-text-muted flex flex-col justify-between cursor-pointer hover:bg-surface-container transition-colors" onclick="selectSlot('A-03-02-04-05', 'VACÍO', 'Posición Libre', '0 UN', '-', 'DISPONIBLE', '0 kg', '-')">
+<span class="font-code-data text-[10px] font-bold">04-05</span>
+<span class="font-caption text-[11px] text-center text-text-muted italic">VACÍO</span>
+<span class="font-badge-status text-[9px] text-text-muted">-</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-quarantine text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-04-06', 'SKU-31299', 'Baterías Ion-Litio', '120 UN', 'LOT-QC-03', 'QUARANTINE', '410 kg', '20 Jan 2028')">
+<span class="font-code-data text-[10px] font-bold">04-06</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-31299</span>
+<span class="font-badge-status text-[9px] opacity-90">QC HOLD</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-04-07', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">04-07</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-04-08', 'SKU-77201', 'Arnés Cableado Industrial', '600 UN', 'LOT-441', 'AVAILABLE', '190 kg', '01 Oct 2027')">
+<span class="font-code-data text-[10px] font-bold">04-08</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-77201</span>
+<span class="font-badge-status text-[9px] opacity-80">600 UN</span>
+</div>
+</div>
+<!-- Row: Nivel 3 -->
+<div class="grid grid-cols-9 gap-space-xs items-center">
+<div class="font-code-data text-caption text-text-secondary text-right pr-2 font-bold">
+            N3 <span class="text-text-muted text-[10px] block font-normal">+5.5m</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-01', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">03-01</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-02', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">03-02</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-damaged text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-03', 'SKU-99401', 'Panel Display OLED', '45 UN', 'LOT-DMG-09', 'DAMAGED', '110 kg', 'N/A')">
+<span class="font-code-data text-[10px] font-bold">03-03</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-99401</span>
+<span class="font-badge-status text-[9px] opacity-90">DAMAGED</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-04', 'SKU-89211', 'Pallet Chips AI', '500 UN', 'LOT-901', 'AVAILABLE', '320 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">03-04</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-reserved text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-05', 'SKU-44021', 'Módulos WiFi 6', '300 UN', 'LOT-882', 'RESERVED', '210 kg', '10 Nov 2026')">
+<span class="font-code-data text-[10px] font-bold">03-05</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-44021</span>
+<span class="font-badge-status text-[9px] opacity-80">RESERVED</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-06', 'SKU-77201', 'Arnés Cableado Industrial', '600 UN', 'LOT-441', 'AVAILABLE', '190 kg', '01 Oct 2027')">
+<span class="font-code-data text-[10px] font-bold">03-06</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-77201</span>
+<span class="font-badge-status text-[9px] opacity-80">600 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-surface-container-high text-text-muted flex flex-col justify-between cursor-pointer hover:bg-surface-container transition-colors" onclick="selectSlot('A-03-02-03-07', 'VACÍO', 'Posición Libre', '0 UN', '-', 'DISPONIBLE', '0 kg', '-')">
+<span class="font-code-data text-[10px] font-bold">03-07</span>
+<span class="font-caption text-[11px] text-center italic">VACÍO</span>
+<span class="font-badge-status text-[9px]">-</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-03-08', 'SKU-89211', 'Pallet Chips AI', '500 UN', 'LOT-901', 'AVAILABLE', '320 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">03-08</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+</div>
+<!-- Row: Nivel 2 -->
+<div class="grid grid-cols-9 gap-space-xs items-center">
+<div class="font-code-data text-caption text-text-secondary text-right pr-2 font-bold">
+            N2 <span class="text-text-muted text-[10px] block font-normal">+3.0m</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-01', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">02-01</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-02', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">02-02</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-03', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">02-03</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-04', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">02-04</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-05', 'SKU-31299', 'Baterías Ion-Litio', '200 UN', 'LOT-BAT-22', 'AVAILABLE', '380 kg', '15 May 2028')">
+<span class="font-code-data text-[10px] font-bold">02-05</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-31299</span>
+<span class="font-badge-status text-[9px] opacity-80">200 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-06', 'SKU-31299', 'Baterías Ion-Litio', '200 UN', 'LOT-BAT-22', 'AVAILABLE', '380 kg', '15 May 2028')">
+<span class="font-code-data text-[10px] font-bold">02-06</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-31299</span>
+<span class="font-badge-status text-[9px] opacity-80">200 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-surface-container-high text-text-muted flex flex-col justify-between cursor-pointer hover:bg-surface-container transition-colors" onclick="selectSlot('A-03-02-02-07', 'VACÍO', 'Posición Libre', '0 UN', '-', 'DISPONIBLE', '0 kg', '-')">
+<span class="font-code-data text-[10px] font-bold">02-07</span>
+<span class="font-caption text-[11px] text-center italic">VACÍO</span>
+<span class="font-badge-status text-[9px]">-</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-02-08', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">02-08</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+</div>
+<!-- Row: Nivel 1 (Picking Floor) -->
+<div class="grid grid-cols-9 gap-space-xs items-center">
+<div class="font-code-data text-caption text-primary font-bold text-right pr-2">
+            N1 <span class="text-primary-container text-[10px] block font-semibold">PICK 0m</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-01', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">01-01</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-02', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">01-02</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-03', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">01-03</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-04', 'SKU-100245', 'Sensor Telemétrico IoT', '500 UN', 'LOT-2026-0916', 'AVAILABLE', '225 kg', '16 Sep 2026')">
+<span class="font-code-data text-[10px] font-bold">01-04</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-100245</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-05', 'SKU-89211', 'Pallet Chips AI', '500 UN', 'LOT-901', 'AVAILABLE', '320 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">01-05</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-surface-container-high text-text-muted flex flex-col justify-between cursor-pointer hover:bg-surface-container transition-colors" onclick="selectSlot('A-03-02-01-06', 'VACÍO', 'Posición Libre', '0 UN', '-', 'DISPONIBLE', '0 kg', '-')">
+<span class="font-code-data text-[10px] font-bold">01-06</span>
+<span class="font-caption text-[11px] text-center italic">VACÍO</span>
+<span class="font-badge-status text-[9px]">-</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-07', 'SKU-89211', 'Pallet Chips AI', '500 UN', 'LOT-901', 'AVAILABLE', '320 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">01-07</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+<div class="h-16 p-1.5 rounded bg-status-available text-on-primary flex flex-col justify-between cursor-pointer hover:scale-105 transition-transform shadow-sm" onclick="selectSlot('A-03-02-01-08', 'SKU-89211', 'Pallet Chips AI', '500 UN', 'LOT-901', 'AVAILABLE', '320 kg', '12 May 2027')">
+<span class="font-code-data text-[10px] font-bold">01-08</span>
+<span class="font-caption text-[11px] truncate font-semibold">SKU-89211</span>
+<span class="font-badge-status text-[9px] opacity-80">500 UN</span>
+</div>
+</div>
+</div>
+<!-- Footer Help & Shortcuts -->
+<div class="flex items-center justify-between mt-space-md pt-space-xs text-text-secondary">
+<div class="flex items-center gap-space-sm font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-text-muted">touch_app</span>
+<span>Haga clic en cualquier celda para inspeccionar el pallet en el panel derecho.</span>
+</div>
+<div class="flex items-center gap-space-xs font-code-data text-[11px] text-text-muted">
+<span>TOLERANCIA PESO MÁX POR HUECO: 1,000 KG</span>
+</div>
+</div>
+</div>
+<!-- Inspector Lateral Pane (4 Cols) -->
+<div class="col-span-4 bg-surface-card p-space-lg rounded-lg shadow-sm flex flex-col gap-space-md sticky top-20">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">pageview</span>
+<span class="font-title-sm text-title-sm text-text-primary">Detalle de Posición</span>
+</div>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold" id="insp-status-badge">
+          AVAILABLE
+        </span>
+</div>
+<!-- Coordenada principal -->
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<span class="font-caption text-caption text-text-muted block uppercase">Coordenada WMS Global</span>
+<div class="flex items-center justify-between mt-0.5">
+<span class="font-code-data text-headline-md text-text-primary font-bold" id="insp-coord">A-03-02-04</span>
+<button class="text-text-muted hover:text-text-primary" title="Copiar Coordenada" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<span class="font-caption text-[11px] text-text-secondary mt-1 block">Pasillo 03 • Rack 02 • Nivel 4 • Posición 04</span>
+</div>
+<!-- SKU Card -->
+<div class="bg-canvas-bg p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase">SKU / Producto Alojado</span>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-card flex items-center justify-center text-text-muted shadow-sm">
+<span class="material-symbols-outlined text-[24px]">devices_other</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-code-data text-body-sm font-bold text-text-primary truncate" id="insp-sku">SKU-100245</span>
+<span class="font-body-sm text-body-sm text-text-secondary truncate" id="insp-name">Sensor Telemétrico IoT</span>
+</div>
+</div>
+</div>
+<!-- Attribute Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-canvas-bg p-space-sm rounded">
+<span class="font-caption text-[11px] text-text-muted uppercase block">Stock en Hueco</span>
+<span class="font-code-data text-body-md font-bold text-text-primary" id="insp-stock">500 UN</span>
+</div>
+<div class="bg-canvas-bg p-space-sm rounded">
+<span class="font-caption text-[11px] text-text-muted uppercase block">Lote Fabricación</span>
+<span class="font-code-data text-body-md font-bold text-text-primary" id="insp-lote">LOT-2026-0916</span>
+</div>
+<div class="bg-canvas-bg p-space-sm rounded">
+<span class="font-caption text-[11px] text-text-muted uppercase block">Peso Neto</span>
+<span class="font-code-data text-body-md font-bold text-text-primary" id="insp-peso">225 kg</span>
+</div>
+<div class="bg-canvas-bg p-space-sm rounded">
+<span class="font-caption text-[11px] text-text-muted uppercase block">Vencimiento</span>
+<span class="font-code-data text-body-md font-bold text-text-primary" id="insp-venc">16 Sep 2026</span>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full flex items-center justify-center gap-space-xs h-9 rounded bg-surface-card hover:bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">barcode_scanner</span>
+<span>Re-imprimir Tag de Ubicación</span>
+</button>
+<button class="w-full flex items-center justify-center gap-space-xs h-9 rounded bg-surface-card hover:bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">swap_horiz</span>
+<span>Crear Tarea de Relocalización</span>
+</button>
+<button class="w-full flex items-center justify-center gap-space-xs h-9 rounded bg-surface-card hover:bg-error-container font-body-sm text-body-sm font-semibold text-status-damaged shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Bloquear Posición por Mantenimiento</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Detailed Table of Rack Locations -->
+<div class="bg-surface-card rounded-lg shadow-sm overflow-hidden mb-space-2xl">
+<div class="p-space-lg flex items-center justify-between bg-surface-card">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col">
+<h2 class="font-title-sm text-title-sm text-text-primary">Inventario Detallado de Posiciones en Rack 02</h2>
+<span class="font-caption text-caption text-text-muted">Registro tabular de 64 ubicaciones indexadas</span>
+</div>
+<span class="px-space-sm py-0.5 rounded-full font-badge-status text-badge-status bg-surface-container text-text-secondary">
+          58 OCUPADAS / 6 VACÍAS
+        </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex items-center w-64 bg-canvas-bg rounded px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus">
+<span class="material-symbols-outlined text-text-muted text-[16px] mr-space-xs">filter_list</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Filtrar por SKU o Nivel..." type="text"/>
+</div>
+<button class="p-1.5 rounded text-text-secondary hover:bg-surface-container-low" title="Exportar CSV" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- Structured Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low font-code-data text-caption text-text-secondary uppercase">
+<tr>
+<th class="py-2.5 px-space-lg">UBICACIÓN</th>
+<th class="py-2.5 px-space-md">TIPO DE POSICIÓN</th>
+<th class="py-2.5 px-space-md">SKU ALOJADO</th>
+<th class="py-2.5 px-space-md text-right">CANTIDAD (ON HAND)</th>
+<th class="py-2.5 px-space-md">ESTADO DE STOCK</th>
+<th class="py-2.5 px-space-md text-right">PESO (KG)</th>
+<th class="py-2.5 px-space-lg text-center">ACCIONES</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle/40">
+<!-- Row 1: Target item -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-primary-container/5">
+<td class="py-3 px-space-lg font-code-data font-bold text-text-primary flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span>A-03-02-04</span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">Pallet Standard (120×100)</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data font-semibold text-text-primary">SKU-100245</span>
+<span class="font-caption text-text-muted">Sensor Telemétrico IoT</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-code-data font-bold text-text-primary">500 UN</td>
+<td class="py-3 px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+                AVAILABLE
+              </span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-primary">225.0 kg</td>
+<td class="py-3 px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Bloquear posición" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Imprimir etiqueta ZPL" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Reubicar pallet" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-lg font-code-data font-bold text-text-primary flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span>A-03-02-04-01</span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">Pallet Standard (120×100)</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data font-semibold text-text-primary">SKU-89211</span>
+<span class="font-caption text-text-muted">Pallet Chips AI</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-code-data font-bold text-text-primary">480 UN</td>
+<td class="py-3 px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+                AVAILABLE
+              </span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-primary">310.0 kg</td>
+<td class="py-3 px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Bloquear posición" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Imprimir etiqueta ZPL" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Reubicar pallet" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Reserved -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-lg font-code-data font-bold text-text-primary flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-reserved"></span>
+<span>A-03-02-04-03</span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">Pallet Standard (120×100)</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data font-semibold text-text-primary">SKU-44021</span>
+<span class="font-caption text-text-muted">Módulos WiFi 6</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-code-data font-bold text-text-primary">240 UN</td>
+<td class="py-3 px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-reserved/10 text-status-reserved font-bold">
+                RESERVED
+              </span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-primary">180.0 kg</td>
+<td class="py-3 px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Bloquear posición" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Imprimir etiqueta ZPL" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Reubicar pallet" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Quarantine -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-lg font-code-data font-bold text-text-primary flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-quarantine"></span>
+<span>A-03-02-04-06</span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">Pallet Ignífugo Reforzado</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data font-semibold text-text-primary">SKU-31299</span>
+<span class="font-caption text-text-muted">Baterías Ion-Litio</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-code-data font-bold text-text-primary">120 UN</td>
+<td class="py-3 px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-quarantine/10 text-status-quarantine font-bold">
+                QUARANTINE
+              </span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-primary">410.0 kg</td>
+<td class="py-3 px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Bloquear posición" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Imprimir etiqueta ZPL" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Reubicar pallet" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Damaged -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-lg font-code-data font-bold text-text-primary flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-damaged"></span>
+<span>A-03-02-03-03</span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">Pallet Standard (120×100)</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data font-semibold text-text-primary">SKU-99401</span>
+<span class="font-caption text-text-muted">Panel Display OLED</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right font-code-data font-bold text-text-primary">45 UN</td>
+<td class="py-3 px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-damaged/10 text-status-damaged font-bold">
+                DAMAGED
+              </span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-primary">110.0 kg</td>
+<td class="py-3 px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Bloquear posición" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Imprimir etiqueta ZPL" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Reubicar pallet" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Empty Slot -->
+<tr class="hover:bg-surface-container-low/60 transition-colors opacity-75">
+<td class="py-3 px-space-lg font-code-data font-bold text-text-muted flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-border-strong"></span>
+<span>A-03-02-04-05</span>
+</td>
+<td class="py-3 px-space-md text-text-secondary">Pallet Standard (120×100)</td>
+<td class="py-3 px-space-md">
+<span class="font-caption text-text-muted italic">Sin carga asignada</span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-muted">0 UN</td>
+<td class="py-3 px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-surface-container-high text-text-secondary font-semibold">
+                VACÍO / LIBRE
+              </span>
+</td>
+<td class="py-3 px-space-md text-right font-code-data text-text-muted">0.0 kg</td>
+<td class="py-3 px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Bloquear posición" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Imprimir etiqueta ZPL" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container" title="Asignar entrada directa" type="button">
+<span class="material-symbols-outlined text-[18px]">input</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between font-caption text-caption text-text-secondary">
+<div>
+<span>Mostrando 1-6 de 64 ubicaciones indexadas en Rack 02</span>
+</div>
+<div class="flex items-center gap-space-xs font-body-sm">
+<button class="p-1 rounded hover:bg-surface-container text-text-muted" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-surface-card font-code-data font-bold text-text-primary shadow-xs">1</span>
+<button class="px-2 py-0.5 rounded hover:bg-surface-container text-text-secondary" type="button">2</button>
+<button class="px-2 py-0.5 rounded hover:bg-surface-container text-text-secondary" type="button">3</button>
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic slot selection updater
+  function selectSlot(coord, sku, name, stock, lote, status, peso, venc) {
+    document.getElementById('insp-coord').textContent = coord;
+    document.getElementById('insp-sku').textContent = sku;
+    document.getElementById('insp-name').textContent = name;
+    document.getElementById('insp-stock').textContent = stock;
+    document.getElementById('insp-lote').textContent = lote;
+    document.getElementById('insp-peso').textContent = peso;
+    document.getElementById('insp-venc').textContent = venc;
+
+    const badge = document.getElementById('insp-status-badge');
+    badge.textContent = status;
+    
+    // Class updater for status badge
+    badge.className = 'px-space-xs py-0.5 rounded font-badge-status text-badge-status font-bold ';
+    if (status === 'AVAILABLE') {
+      badge.className += 'bg-status-available/10 text-status-available';
+    } else if (status === 'RESERVED') {
+      badge.className += 'bg-status-reserved/10 text-status-reserved';
+    } else if (status === 'QUARANTINE') {
+      badge.className += 'bg-status-quarantine/10 text-status-quarantine';
+    } else if (status === 'DAMAGED') {
+      badge.className += 'bg-status-damaged/10 text-status-damaged';
+    } else {
+      badge.className += 'bg-surface-container-high text-text-secondary';
+    }
+  }
+
+  // Ensure sidebar link for 'Ubicaciones & Racks' is marked active
+  document.addEventListener('DOMContentLoaded', () => {
+    const ubicLink = document.querySelector('aside a[data-path="ubicaciones-racks"]');
+    if (ubicLink) {
+      ubicLink.className = 'flex items-center gap-space-sm px-space-md py-space-xs font-body-sm text-body-sm transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm';
+      const codeSpan = ubicLink.querySelector('.font-code-data');
+      if (codeSpan) {
+        codeSpan.className = 'font-code-data text-[11px] text-on-primary-container opacity-90';
+      }
+    }
+  });
+</script></div></main></div></body></html>

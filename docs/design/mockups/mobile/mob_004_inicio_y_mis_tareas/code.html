@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#79dc7b", "on-tertiary-fixed": "#001d31", "tertiary-container": "#48a8ed", "surface-container": "#e5eeff", "canvas-bg": "#F8FAFC", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#003b5c", "surface-container-high": "#dce9ff", "on-primary-fixed-variant": "#005316", "text-secondary": "#475569", "primary": "#006e20", "on-surface": "#0b1c30", "accent-focus": "#53B559", "on-secondary": "#ffffff", "text-muted": "#94A3B8", "surface-tint": "#006e20", "surface-variant": "#d3e4fe", "on-tertiary-fixed-variant": "#004b73", "surface-bright": "#f8f9ff", "border-strong": "#CBD5E1", "primary-fixed": "#94f994", "on-secondary-container": "#5c647a", "on-surface-variant": "#3f4a3d", "inverse-on-surface": "#eaf1ff", "status-blocked": "#475569", "surface-card": "#FFFFFF", "tertiary": "#006398", "on-primary-container": "#00420f", "surface-dim": "#cbdbf5", "on-error-container": "#93000a", "background": "#f8f9ff", "primary-container": "#53b559", "status-available": "#16A34A", "status-damaged": "#DC2626", "surface": "#f8f9ff", "secondary-container": "#dae2fd", "tertiary-fixed-dim": "#93ccff", "outline-variant": "#becab9", "surface-container-low": "#eff4ff", "on-secondary-fixed-variant": "#3f465c", "border-subtle": "#E2E8F0", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#002205", "status-sync-error": "#E11D48", "secondary-fixed-dim": "#bec6e0", "outline": "#6f7a6c", "status-sync-pending": "#F59E0B", "on-background": "#0b1c30", "status-reserved": "#2563EB", "status-expired": "#9333EA", "inverse-surface": "#213145", "on-secondary-fixed": "#131b2e", "tertiary-fixed": "#cce5ff", "error-container": "#ffdad6", "primary-fixed-dim": "#79dc7b", "status-quarantine": "#D97706", "secondary": "#565e74", "secondary-fixed": "#dae2fd", "error": "#ba1a1a", "text-primary": "#0F172A" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "space-3xl": "3rem", "gutter-desktop": "1.5rem", "space-xl": "1.5rem", "space-2xl": "2rem", "space-sm": "0.5rem", "space-md": "0.75rem", "margin": "1rem", "gutter": "1rem", "margin-desktop": "1.5rem", "space-2xs": "0.125rem", "space-lg": "1rem" }, fontFamily: { "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "code-data": ["JetBrains Mono"], "metric-stat": ["Inter"], "headline-md": ["Inter"], "badge-status": ["JetBrains Mono"], "title-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "display-hero": ["Inter"], "caption": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-full antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.04)] pt-safe"><div class="h-6 px-margin flex items-center justify-between text-caption font-code-data text-text-secondary"><div class="flex items-center gap-space-xs"><span class="font-code-data text-caption font-bold text-on-surface">09:41</span><span class="px-space-xs py-0.5 rounded-sm bg-primary-fixed text-on-primary-fixed font-badge-status text-badge-status uppercase">DC-01</span></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-2xs text-status-available"><span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span><span class="font-badge-status text-badge-status tracking-wider">ONLINE</span></div><span class="material-symbols-outlined text-[15px] text-text-secondary">wifi</span><span class="material-symbols-outlined text-[15px] text-text-secondary">battery_charging_full</span></div></div><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Brand logo. - Primary color: #53b559 - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><div class="flex flex-col min-w-0"><span class="font-title-sm text-title-sm text-on-surface truncate">My Tasks</span><span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-code-data">SENTAI OPERATOR</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><button aria-label="Sync status" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-surface-container-low text-text-secondary active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px] text-primary-container">sync</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 px-margin bg-surface"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Metatag & Context Hub -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">MOB-004 // HUB OPERATIVO &amp; MIS TAREAS</span>
+<span class="font-code-data text-caption text-text-secondary bg-surface-container-high px-space-xs py-0.5 rounded-sm">TURNO 06:00 - 14:00</span>
+</div>
+<!-- Operator Context Bar Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-title-sm">
+              CT
+            </div>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-status-available border-[2px] border-surface-container-low"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Carlos Techera</span>
+<span class="font-caption text-caption text-text-muted">• DC-01</span>
+</div>
+<span class="font-caption text-caption text-text-secondary truncate">Asignado: Zona B Racks • Carretilla #04</span>
+</div>
+</div>
+<button aria-label="Ver detalles de turno" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-surface-container text-text-secondary active:scale-95 transition-transform" id="toggle-info-btn">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/80 rounded-lg px-space-sm py-1.5">
+<div class="flex items-center gap-space-xs text-status-available min-w-0">
+<span class="w-2 h-2 rounded-full bg-status-available animate-pulse flex-shrink-0"></span>
+<span class="font-badge-status text-badge-status truncate text-status-available uppercase">ONLINE • SYNC EN TIEMPO REAL</span>
+</div>
+<span class="font-code-data text-caption text-text-secondary flex-shrink-0">0 pendientes</span>
+</div>
+</div>
+</div>
+<!-- Productivity & Shift Metrics Banner (3 compact cards) -->
+<div class="grid grid-cols-3 gap-space-xs">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted mb-space-2xs">
+<span class="font-caption text-[11px] uppercase tracking-wider font-code-data">Completas</span>
+<span class="material-symbols-outlined text-[16px] text-status-available">task_alt</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">18</span>
+<span class="font-caption text-caption text-text-secondary">tar.</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mt-1">
+<div class="bg-status-available h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted mb-space-2xs">
+<span class="font-caption text-[11px] uppercase tracking-wider font-code-data">En Curso</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container">pending_actions</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">01</span>
+<span class="font-caption text-caption text-text-secondary">activa</span>
+</div>
+<div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mt-1">
+<div class="bg-primary-container h-full w-full rounded-full animate-pulse"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-text-muted mb-space-2xs">
+<span class="font-caption text-[11px] uppercase tracking-wider font-code-data">Rendimiento</span>
+<span class="material-symbols-outlined text-[16px] text-status-available">trending_up</span>
+</div>
+<div class="flex items-baseline gap-0.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-status-available font-bold">42</span>
+<span class="font-caption text-[11px] text-text-secondary">l/h</span>
+</div>
+<span class="font-code-data text-[10px] text-text-muted truncate">Meta: 38 l/h</span>
+</div>
+</div>
+<!-- Quick Scan Hardware/Virtual Trigger Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-highest p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0 z-10">
+<div class="flex items-center gap-space-2xs text-on-surface mb-1">
+<span class="material-symbols-outlined text-[18px] text-primary">sensors</span>
+<span class="font-caption text-caption text-text-secondary font-code-data">Zebra Trigger Listo</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Gatillo o Escaneo Rápido</span>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">Apunta a rótulo de ubicación o SKU</p>
+</div>
+<button class="min-h-[52px] px-space-md rounded-xl bg-primary-container text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-md active:scale-95 transition-all flex-shrink-0" id="quick-scan-btn">
+<span class="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+<span>ESCANEAR</span>
+</button>
+</div>
+</div>
+<!-- Task Queues & Segmented Filter Tabs -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Cola de Ejecución</h2>
+<button aria-label="Filtrar tareas" class="min-h-[44px] min-w-[44px] flex items-center justify-center text-text-secondary rounded-lg active:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Segmented Tab Bar -->
+<div class="grid grid-cols-3 bg-surface-container-low p-1 rounded-xl gap-1" role="tablist">
+<button class="tab-trigger py-2 px-space-xs rounded-lg text-center font-title-sm text-[13px] bg-surface-container-lowest text-on-surface shadow-sm font-semibold transition-all" data-target="tab-assigned">
+        Asignadas <span class="bg-primary-fixed text-on-primary-fixed text-[11px] font-code-data font-bold px-1.5 py-0.2 rounded-full ml-1">4</span>
+</button>
+<button class="tab-trigger py-2 px-space-xs rounded-lg text-center font-title-sm text-[13px] text-text-secondary hover:text-on-surface transition-all" data-target="tab-available">
+        Disponibles <span class="bg-surface-container-highest text-text-secondary text-[11px] font-code-data font-semibold px-1.5 py-0.2 rounded-full ml-1">12</span>
+</button>
+<button class="tab-trigger py-2 px-space-xs rounded-lg text-center font-title-sm text-[13px] text-text-secondary hover:text-on-surface transition-all" data-target="tab-completed">
+        Completadas
+      </button>
+</div>
+<!-- Tab Content: Assigned (Primary List) -->
+<div class="flex flex-col gap-space-sm" id="tab-assigned">
+<!-- Active Task Card (In Progress - Hero treatment) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container"></div>
+<!-- Header & Priority Badge -->
+<div class="flex items-center justify-between gap-space-xs pt-1">
+<span class="px-2 py-0.5 rounded-sm bg-primary-fixed text-on-primary-fixed font-badge-status text-badge-status tracking-wide uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span>
+            EN CURSO • PRIORITARIO
+          </span>
+<span class="font-code-data text-caption text-text-muted">#WAVE-882</span>
+</div>
+<!-- Task Core Info -->
+<div class="flex flex-col gap-0.5">
+<span class="font-caption text-caption uppercase text-text-secondary font-code-data">PICKING DE OLA FARMACÉUTICA</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Pasillo B-04 • Rack 02 • Nivel 3</h3>
+<div class="flex items-center gap-space-xs text-text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+<span class="font-code-data text-body-sm font-semibold text-on-surface">B-04-02-03</span>
+</div>
+</div>
+<!-- Visual Product Context Container -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-sm">
+<img class="w-14 h-14 rounded-md object-cover flex-shrink-0 bg-surface-container" data-alt="Pharmaceutical warehouse medical saline solution boxes stacked neatly under industrial warehouse LED illumination with clear barcoded labeling in green and white packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3oCpq3GuX7S0MaeQbVQl_fIng6vp7w0JAZcPjkQ4udQwp1NL7CD5yZlVAllP8H7TlGb9iPC-sULo1TsqWEHLY3qkRPglUV9LXi0TMScJpUJeDLihbUkcmB3LB3hohGlJ_-j4YPZx12iT8Uqnthe6L2WYEMp7GvJw2tg9dH18K2UJM2hNZOEkXpJc0dN30iOoaXJNuvi31I2EKjukOEo7BuM9tyRpecSPiQscs8GofpEd2VH-aEnfI"/>
+<div class="flex flex-col min-w-0">
+<span class="font-code-data text-caption text-text-muted">SKU-100245</span>
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Suero Fisiológico 0.9%</span>
+<span class="font-caption text-caption text-text-secondary">Caja x24 frascos 500ml</span>
+</div>
+</div>
+<!-- Progress Tracking Metric -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-caption font-code-data">
+<span class="text-text-secondary">Bultos recolectados</span>
+<span class="font-bold text-on-surface">6 / 10 bultos (60%)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-3/5 rounded-full transition-all duration-300"></div>
+</div>
+</div>
+<!-- Continue CTA Button -->
+<button class="w-full min-h-[48px] bg-primary-container hover:bg-accent-focus text-on-primary rounded-xl font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98] transition-all">
+<span>Continuar Picking</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Queued Task Card 2: Recepción Física -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 rounded-sm bg-secondary-container text-on-secondary-container font-badge-status text-badge-status tracking-wide uppercase">
+            RECEPCIÓN FÍSICA
+          </span>
+<span class="font-code-data text-caption text-text-muted">#ASN-2024-0089</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Laboratorios Roemmers</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Dársena Inbound 03 • 8 Pallets mixtos</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-2xs">
+<div class="flex items-center gap-1 text-text-secondary text-caption">
+<span class="material-symbols-outlined text-[16px]">forklift</span>
+<span>Descarga pendiente</span>
+</div>
+<button class="min-h-[44px] px-space-md rounded-lg bg-surface-container text-on-surface font-title-sm text-[13px] flex items-center gap-1 active:scale-95 transition-all">
+<span>Iniciar</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Queued Task Card 3: Guardado / Put-away -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 rounded-sm bg-tertiary-fixed text-on-tertiary-fixed font-badge-status text-badge-status tracking-wide uppercase">
+            PUT-AWAY SUGERIDO
+          </span>
+<span class="font-code-data text-caption text-text-muted">#PLT-90412</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Guardado de Pallet #PLT-90412</span>
+<div class="flex items-center gap-1 text-text-secondary font-code-data text-body-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">near_me</span>
+<span>Ubicación sugerida: <strong class="text-on-surface">A-08-01-02</strong></span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-2xs">
+<div class="flex items-center gap-1 text-text-secondary text-caption">
+<span class="material-symbols-outlined text-[16px]">scale</span>
+<span>Peso: 420 kg • A Granel</span>
+</div>
+<button class="min-h-[44px] px-space-md rounded-lg bg-surface-container text-on-surface font-title-sm text-[13px] flex items-center gap-1 active:scale-95 transition-all">
+<span>Ubicar</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Queued Task Card 4: Conteo Cíclico -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="px-2 py-0.5 rounded-sm bg-surface-container-high text-on-surface font-badge-status text-badge-status tracking-wide uppercase">
+            CONTEO CÍCLICO
+          </span>
+<span class="font-code-data text-caption text-text-muted">#CC-PAS-B12</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Auditoría Pasillo B-12</span>
+<span class="font-body-sm text-body-sm text-text-secondary">15 SKU críticos de alta rotación</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-2xs">
+<div class="flex items-center gap-1 text-text-secondary text-caption">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Tiempo estimado: 20 min</span>
+</div>
+<button class="min-h-[44px] px-space-md rounded-lg bg-surface-container text-on-surface font-title-sm text-[13px] flex items-center gap-1 active:scale-95 transition-all">
+<span>Iniciar</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Hidden tab states for interactive switching -->
+<div class="hidden flex-col gap-space-sm" id="tab-available">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-sm bg-primary-fixed text-on-primary-fixed font-badge-status text-badge-status tracking-wide">RECEPCIÓN</span>
+<span class="font-code-data text-caption text-text-muted">Muelle 02</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Descarga Contenedor MSC-99210</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">400 bultos calzado deportivo • Sin asignar</p>
+</div>
+<button class="w-full min-h-[44px] bg-primary rounded-xl text-on-primary font-title-sm text-title-sm">Tomar Tarea</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-sm bg-secondary-container text-on-secondary-container font-badge-status text-badge-status tracking-wide">PICKING URBANO</span>
+<span class="font-code-data text-caption text-text-muted">Zona E-Commerce</span>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Despacho Exprés Lote 44</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">24 pedidos multi-artículo • Prioridad alta</p>
+</div>
+<button class="w-full min-h-[44px] bg-primary rounded-xl text-on-primary font-title-sm text-title-sm">Tomar Tarea</button>
+</div>
+</div>
+<div class="hidden flex-col gap-space-sm" id="tab-completed">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Picking Ola #WAVE-881</span>
+<span class="font-caption text-caption text-text-secondary">100% verificado • Finalizado 09:12</span>
+</div>
+<span class="material-symbols-outlined text-status-available text-[24px]">verified</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-surface">Put-away Pallet #PLT-90344</span>
+<span class="font-caption text-caption text-text-secondary">Ubicado en B-02-01-01 • Finalizado 08:35</span>
+</div>
+<span class="material-symbols-outlined text-status-available text-[24px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Bottom Utility Shortcuts (Incident & Stock Lookup) -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="min-h-[48px] px-space-sm bg-surface-container-lowest rounded-xl shadow-sm text-left flex items-center gap-space-xs active:bg-surface-container-high transition-colors">
+<div class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-[13px] leading-tight text-on-surface font-semibold truncate">Incidencia</span>
+<span class="font-caption text-[11px] text-text-secondary truncate">Dañado / Faltante</span>
+</div>
+</button>
+<button class="min-h-[48px] px-space-sm bg-surface-container-lowest rounded-xl shadow-sm text-left flex items-center gap-space-xs active:bg-surface-container-high transition-colors">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-[13px] leading-tight text-on-surface font-semibold truncate">Consultar Stock</span>
+<span class="font-caption text-[11px] text-text-secondary truncate">Por SKU o Posición</span>
+</div>
+</button>
+</div>
+<!-- Subtle Haptic / Trigger Simulation Notification Toast (Initially hidden) -->
+<div class="hidden fixed top-24 inset-x-margin z-50 bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-xl flex items-center justify-between transition-all" id="scan-toast">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[22px] animate-spin">sync</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-inverse-on-surface font-semibold">Lector de Hardware Activado</span>
+<span class="font-caption text-caption text-text-muted">Apunta al código 1D/2D o presiona gatillo</span>
+</div>
+</div>
+<button aria-label="Cerrar notificación" class="min-h-[44px] min-w-[44px] flex items-center justify-center text-inverse-on-surface/80" id="close-toast-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  // Tab Switching Micro-interaction
+  const tabTriggers = document.querySelectorAll('.tab-trigger');
+  const tabContents = {
+    'tab-assigned': document.getElementById('tab-assigned'),
+    'tab-available': document.getElementById('tab-available'),
+    'tab-completed': document.getElementById('tab-completed')
+  };
+
+  tabTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const target = trigger.getAttribute('data-target');
+      
+      // Reset tab button styles
+      tabTriggers.forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+        btn.classList.add('text-text-secondary');
+      });
+
+      // Highlight active button
+      trigger.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'font-semibold');
+      trigger.classList.remove('text-text-secondary');
+
+      // Hide all content panels
+      Object.values(tabContents).forEach(panel => {
+        if (panel) {
+          panel.classList.add('hidden');
+          panel.classList.remove('flex');
+        }
+      });
+
+      // Show targeted content
+      if (tabContents[target]) {
+        tabContents[target].classList.remove('hidden');
+        tabContents[target].classList.add('flex');
+      }
+    });
+  });
+
+  // Trigger Toast Simulation
+  const scanBtn = document.getElementById('quick-scan-btn');
+  const scanToast = document.getElementById('scan-toast');
+  const closeToastBtn = document.getElementById('close-toast-btn');
+
+  if (scanBtn && scanToast) {
+    scanBtn.addEventListener('click', () => {
+      scanToast.classList.remove('hidden');
+      setTimeout(() => {
+        scanToast.classList.add('hidden');
+      }, 3500);
+    });
+  }
+
+  if (closeToastBtn && scanToast) {
+    closeToastBtn.addEventListener('click', () => {
+      scanToast.classList.add('hidden');
+    });
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(15,23,42,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs grid grid-cols-5 items-center"><a aria-current="page" class="min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-space-2xs transition-colors text-primary font-bold" data-path="my-tasks" href="#"><span class="material-symbols-outlined text-[22px]">checklist</span><span class="font-caption text-caption tracking-tight">Tareas</span></a><a class="min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-space-2xs text-text-secondary transition-colors" data-path="inventory-search" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-caption text-caption tracking-tight">Inventario</span></a><div class="flex items-center justify-center"><a class="min-h-[52px] min-w-[52px] w-13 h-13 rounded-xl bg-primary-container text-on-primary flex flex-col items-center justify-center shadow-[0_4px_12px_rgba(83,181,89,0.35)] active:scale-95 transition-transform" data-path="barcode-scanner" href="#"><span class="material-symbols-outlined text-[26px]">qr_code_scanner</span><span class="font-badge-status text-[10px] leading-none text-on-primary font-bold mt-0.5">SCAN</span></a></div><a class="min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-space-2xs text-text-secondary transition-colors relative" data-path="sync-queue" href="#"><span class="material-symbols-outlined text-[22px]">sync_saved_locally</span><span class="font-caption text-caption tracking-tight">Sincro</span><span class="absolute top-2 right-4 w-2 h-2 rounded-full bg-status-sync-pending"></span></a><a class="min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-space-2xs text-text-secondary transition-colors" data-path="operator-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-caption text-caption tracking-tight">Turno</span></a></div></nav></body></html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full">
+<!-- Top Command & Header Block -->
+<div class="flex flex-col gap-space-md mb-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-surface-container-high text-on-secondary-container font-semibold tracking-widest">WEB-MD-001</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-caption text-caption text-text-muted">MAESTRO CENTRAL LOGÍSTICO</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Catálogo Maestro de Productos (SKU)</h1>
+<p class="font-body-sm text-body-sm text-text-secondary max-w-3xl">
+          Control de especificaciones maestras, unidades de medida, cubicaje y reglas de inventario multi-almacén.
+        </p>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md h-9 rounded-lg bg-surface-card text-text-primary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted">upload_file</span>
+<span>Importar CSV</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md h-9 rounded-lg bg-surface-card text-text-primary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted">tune</span>
+<span>Configurar Columnas</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg h-9 rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Crear Producto</span>
+</button>
+</div>
+</div>
+<!-- Inventory Metric Ribbon / KPI Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mt-space-xs">
+<!-- Metric 1 -->
+<div class="bg-surface-card rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container-low rounded-bl-full pointer-events-none -mr-4 -mt-4 opacity-70"></div>
+<div class="flex items-center justify-between mb-space-xs relative">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Total SKUs Activos</span>
+<span class="material-symbols-outlined text-primary text-[20px]">category</span>
+</div>
+<div class="flex items-baseline gap-space-sm relative">
+<span class="font-metric-stat text-metric-stat text-text-primary">4,892</span>
+<span class="font-badge-status text-badge-status text-primary bg-surface-container-low px-1.5 py-0.5 rounded font-bold">+12 este mes</span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-text-muted font-caption text-caption">
+<span>99.4% con barcode validado</span>
+<span class="font-code-data text-[11px] text-text-secondary">SYS-OK</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-card rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container-low rounded-bl-full pointer-events-none -mr-4 -mt-4 opacity-50"></div>
+<div class="flex items-center justify-between mb-space-xs relative">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">En Stock Disponible</span>
+<span class="material-symbols-outlined text-status-available text-[20px]">check_circle</span>
+</div>
+<div class="flex items-baseline gap-space-sm relative">
+<span class="font-metric-stat text-metric-stat text-text-primary">3,840</span>
+<span class="font-caption text-caption text-text-muted">SKUs con saldo &gt; 0</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mt-space-sm">
+<div class="bg-status-available h-full rounded-full" style="width: 78.5%"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-card rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container-low rounded-bl-full pointer-events-none -mr-4 -mt-4 opacity-40"></div>
+<div class="flex items-center justify-between mb-space-xs relative">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Alerta Stock Bajo</span>
+<span class="material-symbols-outlined text-status-sync-pending text-[20px]">warning</span>
+</div>
+<div class="flex items-baseline gap-space-sm relative">
+<span class="font-metric-stat text-metric-stat text-text-primary">28</span>
+<span class="font-badge-status text-badge-status text-status-sync-pending bg-surface-container-high px-1.5 py-0.5 rounded font-bold">&lt; ROP Mínimo</span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-text-muted font-caption text-caption">
+<span>Requieren reabastecimiento</span>
+<span class="font-caption text-caption font-semibold text-text-primary hover:text-primary cursor-pointer">Ver ASN →</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-card rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error-container/20 rounded-bl-full pointer-events-none -mr-4 -mt-4"></div>
+<div class="flex items-center justify-between mb-space-xs relative">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">En Cuarentena / Dañado</span>
+<span class="material-symbols-outlined text-status-damaged text-[20px]">gpp_maybe</span>
+</div>
+<div class="flex items-baseline gap-space-sm relative">
+<span class="font-metric-stat text-metric-stat text-text-primary">14</span>
+<span class="font-badge-status text-badge-status text-status-damaged bg-error-container/60 px-1.5 py-0.5 rounded font-bold">10 Q / 4 D</span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-text-muted font-caption text-caption">
+<span>Inmovilizados en QC-DOCK</span>
+<span class="font-caption text-caption font-semibold text-text-primary hover:text-primary cursor-pointer">Revisar →</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Filter Hub -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-24 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card shadow-inner transition-all" placeholder="Buscar por SKU, EAN/UPC, descripción o código fiscal..." type="text"/>
+<div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">⌘K</kbd>
+</div>
+</div>
+<!-- Quick Select Filters -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Filter: Categoría -->
+<div class="relative">
+<select class="appearance-none h-9 pl-space-md pr-8 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-text-primary font-medium hover:bg-surface-container transition-colors cursor-pointer focus:outline-none">
+<option value="">Categoría: Todas</option>
+<option value="elec">Electrónica (1,204)</option>
+<option value="rep">Repuestos (942)</option>
+<option value="chem">Químicos (412)</option>
+<option value="energy">Energía (280)</option>
+<option value="auto">Automatización (612)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Filter: Cliente Propietario -->
+<div class="relative">
+<select class="appearance-none h-9 pl-space-md pr-8 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-text-primary font-medium hover:bg-surface-container transition-colors cursor-pointer focus:outline-none">
+<option value="">Propietario: Todos los Clientes</option>
+<option value="pharma">PharmaGroup Latam</option>
+<option value="logistech">LogisTech Corp</option>
+<option value="agrosupply">AgroSupply SA</option>
+<option value="consorcio">Consorcio Retail Sur</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Filter: Control Trazabilidad -->
+<div class="relative">
+<select class="appearance-none h-9 pl-space-md pr-8 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-text-primary font-medium hover:bg-surface-container transition-colors cursor-pointer focus:outline-none">
+<option value="">Control: Lote / Serie</option>
+<option value="lote">Control estricto por LOTE</option>
+<option value="serie">Control por N° de SERIE</option>
+<option value="sin_control">Sin Trazabilidad Unitaria</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Filter: Estado Stock -->
+<div class="relative">
+<select class="appearance-none h-9 pl-space-md pr-8 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-text-primary font-medium hover:bg-surface-container transition-colors cursor-pointer focus:outline-none">
+<option value="">Estado Stock: Cualquier Estado</option>
+<option value="available">Solo AVAILABLE</option>
+<option value="reserved">Con unidades RESERVED</option>
+<option value="quarantine">Con unidades QUARANTINE</option>
+<option value="damaged">Con unidades DAMAGED</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-muted text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Reset Button -->
+<button class="p-2 h-9 w-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-muted hover:text-text-primary flex items-center justify-center transition-colors" title="Limpiar filtros" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Active Tags Row -->
+<div class="flex items-center gap-space-xs mt-space-sm pt-space-xs flex-wrap font-caption text-caption text-text-muted">
+<span class="font-semibold text-text-secondary">Filtros aplicados:</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container">
+        Almacén: Montevideo DC-01
+        <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-container">
+        Estado Maestro: Activo
+        <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<button class="text-primary hover:underline ml-space-xs font-semibold" type="button">Borrar todos</button>
+</div>
+</div>
+<!-- Main High Density Data Table Workspace -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Batch Action Utility Bar -->
+<div class="bg-surface-container-lowest px-space-md py-space-xs flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0" type="checkbox"/>
+<span class="font-caption text-caption text-text-muted">Seleccionar página (5)</span>
+</label>
+<span class="text-text-muted">|</span>
+<button class="font-body-sm text-body-sm text-text-muted hover:text-text-primary flex items-center gap-1 disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+<span>Imprimir Etiquetas ZPL</span>
+</button>
+<button class="font-body-sm text-body-sm text-text-muted hover:text-text-primary flex items-center gap-1 disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">drive_file_move</span>
+<span>Reasignar Propietario</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data text-text-muted text-[11px]">DENSIDAD: ALTA</span>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">density_small</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Table Canvas -->
+<div class="w-full overflow-x-auto">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-surface-container-low text-text-secondary font-caption text-caption uppercase tracking-wider h-9">
+<th class="pl-space-md pr-space-xs w-10 text-center">
+<input aria-label="Seleccionar todos los registros" class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</th>
+<th class="px-space-md py-space-xs font-semibold">SKU &amp; Código EAN</th>
+<th class="px-space-md py-space-xs font-semibold min-w-[280px]">Descripción del Producto &amp; Categoría</th>
+<th class="px-space-md py-space-xs font-semibold min-w-[160px]">Propietario / Cliente</th>
+<th class="px-space-md py-space-xs font-semibold text-right min-w-[120px]">Stock Físico (On Hand)</th>
+<th class="px-space-md py-space-xs font-semibold min-w-[240px]">Desglose de Estados</th>
+<th class="px-space-md py-space-xs font-semibold text-center min-w-[100px]">Trazabilidad</th>
+<th class="px-space-md py-space-xs font-semibold min-w-[150px]">Ubicación Primaria</th>
+<th class="pr-space-md pl-space-xs py-space-xs font-semibold text-right sticky right-0 bg-surface-container-low">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-sm text-body-sm text-text-primary">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group">
+<td class="pl-space-md pr-space-xs py-space-xs text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary hover:text-primary cursor-pointer">SKU-100245</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted hover:text-text-primary cursor-pointer" title="Copiar SKU">content_copy</span>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">EAN: 789102340581</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<span class="font-semibold text-text-primary group-hover:text-primary transition-colors">Sensor Telemétrico IoT Industrial IP67</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-secondary-container font-caption text-[10px] uppercase font-medium">Electrónica</span>
+<span class="text-text-muted font-caption text-[11px]">· Dim: 12x8x4 cm · 0.28 kg</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-reserved"></span>
+<span class="font-medium text-text-primary truncate">PharmaGroup Latam</span>
+</div>
+<span class="font-code-data text-[10px] text-text-muted">ACC-LAT-092</span>
+</td>
+<td class="px-space-md py-space-xs text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-code-data font-bold text-text-primary">1,250 <span class="font-normal text-text-muted text-[11px]">un.</span></span>
+<span class="font-caption text-[10px] text-status-available font-semibold">100% Ubicado</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-emerald-50 text-status-available">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>AVAIL: 1,120
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span>RSV: 90
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-amber-50 text-status-quarantine">
+<span class="w-1.5 h-1.5 rounded-full bg-status-quarantine"></span>QUA: 30
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-rose-50 text-status-damaged">
+<span class="w-1.5 h-1.5 rounded-full bg-status-damaged"></span>DMG: 10
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-xs text-center">
+<div class="flex items-center justify-center gap-1">
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-indigo-50 text-tertiary font-bold tracking-wider">SERIE</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">pin_drop</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">A-03-02-04</span>
+</div>
+<span class="font-caption text-[10px] text-text-muted">DC-01 · Rack Dinámico</span>
+</div>
+</td>
+<td class="pr-space-md pl-space-xs py-space-xs text-right sticky right-0 bg-surface-card group-hover:bg-surface-container-low transition-colors shadow-[-6px_0_10px_-4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-[12px] font-semibold flex items-center gap-1 transition-colors" title="Ver Detalle Maestro (WEB-MD-003)" type="button">
+<span>Detalle</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group bg-surface-container-lowest">
+<td class="pl-space-md pr-space-xs py-space-xs text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary hover:text-primary cursor-pointer">SKU-204918</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted hover:text-text-primary cursor-pointer" title="Copiar SKU">content_copy</span>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">EAN: 789102340592</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<span class="font-semibold text-text-primary group-hover:text-primary transition-colors">Válvula de Presión Hidráulica 2" Acero</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-secondary-container font-caption text-[10px] uppercase font-medium">Repuestos</span>
+<span class="text-text-muted font-caption text-[11px]">· Dim: 30x20x15 cm · 4.80 kg</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-medium text-text-primary truncate">LogisTech Corp</span>
+</div>
+<span class="font-code-data text-[10px] text-text-muted">ACC-LGT-101</span>
+</td>
+<td class="px-space-md py-space-xs text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-code-data font-bold text-text-primary">480 <span class="font-normal text-text-muted text-[11px]">un.</span></span>
+<span class="font-caption text-[10px] text-status-available font-semibold">100% Ubicado</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-emerald-50 text-status-available">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>AVAIL: 420
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span>RSV: 60
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-slate-100 text-text-muted">
+                  QUA: 0
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-xs text-center">
+<div class="flex items-center justify-center gap-1">
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-teal-50 text-primary font-bold tracking-wider">LOTE</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">pin_drop</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">B-01-04-01</span>
+</div>
+<span class="font-caption text-[10px] text-text-muted">DC-01 · Cargas Pesadas</span>
+</div>
+</td>
+<td class="pr-space-md pl-space-xs py-space-xs text-right sticky right-0 bg-surface-container-lowest group-hover:bg-surface-container-low transition-colors shadow-[-6px_0_10px_-4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-[12px] font-semibold flex items-center gap-1 transition-colors" title="Ver Detalle Maestro (WEB-MD-003)" type="button">
+<span>Detalle</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group">
+<td class="pl-space-md pr-space-xs py-space-xs text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary hover:text-primary cursor-pointer">SKU-309112</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted hover:text-text-primary cursor-pointer" title="Copiar SKU">content_copy</span>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">EAN: 789102340603</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<span class="font-semibold text-text-primary group-hover:text-primary transition-colors">Aceite Sintético Grado Alimentario 20L</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-secondary-container font-caption text-[10px] uppercase font-medium">Químicos</span>
+<span class="text-text-muted font-caption text-[11px]">· Bidón · 20.00 kg · Hazmat Level 0</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span class="font-medium text-text-primary truncate">AgroSupply SA</span>
+</div>
+<span class="font-code-data text-[10px] text-text-muted">ACC-AGR-409</span>
+</td>
+<td class="px-space-md py-space-xs text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-code-data font-bold text-text-primary">2,100 <span class="font-normal text-text-muted text-[11px]">un.</span></span>
+<span class="font-caption text-[10px] text-text-muted">84 Pallets</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-emerald-50 text-status-available">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>AVAIL: 1,980
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span>RSV: 120
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-xs text-center">
+<div class="flex items-center justify-center gap-1">
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-teal-50 text-primary font-bold tracking-wider">LOTE</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">pin_drop</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">C-02-01-02</span>
+</div>
+<span class="font-caption text-[10px] text-text-muted">DC-01 · Zona Segura Químicos</span>
+</div>
+</td>
+<td class="pr-space-md pl-space-xs py-space-xs text-right sticky right-0 bg-surface-card group-hover:bg-surface-container-low transition-colors shadow-[-6px_0_10px_-4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-[12px] font-semibold flex items-center gap-1 transition-colors" title="Ver Detalle Maestro (WEB-MD-003)" type="button">
+<span>Detalle</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group bg-surface-container-lowest">
+<td class="pl-space-md pr-space-xs py-space-xs text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary hover:text-primary cursor-pointer">SKU-400199</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted hover:text-text-primary cursor-pointer" title="Copiar SKU">content_copy</span>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">EAN: 789102340614</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<span class="font-semibold text-text-primary group-hover:text-primary transition-colors">Batería Litio Recargable 48V 100Ah</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-secondary-container font-caption text-[10px] uppercase font-medium">Energía</span>
+<span class="text-text-muted font-caption text-[11px]">· Dim: 44x40x18 cm · 38.50 kg · UN3480</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-medium text-text-primary truncate">LogisTech Corp</span>
+</div>
+<span class="font-code-data text-[10px] text-text-muted">ACC-LGT-101</span>
+</td>
+<td class="px-space-md py-space-xs text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-code-data font-bold text-text-primary">150 <span class="font-normal text-text-muted text-[11px]">un.</span></span>
+<span class="font-caption text-[10px] text-status-sync-pending font-semibold">Stock Crítico ROP</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-emerald-50 text-status-available">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>AVAIL: 110
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span>RSV: 40
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-xs text-center">
+<div class="flex items-center justify-center gap-1">
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-indigo-50 text-tertiary font-bold tracking-wider">SERIE</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">pin_drop</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">BAT-01-01-01</span>
+</div>
+<span class="font-caption text-[10px] text-text-muted">DC-01 · Sala Climatizada</span>
+</div>
+</td>
+<td class="pr-space-md pl-space-xs py-space-xs text-right sticky right-0 bg-surface-container-lowest group-hover:bg-surface-container-low transition-colors shadow-[-6px_0_10px_-4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-[12px] font-semibold flex items-center gap-1 transition-colors" title="Ver Detalle Maestro (WEB-MD-003)" type="button">
+<span>Detalle</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group">
+<td class="pl-space-md pr-space-xs py-space-xs text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-accent-focus focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary hover:text-primary cursor-pointer">SKU-501824</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted hover:text-text-primary cursor-pointer" title="Copiar SKU">content_copy</span>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">EAN: 789102340625</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<span class="font-semibold text-text-primary group-hover:text-primary transition-colors">Módulo de Control PLC Ethernet 24V</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-secondary-container font-caption text-[10px] uppercase font-medium">Automatización</span>
+<span class="text-text-muted font-caption text-[11px]">· Dim: 15x12x6 cm · 0.65 kg</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-status-reserved"></span>
+<span class="font-medium text-text-primary truncate">PharmaGroup Latam</span>
+</div>
+<span class="font-code-data text-[10px] text-text-muted">ACC-LAT-092</span>
+</td>
+<td class="px-space-md py-space-xs text-right">
+<div class="flex flex-col items-end">
+<span class="font-code-data text-code-data font-bold text-text-primary">340 <span class="font-normal text-text-muted text-[11px]">un.</span></span>
+<span class="font-caption text-[10px] text-status-available font-semibold">100% Ubicado</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-emerald-50 text-status-available">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>AVAIL: 310
+                </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded font-badge-status text-badge-status bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span>RSV: 30
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-xs text-center">
+<div class="flex items-center justify-center gap-1">
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-indigo-50 text-tertiary font-bold tracking-wider">SERIE</span>
+</div>
+</td>
+<td class="px-space-md py-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">pin_drop</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">A-02-05-01</span>
+</div>
+<span class="font-caption text-[10px] text-text-muted">DC-01 · Zona Electrónica</span>
+</div>
+</td>
+<td class="pr-space-md pl-space-xs py-space-xs text-right sticky right-0 bg-surface-card group-hover:bg-surface-container-low transition-colors shadow-[-6px_0_10px_-4px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-[12px] font-semibold flex items-center gap-1 transition-colors" title="Ver Detalle Maestro (WEB-MD-003)" type="button">
+<span>Detalle</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Editar Producto" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Crisp Pagination Bar -->
+<div class="bg-surface-card px-space-md py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-text-secondary">
+          Mostrando <span class="font-semibold text-text-primary">1–5</span> de <span class="font-semibold text-text-primary">4,892</span> SKUs · Página 1 de 979
+        </span>
+<div class="hidden md:flex items-center gap-space-xs font-caption text-caption text-text-muted">
+<span>Filas por página:</span>
+<select class="bg-surface-container-low rounded px-1.5 py-0.5 text-text-primary font-semibold focus:outline-none cursor-pointer">
+<option>5</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-low text-text-muted opacity-50 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low text-text-muted opacity-50 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-bold font-body-sm text-body-sm shadow-sm" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-medium font-body-sm text-body-sm transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-medium font-body-sm text-body-sm transition-colors" type="button">3</button>
+<span class="px-1 text-text-muted">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-medium font-body-sm text-body-sm transition-colors" type="button">979</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Operational Context Footer Hint -->
+<div class="mt-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md p-space-md bg-surface-container-low rounded-xl text-text-secondary">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<p class="font-caption text-caption">
+<strong>Regla de Lógica WMS:</strong> Los SKUs configurados con trazabilidad <em>SERIE</em> requieren confirmación 2D Barcode Datamatrix durante los procesos de Picking y Crossdocking activo.
+      </p>
+</div>
+<div class="flex items-center gap-space-md text-text-muted font-caption text-[11px] self-end md:self-auto">
+<span>Latencia de réplica maestro: <strong class="text-text-primary">14ms</strong></span>
+<span>·</span>
+<span>Última sincronización SAP S/4HANA: <strong class="text-text-primary">11:42:09 UTC</strong></span>
+</div>
+</div>
+</div></div></main></div></body></html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SENTAI Customer Portal - WEB-CP-006 Revisión y Confirmación B2B</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "text-secondary": "#475569",
+            "on-primary-container": "#00420f",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-container-low": "#eff4ff",
+            "secondary": "#565e74",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#e5eeff",
+            "border-subtle": "#E2E8F0",
+            "status-quarantine": "#D97706",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "surface-tint": "#006e20",
+            "tertiary": "#006398",
+            "background": "#f8f9ff",
+            "on-primary-fixed-variant": "#005316",
+            "inverse-primary": "#79dc7b",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-bright": "#f8f9ff",
+            "tertiary-fixed": "#cce5ff",
+            "accent-focus": "#53B559",
+            "on-secondary-fixed-variant": "#3f465c",
+            "status-sync-pending": "#F59E0B",
+            "status-sync-error": "#E11D48",
+            "border-strong": "#CBD5E1",
+            "on-primary": "#ffffff",
+            "surface": "#f8f9ff",
+            "secondary-container": "#dae2fd",
+            "surface-container-highest": "#d3e4fe",
+            "primary-container": "#53b559",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#cbdbf5",
+            "status-damaged": "#DC2626",
+            "error-container": "#ffdad6",
+            "status-available": "#16A34A",
+            "inverse-surface": "#213145",
+            "on-surface-variant": "#3f4a3d",
+            "on-tertiary-fixed": "#001d31",
+            "surface-container-high": "#dce9ff",
+            "status-expired": "#9333EA",
+            "on-primary-fixed": "#002205",
+            "primary-fixed": "#94f994",
+            "on-tertiary-fixed-variant": "#004b73",
+            "tertiary-container": "#48a8ed",
+            "outline": "#6f7a6c",
+            "primary": "#006e20",
+            "on-surface": "#0b1c30",
+            "canvas-bg": "#F8FAFC",
+            "on-tertiary-container": "#003b5c",
+            "surface-variant": "#d3e4fe",
+            "outline-variant": "#becab9",
+            "tertiary-fixed-dim": "#93ccff",
+            "primary-fixed-dim": "#79dc7b",
+            "status-blocked": "#475569",
+            "surface-card": "#FFFFFF",
+            "on-secondary-container": "#5c647a",
+            "secondary-fixed": "#dae2fd",
+            "on-background": "#0b1c30",
+            "on-error-container": "#93000a",
+            "text-muted": "#94A3B8",
+            "text-primary": "#0F172A",
+            "status-reserved": "#2563EB"
+          },
+          fontFamily: {
+            "body-sm": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "caption": ["Inter", "sans-serif"],
+            "display-hero": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "title-sm": ["Inter", "sans-serif"],
+            "metric-stat": ["Inter", "sans-serif"],
+            "badge-status": ["JetBrains Mono", "monospace"],
+            "code-data": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-body-md min-h-screen flex antialiased selection:bg-emerald-100 selection:text-emerald-800">
+<!-- Desktop Sidebar (256px / w-64) -->
+<aside class="w-64 bg-slate-900 text-slate-200 flex flex-col shrink-0 min-h-screen border-r border-slate-800 fixed inset-y-0 left-0 z-30">
+<!-- Brand Header -->
+<div class="h-16 flex items-center gap-3 px-6 border-b border-slate-800">
+<div class="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center text-white shadow-md shadow-emerald-900/40">
+<span class="material-symbols-outlined text-[22px]">medical_services</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-bold text-white text-base tracking-tight font-body-md">SENTAI</span>
+<span class="font-code-data text-[10px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.2 rounded font-semibold border border-emerald-500/30">B2B</span>
+</div>
+<p class="text-[11px] text-slate-400 font-medium tracking-wide uppercase">Portal Clientes</p>
+</div>
+</div>
+<!-- Tenant / Account Selector -->
+<div class="p-3 border-b border-slate-800 bg-slate-950/40">
+<button class="w-full text-left p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-800 transition-colors border border-slate-700/60 group">
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] uppercase font-bold tracking-wider text-emerald-400 font-code-data">Cuenta Corporativa</span>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-slate-200 transition-colors">unfold_more</span>
+</div>
+<p class="font-semibold text-xs text-white truncate">Distribuidora Central S.R.L.</p>
+<p class="text-[11px] text-slate-400 truncate flex items-center gap-1 mt-0.5 font-code-data">
+<span>Casa Central</span>
+<span class="text-slate-600">•</span>
+<span class="text-slate-300">ID #99214</span>
+</p>
+</button>
+</div>
+<!-- Navigation Menu -->
+<div class="flex-1 overflow-y-auto px-3 py-4 space-y-6">
+<!-- Section: Operaciones B2B -->
+<div>
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 font-code-data">Operaciones B2B</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/70 transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span>Inicio / Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/70 transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">view_in_ar</span>
+<span>Catálogo de Productos</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-emerald-600/15 text-emerald-300 border border-emerald-500/30 text-xs font-semibold shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px] text-emerald-400">shopping_cart_checkout</span>
+<span>Mis Pedidos</span>
+</div>
+<span class="font-code-data text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-bold">ACTIVO</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/70 transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Mis Envíos &amp; Tracking</span>
+</a>
+</nav>
+</div>
+<!-- Section: Finanzas & Facturación -->
+<div>
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 font-code-data">Finanzas &amp; Facturación</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/70 transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Cuentas por Pagar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/70 transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Pagos Realizados</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/70 transition-colors text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>Estado de Cuenta</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- Bottom Widget: Línea de Crédito -->
+<div class="p-3 border-t border-slate-800 bg-slate-950/60">
+<div class="p-3 rounded-lg bg-slate-800/60 border border-slate-700/50">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-[11px] font-semibold text-slate-300 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-emerald-400">account_balance</span>
+            Línea de Crédito Activa
+          </span>
+<span class="text-[11px] font-bold text-emerald-400 font-code-data">82% Disp.</span>
+</div>
+<div class="w-full h-1.5 bg-slate-700 rounded-full overflow-hidden mb-2">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 82%;"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] text-slate-400 font-code-data">
+<span>Cupo: $80,000 USD</span>
+<span class="text-slate-200 font-medium">$65,600 libre</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right App Container (with sidebar margin offset) -->
+<div class="flex-1 ml-64 flex flex-col min-w-0">
+<!-- Topbar (Exact WEB-CP-003 Shell) -->
+<header class="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-between sticky top-0 z-20 shadow-xs">
+<!-- Breadcrumb -->
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<span class="font-medium text-slate-800 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">storefront</span>
+          Portal B2B
+        </span>
+<span class="text-slate-300">/</span>
+<span class="text-slate-600 font-medium">Distribuidora Central</span>
+<span class="text-slate-300">/</span>
+<span class="text-slate-900 font-semibold">Confirmación de Pedido</span>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-4">
+<!-- WMS Sync Pill -->
+<div class="hidden xl:flex items-center gap-1.5 font-code-data text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md border border-slate-200">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Sincronizado WMS: <strong class="text-slate-800">14:02:18 UTC-3</strong></span>
+</div>
+<!-- Cart / Draft Summary -->
+<div class="flex items-center gap-2 bg-emerald-50 text-emerald-800 px-3 py-1.5 rounded-lg border border-emerald-200/80">
+<span class="material-symbols-outlined text-[18px] text-emerald-600">shopping_bag</span>
+<span class="text-xs font-semibold">Borrador de Pedido (4)</span>
+</div>
+<!-- Notification Bell -->
+<button class="relative p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-emerald-600 rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-6 w-px bg-slate-200"></div>
+<!-- User Profile Pill -->
+<div class="flex items-center gap-3 pl-1">
+<div class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shadow-inner">
+            MG
+          </div>
+<div class="text-left leading-tight hidden sm:block">
+<p class="text-xs font-bold text-slate-900">Mariana Gómez</p>
+<p class="text-[11px] text-slate-500">Jefe de Compras &amp; Abastecimiento</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas (1440px target, max-w-7xl) -->
+<main class="flex-1 p-8 max-w-7xl mx-auto w-full">
+<!-- Technical Top Tag & Status Rail -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 mb-6 border-b border-slate-200">
+<div class="flex items-center gap-2.5 flex-wrap">
+<span class="font-code-data text-xs bg-slate-200/80 text-slate-800 px-2.5 py-1 rounded font-semibold tracking-wide border border-slate-300">
+            WEB-CP-006 // REVISIÓN Y CONFIRMACIÓN DE PEDIDO // AUTORIZACIÓN B2B
+          </span>
+<span class="inline-flex items-center gap-1.5 font-badge-status text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full font-bold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            STOCK CONGELADO 59:42 MIN
+          </span>
+</div>
+<div class="flex items-center gap-3 text-xs font-code-data text-slate-500">
+<span class="flex items-center gap-1 text-slate-700 font-medium">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">domain</span>
+            Montevideo DC-01
+          </span>
+<span class="text-slate-300">•</span>
+<span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200 font-semibold">PO: OC-CENTRAL-2024-1192</span>
+</div>
+</div>
+<!-- Stepper Indicator (Wide Desktop Horizontal Progress Bar) -->
+<div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm mb-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
+<!-- Step 1 (Completed) -->
+<div class="flex items-center gap-3.5 p-2 rounded-lg">
+<div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="min-w-0">
+<p class="font-code-data text-[10px] font-bold text-slate-400 uppercase tracking-wider">Paso 1 // Completado</p>
+<p class="font-semibold text-xs text-slate-800 truncate">Configuración de Pedido &amp; Logística</p>
+</div>
+</div>
+<!-- Step 2 (Active / Highlighted Green) -->
+<div class="flex items-center gap-3.5 bg-emerald-50 border border-emerald-200 p-2.5 rounded-lg">
+<div class="w-9 h-9 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center font-code-data text-sm font-bold shadow-sm shrink-0">
+              02
+            </div>
+<div class="min-w-0">
+<p class="font-code-data text-[10px] font-bold text-emerald-700 uppercase tracking-wider flex items-center gap-1">
+<span>Paso 2 // En Curso</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></span>
+</p>
+<p class="font-bold text-xs text-emerald-950 truncate">Revisión y Autorización B2B</p>
+</div>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="flex items-center gap-3.5 opacity-60 p-2 rounded-lg">
+<div class="w-9 h-9 rounded-full bg-slate-100 border border-slate-300 text-slate-500 flex items-center justify-center font-code-data text-sm font-semibold shrink-0">
+              03
+            </div>
+<div class="min-w-0">
+<p class="font-code-data text-[10px] font-bold text-slate-400 uppercase tracking-wider">Paso 3 // Siguiente</p>
+<p class="font-semibold text-xs text-slate-600 truncate">Confirmación y WMS Dispatch</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Notice Banner -->
+<div class="bg-gradient-to-r from-emerald-50 via-teal-50/50 to-white rounded-xl p-4 border border-emerald-200/80 mb-6 flex items-start justify-between gap-4 shadow-xs">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<h2 class="font-bold text-sm text-slate-900">Pedido listo para emisión oficial B2B</h2>
+<p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+              Stock reservado preventivamente por <span class="font-code-data font-bold text-emerald-700">60 minutos</span> en <span class="font-semibold text-slate-800">Montevideo DC-01</span>. Condición financiera: <span class="font-semibold text-slate-800">Pago a 30 días neto contra e-Factura DGI</span>.
+            </p>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-1.5 font-code-data text-[11px] bg-white text-slate-700 px-3 py-1.5 rounded-md border border-slate-200 shadow-2xs shrink-0">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">lock_clock</span>
+<span class="font-semibold tracking-wide">HOLD DC-01 ACTIVE</span>
+</div>
+</div>
+<!-- 2-Column Desktop Grid Layout (12 Columns: 8 cols left / 4 cols right) -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Dispatch info, Full Data Table, Terms (col-span-8) -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Card 1: Identificación y Parámetros de Despacho -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="flex items-center justify-between px-6 py-4 bg-slate-50 border-b border-slate-200">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-700 text-[22px]">local_shipping</span>
+<h3 class="font-bold text-sm text-slate-900">Identificación y Parámetros de Despacho</h3>
+</div>
+<span class="font-code-data text-xs bg-white px-2.5 py-1 rounded border border-slate-200 text-slate-700 shadow-2xs font-semibold">
+                OC-CENTRAL-2024-1192
+              </span>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+<div class="space-y-1">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-caption">Razón Social &amp; Cliente</span>
+<p class="font-bold text-sm text-slate-900">Distribuidora Central S.R.L.</p>
+<p class="font-code-data text-xs text-slate-600">RUT: 21.439.810.0014 <span class="text-slate-300">•</span> <span class="font-semibold text-slate-800">CLI-0492</span></p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-caption">Ventana de Entrega Comprometida</span>
+<p class="font-bold text-sm text-emerald-700 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+                    Viernes 25 de Octubre 2024
+                  </p>
+<p class="font-code-data text-xs text-slate-600">Banda Horaria: <strong>09:00 a 13:00 hs</strong></p>
+</div>
+<div class="md:col-span-2 space-y-1 bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-caption">Punto de Entrega (Recepción Hospitalaria)</span>
+<p class="text-xs font-semibold text-slate-900 flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">pin_drop</span>
+                    Casa Central - Depósito Sanitario, Av. 8 de Octubre 3420, Montevideo
+                  </p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-caption">Operador Logístico Asignado</span>
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-slate-900">Flota Propia SENTAI Logistics</span>
+<span class="font-code-data text-[10px] text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded font-bold border border-emerald-200">DAC Express</span>
+</div>
+<p class="text-xs text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-sky-600">ac_unit</span>
+                    Monitoreo y trazabilidad térmica activa
+                  </p>
+</div>
+<div class="space-y-1">
+<span class="text-[10px] uppercase font-bold tracking-wider text-slate-400 font-caption">Contacto en Muelle Receptor</span>
+<p class="font-bold text-sm text-slate-900">Lic. Martín Herrera</p>
+<p class="font-code-data text-xs text-slate-600">Tel: +598 2900 1234 int. 402</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Desglose Definitivo de Mercadería & Lotes Asignados -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-6 py-4 bg-slate-50 border-b border-slate-200">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-700 text-[22px]">inventory_2</span>
+<h3 class="font-bold text-sm text-slate-900">Desglose Definitivo de Mercadería &amp; Lotes Asignados</h3>
+</div>
+<span class="font-badge-status text-[11px] bg-slate-200 text-slate-800 px-2.5 py-1 rounded font-bold border border-slate-300">
+                4 LÍNEAS AUDITADAS
+              </span>
+</div>
+<!-- Full Desktop Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs border-collapse">
+<thead>
+<tr class="bg-slate-100/80 text-slate-600 font-code-data text-[11px] uppercase tracking-wider border-b border-slate-200">
+<th class="py-3 px-4 font-bold">SKU / Lote</th>
+<th class="py-3 px-4 font-bold">Descripción &amp; Presentación</th>
+<th class="py-3 px-4 text-right font-bold">Presentación</th>
+<th class="py-3 px-4 text-right font-bold">Precio Unit</th>
+<th class="py-3 px-4 text-right font-bold">Subtotal</th>
+<th class="py-3 px-4 text-center font-bold">Estado Lote</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 font-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4">
+<div class="font-code-data font-bold text-slate-900">SKU-100245</div>
+<div class="font-code-data text-[11px] text-emerald-700 font-bold">LOT-2026-0916</div>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900">Suero Fisiológico 500ml</p>
+<p class="text-slate-500 text-[11px]">Caja x24 unidades</p>
+</td>
+<td class="py-3 px-4 text-right font-code-data">
+<div class="font-bold text-slate-800">40 cjs</div>
+<div class="text-[11px] text-slate-500">960 uds</div>
+</td>
+<td class="py-3 px-4 text-right font-code-data text-slate-600 font-medium">$32.00</td>
+<td class="py-3 px-4 text-right font-code-data font-bold text-slate-900">$1,280.00 USD</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 font-badge-status text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Auditado OK
+                      </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4">
+<div class="font-code-data font-bold text-slate-900">SKU-204918</div>
+<div class="font-code-data text-[11px] text-emerald-700 font-bold">LOT-2025-1102</div>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900">Guantes Nitrilo M</p>
+<p class="text-slate-500 text-[11px]">Caja x100 unidades</p>
+</td>
+<td class="py-3 px-4 text-right font-code-data">
+<div class="font-bold text-slate-800">80 cjs</div>
+<div class="text-[11px] text-slate-500">8,000 uds</div>
+</td>
+<td class="py-3 px-4 text-right font-code-data text-slate-600 font-medium">$18.50</td>
+<td class="py-3 px-4 text-right font-code-data font-bold text-slate-900">$1,480.00 USD</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 font-badge-status text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Auditado OK
+                      </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4">
+<div class="font-code-data font-bold text-slate-900">SKU-892110</div>
+<div class="font-code-data text-[11px] text-emerald-700 font-bold">LOT-2026-0418</div>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900">Catéter Intravenoso 18G</p>
+<p class="text-slate-500 text-[11px]">Paquete x50 unidades</p>
+</td>
+<td class="py-3 px-4 text-right font-code-data">
+<div class="font-bold text-slate-800">30 paq</div>
+<div class="text-[11px] text-slate-500">1,500 uds</div>
+</td>
+<td class="py-3 px-4 text-right font-code-data text-slate-600 font-medium">$24.00</td>
+<td class="py-3 px-4 text-right font-code-data font-bold text-slate-900">$720.00 USD</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 font-badge-status text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Auditado OK
+                      </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/80 transition-colors">
+<td class="py-3 px-4">
+<div class="font-code-data font-bold text-slate-900">SKU-304112</div>
+<div class="font-code-data text-[11px] text-emerald-700 font-bold">LOT-2027-0105</div>
+</td>
+<td class="py-3 px-4">
+<p class="font-semibold text-slate-900">Jeringas Luer Lock 10ml</p>
+<p class="text-slate-500 text-[11px]">Caja x100 unidades</p>
+</td>
+<td class="py-3 px-4 text-right font-code-data">
+<div class="font-bold text-slate-800">60 cjs</div>
+<div class="text-[11px] text-slate-500">6,000 uds</div>
+</td>
+<td class="py-3 px-4 text-right font-code-data text-slate-600 font-medium">$14.20</td>
+<td class="py-3 px-4 text-right font-code-data font-bold text-slate-900">$852.00 USD</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 font-badge-status text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded font-bold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+                        Auditado OK
+                      </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Bar of Table: Totales Físicos -->
+<div class="p-4 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs font-code-data text-slate-600">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-slate-400">package_2</span>
+<span>Totales Físicos: <strong class="text-slate-900">210 bultos</strong> (16,460 unidades)</span>
+</div>
+<div class="flex items-center gap-4 flex-wrap">
+<span>Peso: <strong class="text-slate-900">1,180 kg</strong></span>
+<span>Volumen: <strong class="text-slate-900">3.4 m³</strong></span>
+<span class="bg-emerald-100 text-emerald-800 border border-emerald-200 px-2.5 py-0.5 rounded font-bold">2 Pallets Completos</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Condiciones Comerciales y Cumplimiento B2B -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+<div class="flex items-center gap-2.5 pb-3 mb-4 border-b border-slate-100">
+<span class="material-symbols-outlined text-emerald-700 text-[22px]">gavel</span>
+<h3 class="font-bold text-sm text-slate-900">Condiciones Comerciales y Cumplimiento B2B</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Col 1 -->
+<div class="p-4 bg-slate-50 rounded-lg border border-slate-200/80">
+<div class="flex items-center gap-2 text-emerald-700 mb-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="text-[11px] uppercase font-bold tracking-wider text-slate-800 font-caption">Términos de Pago</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                  30 Días Fecha Factura Fiscal.<br/>
+<span class="font-code-data text-xs text-emerald-700 font-bold">Vencimiento: 24/11/2024</span>
+</p>
+</div>
+<!-- Col 2 -->
+<div class="p-4 bg-slate-50 rounded-lg border border-slate-200/80">
+<div class="flex items-center gap-2 text-emerald-700 mb-2">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span class="text-[11px] uppercase font-bold tracking-wider text-slate-800 font-caption">Facturación DGI</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                  e-Factura remitida a:<br/>
+<span class="font-code-data text-[11px] text-slate-900 font-semibold break-all">compras@distribuidoracentral.com.uy</span>
+</p>
+</div>
+<!-- Col 3 -->
+<div class="p-4 bg-slate-50 rounded-lg border border-slate-200/80">
+<div class="flex items-center gap-2 text-emerald-700 mb-2">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+<span class="text-[11px] uppercase font-bold tracking-wider text-slate-800 font-caption">Recepción Digital</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                  Remito electrónico (e-REM) con firma biométrica y conformidad en muelle.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Financial Settlement, Credit Validation & Confirmation (col-span-4) -->
+<div class="col-span-12 lg:col-span-4 space-y-6 sticky top-24">
+<!-- Card 1: Liquidación de Orden -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+<div class="p-5 border-b border-slate-100">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-base text-slate-900">Liquidación de Orden</h3>
+<span class="font-code-data text-xs bg-slate-100 text-slate-700 font-bold px-2 py-0.5 rounded border border-slate-200">USD</span>
+</div>
+<div class="space-y-2.5 text-xs text-slate-600">
+<div class="flex justify-between items-center">
+<span>Subtotal Bruto (4 ítems)</span>
+<span class="font-code-data text-slate-900 font-semibold">$4,332.00 USD</span>
+</div>
+<div class="flex justify-between items-center text-emerald-700 font-medium">
+<span class="flex items-center gap-1.5">
+<span>Descuento Hospitalario</span>
+<span class="font-code-data text-[10px] bg-emerald-100 text-emerald-800 px-1 py-0.2 rounded font-bold">-5%</span>
+</span>
+<span class="font-code-data font-bold">-$216.60 USD</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Subtotal Imponible</span>
+<span class="font-code-data text-slate-800 font-semibold">$4,115.40 USD</span>
+</div>
+<div class="flex justify-between items-center">
+<span>IVA Computado DGI (10%/22%)</span>
+<span class="font-code-data text-slate-800 font-semibold">$485.40 USD</span>
+</div>
+</div>
+</div>
+<!-- Grand Total Block -->
+<div class="p-5 bg-gradient-to-b from-slate-50 to-slate-100/80 border-b border-slate-200">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider font-caption">Total a Facturar</span>
+<span class="font-extrabold text-2xl text-slate-900 font-code-data">$4,600.80 USD</span>
+</div>
+<p class="font-code-data text-[11px] text-slate-500 text-right">Valores expresados en Dólares Americanos</p>
+</div>
+<!-- Credit Validation & WMS Interlock Section -->
+<div class="p-5 space-y-4">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h4 class="font-bold text-xs text-slate-900">Validación Crediticia Corporativa</h4>
+<p class="text-[11px] text-emerald-700 font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+                      Línea Habilitada sin Retención
+                    </p>
+</div>
+<span class="font-badge-status text-[11px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold border border-emerald-200">
+                    PASS
+                  </span>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex justify-between text-[11px] font-code-data">
+<span class="text-slate-500">Disponible: $15,850.00 USD</span>
+<span class="text-slate-800 font-bold">Línea: $80,000.00</span>
+</div>
+<div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden flex">
+<div class="h-full bg-slate-500" style="width: 80.2%;"></div>
+<div class="h-full bg-emerald-500" style="width: 5.8%;"></div>
+</div>
+<div class="flex justify-between items-center text-xs pt-0.5">
+<span class="text-slate-500 text-[11px]">Disponible post-emisión:</span>
+<span class="font-code-data font-bold text-slate-900">$11,249.20 USD</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200 flex items-center gap-2 text-xs font-code-data text-slate-700">
+<span class="material-symbols-outlined text-[17px] text-emerald-600">sync</span>
+<span>WMS Interlock: Liberación automática directa a preparación</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Firma & Autorización B2B -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4">
+<div class="flex items-center gap-2 border-b border-slate-100 pb-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px]">badge</span>
+<h4 class="font-bold text-sm text-slate-900">Firma &amp; Autorización B2B</h4>
+</div>
+<!-- Authorizing Officer Info -->
+<div class="bg-slate-50 p-3.5 rounded-lg border border-slate-200 space-y-1">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider font-caption">Usuario Autorizante</p>
+<p class="font-bold text-xs text-slate-900">Mariana Gómez</p>
+<p class="text-[11px] text-slate-500">Jefe de Compras y Abastecimiento</p>
+<div class="pt-1">
+<span class="inline-flex items-center gap-1 font-code-data text-[10px] text-emerald-700 bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded font-bold">
+<span class="material-symbols-outlined text-[13px]">key</span>
+                  Certificado e-Token Activo
+                </span>
+</div>
+</div>
+<!-- Required Legal Acceptance Checkbox -->
+<label class="flex items-start gap-2.5 cursor-pointer select-none text-xs text-slate-600 leading-snug">
+<input checked="" class="mt-0.5 w-4 h-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 cursor-pointer" id="agreeCheckbox" type="checkbox"/>
+<span>
+                Confirmo la emisión de la orden de compra conforme a los precios y términos vigentes del <strong class="text-slate-900">Acuerdo Hospitalario L2-2024</strong>.
+              </span>
+</label>
+<!-- Primary Action Button ($53b559) -->
+<button class="w-full bg-[#53b559] hover:bg-emerald-600 active:scale-[0.99] text-white font-bold text-sm py-3 px-4 rounded-xl transition-all duration-150 shadow-md shadow-emerald-600/25 flex items-center justify-center gap-2 group" id="confirmOrderBtn">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">check_circle</span>
+<span>Confirmar y Emitir Pedido B2B</span>
+</button>
+<!-- Secondary Action Links -->
+<div class="space-y-2 pt-1">
+<a class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 border border-slate-200" href="#modify-products">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Modificar Productos (Volver a WEB-CP-005)</span>
+</a>
+<button class="w-full bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 font-code-data text-[11px] py-2 px-3 rounded transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-500">picture_as_pdf</span>
+<span>Descargar Proforma / Borrador PDF</span>
+</button>
+</div>
+</div>
+<!-- Support & Post-Emission Footnote -->
+<div class="p-3.5 bg-slate-100/90 border border-slate-200 rounded-xl flex items-start gap-2.5 text-xs text-slate-500">
+<span class="material-symbols-outlined text-[18px] text-sky-600 shrink-0 mt-0.5">info</span>
+<p class="leading-relaxed">
+              Una vez emitido, se generará la orden <strong class="font-code-data text-slate-800">SO-000159</strong> y se notificará automáticamente a la mesa de planificación en Montevideo DC-01.
+            </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+    (function() {
+      const confirmBtn = document.getElementById('confirmOrderBtn');
+      const agreeCheckbox = document.getElementById('agreeCheckbox');
+
+      if (agreeCheckbox && confirmBtn) {
+        agreeCheckbox.addEventListener('change', function() {
+          if (!this.checked) {
+            confirmBtn.classList.add('opacity-50', 'pointer-events-none');
+          } else {
+            confirmBtn.classList.remove('opacity-50', 'pointer-events-none');
+          }
+        });
+      }
+
+      if (confirmBtn) {
+        confirmBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          confirmBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+            <span>Transmitiendo a DC-01...</span>
+          `;
+          confirmBtn.disabled = true;
+
+          setTimeout(function() {
+            confirmBtn.innerHTML = `
+              <span class="material-symbols-outlined text-[20px]">done_all</span>
+              <span>¡Pedido SO-000159 Emitido con Éxito!</span>
+            `;
+            confirmBtn.classList.replace('bg-[#53b559]', 'bg-emerald-700');
+          }, 1100);
+        });
+      }
+    })();
+  </script>
+</body></html>

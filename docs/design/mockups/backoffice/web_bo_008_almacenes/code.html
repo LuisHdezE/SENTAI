@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full gap-space-xl">
+<!-- Page Header & Operational Metadata Bar -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-surface-container text-tertiary">WEB-BO-008</span>
+<span class="font-code-data text-body-sm text-text-muted">LATAM-CORRIDOR-NET</span>
+<span class="inline-flex items-center gap-1 font-caption text-caption text-status-available">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-ping"></span>
+            Sync Real-Time
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Almacenes &amp; Centros de Distribución</h1>
+<p class="font-body-md text-body-md text-text-secondary">Gestión multialmacén, capacidad de cubicaje, muelles de carga y estado operativo de la red logística unificada.</p>
+</div>
+<!-- Header CTAs -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-xl bg-surface-card hover:bg-surface-container-low font-body-sm text-body-sm font-semibold text-text-primary shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted">tune</span>
+<span>Configuración Red</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-xl bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">add_business</span>
+<span>+ Registrar Almacén</span>
+</button>
+</div>
+</div>
+<!-- KPI Summary Ribbon (Elevated Bento Blocks with Micro SVGs) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1: Centros Totales -->
+<div class="relative bg-surface-card rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Total Almacenes</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary leading-none">6</span>
+<span class="font-title-sm text-title-sm text-text-secondary">Centros</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">warehouse</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-muted">4 DC · 1 Cross-dock · 1 Hub</span>
+<span class="font-badge-status text-badge-status text-status-available bg-status-available/10 px-1.5 py-0.5 rounded">100% OPERATIVO</span>
+</div>
+</div>
+<!-- KPI 2: Capacidad Total Metrada -->
+<div class="relative bg-surface-card rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Capacidad Total</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary leading-none">145,000</span>
+<span class="font-title-sm text-title-sm text-text-secondary">m²</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">square_foot</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-muted">Volumen: 1.18M m³ útil</span>
+<span class="font-caption text-caption text-text-secondary font-medium">18,920 Posiciones</span>
+</div>
+</div>
+<!-- KPI 3: Ocupación Promedio -->
+<div class="relative bg-surface-card rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Ocupación Promedio</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary leading-none">79.6%</span>
+<span class="font-badge-status text-[11px] text-status-quarantine font-bold bg-status-quarantine/10 px-1 py-0.5 rounded">+3.4% s/m</span>
+</div>
+</div>
+<!-- Sparkline Mini-gauge Inline SVG -->
+<svg class="w-12 h-10 text-primary-container" fill="none" stroke="currentColor" viewbox="0 0 60 40">
+<path d="M4 32 L15 28 L28 22 L40 18 L56 8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle class="fill-primary" cx="56" cy="8" r="3" stroke-width="0"></circle>
+</svg>
+</div>
+<div class="mt-space-md w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 79.6%"></div>
+</div>
+</div>
+<!-- KPI 4: Muelles Operativos -->
+<div class="relative bg-surface-card rounded-xl p-space-lg shadow-sm overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-semibold">Muelles Operativos</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary leading-none">48</span>
+<span class="font-metric-stat text-metric-stat text-text-muted font-normal leading-none">/ 52</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">dock</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-muted">4 en mant. preventivo</span>
+<span class="font-badge-status text-badge-status text-status-available font-bold">92.3% DISPONIBLE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Filter & Control Bar -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<!-- Left: Search and Multi-filters -->
+<div class="flex flex-1 flex-wrap items-center gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[260px] max-w-md bg-canvas-bg rounded-lg px-space-md py-1.5 flex items-center focus-within:bg-surface-card focus-within:shadow-sm transition-all">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" id="warehouseSearch" placeholder="Buscar por código, nombre o ciudad..." type="text"/>
+<button aria-label="Limpiar búsqueda" class="text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Filter: Tipo -->
+<div class="relative">
+<select class="appearance-none bg-canvas-bg hover:bg-surface-container-low font-body-sm text-body-sm text-text-primary px-space-md py-1.5 pr-8 rounded-lg cursor-pointer focus:outline-none transition-colors">
+<option value="">Tipo: Todos (DC, Cross-dock, Hub)</option>
+<option value="dc">Distribution Center (DC)</option>
+<option value="crossdock">Cross-docking</option>
+<option value="hub">Hub Regional</option>
+<option value="fulfillment">Fulfillment E-commerce</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-text-muted text-[16px]">expand_more</span>
+</div>
+<!-- Filter: Estado -->
+<div class="relative">
+<select class="appearance-none bg-canvas-bg hover:bg-surface-container-low font-body-sm text-body-sm text-text-primary px-space-md py-1.5 pr-8 rounded-lg cursor-pointer focus:outline-none transition-colors">
+<option value="">Estado: Todos</option>
+<option value="activo">Activo Normal</option>
+<option value="critico">Capacidad Crítica (&gt;90%)</option>
+<option value="mantenimiento">Mantenimiento Parcial</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-text-muted text-[16px]">expand_more</span>
+</div>
+<!-- Quick Reset / Clear Filter -->
+<button class="h-8 px-space-sm rounded-lg text-text-muted hover:text-text-primary font-caption text-caption flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">filter_alt_off</span>
+<span>Limpiar</span>
+</button>
+</div>
+<!-- Right: View Modes & Bulk Actions -->
+<div class="flex items-center gap-space-xs self-end md:self-center">
+<div class="bg-canvas-bg p-0.5 rounded-lg flex items-center">
+<button aria-label="Vista tabla" class="p-1.5 rounded-md bg-surface-card text-text-primary shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+<button aria-label="Vista mapa de red" class="p-1.5 rounded-md text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">map</span>
+</button>
+</div>
+<button class="h-8 px-space-md rounded-lg bg-canvas-bg hover:bg-surface-container-low font-body-sm text-body-sm text-text-primary flex items-center gap-space-xs transition-colors" title="Descargar CSV / Reporte de Capacidad" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-muted">download</span>
+<span>Exportar</span>
+</button>
+</div>
+</div>
+<!-- Visual Network Footprint Banner (Asymmetric Logistics Corridor) -->
+<div class="relative bg-inverse-surface rounded-xl overflow-hidden p-space-lg text-inverse-on-surface shadow-md flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="relative z-10 flex flex-col gap-space-xs max-w-xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded font-badge-status text-[10px] bg-primary-container text-on-primary-container font-bold">RED CONECTADA</span>
+<span class="font-code-data text-caption text-text-muted">FIBRA DEDICADA 10 Gbps</span>
+</div>
+<h2 class="font-title-sm text-title-sm text-surface tracking-tight font-bold">Corredor Cono Sur &amp; Región Andina</h2>
+<p class="font-body-sm text-body-sm text-secondary-fixed-dim">Montevideo DC-01 coordina las transferencias multimodales hacia Buenos Aires, Santiago y São Paulo con ruteo inteligente automatizado.</p>
+</div>
+<!-- Network Graph Miniature SVG Representation -->
+<div class="relative z-10 flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-center">
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_12px_rgba(83,181,89,0.8)]"></span>
+<span class="font-code-data text-[10px] text-surface mt-1">MVD</span>
+</div>
+<div class="w-8 md:w-12 h-0.5 bg-secondary"></div>
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="font-code-data text-[10px] text-text-muted mt-1">BUE</span>
+</div>
+<div class="w-8 md:w-12 h-0.5 bg-secondary"></div>
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-status-quarantine"></span>
+<span class="font-code-data text-[10px] text-status-quarantine mt-1">SCL</span>
+</div>
+<div class="w-8 md:w-12 h-0.5 bg-secondary"></div>
+<div class="flex flex-col items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="font-code-data text-[10px] text-text-muted mt-1">SAO</span>
+</div>
+</div>
+<a class="px-space-md py-1.5 rounded-lg bg-surface/10 hover:bg-surface/20 text-surface font-caption text-caption flex items-center gap-1 transition-colors" href="#">
+<span>Topología</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Ambient subtle background glow -->
+<div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+</div>
+<!-- Main Warehouse Structured Data Table -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left text-text-primary">
+<thead>
+<tr class="bg-canvas-bg text-text-secondary font-caption text-caption uppercase tracking-wider">
+<th class="py-space-sm px-space-lg font-semibold" scope="col">Almacén &amp; Identificador</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Tipo Operación</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Zonas &amp; Racks</th>
+<th class="py-space-sm px-space-md font-semibold min-w-[200px]" scope="col">Ocupación / Cubicaje</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Muelles (In/Out)</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Estado Red</th>
+<th class="py-space-sm px-space-lg text-right font-semibold" scope="col">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<!-- ROW 1: Montevideo DC-01 (Principal Hub) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm font-semibold text-text-primary truncate">Montevideo DC-01</span>
+<span class="px-1.5 py-0.2 rounded font-badge-status text-[10px] bg-tertiary-fixed text-on-tertiary-container uppercase font-bold">Principal</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted mt-0.5">
+<span class="font-code-data text-code-data text-text-secondary font-bold">MVD-DC01</span>
+<span>·</span>
+<span class="font-caption text-caption">Zonamerica, Ruta 8 Km 17.5</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-text-primary font-medium">Distribution Center</span>
+<span class="font-caption text-caption text-text-muted">Consolidación Multimodal</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary">12 Zonas · 48 Pasillos</span>
+<span class="font-caption text-caption text-text-secondary">3,420 Racks Palletizados</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-code-data text-code-data font-bold text-text-primary">84.2%</span>
+<span class="font-caption text-caption text-text-muted">45,000 m²</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 84.2%"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted">37,890 m² ocupados · 7,110 m² disp.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">south</span> 8 In
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-primary">north</span> 12 Out
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                ACTIVO
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" title="Ver detalle operacional (WEB-BO-009)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Configurar zonas &amp; racks (WEB-BO-010)" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Más opciones" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Buenos Aires Hub Norte -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group bg-canvas-bg/20">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tertiary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm font-semibold text-text-primary truncate">Buenos Aires Hub Norte</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted mt-0.5">
+<span class="font-code-data text-code-data text-text-secondary font-bold">BUE-HN02</span>
+<span>·</span>
+<span class="font-caption text-caption">Pacheco Industrial, Panamericana km 31</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-text-primary font-medium">Cross-docking</span>
+<span class="font-caption text-caption text-text-muted">Despacho Rápido &lt; 24h</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary">8 Zonas · 24 Pasillos</span>
+<span class="font-caption text-caption text-text-secondary">1,890 Posiciones Flow</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-code-data text-code-data font-bold text-text-primary">76.1%</span>
+<span class="font-caption text-caption text-text-muted">32,000 m²</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 76.1%"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted">24,352 m² ocupados · 7,648 m² disp.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">south</span> 6 In
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-primary">north</span> 8 Out
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                ACTIVO
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" title="Ver detalle operacional" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Configurar zonas &amp; racks" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Más opciones" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Santiago Fulfillment Center (CRITICAL CAPACITY) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm font-semibold text-text-primary truncate">Santiago Fulfillment Center</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted mt-0.5">
+<span class="font-code-data text-code-data text-text-secondary font-bold">SCL-FC01</span>
+<span>·</span>
+<span class="font-caption text-caption">Parque Enea, Pudahuel, RM</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-text-primary font-medium">Fulfillment Center</span>
+<span class="font-caption text-caption text-text-muted">B2C / E-Commerce 1-Day</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary">16 Zonas · 62 Pasillos</span>
+<span class="font-caption text-caption text-text-secondary">4,610 Bin Racks Multi-tier</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-code-data text-code-data font-bold text-status-damaged">92.5%</span>
+<span class="font-caption text-caption text-text-muted">28,000 m²</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-status-damaged h-full rounded-full transition-all duration-500" style="width: 92.5%"></div>
+</div>
+<span class="font-caption text-[11px] text-status-damaged font-medium">Alerta: &lt; 2,100 m² de margen libre</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">south</span> 5 In
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-primary">north</span> 9 Out
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-quarantine/10 text-status-quarantine font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-quarantine"></span>
+                CAPACIDAD CRÍTICA
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" title="Ver detalle operacional" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Configurar zonas &amp; racks" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Más opciones" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: São Paulo Mega-DC -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group bg-canvas-bg/20">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm font-semibold text-text-primary truncate">São Paulo Mega-DC</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted mt-0.5">
+<span class="font-code-data text-code-data text-text-secondary font-bold">SAO-DC04</span>
+<span>·</span>
+<span class="font-caption text-caption">Cajamar Log Park, Rod. Anhanguera</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-text-primary font-medium">Distribution Center</span>
+<span class="font-caption text-caption text-text-muted">High-Velocity B2B &amp; Retail</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary">18 Zonas · 70 Pasillos</span>
+<span class="font-caption text-caption text-text-secondary">5,200 Racks Doble Profundidad</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-code-data text-code-data font-bold text-text-primary">68.4%</span>
+<span class="font-caption text-caption text-text-muted">26,000 m²</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 68.4%"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted">17,784 m² ocupados · 8,216 m² disp.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">south</span> 6 In
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-primary">north</span> 8 Out
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                ACTIVO
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" title="Ver detalle operacional" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Configurar zonas &amp; racks" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Más opciones" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Bogotá Regional Hub -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm font-semibold text-text-primary truncate">Bogotá Regional Hub</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted mt-0.5">
+<span class="font-code-data text-code-data text-text-secondary font-bold">BOG-RH01</span>
+<span>·</span>
+<span class="font-caption text-caption">Siberia Industrial Park, Cota</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-text-primary font-medium">Hub Regional</span>
+<span class="font-caption text-caption text-text-muted">Inbound Andino &amp; Forwarding</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary">6 Zonas · 18 Pasillos</span>
+<span class="font-caption text-caption text-text-secondary">2,100 Racks Selectivos</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-code-data text-code-data font-bold text-text-primary">71.0%</span>
+<span class="font-caption text-caption text-text-muted">14,000 m²</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 71.0%"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted">9,940 m² ocupados · 4,060 m² disp.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">south</span> 4 In
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-primary">north</span> 4 Out
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                ACTIVO
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" title="Ver detalle operacional" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Configurar zonas &amp; racks" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Más opciones" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: Lima Cross-Dock Logistics (Completing the 6 entries) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group bg-canvas-bg/20">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-tertiary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm font-semibold text-text-primary truncate">Lima Callao Cross-Dock</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted mt-0.5">
+<span class="font-code-data text-code-data text-text-secondary font-bold">LIM-CD01</span>
+<span>·</span>
+<span class="font-caption text-caption">Av. Elmer Faucett, Callao Portuary Zone</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-text-primary font-medium">Cross-docking</span>
+<span class="font-caption text-caption text-text-muted">Tránsito Marítimo / Aéreo</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary">4 Zonas · 12 Pasillos</span>
+<span class="font-caption text-caption text-text-secondary">850 Posiciones Buffer</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="font-code-data text-code-data font-bold text-text-primary">54.0%</span>
+<span class="font-caption text-caption text-text-muted">10,000 m²</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 54.0%"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted">5,400 m² ocupados · 4,600 m² disp.</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">south</span> 3 In
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low font-code-data text-[12px] text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-primary">north</span> 4 Out
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+                ACTIVO
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" title="Ver detalle operacional" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-surface-container transition-colors" title="Configurar zonas &amp; racks" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-container transition-colors" title="Más opciones" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Strict Pagination Status -->
+<div class="px-space-lg py-space-sm bg-surface-card flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-text-secondary font-caption text-caption">
+<span>Mostrando</span>
+<span class="font-code-data font-bold text-text-primary">1 a 6</span>
+<span>de</span>
+<span class="font-code-data font-bold text-text-primary">6 almacenes activos</span>
+<span class="text-text-muted">· Conexión segura TLS 1.3</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg text-text-muted font-body-sm text-body-sm opacity-50 cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Anterior</span>
+</button>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container-low font-code-data text-[12px] font-bold text-text-primary">Pág 1 de 1</span>
+<button class="px-space-sm py-1 rounded-lg text-text-muted font-body-sm text-body-sm opacity-50 cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span>Siguiente</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Operational Facilities Deep-Dive / Quick Zone Capacity Panels -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- Panel 1: Montevideo MVD-DC01 Quick Telemetry -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-badge-status text-badge-status text-primary bg-primary/10 px-1.5 py-0.5 rounded">HUB CENTRAL MVD</span>
+<h3 class="font-title-sm text-title-sm text-text-primary mt-space-xs">Flujo de Muelles en Vivo</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">sensors</span>
+</div>
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1 bg-canvas-bg px-2 rounded-lg">
+<span class="text-text-secondary">Muelles Inbound Activos</span>
+<span class="font-code-data font-bold text-text-primary">6 de 8 (75%)</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-canvas-bg px-2 rounded-lg">
+<span class="text-text-secondary">Muelles Outbound Activos</span>
+<span class="font-code-data font-bold text-text-primary">11 de 12 (91%)</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-canvas-bg px-2 rounded-lg">
+<span class="text-text-secondary">Tiempo Promedio en Rampa</span>
+<span class="font-code-data font-bold text-text-primary">42 min</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Monitor de Muelles WEB-SHP-001</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Panel 2: Santiago Critical Reallocation Banner -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-badge-status text-badge-status text-status-damaged bg-status-damaged/10 px-1.5 py-0.5 rounded">ALERTA CUPO SCL</span>
+<h3 class="font-title-sm text-title-sm text-text-primary mt-space-xs">Recomendación Rebalanceo</h3>
+</div>
+<span class="material-symbols-outlined text-status-damaged text-[20px]">crisis_alert</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+        Santiago FC superó el umbral del 90%. Se sugiere desviar 18 ASN previstos para la semana hacia Montevideo DC-01 o cross-dock Pacheco.
+      </p>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-text-primary font-caption text-caption font-semibold hover:bg-surface-container-high transition-colors" type="button">
+          Analizar Desvíos
+        </button>
+<button class="px-space-md py-1.5 rounded-lg bg-status-damaged text-on-error font-caption text-caption font-semibold hover:bg-red-700 transition-colors" type="button">
+          Bloquear ASN Extra
+        </button>
+</div>
+</div>
+<!-- Panel 3: Direct Link to Topology Configuration -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-badge-status text-badge-status text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded">RACKS &amp; LAYOUT</span>
+<h3 class="font-title-sm text-title-sm text-text-primary mt-space-xs">Editor de Zonas Físicas</h3>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">shelves</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+        Configure coordenadas XYZ, restricciones de peso por nivel, zonas frías y políticas de put-away por clase ABC en el módulo correspondiente.
+      </p>
+<a class="font-caption text-caption text-tertiary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Ir a Ubicaciones &amp; Racks (WEB-BO-010)</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Client-side Interactive Filter Behavior -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('warehouseSearch');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase();
+          const rows = document.querySelectorAll('tbody tr');
+          rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(query) ? '' : 'none';
+          });
+        });
+      }
+    });
+  </script>
+</div></div></main></div></body></html>

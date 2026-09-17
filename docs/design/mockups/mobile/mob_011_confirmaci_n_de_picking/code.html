@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#131b2e","tertiary":"#006398","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","on-tertiary-fixed":"#001d31","inverse-on-surface":"#eaf1ff","secondary-fixed":"#dae2fd","on-tertiary-container":"#003b5c","primary-container":"#53b559","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","primary-fixed-dim":"#79dc7b","canvas-bg":"#F8FAFC","status-damaged":"#DC2626","on-secondary-container":"#5c647a","text-primary":"#0F172A","surface":"#f8f9ff","primary":"#006e20","status-available":"#16A34A","surface-container-highest":"#d3e4fe","surface-container-high":"#dce9ff","secondary":"#565e74","status-sync-pending":"#F59E0B","on-surface":"#0b1c30","status-quarantine":"#D97706","tertiary-container":"#48a8ed","accent-focus":"#53B559","surface-container":"#e5eeff","error":"#ba1a1a","tertiary-fixed":"#cce5ff","surface-card":"#FFFFFF","text-muted":"#94A3B8","status-blocked":"#475569","on-surface-variant":"#3f4a3d","text-secondary":"#475569","on-primary-container":"#00420f","surface-bright":"#f8f9ff","background":"#f8f9ff","on-tertiary-fixed-variant":"#004b73","status-sync-error":"#E11D48","primary-fixed":"#94f994","on-secondary":"#ffffff","surface-dim":"#cbdbf5","on-secondary-fixed-variant":"#3f465c","on-error-container":"#93000a","inverse-primary":"#79dc7b","on-primary-fixed-variant":"#005316","outline-variant":"#becab9","border-strong":"#CBD5E1","border-subtle":"#E2E8F0","on-error":"#ffffff","status-expired":"#9333EA","on-tertiary":"#ffffff","on-primary":"#ffffff","on-background":"#0b1c30","inverse-surface":"#213145","error-container":"#ffdad6","surface-container-lowest":"#ffffff","surface-variant":"#d3e4fe","outline":"#6f7a6c","surface-tint":"#006e20","on-primary-fixed":"#002205","secondary-container":"#dae2fd"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.5rem","space-md":"0.75rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-xl":"1.5rem","space-2xl":"2rem","gutter":"1rem","space-3xl":"3rem","margin":"1rem","margin-desktop":"1.5rem","space-2xs":"0.125rem"},"fontFamily":{"code-data":["JetBrains Mono"],"badge-status":["JetBrains Mono"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"],"display-hero":["Inter"],"body-md":["Inter"],"metric-stat":["Inter"]},"fontSize":{"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen antialiased select-none"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-24 flex flex-col justify-between px-margin py-space-xs"><div class="flex items-center justify-between h-7"><div class="flex items-center gap-space-sm"><span class="font-code-data text-caption text-text-primary font-bold tracking-tight">09:41</span><div class="flex items-center gap-space-2xs bg-surface-container-high px-space-xs py-0.5 rounded-lg"><span class="w-1.5 h-1.5 rounded-full bg-accent-focus"></span><span class="font-badge-status text-badge-status text-text-primary">DC-01</span></div></div><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-text-primary">wifi</span><div class="flex items-center gap-space-2xs"><span class="font-code-data text-caption text-text-primary">92%</span><span class="material-symbols-outlined text-[16px] text-text-primary">battery_charging_full</span></div><div class="flex items-center gap-space-2xs bg-surface-container-high px-space-xs py-0.5 rounded-lg"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span><span class="font-badge-status text-badge-status text-status-available">ONLINE</span></div></div></div><div class="flex items-center justify-between h-14"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Volver" class="w-11 h-11 -ml-space-xs flex items-center justify-center text-text-primary rounded-lg hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="SENTAI Operator" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><div class="flex flex-col min-w-0"><span class="font-caption text-caption text-text-muted uppercase tracking-wider leading-none">SENTAI WMS</span><h1 class="font-headline-md text-headline-md text-text-primary truncate leading-tight">Detalle De Tarea</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notificaciones" class="w-11 h-11 flex items-center justify-center text-text-secondary rounded-lg hover:bg-surface-container transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-accent-focus"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-24 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-space-2xl gap-space-md select-none">
+<!-- Task Context & Wave Progress -->
+<div class="flex flex-col gap-space-2xs bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data text-text-muted">MOB-011</span>
+<span class="text-text-muted font-body-sm">•</span>
+<span class="font-code-data text-code-data text-text-secondary font-bold">#WAVE-882</span>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container px-space-xs py-0.5 rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-focus animate-pulse"></span>
+<span class="font-badge-status text-badge-status text-text-primary uppercase">VERIFICACIÓN</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-muted text-[18px]">location_on</span>
+<span class="font-title-sm text-title-sm text-text-primary tracking-tight">Slot B-04-02-03</span>
+</div>
+<span class="font-code-data text-code-data text-accent-focus font-bold">Paso 5 / 10</span>
+</div>
+<!-- Mini progress track -->
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-space-2xs">
+<div class="bg-primary-container h-full rounded-full transition-all duration-300" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Realtime Scan Validation Banner -->
+<div class="flex flex-col gap-space-2xs bg-surface-container-lowest p-space-md rounded-xl shadow-sm overflow-hidden relative">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-center justify-between pl-space-xs">
+<div class="flex items-center gap-space-xs text-status-available">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-badge-status text-badge-status uppercase tracking-wide">UBICACIÓN B-04-02-03 VALIDADA</span>
+</div>
+<span class="font-code-data text-caption text-text-muted">09:41:22</span>
+</div>
+<div class="flex items-center justify-between pl-space-xs">
+<div class="flex items-center gap-space-xs text-status-available">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-badge-status text-badge-status uppercase tracking-wide">SKU-100245 COINCIDE</span>
+</div>
+<span class="font-code-data text-caption text-text-muted">EAN-13 OK</span>
+</div>
+</div>
+<!-- Target SKU Card with Rich Physical Detail -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-md">
+<div class="flex gap-space-md">
+<!-- Pack shot placeholder -->
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="Medical box containing sterile saline infusion solution bottles Suero Fisiologico 500ml stacked neatly in a warehouse logistics picking zone, crisp studio lighting, clear product label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi5nNEOQ6UqJ5iNlU7V6rBukDwPm-InGb8K-Sc4J_qAV_grWt_COiKrknuWF_q7zuB4XS_Idqa-gVSHZ_evRZmZmYCvcGAnpMCLdgxJ2WffJ5-G3xEfZ6bvjFy7rausi4GDY6E-nHOMjviKJRYUwfbT-dyETCX0lPU1lBzSEUZ9_zK82MI3Q5I1gg2LBrzK3MDTLW5JvNeStbQCNBJn2xRR8IDfmFjo8MoUZoGp4Hco4DLCRTZCFxn"/>
+<div class="absolute bottom-0 inset-x-0 bg-text-primary/70 backdrop-blur-sm text-center py-0.5">
+<span class="font-code-data text-[10px] text-surface font-bold uppercase">x24 Frascos</span>
+</div>
+</div>
+<!-- Item metadata -->
+<div class="flex flex-col min-w-0 flex-1 justify-center">
+<div class="flex items-center gap-space-xs mb-0.5">
+<span class="font-badge-status text-badge-status text-text-secondary bg-surface-container px-space-xs py-0.5 rounded">FARMACEÚTICO</span>
+<span class="font-code-data text-caption text-text-muted truncate">SKU-100245</span>
+</div>
+<h2 class="font-title-sm text-title-sm text-text-primary font-bold leading-snug line-clamp-2">Suero Fisiológico 0.9% 500ml</h2>
+<span class="font-caption text-caption text-text-secondary mt-0.5">Caja x24 frascos rígidos PEAD</span>
+</div>
+</div>
+<!-- Lot & Expiration Security Pills -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-caption text-[11px] text-text-muted uppercase">Lote Verificado</span>
+<div class="flex items-center gap-space-2xs mt-0.5">
+<span class="material-symbols-outlined text-primary-container text-[16px]">verified</span>
+<span class="font-code-data text-code-data text-text-primary font-bold">LOT-2026-0916</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-[11px] text-text-muted uppercase">Vencimiento</span>
+<div class="flex items-center gap-space-2xs mt-0.5">
+<span class="material-symbols-outlined text-text-secondary text-[16px]">event_available</span>
+<span class="font-code-data text-code-data text-text-primary font-bold">09 / 2026</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quantity Stepper / Touch Validation -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Cantidad Requerida</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-text-primary font-bold">2</span>
+<span class="font-body-md text-body-md text-text-secondary font-bold uppercase">Cajas</span>
+<span class="font-code-data text-caption text-text-muted font-normal">(48 unidades totales)</span>
+</div>
+</div>
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-high text-text-primary">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+</div>
+<!-- Big Touch Stepper for High Precision Handheld Use -->
+<div class="flex items-stretch gap-space-sm h-14">
+<button aria-label="Disminuir cantidad" class="w-16 flex items-center justify-center bg-surface-container-high hover:bg-surface-container-highest active:bg-surface-dim rounded-xl text-text-primary transition-all active:scale-95" id="btn-decrement" type="button">
+<span class="material-symbols-outlined text-[28px]">remove</span>
+</button>
+<div class="flex-1 flex flex-col items-center justify-center bg-surface-container-low rounded-xl px-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary font-bold leading-none" id="counter-val">2</span>
+<span class="font-title-sm text-title-sm text-text-secondary font-semibold">CAJAS</span>
+</div>
+<span class="font-code-data text-[11px] text-accent-focus font-bold uppercase tracking-tight" id="units-val">48 frascos contados</span>
+</div>
+<button aria-label="Aumentar cantidad" class="w-16 flex items-center justify-center bg-surface-container-high hover:bg-surface-container-highest active:bg-surface-dim rounded-xl text-text-primary transition-all active:scale-95" id="btn-increment" type="button">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<!-- Quick Preset Buttons -->
+<div class="grid grid-cols-3 gap-space-xs">
+<button class="py-2 px-space-xs bg-surface-container hover:bg-surface-container-high text-text-secondary active:scale-95 transition-all rounded-lg font-code-data text-code-data font-semibold text-center" id="btn-quick-1" type="button">
+        1 cj (24 u)
+      </button>
+<button class="py-2 px-space-xs bg-surface-container-highest text-primary-container font-code-data text-code-data font-bold active:scale-95 transition-all rounded-lg text-center flex items-center justify-center gap-1" id="btn-quick-full" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span> 2 cjs (Total)
+      </button>
+<button class="py-2 px-space-xs bg-surface-container hover:bg-surface-container-high text-status-damaged font-code-data text-code-data font-semibold active:scale-95 transition-all rounded-lg text-center" id="btn-discrepancy" type="button">
+        Discrepancia
+      </button>
+</div>
+</div>
+<!-- Target Tote / Canasto Assignment Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Contenedor Destino</span>
+<span class="font-badge-status text-badge-status text-status-reserved bg-secondary-fixed px-space-xs py-0.5 rounded">ASIGNADO</span>
+</div>
+<div class="flex items-center gap-space-md p-space-sm bg-surface-container-low rounded-lg">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-sm text-title-sm text-text-primary font-bold">TOTE #T-104</span>
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary truncate">Carro CRT-04 • Nivel 1 (Inferior)</span>
+</div>
+</div>
+<!-- Scan Tote Barcode CTA with Micro-Interaction State -->
+<div class="flex flex-col gap-space-xs pt-space-2xs" id="tote-scan-container">
+<p class="font-caption text-caption text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">qr_code_scanner</span>
+        Escanear código de barras del Tote destino para confirmar guardado físico
+      </p>
+<button class="w-full h-12 flex items-center justify-center gap-space-sm bg-surface-container-high hover:bg-surface-container-highest active:bg-surface-dim text-text-primary rounded-xl transition-all font-title-sm text-title-sm font-semibold active:scale-[0.99]" id="btn-scan-tote" type="button">
+<span class="material-symbols-outlined text-text-secondary text-[22px]" id="tote-scan-icon">barcode_scanner</span>
+<span id="tote-scan-label">[SCAN TOTE] Confirmar en Tote #T-104</span>
+</button>
+</div>
+</div>
+<!-- Primary Confirmation Action & Exception Controls -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Big Industrial Confirm Button -->
+<button class="w-full h-14 bg-primary-container hover:opacity-95 active:opacity-90 text-on-primary rounded-xl flex items-center justify-between px-space-lg shadow-md transition-all active:scale-[0.99]" id="btn-confirm-pick" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-card/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px] text-on-primary">check</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-title-sm text-title-sm font-bold text-on-primary leading-tight">Confirmar Pick</span>
+<span class="font-caption text-[11px] text-on-primary/80">Avanzar al Ítem Siguiente (5/10)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[26px] text-on-primary">arrow_forward</span>
+</button>
+<!-- Exception Reporting Trigger Link -->
+<button class="w-full py-space-sm flex items-center justify-center gap-space-2xs text-status-damaged hover:bg-surface-container-lowest/50 rounded-lg transition-colors font-body-sm text-body-sm font-medium" id="btn-report-issue" type="button">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+<span>Reportar rotura de envase o lote no legible</span>
+</button>
+</div>
+</div>
+<script>
+  (() => {
+    let count = 2;
+    const max = 2;
+    const btnDecrement = document.getElementById('btn-decrement');
+    const btnIncrement = document.getElementById('btn-increment');
+    const counterVal = document.getElementById('counter-val');
+    const unitsVal = document.getElementById('units-val');
+    const btnQuick1 = document.getElementById('btn-quick-1');
+    const btnQuickFull = document.getElementById('btn-quick-full');
+    const btnDiscrepancy = document.getElementById('btn-discrepancy');
+    const btnScanTote = document.getElementById('btn-scan-tote');
+    const toteScanLabel = document.getElementById('tote-scan-label');
+    const toteScanIcon = document.getElementById('tote-scan-icon');
+    const btnConfirmPick = document.getElementById('btn-confirm-pick');
+    const btnReportIssue = document.getElementById('btn-report-issue');
+
+    function updateCounter(newVal) {
+      count = Math.max(0, newVal);
+      counterVal.textContent = count;
+      unitsVal.textContent = (count * 24) + ' frascos contados';
+
+      if (count === 2) {
+        unitsVal.className = 'font-code-data text-[11px] text-accent-focus font-bold uppercase tracking-tight';
+      } else if (count < 2) {
+        unitsVal.className = 'font-code-data text-[11px] text-status-quarantine font-bold uppercase tracking-tight';
+      } else {
+        unitsVal.className = 'font-code-data text-[11px] text-status-damaged font-bold uppercase tracking-tight';
+      }
+    }
+
+    btnDecrement?.addEventListener('click', () => updateCounter(count - 1));
+    btnIncrement?.addEventListener('click', () => updateCounter(count + 1));
+    btnQuick1?.addEventListener('click', () => updateCounter(1));
+    btnQuickFull?.addEventListener('click', () => updateCounter(2));
+
+    btnDiscrepancy?.addEventListener('click', () => {
+      alert('Discrepancia registrada: Informe de faltante enviado al supervisor de ola #WAVE-882.');
+    });
+
+    let toteScanned = false;
+    btnScanTote?.addEventListener('click', () => {
+      toteScanned = !toteScanned;
+      if (toteScanned) {
+        toteScanLabel.textContent = '✓ Tote #T-104 Verificado y Vinculado';
+        toteScanIcon.textContent = 'check_circle';
+        btnScanTote.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btnScanTote.classList.add('bg-surface-container-lowest', 'text-status-available');
+      } else {
+        toteScanLabel.textContent = '[SCAN TOTE] Confirmar en Tote #T-104';
+        toteScanIcon.textContent = 'barcode_scanner';
+        btnScanTote.classList.add('bg-surface-container-high', 'text-text-primary');
+        btnScanTote.classList.remove('bg-surface-container-lowest', 'text-status-available');
+      }
+    });
+
+    btnConfirmPick?.addEventListener('click', () => {
+      if (count !== 2) {
+        alert('Atención: La cantidad pickeada (' + count + ' cjs) no coincide con el total esperado (2 cjs). Registre discrepancia si corresponde.');
+        return;
+      }
+      btnConfirmPick.classList.add('scale-95');
+      setTimeout(() => {
+        btnConfirmPick.classList.remove('scale-95');
+        alert('Pick Confirmado con éxito. Cargando ítem 6 de 10...');
+      }, 150);
+    });
+
+    btnReportIssue?.addEventListener('click', () => {
+      prompt('Indique el motivo del reporte (e.g., Fuga de líquido, etiqueta ilegible, frasco roto):');
+    });
+  })();
+</script></main></body></html>

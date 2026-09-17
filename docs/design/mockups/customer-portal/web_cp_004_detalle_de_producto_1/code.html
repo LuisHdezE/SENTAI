@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-container": "#dae2fd",
+        "tertiary-container": "#48a8ed",
+        "background": "#f8f9ff",
+        "on-secondary-container": "#5c647a",
+        "canvas-bg": "#F8FAFC",
+        "surface-bright": "#f8f9ff",
+        "outline-variant": "#becab9",
+        "error": "#ba1a1a",
+        "on-surface-variant": "#3f4a3d",
+        "surface-container-highest": "#d3e4fe",
+        "text-muted": "#94A3B8",
+        "on-primary": "#ffffff",
+        "inverse-on-surface": "#eaf1ff",
+        "status-reserved": "#2563EB",
+        "status-expired": "#9333EA",
+        "on-primary-fixed-variant": "#005316",
+        "on-primary-container": "#00420f",
+        "surface-container-low": "#eff4ff",
+        "accent-focus": "#53B559",
+        "surface-tint": "#006e20",
+        "on-error": "#ffffff",
+        "on-tertiary-container": "#003b5c",
+        "on-surface": "#0b1c30",
+        "surface-container": "#e5eeff",
+        "status-blocked": "#475569",
+        "tertiary-fixed": "#cce5ff",
+        "tertiary-fixed-dim": "#93ccff",
+        "on-tertiary-fixed-variant": "#004b73",
+        "surface-variant": "#d3e4fe",
+        "border-subtle": "#E2E8F0",
+        "text-secondary": "#475569",
+        "secondary": "#565e74",
+        "inverse-primary": "#79dc7b",
+        "border-strong": "#CBD5E1",
+        "primary-container": "#53b559",
+        "on-error-container": "#93000a",
+        "primary": "#006e20",
+        "on-secondary-fixed-variant": "#3f465c",
+        "tertiary": "#006398",
+        "inverse-surface": "#213145",
+        "on-secondary": "#ffffff",
+        "outline": "#6f7a6c",
+        "text-primary": "#0F172A",
+        "primary-fixed": "#94f994",
+        "on-tertiary": "#ffffff",
+        "surface-container-high": "#dce9ff",
+        "on-background": "#0b1c30",
+        "on-tertiary-fixed": "#001d31",
+        "status-sync-pending": "#F59E0B",
+        "primary-fixed-dim": "#79dc7b",
+        "on-secondary-fixed": "#131b2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary-fixed-dim": "#bec6e0",
+        "error-container": "#ffdad6",
+        "surface": "#f8f9ff",
+        "secondary-fixed": "#dae2fd",
+        "status-damaged": "#DC2626",
+        "status-quarantine": "#D97706",
+        "status-available": "#16A34A",
+        "surface-dim": "#cbdbf5",
+        "surface-card": "#FFFFFF",
+        "on-primary-fixed": "#002205",
+        "status-sync-error": "#E11D48"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin": "1rem",
+        "space-xl": "1.5rem",
+        "space-2xl": "2rem",
+        "margin-desktop": "1.5rem",
+        "gutter": "1rem",
+        "space-sm": "0.5rem",
+        "space-md": "0.75rem",
+        "space-lg": "1rem",
+        "space-2xs": "0.125rem",
+        "gutter-desktop": "1.5rem",
+        "space-3xl": "3rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "metric-stat": ["Inter"],
+        "title-sm": ["Inter"],
+        "caption": ["Inter"],
+        "body-md": ["Inter"],
+        "badge-status": ["JetBrains Mono"],
+        "body-sm": ["Inter"],
+        "code-data": ["JetBrains Mono"],
+        "headline-md": ["Inter"],
+        "display-hero": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+        "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+        "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+        "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex items-center justify-center min-h-screen"><main class="w-full max-w-md mx-auto px-margin"><div class="flex flex-col w-full text-on-surface font-body-md text-body-md pb-space-3xl">
+<!-- Top Protocol Metadata Tag -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs bg-inverse-surface text-inverse-on-surface px-space-md py-space-xs rounded-lg shadow-sm mb-space-md">
+<div class="flex items-center gap-space-xs font-code-data text-code-data text-inverse-primary tracking-wide">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>WEB-CP-004 // DETALLE DE PRODUCTO Y FICHA TÉCNICA // MONTEVIDEO DC-01</span>
+</div>
+<div class="flex items-center gap-space-md text-caption font-caption text-text-muted">
+<span class="flex items-center gap-space-2xs text-status-available">
+<span class="inline-block w-2 h-2 rounded-full bg-status-available"></span>
+        NODO ACTIVO: CONEXIÓN SAP B1 V3
+      </span>
+<span>HORA REF: 14:32 UTC-3</span>
+</div>
+</div>
+<!-- Breadcrumb & Back Action -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-sm mb-space-lg">
+<nav aria-label="Breadcrumb" class="flex items-center flex-wrap gap-space-2xs text-body-sm font-body-sm text-text-secondary">
+<span class="hover:text-primary transition-colors cursor-pointer">Portal B2B</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Catálogo de Productos</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Sueros &amp; Soluciones</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold truncate max-w-[280px] sm:max-w-none">Suero Fisiológico 500ml NaCl 0.9% (SKU-100245)</span>
+</nav>
+<button class="inline-flex items-center gap-space-xs text-text-secondary hover:text-on-surface hover:bg-surface-container-high px-space-sm py-space-xs rounded-lg transition-all self-start md:self-auto font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Volver al Catálogo (WEB-CP-003)</span>
+</button>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Technical & Visual Gallery -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Product Showcase Gallery Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="bg-surface-container text-on-surface font-badge-status text-badge-status px-space-xs py-space-2xs rounded uppercase tracking-wider">
+              SKU-100245
+            </span>
+<span class="bg-surface-container-high text-tertiary font-badge-status text-badge-status px-space-xs py-space-2xs rounded uppercase">
+              GTIN: 7730948200192
+            </span>
+</div>
+<span class="inline-flex items-center gap-space-2xs text-status-available font-caption text-caption bg-surface-container-low px-space-xs py-space-2xs rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span>
+            DISPONIBILIDAD INMEDIATA
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-space-xs">
+          Suero Fisiológico 500ml Cloruro de Sodio 0.9%
+        </h1>
+<p class="text-text-secondary font-body-md text-body-md mb-space-lg">
+          Solución isotónica parenteral estéril, en envase de infusión continua colapsable bi-conector, termo-soldado sin PVC ni látex. Grado hospitalario y quirúrgico.
+        </p>
+<!-- Main Product Image Frame -->
+<div class="relative w-full h-80 rounded-xl overflow-hidden bg-surface-container-low mb-space-md shadow-inner group">
+<img alt="Suero Fisiológico 500ml Cloruro de Sodio 0.9%" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Technical pharmaceutical photograph of sterile 500ml saline physiological solution infusion bags stacked neatly in cleanroom clinical lighting, showing barcode label LOT-2026-0916, high contrast laboratory precision backdrop with subtle slate and industrial tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFDpKct4KfoS6QSoqTiXuWwcCkfkldBARoLCcNtXOKoKDkHOT-caWTs_LG0CuL2yoIe37k9XFfnmidtg-2Ii_UwEicsFWqjj7lgdHX0mSUjaR5mTAQXbo5cTV4Uu_YwUZuanLMXitqPH6UFC71Xy7yElPX_92zSIIYDc-unVkUBdHrTXbg3rutYJypIe3IvmHdizOMwb0oYq19IcsjRW5wvYYzjHVnNpqyo7UTEg7IZvrDP25i-MO1"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-space-2xs">
+<span class="bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface font-code-data text-code-data px-space-xs py-space-2xs rounded">
+              LOTE: LOT-2026-0916
+            </span>
+<span class="bg-inverse-surface/85 backdrop-blur-sm text-inverse-primary font-code-data text-code-data px-space-xs py-space-2xs rounded">
+              MSP REG: 49822/01
+            </span>
+</div>
+<div class="absolute bottom-space-sm right-space-sm">
+<button class="bg-surface-card/90 backdrop-blur-sm text-on-surface p-space-xs rounded-lg shadow-sm hover:bg-surface-card transition-colors inline-flex items-center gap-space-2xs font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+<span>Vista 360°</span>
+</button>
+</div>
+</div>
+<!-- Thumbnails Strip -->
+<div class="grid grid-cols-4 gap-space-sm mb-space-lg">
+<div class="h-20 rounded-lg overflow-hidden bg-surface-container relative cursor-pointer shadow-sm ring-2 ring-primary-container">
+<img alt="Detalle de conectores" class="w-full h-full object-cover" data-alt="Secondary angle closeup of sterile physiological saline bag dual injection ports with blue protective seals on medical stainless steel workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkfIx7zECMoQenmMO6wfQa5tGUMIEq9DAC3ZvxuKPZqTK765Pe9IQLr9lcgMGnJmiF5UDnNbp7ywpwvIUrXizkqQPsreqZQFd0Pn0e6qrJC8nRm27MeNW-17qZwMjC7F2v1k0hx1kQvLBSJgtvEnlHeBbVzE7f3fHNq3P2qW2_nrsPhikU-DARhzXSocYGQAFVFx2ICX9NUbgxcn2O-xjpm31XBU78TRsi1BxplrXr-n10jgpoE39d"/>
+</div>
+<div class="h-20 rounded-lg overflow-hidden bg-surface-container relative cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Caja Máster x24 unidades" class="w-full h-full object-cover" data-alt="Heavy corrugated master cardboard packaging box containing 24 units of medical saline solution with clean industrial typography and hazardous logistics pictograms." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6dSeoDhqedZPV752NumWwqLj8WmDwuWT5WLYt7NeZcLicPG1XANNj-b6I-hApabK6xxem89ZhjIG8uZNT1L51_Em6jILQekZkI8xAviMaKs-8P906D5Dy1a3cvryuvfUJp-oOiNpslIVmkWqF9iibgooolrt8Hd3vJoD5w8QTNf5FipbPvebjO9znpz_kefAdnnMEpMkC7uHQ-l4ZhgfQ88knFk5GRSmDgc-OC5b4tLxSNa9J0Ko6"/>
+</div>
+<div class="h-20 rounded-lg overflow-hidden bg-surface-container relative cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+<img alt="Pallet Europeo Filmado 60 Cajas" class="w-full h-full object-cover" data-alt="Full wrapped standard Euro pallet loaded with 60 medical supply carton boxes wrapped in transparent shrink film inside automated pharmaceutical warehouse rack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0umI3fplE2CWD1UYOJ5XInkC_GMCpfMeS1Wj46NN124_dDhYIDrJ783ClHkiNNK5RbNaBDt8Qf1uWTmGn_JmIPNwvRD54phuFUuUug6R8LIFJHreFNsKy5f3iJ6Pf2mX8luadRXC2R5JgxIMpbBV4lS0IeYBtu44ZxOwb99sZBQGdRhEnsBEscxjlkkad2yFO05dotT75s7vNFMi8lql68HANsvYPgIM55ZkqaS--Ux6b0Qku21NG"/>
+</div>
+<div class="h-20 rounded-lg overflow-hidden bg-surface-container-high relative cursor-pointer flex flex-col items-center justify-center text-text-secondary hover:text-on-surface p-space-xs text-center transition-colors">
+<span class="material-symbols-outlined text-[24px] text-tertiary">science</span>
+<span class="font-caption text-caption mt-space-2xs">Cromatografía Lote</span>
+</div>
+</div>
+<!-- Certification & Regulatory Chips -->
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<div class="inline-flex items-center gap-space-2xs bg-surface-container px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-title-sm text-body-sm text-on-surface">ANMAT Homologado</span>
+</div>
+<div class="inline-flex items-center gap-space-2xs bg-surface-container px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-primary text-[18px]">inventory</span>
+<span class="font-title-sm text-body-sm text-on-surface">BPA / GMP Certificado</span>
+</div>
+<div class="inline-flex items-center gap-space-2xs bg-surface-container-high px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-[18px]">thermostat</span>
+<span class="font-title-sm text-body-sm text-on-surface">15°C - 25°C (Ambiente Controlado)</span>
+</div>
+<div class="inline-flex items-center gap-space-2xs bg-surface-container px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">sanitizer</span>
+<span class="font-title-sm text-body-sm text-on-surface">Estéril EO / Sin Látex</span>
+</div>
+</div>
+</div>
+<!-- Technical Dossier Tabbed Section -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-md mb-space-lg bg-surface-container-low p-space-2xs rounded-lg">
+<button class="flex-1 py-space-xs px-space-sm text-center rounded-lg font-title-sm text-body-sm bg-surface-card text-on-surface shadow-sm transition-all" id="tab-specs-btn" onclick="switchTechTab('specs')">
+            Especificaciones &amp; Composición
+          </button>
+<button class="flex-1 py-space-xs px-space-sm text-center rounded-lg font-title-sm text-body-sm text-text-secondary hover:text-on-surface transition-all" id="tab-logistics-btn" onclick="switchTechTab('logistics')">
+            Logística &amp; Empaque
+          </button>
+<button class="flex-1 py-space-xs px-space-sm text-center rounded-lg font-title-sm text-body-sm text-text-secondary hover:text-on-surface transition-all" id="tab-docs-btn" onclick="switchTechTab('docs')">
+            Documentación Descargable
+          </button>
+</div>
+<!-- Tab 1: Specs Content -->
+<div class="block space-y-space-md" id="tab-specs">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<span class="text-caption font-caption text-text-secondary uppercase">Principio Activo Principal</span>
+<p class="font-title-sm text-on-surface mt-space-2xs">Cloruro de Sodio (NaCl) Farmacopea USP</p>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">Concentración: 0.90 g / 100 mL (Isotónico).</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<span class="text-caption font-caption text-text-secondary uppercase">Perfil Osmolar &amp; Electrolítico</span>
+<p class="font-title-sm text-on-surface mt-space-2xs">Osmolaridad Teórica: 308 mOsm/L</p>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">Na+: 154 mEq/L | Cl-: 154 mEq/L | pH: 4.5 - 7.0</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg space-y-space-xs">
+<h4 class="font-title-sm text-title-sm text-on-surface">Tipo de Envase y Bioseguridad</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              Bolsa colapsable de poliolefina multicapa grado médico co-extruida. Sistema cerrado que no requiere aguja de venteo exterior, minimizando riesgos de contaminación nosocomial aerotransportada. Libre de DEHP y plastificantes con dos puertos termo-sellados elastoméricos de autosellado.
+            </p>
+</div>
+<!-- Micro Spec Table -->
+<div class="bg-surface rounded-lg p-space-md">
+<h5 class="text-caption font-caption text-text-secondary uppercase tracking-wider mb-space-sm">Indicadores Fisicoquímicos Auditados</h5>
+<div class="grid grid-cols-3 gap-space-sm text-center">
+<div class="bg-surface-card p-space-xs rounded shadow-2xs">
+<span class="text-caption font-caption text-text-secondary">Endotoxinas</span>
+<p class="font-code-data text-code-data font-semibold text-status-available">&lt; 0.25 EU/mL</p>
+</div>
+<div class="bg-surface-card p-space-xs rounded shadow-2xs">
+<span class="text-caption font-caption text-text-secondary">Partículas Visibles</span>
+<p class="font-code-data text-code-data font-semibold text-status-available">Ausentes</p>
+</div>
+<div class="bg-surface-card p-space-xs rounded shadow-2xs">
+<span class="text-caption font-caption text-text-secondary">Esterilidad</span>
+<p class="font-code-data text-code-data font-semibold text-status-available">PASA (USP &lt;71&gt;)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 2: Logistics & Packing Content -->
+<div class="hidden space-y-space-md" id="tab-logistics">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center gap-space-xs text-primary mb-space-2xs">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">Caja Máster Corrugada</h4>
+</div>
+<ul class="text-body-sm font-body-sm text-text-secondary space-y-space-2xs">
+<li class="flex justify-between"><span>Unidades por caja:</span> <strong class="text-on-surface font-code-data">24 unidades</strong></li>
+<li class="flex justify-between"><span>Peso bruto / neto:</span> <strong class="text-on-surface font-code-data">13.20 kg / 12.00 kg</strong></li>
+<li class="flex justify-between"><span>Dimensiones:</span> <strong class="text-on-surface font-code-data">380 × 260 × 220 mm</strong></li>
+<li class="flex justify-between"><span>Volumen cúbico:</span> <strong class="text-on-surface font-code-data">0.0217 m³</strong></li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center gap-space-xs text-tertiary mb-space-2xs">
+<span class="material-symbols-outlined text-[20px]">pallet</span>
+<h4 class="font-title-sm text-title-sm text-on-surface">Palletización Estándar</h4>
+</div>
+<ul class="text-body-sm font-body-sm text-text-secondary space-y-space-2xs">
+<li class="flex justify-between"><span>Tipo de pallet:</span> <strong class="text-on-surface font-code-data">Euro (1200 × 800 mm)</strong></li>
+<li class="flex justify-between"><span>Cajas por pallet:</span> <strong class="text-on-surface font-code-data">60 cajas (1,440 uds)</strong></li>
+<li class="flex justify-between"><span>Configuración estiba:</span> <strong class="text-on-surface font-code-data">12 cajas/capa × 5 capas</strong></li>
+<li class="flex justify-between"><span>Peso total pallet:</span> <strong class="text-on-surface font-code-data">792 kg bruto</strong></li>
+</ul>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface text-[26px]">warehouse</span>
+<div>
+<p class="font-title-sm text-on-surface">Condiciones de Acopio Farmacéutico</p>
+<p class="font-body-sm text-text-secondary">Apilamiento máximo permitido: 2 pallets en altura con separador rígido.</p>
+</div>
+</div>
+<span class="bg-surface-card text-text-secondary px-space-sm py-space-2xs rounded font-badge-status text-badge-status">
+              SLOT: FARMA-04-A
+            </span>
+</div>
+</div>
+<!-- Tab 3: Documentation Content -->
+<div class="hidden space-y-space-sm" id="tab-docs">
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-[28px]">picture_as_pdf</span>
+<div>
+<h5 class="font-title-sm text-on-surface">Ficha Técnica Oficial y Monografía de Producto</h5>
+<p class="text-caption font-caption text-text-secondary">Rev. 2024-B • Formato PDF • 1.4 MB • Homologado MSP</p>
+</div>
+</div>
+<button class="px-space-sm py-space-xs bg-surface-card hover:bg-surface text-on-surface rounded-lg font-title-sm text-body-sm shadow-xs inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Descargar</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">verified_user</span>
+<div>
+<h5 class="font-title-sm text-on-surface">Certificado de Lote y Análisis Químico (CoA)</h5>
+<p class="text-caption font-caption text-text-secondary">Lote LOT-2026-0916 • Liberación Microbiológica Conforme</p>
+</div>
+</div>
+<button class="px-space-sm py-space-xs bg-surface-card hover:bg-surface text-on-surface rounded-lg font-title-sm text-body-sm shadow-xs inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Descargar CoA</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[28px]">policy</span>
+<div>
+<h5 class="font-title-sm text-on-surface">Certificado Sanitario Registro MSP / DGI</h5>
+<p class="text-caption font-caption text-text-secondary">Expediente Oficial MSP #49822/01 • Vigencia 2029</p>
+</div>
+</div>
+<button class="px-space-sm py-space-xs bg-surface-card hover:bg-surface text-on-surface rounded-lg font-title-sm text-body-sm shadow-xs inline-flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Ver Registro</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Commercial, Multicenter Inventory & Order Placement -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Pricing & Active Agreement Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="text-caption font-caption uppercase text-text-secondary tracking-wider">Tarifario B2B Corporativo</span>
+<span class="bg-secondary-container text-on-secondary-fixed-variant px-space-xs py-space-2xs rounded font-badge-status text-badge-status">
+            ACUERDO HOSPITALARIO L2-2024
+          </span>
+</div>
+<div class="flex items-baseline gap-space-md mb-space-xs">
+<span class="font-display-hero text-display-hero text-on-surface font-bold tracking-tight">
+            $32.00
+          </span>
+<span class="font-title-sm text-text-secondary">USD / caja (24 uds)</span>
+<span class="bg-surface-container-low text-primary font-badge-status text-badge-status px-space-xs py-space-2xs rounded">
+            -15.0% DESC.
+          </span>
+</div>
+<div class="flex items-center gap-space-md text-caption font-caption text-text-secondary mb-space-md">
+<span class="line-through">Precio Lista: $37.65 USD/caja</span>
+<span>•</span>
+<span class="text-on-surface">Equiv: $1.33 USD por unidad</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-body-sm font-body-sm text-text-secondary">
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            IVA Tasa Salud (10%) Incluido
+          </span>
+<span class="font-code-data text-code-data text-on-surface font-semibold">$2.91 USD / IVA</span>
+</div>
+</div>
+<!-- Real-time Multicenter Warehouse Stock Status -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-title-sm text-title-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+            Disponibilidad Multicentro Real
+          </h3>
+<span class="text-caption font-caption text-text-secondary">Actualizado: Hace 3 min</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Montevideo DC-01 Hub -->
+<div class="p-space-md bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-status-available"></span>
+<span class="font-title-sm text-on-surface">Montevideo DC-01 (Silo Farmacéutico)</span>
+</div>
+<span class="font-code-data text-code-data font-bold text-on-surface">1,420 cajas</span>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary">
+<span>Entrega inmediata garantizada en 24h</span>
+<span class="text-status-available font-semibold">Despacho Prioritario</span>
+</div>
+</div>
+<!-- Salto Regional Hub -->
+<div class="p-space-md bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-status-sync-pending"></span>
+<span class="font-title-sm text-on-surface">Centro Logístico Norte (Salto)</span>
+</div>
+<span class="font-code-data text-code-data font-bold text-on-surface">480 cajas</span>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary">
+<span>Transferencia regional habilitada</span>
+<span class="text-text-secondary font-medium">Entrega en 48h</span>
+</div>
+</div>
+</div>
+<!-- Active Batch Info Strip -->
+<div class="mt-space-md pt-space-md bg-surface rounded-lg p-space-sm flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">verified</span>
+<div>
+<p class="font-title-sm text-on-surface">Lote Asignado: <span class="font-code-data font-bold text-primary">LOT-2026-0916</span></p>
+<p class="text-caption font-caption text-text-secondary">Fab: 09/2024 • Vence: 09/2028 (Vida útil &gt;36 meses)</p>
+</div>
+</div>
+<span class="bg-surface-card text-status-available font-badge-status text-badge-status px-space-xs py-space-2xs rounded">
+            CALIDAD OK
+          </span>
+</div>
+</div>
+<!-- Quick Order Volume Calculator Card -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<h3 class="font-title-sm text-title-sm text-on-surface mb-space-sm">
+          Calculadora de Pedido B2B
+        </h3>
+<!-- Preset Pallet Chips -->
+<div class="grid grid-cols-3 gap-space-xs mb-space-md">
+<button class="py-space-xs px-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-caption font-semibold transition-colors text-center" onclick="setQuantity(10)">
+            +10 cajas <span class="block text-text-secondary font-normal font-code-data">1/6 Pallet</span>
+</button>
+<button class="py-space-xs px-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-caption font-semibold transition-colors text-center" onclick="setQuantity(30)">
+            +30 cajas <span class="block text-text-secondary font-normal font-code-data">½ Pallet</span>
+</button>
+<button class="py-space-xs px-space-2xs bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg text-caption font-caption font-semibold transition-colors text-center" onclick="setQuantity(60)">
+            +60 cajas <span class="block text-text-secondary font-normal font-code-data">1 Pallet Comp.</span>
+</button>
+</div>
+<!-- Quantity Picker & Total Computed Summary -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg mb-space-md">
+<div class="flex items-center gap-space-xs">
+<button aria-label="Disminuir cantidad" class="w-9 h-9 flex items-center justify-center bg-surface-card text-on-surface rounded hover:bg-surface shadow-xs transition-colors" onclick="decrementQty()">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-16 h-9 text-center bg-surface-card font-code-data text-title-sm font-bold text-on-surface rounded outline-none focus:ring-2 focus:ring-primary" id="order-qty-input" max="1420" min="1" oninput="recalculateTotal()" type="number" value="20"/>
+<button aria-label="Aumentar cantidad" class="w-9 h-9 flex items-center justify-center bg-surface-card text-on-surface rounded hover:bg-surface shadow-xs transition-colors" onclick="incrementQty()">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<span class="text-caption font-caption text-text-secondary ml-space-2xs">cajas</span>
+</div>
+<div class="text-right">
+<span class="text-caption font-caption text-text-secondary block">Total Estimado</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold font-code-data" id="order-subtotal">
+              $640.00 USD
+            </span>
+</div>
+</div>
+<!-- Metric logistics indicators for current selection -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface rounded-lg p-space-sm mb-space-lg text-caption font-caption text-text-secondary">
+<div>
+<span>Peso total estiba:</span>
+<strong class="text-on-surface font-code-data ml-space-2xs" id="weight-calc">264.0 kg</strong>
+</div>
+<div class="text-right">
+<span>Unidades fraccionadas:</span>
+<strong class="text-on-surface font-code-data ml-space-2xs" id="units-calc">480 unidades</strong>
+</div>
+</div>
+<!-- Order Action Buttons -->
+<div class="flex flex-col gap-space-sm">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary py-space-sm px-space-md rounded-lg font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+<span>+ Agregar al Pedido Actual</span>
+</button>
+<button class="w-full bg-surface-card hover:bg-surface-container text-on-surface py-space-sm px-space-md rounded-lg font-title-sm text-body-sm flex items-center justify-center gap-space-xs shadow-xs transition-all">
+<span>Comprar ahora y configurar despacho (WEB-CP-005)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Credit Line Status Banner -->
+<div class="mt-space-md p-space-md bg-surface-container-low rounded-lg">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">account_balance_wallet</span>
+<div class="text-caption font-caption">
+<p class="text-on-surface font-semibold">Línea de Crédito Activa: $15,850 USD disponibles.</p>
+<p class="text-text-secondary mt-space-2xs">
+                Este ítem consume <span class="font-semibold text-on-surface" id="credit-impact">$640.00 USD (4.0% del cupo disponible)</span>. No requiere autorización financiera previa de tesorería.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Volume Quote Commercial Support Row -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div class="text-body-sm font-body-sm">
+<p class="font-title-sm text-on-surface">¿Volumen superior a 500 cajas?</p>
+<p class="text-text-secondary text-caption font-caption">Contactar a ejecutiva comercial Valeria Silva para cotización spot FOB/DDP.</p>
+</div>
+</div>
+<button class="shrink-0 px-space-sm py-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-body-sm rounded-lg transition-colors">
+          Solicitar Cotización
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Technical Tab Switching
+  function switchTechTab(tabName) {
+    const tabs = ['specs', 'logistics', 'docs'];
+    tabs.forEach(name => {
+      const content = document.getElementById('tab-' + name);
+      const btn = document.getElementById('tab-' + name + '-btn');
+      if (name === tabName) {
+        content.classList.remove('hidden');
+        content.classList.add('block');
+        btn.className = 'flex-1 py-space-xs px-space-sm text-center rounded-lg font-title-sm text-body-sm bg-surface-card text-on-surface shadow-sm transition-all';
+      } else {
+        content.classList.remove('block');
+        content.classList.add('hidden');
+        btn.className = 'flex-1 py-space-xs px-space-sm text-center rounded-lg font-title-sm text-body-sm text-text-secondary hover:text-on-surface transition-all';
+      }
+    });
+  }
+
+  // Volume Calculator State & Mechanics
+  const UNIT_PRICE = 32.00;
+  const CREDIT_AVAILABLE = 15850.00;
+  const WEIGHT_PER_BOX = 13.20;
+  const UNITS_PER_BOX = 24;
+
+  function recalculateTotal() {
+    const input = document.getElementById('order-qty-input');
+    let qty = parseInt(input.value) || 0;
+    if (qty < 1) qty = 1;
+    if (qty > 1420) qty = 1420;
+
+    const subtotal = (qty * UNIT_PRICE).toFixed(2);
+    const totalWeight = (qty * WEIGHT_PER_BOX).toFixed(1);
+    const totalUnits = qty * UNITS_PER_BOX;
+    const creditPct = ((subtotal / CREDIT_AVAILABLE) * 100).toFixed(1);
+
+    document.getElementById('order-subtotal').textContent = `$${subtotal} USD`;
+    document.getElementById('weight-calc').textContent = `${totalWeight} kg`;
+    document.getElementById('units-calc').textContent = `${totalUnits.toLocaleString()} unidades`;
+    document.getElementById('credit-impact').textContent = `$${subtotal} USD (${creditPct}% del cupo disponible)`;
+  }
+
+  function setQuantity(val) {
+    const input = document.getElementById('order-qty-input');
+    input.value = val;
+    recalculateTotal();
+  }
+
+  function incrementQty() {
+    const input = document.getElementById('order-qty-input');
+    let current = parseInt(input.value) || 0;
+    if (current < 1420) {
+      input.value = current + 1;
+      recalculateTotal();
+    }
+  }
+
+  function decrementQty() {
+    const input = document.getElementById('order-qty-input');
+    let current = parseInt(input.value) || 0;
+    if (current > 1) {
+      input.value = current - 1;
+      recalculateTotal();
+    }
+  }
+</script></main></body></html>

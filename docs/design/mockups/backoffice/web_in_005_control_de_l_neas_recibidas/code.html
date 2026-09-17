@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full">
+<!-- ID Visual & Breadcrumb Bar -->
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b border-border-subtle">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded font-badge-status text-badge-status bg-surface-container text-on-surface-variant uppercase tracking-wider">
+        WEB-IN-005 • CONTROL DE LÍNEAS RECIBIDAS
+      </span>
+<span class="w-1.5 h-1.5 rounded-full bg-status-sync-pending animate-pulse"></span>
+<span class="font-code-data text-body-sm text-text-secondary">MUELLE INBOUND #04 • DESCARGA DINÁMICA</span>
+</div>
+<div class="flex items-center gap-space-sm font-caption text-caption text-text-muted">
+<span>Sesión Auditor: <strong class="text-text-primary font-semibold">Carlos Méndez (OP-094)</strong></span>
+<span>•</span>
+<span class="font-code-data">EDI 856 VER: 4.2.1</span>
+</div>
+</div>
+<!-- Header Section with Metadata & Actions -->
+<div class="flex flex-col xl:flex-row xl:items-start justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">
+          Control y Conciliación de Líneas Recibidas
+        </h1>
+<span class="px-space-sm py-1 rounded font-badge-status text-badge-status bg-status-sync-pending/15 text-status-quarantine uppercase">
+          ESTADO: AUDITORÍA EN CURSO
+        </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        Auditoría comparativa entre manifiesto EDI 856 / Orden de Compra y escaneos físicos de descarga para <strong class="text-text-primary">ASN-00142</strong> (PharmaGroup Latam). Verificación y balance de inventario en tiempo real.
+      </p>
+<!-- Key Identifiers Badges -->
+<div class="flex items-center gap-space-xs flex-wrap mt-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded font-code-data text-caption bg-surface-card text-text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-text-muted">receipt_long</span>
+          ASN-00142
+        </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded font-code-data text-caption bg-surface-card text-text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-text-muted">shopping_bag</span>
+          PO-2024-8831
+        </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded font-code-data text-caption bg-surface-card text-text-primary shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-text-muted">local_shipping</span>
+          REMITO REM-889201
+        </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded font-code-data text-caption bg-surface-container-high text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+          Arribo: Hoy, 08:34 hs
+        </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm self-start flex-wrap">
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container-low text-text-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">description</span>
+<span>Exportar Acta (PDF/XLS)</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-card hover:bg-error-container text-error font-body-sm text-body-sm font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+<span>Solicitar Aprobación de Merma</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">rule_folder</span>
+<span>Aprobar Conciliación y Pasar a Put-Away</span>
+</button>
+</div>
+</div>
+<!-- KPI Reconciliation Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md mb-space-xl">
+<!-- Card 1: Líneas Totales -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase font-bold tracking-wider">Líneas del Manifiesto</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">format_list_bulleted</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">4</span>
+<span class="font-caption text-caption text-text-secondary font-medium">SKUs registrados</span>
+</div>
+<div class="pt-space-xs text-text-muted font-caption text-[11px] flex items-center justify-between">
+<span class="text-status-available font-semibold">1 Completa</span>
+<span>•</span>
+<span class="text-status-reserved font-semibold">2 En Descarga</span>
+<span>•</span>
+<span class="text-text-secondary font-semibold">1 Pendiente</span>
+</div>
+</div>
+<!-- Card 2: Unidades Totales Declaradas -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase font-bold tracking-wider">Unidades Declaradas</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">inventory_2</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">1,250</span>
+<span class="font-caption text-caption text-text-muted font-code-data uppercase">UN</span>
+</div>
+<div class="pt-space-xs text-text-muted font-caption text-[11px]">
+        PO-2024-8831 Manifestada vía EDI
+      </div>
+</div>
+<!-- Card 3: Unidades Físicas Contadas -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase font-bold tracking-wider">Físico Contado</span>
+<span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-primary-container/20 text-on-primary-container font-bold">65.6%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">820</span>
+<span class="font-caption text-caption text-text-muted font-code-data uppercase">UN</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 overflow-hidden mt-1">
+<div class="bg-primary-container h-full rounded-full" style="width: 65.6%;"></div>
+</div>
+</div>
+<!-- Card 4: Discrepancia Neta Acumulada -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between bg-error-container/10">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-status-damaged uppercase font-bold tracking-wider">Discrepancia Neta</span>
+<span class="material-symbols-outlined text-status-damaged text-[18px]">warning</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-metric-stat text-metric-stat text-status-damaged">-12</span>
+<span class="font-caption text-caption text-status-damaged font-code-data uppercase">UN Faltante</span>
+</div>
+<div class="pt-space-xs text-status-damaged font-caption text-[11px] truncate" title="SKU-204918: Caja #14 abierta/incompleta">
+        Diferencia en SKU-204918 (Caja abierta)
+      </div>
+</div>
+<!-- Card 5: Estado Cuarentena / QA -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-status-quarantine uppercase font-bold tracking-wider">Retención QA / Muestreo</span>
+<span class="material-symbols-outlined text-status-quarantine text-[18px]">biotech</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-xs">
+<span class="font-metric-stat text-metric-stat text-status-quarantine">30</span>
+<span class="font-caption text-caption text-text-muted font-code-data uppercase">UN Bloqueadas</span>
+</div>
+<div class="pt-space-xs text-text-secondary font-caption text-[11px] truncate">
+        Muestreo microbiológico pendiente
+      </div>
+</div>
+</div>
+<!-- Operational Filter & Live Progress Bar -->
+<div class="bg-surface-card rounded-xl p-space-md mb-space-lg shadow-sm">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative w-full lg:w-96 flex items-center bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" id="lineSearch" placeholder="Buscar por SKU, descripción, lote o caja..." type="text"/>
+<span class="font-code-data text-caption text-text-muted text-[10px] px-1 bg-surface-card rounded shadow-xs">ESC</span>
+</div>
+<!-- Segmented Status Tabs -->
+<div class="flex items-center gap-space-xs p-1 bg-canvas-bg rounded-lg w-full lg:w-auto overflow-x-auto">
+<button class="tab-btn active px-space-md py-1 rounded-md font-body-sm text-body-sm font-semibold text-on-primary bg-primary shadow-xs transition-all" type="button">
+          Todas las Líneas (4)
+        </button>
+<button class="tab-btn px-space-md py-1 rounded-md font-body-sm text-body-sm text-text-secondary hover:text-text-primary hover:bg-surface-card transition-all" type="button">
+          Coincidentes 100% (1)
+        </button>
+<button class="tab-btn px-space-md py-1 rounded-md font-body-sm text-body-sm text-text-secondary hover:text-text-primary hover:bg-surface-card transition-all" type="button">
+          Con Discrepancia (1)
+        </button>
+<button class="tab-btn px-space-md py-1 rounded-md font-body-sm text-body-sm text-text-secondary hover:text-text-primary hover:bg-surface-card transition-all" type="button">
+          Pendientes (2)
+        </button>
+</div>
+<!-- Quick Toggles -->
+<div class="flex items-center gap-space-md w-full lg:w-auto justify-end">
+<label class="flex items-center gap-space-xs cursor-pointer select-none">
+<input class="sr-only peer" id="toggleDiscrepanciesOnly" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+<span class="font-body-sm text-body-sm text-text-secondary font-medium">Solo diferencias</span>
+</label>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-primary hover:bg-canvas-bg transition-colors" title="Refrescar datos de lectores RFID / Scanner" type="button">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Master Reconciliation Table -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden mb-space-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-canvas-bg h-9 text-text-secondary font-badge-status text-badge-status uppercase tracking-wider">
+<th class="px-space-md font-semibold">SKU &amp; Descripción</th>
+<th class="px-space-md font-semibold">Lote / Serie</th>
+<th class="px-space-md font-semibold">Vencimiento</th>
+<th class="px-space-md font-semibold text-right">Cant. Manifestada</th>
+<th class="px-space-md font-semibold text-right">Cant. Recibida</th>
+<th class="px-space-md font-semibold text-right">Varianza (+ / -)</th>
+<th class="px-space-md font-semibold">Estado de Inspección</th>
+<th class="px-space-md font-semibold">Clasificación QA</th>
+<th class="px-space-md font-semibold text-center sticky right-0 bg-canvas-bg">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-body-sm text-body-sm text-text-primary">
+<!-- Row 1: SKU-100245 (Exacto) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group">
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-data font-bold text-text-primary">SKU-100245</span>
+<span class="font-body-sm text-text-secondary truncate">Sensor Telemétrico IoT IP67</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data font-medium text-text-primary">LOT-2026-0916</span>
+<span class="font-caption text-[11px] text-text-muted">Pallet #PL-0881</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm font-code-data text-text-secondary">
+              16 Sep 2026
+            </td>
+<td class="px-space-md py-space-sm text-right font-code-data font-medium">
+              500 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data font-bold text-status-available">
+              500 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded font-badge-status text-[11px] bg-status-available/10 text-status-available font-bold">
+                0 UN (EXACTO)
+              </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-status-available text-[16px]">check_circle</span>
+<span class="font-body-sm text-text-primary font-medium">Completo y Verificado</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available/10 text-status-available uppercase">
+                LIBRE DISPOSICIÓN
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-center sticky right-0 bg-surface-card group-hover:bg-canvas-bg transition-colors shadow-[-4px_0_6px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ver detalle de bultos" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ajustar conteo" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: SKU-204918 (Discrepancia) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors bg-error-container/5 group">
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-error-container/30 flex items-center justify-center text-status-damaged shrink-0">
+<span class="material-symbols-outlined text-[18px]">valve</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-data font-bold text-status-damaged">SKU-204918</span>
+<span class="font-body-sm text-text-secondary truncate">Válvula de Presión Hidráulica 2" Acero</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data font-medium text-text-primary">LOT-2025-1102</span>
+<span class="font-caption text-[11px] text-status-damaged font-medium">Bulto #14 (Dañado)</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm font-code-data text-text-secondary">
+              02 Nov 2025
+            </td>
+<td class="px-space-md py-space-sm text-right font-code-data font-medium">
+              300 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data font-bold text-status-damaged">
+              288 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded font-badge-status text-[11px] bg-status-damaged/15 text-status-damaged font-bold">
+                  -12 UN FALTANTE
+                </span>
+<a class="text-[10px] text-tertiary underline mt-0.5 hover:text-tertiary-container" href="#">Ver Acta INC-09</a>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1.5 text-status-damaged">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span class="font-body-sm font-semibold">Faltante en Bulto #14</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-damaged/10 text-status-damaged uppercase">
+                RETENIDO ACTA
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-center sticky right-0 bg-surface-card group-hover:bg-canvas-bg transition-colors shadow-[-4px_0_6px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded bg-error-container/40 text-status-damaged hover:bg-error-container" title="Ver Acta Incidencia INC-09" type="button">
+<span class="material-symbols-outlined text-[18px]">assignment_late</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ajustar conteo" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: SKU-501824 (En Descarga) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors group">
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-status-reserved shrink-0">
+<span class="material-symbols-outlined text-[18px]">developer_board</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-data font-bold text-text-primary">SKU-501824</span>
+<span class="font-body-sm text-text-secondary truncate">Módulo de Control PLC Ethernet 24V</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data font-medium text-text-primary">LOT-2027-0115</span>
+<span class="font-caption text-[11px] text-text-muted">Pallets #20, #21</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm font-code-data text-text-secondary">
+              15 Ene 2027
+            </td>
+<td class="px-space-md py-space-sm text-right font-code-data font-medium">
+              350 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data font-bold text-status-reserved">
+              120 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded font-badge-status text-[11px] bg-status-reserved/10 text-status-reserved font-bold">
+                EN DESCARGA (34%)
+              </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-status-reserved text-[16px] animate-spin">sync</span>
+<span class="font-body-sm text-text-secondary">Parcial en Rampa</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-secondary-container text-on-secondary-container uppercase">
+                EN INSPECCIÓN
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-center sticky right-0 bg-surface-card group-hover:bg-canvas-bg transition-colors shadow-[-4px_0_6px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ver detalle de bultos" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ajustar conteo" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: SKU-309112 (Pendiente) -->
+<tr class="hover:bg-canvas-bg/60 transition-colors opacity-80 group">
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-text-muted shrink-0">
+<span class="material-symbols-outlined text-[18px]">oil_barrel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-data font-bold text-text-secondary">SKU-309112</span>
+<span class="font-body-sm text-text-secondary truncate">Aceite Sintético Grado Alimentario 20L</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data font-medium text-text-secondary">LOT-2026-0504</span>
+<span class="font-caption text-[11px] text-text-muted">Fondo camión remolque</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm font-code-data text-text-secondary">
+              04 May 2026
+            </td>
+<td class="px-space-md py-space-sm text-right font-code-data font-medium">
+              100 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data font-bold text-text-muted">
+              0 <span class="text-text-muted text-[11px]">UN</span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded font-badge-status text-[11px] bg-status-blocked/10 text-status-blocked font-bold">
+                PENDIENTE (0%)
+              </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-body-sm">Sin descargar</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-quarantine/10 text-status-quarantine uppercase">
+                MUESTREO PREVIO
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-center sticky right-0 bg-surface-card group-hover:bg-canvas-bg transition-colors shadow-[-4px_0_6px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ver detalle de bultos" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-text-secondary hover:text-text-primary" title="Ajustar conteo" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Summary / Footer -->
+<div class="px-space-lg py-space-md bg-canvas-bg flex flex-col sm:flex-row items-center justify-between gap-space-sm border-t border-border-subtle">
+<div class="flex items-center gap-space-md text-text-secondary font-body-sm">
+<span>Mostrando <strong>4 de 4</strong> líneas manifiesto</span>
+<span class="hidden sm:inline">•</span>
+<span class="font-code-data text-caption text-text-muted">Tiempo de rampa transcurrido: 01h 14m</span>
+</div>
+<div class="flex items-center gap-space-lg font-code-data text-body-sm">
+<div class="text-text-secondary">Total PO: <strong class="text-text-primary">1,250 UN</strong></div>
+<div class="text-text-secondary">Total Recibido: <strong class="text-status-available">820 UN</strong></div>
+<div class="text-text-secondary">Delta: <strong class="text-status-damaged font-bold">-12 UN</strong></div>
+</div>
+</div>
+</div>
+<!-- Resolution, Transport Protocol & Kardex Rules (Split Panel) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Block: Discrepancy Protocol & Driver Endorsement (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-card rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b border-border-subtle">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-status-damaged text-[22px]">assignment_turned_in</span>
+<h2 class="font-title-sm text-title-sm text-text-primary">
+              Acta de Discrepancia &amp; Conformidad Transportista
+            </h2>
+</div>
+<span class="px-space-sm py-0.5 rounded font-badge-status text-badge-status bg-error-container text-status-damaged font-bold">
+            DOC #ACT-2024-0091
+          </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary mb-space-md leading-relaxed">
+          Se deja constancia fehaciente en presencia del transportista de la falta de <strong class="text-status-damaged">12 unidades</strong> de la referencia <code class="font-code-data text-text-primary">SKU-204918</code> por alteración/rotura del bulto terciario #14. Remito intervenido y asentado en sistema WMS central.
+        </p>
+<!-- Digital Signatures Verification Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md bg-canvas-bg rounded-lg mb-space-md">
+<!-- Driver signature box -->
+<div class="flex flex-col justify-between p-space-sm bg-surface-card rounded border border-border-subtle">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase font-bold">Chofer / Transportista</span>
+<span class="material-symbols-outlined text-status-available text-[16px]">verified</span>
+</div>
+<div class="h-12 flex items-center justify-center border-b border-dashed border-border-strong mb-space-xs">
+<span class="font-code-data text-[12px] italic text-text-secondary tracking-widest select-none">H. Gutierrez (CI 4.192.301-8)</span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-muted font-code-data">
+<span>Trans-Sur Express</span>
+<span>09:12:44 hs</span>
+</div>
+</div>
+<!-- Supervisor signature box -->
+<div class="flex flex-col justify-between p-space-sm bg-surface-card rounded border border-border-subtle">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-text-muted uppercase font-bold">Supervisor WMS SENTAI</span>
+<span class="material-symbols-outlined text-status-available text-[16px]">verified</span>
+</div>
+<div class="h-12 flex items-center justify-center border-b border-dashed border-border-strong mb-space-xs">
+<span class="font-code-data text-[12px] italic text-primary font-bold tracking-wider select-none">Carlos Méndez (OP-094)</span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-muted font-code-data">
+<span>Token: 94F-11B-AC</span>
+<span>09:14:18 hs</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md border-t border-border-subtle">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Registro inmutable firmado digitalmente</span>
+</div>
+<button class="font-body-sm text-body-sm font-semibold text-primary hover:text-primary-container transition-colors" type="button">
+          Descargar Acta Firmada (PDF) →
+        </button>
+</div>
+</div>
+<!-- Right Block: WMS Kardex Dynamic Ingestion Rules (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-card rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-sm pb-space-sm mb-space-md border-b border-border-subtle">
+<span class="material-symbols-outlined text-primary text-[22px]">account_tree</span>
+<h2 class="font-title-sm text-title-sm text-text-primary">
+            Reglas de Ingreso a Kardex
+          </h2>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Rule 1: Stock Conforme -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low/60">
+<span class="material-symbols-outlined text-status-available text-[20px] mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm font-semibold text-text-primary">Stock Conforme (808 UN)</span>
+<p class="font-caption text-caption text-text-secondary leading-snug">
+                Pasan directo a órdenes automáticas de Put-Away para asignación en estanterías estándar RACK-A02.
+              </p>
+</div>
+</div>
+<!-- Rule 2: Cuarentena Automática -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-status-quarantine/10">
+<span class="material-symbols-outlined text-status-quarantine text-[20px] mt-0.5">lock_clock</span>
+<div class="flex flex-col">
+<span class="font-body-sm font-semibold text-text-primary">Retención Cuarentena (12 UN)</span>
+<p class="font-caption text-caption text-text-secondary leading-snug">
+                Generación automática de lote de cuarentena <strong class="font-code-data">LOC-QUAR-01</strong> para liquidación por seguro o reintegro proveedor.
+              </p>
+</div>
+</div>
+<!-- Rule 3: Muestreo Microbiológico -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">science</span>
+<div class="flex flex-col">
+<span class="font-body-sm font-semibold text-text-primary">Muestreo QA Obligatorio (30 UN)</span>
+<p class="font-caption text-caption text-text-secondary leading-snug">
+                Retenidas por protocolo sanitario de lote farmacéutico previo a habilitación comercial.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Execution Warning & Action -->
+<div class="mt-space-lg pt-space-md border-t border-border-subtle flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted">
+          Impacto contable: <strong class="text-text-primary">En espera de cierre</strong>
+</span>
+<span class="font-code-data text-[11px] px-space-sm py-0.5 rounded bg-surface-container font-medium text-text-secondary">
+          AUTO-POST: ACTIVO
+        </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple client-side micro-interactions for Table search & Tab filtering
+  (function() {
+    const searchInput = document.getElementById('lineSearch');
+    const toggleDiscrepancies = document.getElementById('toggleDiscrepanciesOnly');
+    const rows = document.querySelectorAll('tbody tr');
+    const tabs = document.querySelectorAll('.tab-btn');
+
+    function filterTable() {
+      const term = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const onlyDiscrepancies = toggleDiscrepancies ? toggleDiscrepancies.checked : false;
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const hasDiscrepancy = text.includes('faltante') || text.includes('discrepancia') || text.includes('-12');
+        
+        let matchesSearch = !term || text.includes(term);
+        let matchesDiscrepancy = !onlyDiscrepancies || hasDiscrepancy;
+
+        if (matchesSearch && matchesDiscrepancy) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterTable);
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          filterTable();
+        }
+      });
+    }
+
+    if (toggleDiscrepancies) {
+      toggleDiscrepancies.addEventListener('change', filterTable);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary', 'text-on-primary', 'shadow-xs');
+          t.classList.add('text-text-secondary');
+        });
+        tab.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+        tab.classList.remove('text-text-secondary');
+
+        const label = tab.innerText.toLowerCase();
+        if (label.includes('todas')) {
+          if (toggleDiscrepancies) toggleDiscrepancies.checked = false;
+          if (searchInput) searchInput.value = '';
+        } else if (label.includes('discrepancia')) {
+          if (toggleDiscrepancies) toggleDiscrepancies.checked = true;
+        } else if (label.includes('coincidentes')) {
+          if (toggleDiscrepancies) toggleDiscrepancies.checked = false;
+          if (searchInput) searchInput.value = 'exacto';
+        } else if (label.includes('pendientes')) {
+          if (toggleDiscrepancies) toggleDiscrepancies.checked = false;
+          if (searchInput) searchInput.value = 'pendiente';
+        }
+        filterTable();
+      });
+    });
+  })();
+</script></div></main></div></body></html>

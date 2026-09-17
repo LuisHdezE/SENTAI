@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#79dc7b", "on-secondary": "#ffffff", "on-tertiary-fixed": "#001d31", "surface-variant": "#d3e4fe", "secondary-fixed": "#dae2fd", "outline": "#6f7a6c", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#004b73", "status-sync-pending": "#F59E0B", "primary": "#006e20", "status-reserved": "#2563EB", "tertiary-fixed-dim": "#93ccff", "status-sync-error": "#E11D48", "on-error-container": "#93000a", "primary-container": "#53b559", "status-quarantine": "#D97706", "border-subtle": "#E2E8F0", "primary-fixed": "#94f994", "secondary-container": "#dae2fd", "on-tertiary-container": "#003b5c", "background": "#f8f9ff", "accent-focus": "#53B559", "canvas-bg": "#F8FAFC", "on-secondary-fixed-variant": "#3f465c", "status-expired": "#9333EA", "on-background": "#0b1c30", "on-primary-container": "#00420f", "inverse-surface": "#213145", "on-surface-variant": "#3f4a3d", "surface-container-lowest": "#ffffff", "text-primary": "#0F172A", "outline-variant": "#becab9", "primary-fixed-dim": "#79dc7b", "text-muted": "#94A3B8", "on-surface": "#0b1c30", "status-blocked": "#475569", "surface-dim": "#cbdbf5", "on-secondary-container": "#5c647a", "surface-container": "#e5eeff", "tertiary": "#006398", "secondary-fixed-dim": "#bec6e0", "secondary": "#565e74", "inverse-on-surface": "#eaf1ff", "tertiary-container": "#48a8ed", "status-available": "#16A34A", "status-damaged": "#DC2626", "border-strong": "#CBD5E1", "surface-container-highest": "#d3e4fe", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "on-error": "#ffffff", "text-secondary": "#475569", "surface-container-low": "#eff4ff", "surface-card": "#FFFFFF", "on-primary-fixed": "#002205", "surface-container-high": "#dce9ff", "surface-bright": "#f8f9ff", "on-secondary-fixed": "#131b2e", "surface": "#f8f9ff", "tertiary-fixed": "#cce5ff", "surface-tint": "#006e20", "on-primary-fixed-variant": "#005316", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "margin-desktop": "1.5rem", "space-2xs": "0.125rem", "space-lg": "1rem", "space-xl": "1.5rem", "gutter": "1rem", "space-2xl": "2rem", "space-3xl": "3rem", "space-md": "0.75rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["Inter"], "headline-lg-mobile": ["Inter"], "caption": ["Inter"], "metric-stat": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "badge-status": ["JetBrains Mono"], "code-data": ["JetBrains Mono"], "title-sm": ["Inter"], "display-hero": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 px-margin flex flex-col justify-center gap-space-2xs"><div class="flex items-center justify-between text-text-secondary font-code-data text-caption"><div class="flex items-center gap-space-sm"><span class="font-headline-md font-semibold text-text-primary">09:41</span><span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-badge-status text-badge-status font-bold">DC-01</span></div><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-lowest text-status-available font-badge-status text-badge-status uppercase"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>ONLINE</span><span class="material-symbols-outlined text-[16px] text-text-secondary">wifi</span><div class="flex items-center gap-0.5 text-text-secondary"><span class="text-[11px] font-code-data">92%</span><span class="material-symbols-outlined text-[16px]">battery_5_bar</span></div></div></div><div class="flex items-center justify-between pt-space-2xs"><div class="flex items-center gap-space-sm min-w-0"><img alt="Brand logo. - Primary color: #53b559
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><div class="flex flex-col min-w-0"><span class="font-badge-status text-badge-status uppercase tracking-wider text-text-muted">SENTAI WMS</span><h1 class="font-title-sm text-title-sm text-on-surface truncate">Tareas</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Quick Sync" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-surface-container text-text-secondary hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">sync</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 w-full bg-surface pt-24 pb-28 px-margin max-w-[430px] mx-auto"><div class="flex flex-col w-full gap-space-md">
+<!-- Operator Session Micro-Banner & Screen ID -->
+<div class="flex flex-col bg-surface-container rounded-xl p-space-sm shadow-sm gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-badge-status text-badge-status text-primary uppercase font-bold tracking-wider">
+        MOB-005 // COLA OPERATIVA &amp; FILTROS
+      </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-lowest font-code-data text-caption text-text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+        CARLOS TECHERA (#OP-4821)
+      </span>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary pt-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-primary">warehouse</span>
+<span>Montevideo DC-01</span>
+<span class="text-outline-variant">•</span>
+<span class="font-code-data text-text-primary">Turno Mañana (06:00 - 14:00)</span>
+</div>
+<div class="flex items-center gap-1 text-primary font-code-data font-semibold">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>98.4% KPI</span>
+</div>
+</div>
+</div>
+<!-- Industrial Fast Search & Barcode Trigger -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-space-2xs rounded-xl shadow-sm">
+<div class="flex-1 flex items-center gap-space-xs pl-space-sm pr-space-xs min-h-[44px]">
+<span class="material-symbols-outlined text-text-muted text-[20px]">search</span>
+<input class="w-full bg-transparent text-body-md font-body-md text-on-surface placeholder:text-text-muted focus:outline-none" id="task-search-input" placeholder="Buscar ID, Pedido, Pasillo..." type="text"/>
+</div>
+<button aria-label="Escanear Código de Barras de Tarea" class="min-h-[44px] px-space-sm flex items-center justify-center gap-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-95 text-on-surface font-badge-status text-badge-status transition-transform" id="camera-scan-btn" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">barcode_scanner</span>
+<span class="uppercase">Escanear</span>
+</button>
+</div>
+<!-- Horizontal Scrollable Primary Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5" id="primary-filter-group">
+<button class="filter-pill shrink-0 px-space-md py-space-xs rounded-full bg-primary-container text-on-primary font-badge-status text-badge-status shadow-sm active:scale-95 transition-all" data-filter="all" type="button">
+      TODAS (16)
+    </button>
+<button class="filter-pill shrink-0 px-space-md py-space-xs rounded-full bg-surface-container-lowest text-text-secondary hover:text-on-surface font-badge-status text-badge-status shadow-sm active:scale-95 transition-all" data-filter="picking" type="button">
+      PICKING (6)
+    </button>
+<button class="filter-pill shrink-0 px-space-md py-space-xs rounded-full bg-surface-container-lowest text-text-secondary hover:text-on-surface font-badge-status text-badge-status shadow-sm active:scale-95 transition-all" data-filter="putaway" type="button">
+      PUT-AWAY (4)
+    </button>
+<button class="filter-pill shrink-0 px-space-md py-space-xs rounded-full bg-surface-container-lowest text-text-secondary hover:text-on-surface font-badge-status text-badge-status shadow-sm active:scale-95 transition-all" data-filter="recepcion" type="button">
+      RECEPCIÓN (3)
+    </button>
+<button class="filter-pill shrink-0 px-space-md py-space-xs rounded-full bg-surface-container-lowest text-text-secondary hover:text-on-surface font-badge-status text-badge-status shadow-sm active:scale-95 transition-all" data-filter="conteos" type="button">
+      CONTEOS (3)
+    </button>
+</div>
+<!-- Secondary Tactical Quick Toggles -->
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar">
+<button class="secondary-toggle shrink-0 flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container text-text-secondary font-code-data text-caption active:bg-secondary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px] text-status-sync-pending">star</span>
+<span>Prioritarias</span>
+</button>
+<button class="secondary-toggle shrink-0 flex items-center gap-1 px-space-sm py-1 rounded bg-secondary-container text-on-secondary-container font-code-data text-caption active:bg-secondary-container transition-colors font-semibold" type="button">
+<span class="material-symbols-outlined text-[15px]">pin_drop</span>
+<span>Zona B (Asignada)</span>
+</button>
+<button class="secondary-toggle shrink-0 flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container text-text-secondary font-code-data text-caption active:bg-secondary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px] text-status-damaged">warning</span>
+<span>Solo Urgentes</span>
+</button>
+</div>
+<span class="font-code-data text-caption text-text-muted shrink-0 pl-1">4 de 16</span>
+</div>
+<!-- Task Queue Stacks -->
+<div class="flex flex-col gap-space-md" id="task-list-container">
+<!-- Card 1: En Curso / Alta Prioridad (Picking) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md p-space-md gap-space-sm relative overflow-hidden">
+<!-- Active Edge Bar Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<!-- Header & Badges -->
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-badge-status text-badge-status uppercase font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-pulse"></span>
+              EN CURSO • PICKING
+            </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-badge-status text-badge-status">
+              ALTA PRIORIDAD
+            </span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">#WAVE-882</span>
+<span class="font-caption text-caption text-text-muted truncate">Wave Farmacéutica</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-data text-[18px] leading-tight font-bold text-primary">60%</span>
+<span class="font-caption text-[11px] text-text-muted">6/10 BULTOS</span>
+</div>
+</div>
+<!-- Operational Details Grid -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg pl-3">
+<div class="flex flex-col">
+<span class="font-caption text-[11px] uppercase tracking-wider text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">location_on</span>
+            Ubicación Actual
+          </span>
+<span class="font-code-data text-code-data font-bold text-text-primary mt-0.5">B-04-02-03</span>
+<span class="font-caption text-caption text-text-secondary truncate">Pasillo B-04 • Rack 02 • N3</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-[11px] uppercase tracking-wider text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">medication</span>
+            SKU Seleccionado
+          </span>
+<span class="font-code-data text-code-data font-semibold text-text-primary mt-0.5 truncate">SKU-100245</span>
+<span class="font-caption text-caption text-text-secondary truncate">Suero Fisio 0.9% 500ml</span>
+</div>
+</div>
+<!-- Linear Visual Progress Bar -->
+<div class="flex flex-col gap-1 pl-1">
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+<div class="flex justify-between items-center text-caption font-code-data text-text-muted">
+<span>Ruta de picking optimizada</span>
+<span class="text-text-primary font-semibold">4 picks restantes</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full min-h-[48px] rounded-lg bg-primary-container hover:bg-primary active:scale-[0.99] text-on-primary font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-sm transition-transform" type="button">
+<span>Continuar Tarea</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2: Recepción Física Urgente (Inbound Dársena) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm p-space-md gap-space-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-status-sync-pending"></div>
+<!-- Card Top Info -->
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-status-quarantine font-badge-status text-badge-status uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">ac_unit</span>
+              RECEPCIÓN FÍSICA • URGENTE
+            </span>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-badge-status text-badge-status font-bold">
+              CADENA FRÍO
+            </span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">#ASN-2024-0089</span>
+<span class="font-caption text-caption text-text-muted truncate">Lab. Roemmers</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-text-secondary font-code-data text-caption shrink-0">
+          Inbound
+        </span>
+</div>
+<!-- Warehouse Visual / Dock Specifications -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg pl-3">
+<img class="w-14 h-14 rounded-lg object-cover shrink-0 shadow-sm" data-alt="Industrial cold chain pharmaceutical shipment loading dock with refrigerated trailer parked, crisp lighting, high quality warehouse interior, clean logistics environment with green and slate accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAokzlbRrxr1hyhefJVBLePl4sjxYvPix8hBkFuJiNUbWMyRTVa06FhnuxuW2LzE0kERxL0wjtJ9w2xzNvRVvCJXjVkHQ6gVzXeX-sOZDFJBSHsDjxheEJFfUJjIP07WpvNKIG25CeVrvN70VeQuq9npZmW_oyLzpAn_qwDfl6Gzova57M7nuWh9Cpmkq6p0lsFLEOqw80WrOAZdXWAGK5dKYkXzTlI2K4BKfn8ZH6b2d9tLmxWWAr1"/>
+<div class="flex flex-col min-w-0 justify-center">
+<div class="flex items-center gap-1">
+<span class="font-code-data text-title-sm font-bold text-text-primary">Dársena 03</span>
+<span class="font-caption text-caption text-status-sync-pending font-semibold">• Camión en espera</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary truncate mt-0.5">
+            8 Pallets mixtos con registro de temperatura
+          </p>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 text-[11px] font-code-data px-1.5 py-0.5 rounded bg-surface-container text-status-quarantine font-bold">
+<span class="material-symbols-outlined text-[12px]">device_thermostat</span> 2°C a 8°C
+            </span>
+<span class="text-caption font-code-data text-text-muted">Llegó hace 12 min</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full min-h-[48px] rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-[0.99] text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-space-xs transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px] text-status-sync-pending">move_to_inbox</span>
+<span>Iniciar Recepción</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Card 3: Put-Away Sugerido (Forklift Task) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm p-space-md gap-space-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<!-- Top Info -->
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-badge-status text-badge-status uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">forklift</span>
+              PUT-AWAY SUGERIDO
+            </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status">
+              ZONA A
+            </span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">#PLT-90412</span>
+<span class="font-caption text-caption text-text-muted truncate">Pallet Suero Glucosado</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-code-data text-code-data font-bold text-text-primary">420 kg</span>
+<span class="font-caption text-[11px] text-text-muted">E-STAGE-02</span>
+</div>
+</div>
+<!-- Location Target Blueprint Card -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg pl-3">
+<div class="flex flex-col">
+<span class="font-caption text-[11px] uppercase tracking-wider text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">alt_route</span>
+            Destino Óptimo WMS
+          </span>
+<span class="font-code-data text-title-sm font-bold text-text-primary mt-0.5">A-08-01-02</span>
+<span class="font-caption text-caption text-text-secondary">Zona A • Pasillo 8 • N2</span>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<span class="font-caption text-[11px] uppercase tracking-wider text-text-muted">Equipo Requerido</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary block mt-0.5">Montacargas #FLT-03</span>
+</div>
+<span class="font-caption text-caption text-status-available font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Slot Disponible
+          </span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full min-h-[48px] rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-[0.99] text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-space-xs transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">input</span>
+<span>Comenzar Ubicación</span>
+</button>
+</div>
+<!-- Card 4: Conteo Cíclico Preventivo (Auditoría) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-sm p-space-md gap-space-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<!-- Card Top Info -->
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container text-tertiary font-badge-status text-badge-status uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">fact_check</span>
+              CONTEO CÍCLICO
+            </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status">
+              ROTACIÓN A
+            </span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">#CC-PAS-B12</span>
+<span class="font-caption text-caption text-text-muted truncate">Auditoría Pasillo B-12</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-text-secondary font-code-data text-caption bg-surface-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>~20 min</span>
+</div>
+</div>
+<!-- Task Scope Metrics -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg pl-3 text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-data text-code-data font-bold text-text-primary">15 SKUs Críticos</span>
+<span class="font-caption text-caption text-text-secondary">Conteo ciego de discrepancias</span>
+</div>
+</div>
+<span class="font-badge-status text-badge-status px-2 py-1 rounded bg-surface-container-lowest text-text-secondary font-bold">
+          PASILLO B-12
+        </span>
+</div>
+<!-- Action Button -->
+<button class="w-full min-h-[48px] rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-[0.99] text-on-surface font-title-sm text-title-sm flex items-center justify-center gap-space-xs transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">person_add</span>
+<span>Asignarme Tarea</span>
+</button>
+</div>
+</div>
+<!-- Operational Floating Trigger Card: Auto-Assign Priority Next -->
+<div class="sticky bottom-2 z-20 bg-surface-container-lowest/95 backdrop-blur-md p-space-sm rounded-xl shadow-lg flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0 pl-1">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">auto_mode</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-code-data text-[11px] text-text-muted uppercase tracking-wider font-semibold">Despacho Automático</span>
+<span class="font-body-sm text-body-sm font-bold text-text-primary truncate">Siguiente Más Prioritaria</span>
+</div>
+</div>
+<button class="min-h-[44px] px-space-md rounded-lg bg-primary-container hover:bg-primary active:scale-95 text-on-primary font-badge-status text-badge-status font-bold uppercase tracking-wider shrink-0 flex items-center gap-1 shadow-sm transition-all" id="auto-assign-trigger" type="button">
+<span>Tomar</span>
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+</div>
+</div>
+<script>
+  (function initOperatorQueue() {
+    // Filter chips interaction
+    const filterPills = document.querySelectorAll('.filter-pill');
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('bg-primary-container', 'text-on-primary');
+          p.classList.add('bg-surface-container-lowest', 'text-text-secondary');
+        });
+        pill.classList.remove('bg-surface-container-lowest', 'text-text-secondary');
+        pill.classList.add('bg-primary-container', 'text-on-primary');
+      });
+    });
+
+    // Secondary toggles state
+    const secondaryToggles = document.querySelectorAll('.secondary-toggle');
+    secondaryToggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isToggled = btn.classList.contains('bg-secondary-container');
+        if (isToggled) {
+          btn.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'font-semibold');
+          btn.classList.add('bg-surface-container', 'text-text-secondary');
+        } else {
+          btn.classList.remove('bg-surface-container', 'text-text-secondary');
+          btn.classList.add('bg-secondary-container', 'text-on-secondary-container', 'font-semibold');
+        }
+      });
+    });
+
+    // Barcode trigger tactile feedback
+    const scanBtn = document.getElementById('camera-scan-btn');
+    if (scanBtn) {
+      scanBtn.addEventListener('click', () => {
+        scanBtn.classList.add('bg-primary', 'text-on-primary');
+        setTimeout(() => {
+          scanBtn.classList.remove('bg-primary', 'text-on-primary');
+        }, 300);
+      });
+    }
+
+    // Auto-assign button feedback
+    const autoBtn = document.getElementById('auto-assign-trigger');
+    if (autoBtn) {
+      autoBtn.addEventListener('click', () => {
+        const originalText = autoBtn.innerHTML;
+        autoBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> ASIGNANDO...';
+        setTimeout(() => {
+          autoBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> ASIGNADA';
+          setTimeout(() => {
+            autoBtn.innerHTML = originalText;
+          }, 1500);
+        }, 700);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="h-20 max-w-[430px] mx-auto px-space-xs grid grid-cols-5 items-center"><a aria-current="page" class="min-h-[44px] flex flex-col items-center justify-center gap-0.5 transition-colors text-primary-container font-semibold" data-path="tareas" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-caption text-caption">Tareas</span></a><a class="min-h-[44px] flex flex-col items-center justify-center gap-0.5 text-text-secondary transition-colors" data-path="inventario" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-caption text-caption">Inventario</span></a><div class="flex items-center justify-center -mt-5"><a aria-label="Escanear Código" class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_4px_16px_rgba(83,181,89,0.35)] transition-transform active:scale-95" data-path="scan-hub" href="#"><span class="material-symbols-outlined text-[28px]">qr_code_scanner</span></a></div><a class="min-h-[44px] flex flex-col items-center justify-center gap-0.5 text-text-secondary transition-colors relative" data-path="sincro" href="#"><span class="material-symbols-outlined text-[24px]">cloud_sync</span><span class="font-caption text-caption">Sincro</span><span class="absolute top-1.5 right-4 w-2 h-2 rounded-full bg-status-sync-pending"></span></a><a class="min-h-[44px] flex flex-col items-center justify-center gap-0.5 text-text-secondary transition-colors" data-path="turno" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-caption text-caption">Turno</span></a></div></nav></body></html>

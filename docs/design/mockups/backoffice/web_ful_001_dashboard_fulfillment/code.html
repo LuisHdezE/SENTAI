@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed":"#001d31","border-strong":"#CBD5E1","surface":"#f8f9ff","background":"#f8f9ff","on-tertiary":"#ffffff","primary-container":"#53b559","on-primary":"#ffffff","on-primary-fixed":"#002205","secondary-container":"#dae2fd","text-muted":"#94A3B8","canvas-bg":"#F8FAFC","status-expired":"#9333EA","surface-container-high":"#dce9ff","on-tertiary-container":"#003b5c","outline-variant":"#becab9","outline":"#6f7a6c","status-reserved":"#2563EB","on-secondary-fixed-variant":"#3f465c","status-sync-pending":"#F59E0B","on-background":"#0b1c30","on-error-container":"#93000a","surface-container-highest":"#d3e4fe","inverse-primary":"#79dc7b","surface-tint":"#006e20","on-secondary-fixed":"#131b2e","status-sync-error":"#E11D48","tertiary":"#006398","surface-container-lowest":"#ffffff","surface-container-low":"#eff4ff","surface-container":"#e5eeff","inverse-on-surface":"#eaf1ff","surface-dim":"#cbdbf5","border-subtle":"#E2E8F0","on-error":"#ffffff","on-surface-variant":"#3f4a3d","on-secondary":"#ffffff","error-container":"#ffdad6","on-primary-fixed-variant":"#005316","tertiary-container":"#48a8ed","error":"#ba1a1a","secondary-fixed":"#dae2fd","primary":"#006e20","status-damaged":"#DC2626","accent-focus":"#53B559","tertiary-fixed":"#cce5ff","on-primary-container":"#00420f","text-secondary":"#475569","surface-card":"#FFFFFF","text-primary":"#0F172A","surface-variant":"#d3e4fe","secondary-fixed-dim":"#bec6e0","on-secondary-container":"#5c647a","primary-fixed":"#94f994","primary-fixed-dim":"#79dc7b","on-tertiary-fixed-variant":"#004b73","status-blocked":"#475569","status-available":"#16A34A","status-quarantine":"#D97706","inverse-surface":"#213145","tertiary-fixed-dim":"#93ccff","surface-bright":"#f8f9ff","on-surface":"#0b1c30","secondary":"#565e74"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-3xl":"3rem","space-xl":"1.5rem","margin":"1rem","space-md":"0.75rem","margin-desktop":"1.5rem","space-xs":"0.25rem","gutter":"1rem","space-lg":"1rem","space-sm":"0.5rem","space-2xl":"2rem","space-2xs":"0.125rem","gutter-desktop":"1.5rem"},"fontFamily":{"title-sm":["Inter"],"body-sm":["Inter"],"badge-status":["JetBrains Mono"],"metric-stat":["Inter"],"headline-md":["Inter"],"caption":["Inter"],"body-md":["Inter"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"]},"fontSize":{"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="almacenes-red" href="#"><span class="truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos" href="#"><span class="truncate">Pedidos</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="reserva-allocation" href="#"><span class="truncate">Reserva / Allocation</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-fulfillment" href="#"><span class="truncate">Dashboard Fulfillment</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="planificacion-olas" href="#"><span class="truncate">Planificación &amp; Olas</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="tareas-picking" href="#"><span class="truncate">Tareas de Picking</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="estacion-packing" href="#"><span class="truncate">Estación de Packing</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="excepciones-fulfillment" href="#"><span class="truncate">Excepciones de Fulfillment</span><span class="font-code-data text-[11px] text-text-muted">006</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full gap-space-lg">
+<!-- Sub-Header & Live Operational Indicators -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-card p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Torre de Control de Fulfillment &amp; Expedición</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-status-available animate-ping"></span>
+<span class="font-badge-status text-badge-status text-status-available uppercase">En Curso · Turno Mañana</span>
+</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary max-w-4xl">
+        Monitoreo en tiempo real del flujo de pedidos, capacidad de picking, estaciones de packing y cumplimiento horario de SLAs de despacho en Montevideo DC-01.
+      </p>
+</div>
+<!-- Quick Actions & Selector -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<div class="flex items-center bg-surface-container-low px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-space-xs">schedule</span>
+<div class="flex flex-col">
+<span class="font-caption text-[10px] text-text-muted uppercase leading-none font-semibold">Ventana de Turno</span>
+<span class="font-code-data text-code-data text-text-primary font-bold">06:00 - 14:00 (T1)</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-tertiary-container font-body-sm text-body-sm font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+<span>Simulador de Carga</span>
+</button>
+<button class="inline-flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Exportar Métricas SLA</span>
+</button>
+</div>
+</div>
+<!-- KPI Overview Grid (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="flex flex-col justify-between bg-surface-card p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-bold">Órdenes Activas Hoy</span>
+<span class="inline-flex items-center font-code-data text-[11px] font-bold text-status-available bg-surface-container-low px-1.5 py-0.5 rounded">
+          +14% vs ayer
+        </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-metric-stat text-metric-stat text-text-primary font-bold">184</span>
+<span class="font-body-sm text-body-sm text-text-secondary">órdenes en circuito</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full" style="width: 61%" title="112 En Proceso"></div>
+<div class="bg-status-sync-pending h-full" style="width: 26%" title="48 Pendientes"></div>
+<div class="bg-status-available h-full" style="width: 13%" title="24 Listas Despacho"></div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-code-data text-[11px] text-text-muted">
+<span>112 En Curso</span>
+<span>48 Pend.</span>
+<span>24 Listas</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col justify-between bg-surface-card p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-bold">Progreso de Picking</span>
+<span class="font-code-data text-code-data text-text-primary font-bold">74.2%</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-metric-stat text-metric-stat text-text-primary font-bold">3,240</span>
+<span class="font-body-sm text-body-sm text-text-secondary">/ 4,360 líneas</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 74.2%"></div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-caption text-caption text-text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-container">speed</span>
+          Ritmo: 520 líneas/h
+        </span>
+<span class="font-code-data text-[11px] text-text-muted">Meta: 480/h</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col justify-between bg-surface-card p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-bold">Estaciones Packing</span>
+<span class="inline-flex items-center font-badge-status text-badge-status text-text-primary bg-surface-container px-1.5 py-0.5 rounded">
+          92% OCUPACIÓN
+        </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-metric-stat text-metric-stat text-text-primary font-bold">8 / 10</span>
+<span class="font-body-sm text-body-sm text-text-secondary">mesas activas</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 80%"></div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-caption text-caption text-text-secondary">
+<span>Flujo: 380 bultos/h</span>
+<span class="text-error font-medium flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Mesa 04 req. atención
+        </span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col justify-between bg-surface-card p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider font-bold">Cumplimiento SLA Global</span>
+<span class="inline-flex items-center font-code-data text-[11px] font-bold text-status-available bg-surface-container-low px-1.5 py-0.5 rounded">
+          Target 97.0%
+        </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-metric-stat text-metric-stat text-primary font-bold">98.4%</span>
+<span class="font-body-sm text-body-sm text-text-secondary">On-Track</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-available h-full rounded-full" style="width: 98.4%"></div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-caption text-caption">
+<span class="text-status-quarantine font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+          3 órdenes en riesgo
+        </span>
+<span class="font-code-data text-[11px] text-text-muted">Cutoff 14:00</span>
+</div>
+</div>
+</div>
+<!-- Operational Pipeline & Wave Execution Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Left 60%: Flow Pipeline -->
+<div class="lg:col-span-7 flex flex-col bg-surface-card p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[22px]">account_tree</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold">Pipeline Operativo de Órdenes</span>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption text-text-muted">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span>Ritmo Óptimo</span>
+</div>
+</div>
+<!-- Pipeline Steps Visualization -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-space-sm my-space-xs">
+<!-- Step 1 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between text-text-muted mb-space-xs">
+<span class="font-code-data text-[11px] font-bold text-text-secondary">01. INGESTA</span>
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<span class="font-headline-md text-text-primary font-bold">28</span>
+<span class="font-caption text-caption text-text-secondary">Órdenes Nuevas</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span>Espera prom.</span>
+<span class="font-bold text-text-primary">8 min</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between text-text-muted mb-space-xs">
+<span class="font-code-data text-[11px] font-bold text-text-secondary">02. PLANIFICACIÓN</span>
+<span class="material-symbols-outlined text-[18px]">lan</span>
+</div>
+<span class="font-headline-md text-text-primary font-bold">6</span>
+<span class="font-caption text-caption text-text-secondary">Olas Asignadas</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span>Buffer</span>
+<span class="font-bold text-text-primary">120 SKUs</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between text-text-muted mb-space-xs">
+<span class="font-code-data text-[11px] font-bold text-primary">03. PICKING</span>
+<span class="material-symbols-outlined text-[18px] text-primary">shopping_cart</span>
+</div>
+<span class="font-headline-md text-text-primary font-bold">67</span>
+<span class="font-caption text-caption text-text-secondary">Pedidos en Recorrido</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span>Operadores</span>
+<span class="font-bold text-primary">8 en zona</span>
+</div>
+</div>
+<!-- Step 4 - Bottleneck Alert -->
+<div class="flex flex-col p-space-md bg-error-container/40 rounded-lg transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between text-error mb-space-xs">
+<span class="font-code-data text-[11px] font-bold">04. PACKING</span>
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<span class="font-headline-md text-text-primary font-bold">42</span>
+<span class="font-caption text-caption text-text-secondary">Consolidando en Mesa</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-[11px] font-code-data text-error font-bold">
+<span>Cuello de botella</span>
+<span>Mesa 03/04</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between text-text-muted mb-space-xs">
+<span class="font-code-data text-[11px] font-bold text-text-secondary">05. STAGING</span>
+<span class="material-symbols-outlined text-[18px]">forklift</span>
+</div>
+<span class="font-headline-md text-text-primary font-bold">20</span>
+<span class="font-caption text-caption text-text-secondary">En Muelles D-01/03</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span>Listas p/ Carga</span>
+<span class="font-bold text-text-primary">100% Ok</span>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between text-text-muted mb-space-xs">
+<span class="font-code-data text-[11px] font-bold text-status-available">06. DESPACHADAS</span>
+<span class="material-symbols-outlined text-[18px] text-status-available">local_shipping</span>
+</div>
+<span class="font-headline-md text-status-available font-bold">27</span>
+<span class="font-caption text-caption text-text-secondary">Salidas con Carrier</span>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span>Puntualidad</span>
+<span class="font-bold text-status-available">100%</span>
+</div>
+</div>
+</div>
+<!-- Mini Chart: Hourly Dispatch Curve -->
+<div class="mt-space-md pt-space-sm bg-surface-container-lowest p-space-md rounded-lg">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-caption text-caption text-text-secondary font-bold uppercase">Rendimiento Horario: Picking vs. Despacho Real</span>
+<span class="font-code-data text-[11px] text-text-muted">Líneas procesadas / hora</span>
+</div>
+<div class="h-28 w-full flex items-end gap-3 px-2 pt-2">
+<!-- 07:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container/40 rounded-t h-[35%]"></div>
+<span class="font-code-data text-[10px] text-text-muted">07h</span>
+</div>
+<!-- 08:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container/60 rounded-t h-[55%]"></div>
+<span class="font-code-data text-[10px] text-text-muted">08h</span>
+</div>
+<!-- 09:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container/80 rounded-t h-[75%]"></div>
+<span class="font-code-data text-[10px] text-text-muted">09h</span>
+</div>
+<!-- 10:00 -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container rounded-t h-[92%]"></div>
+<span class="font-code-data text-[10px] text-text-muted">10h</span>
+</div>
+<!-- 11:00 (Current) -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container rounded-t h-[86%] shadow-sm"></div>
+<span class="font-code-data text-[10px] text-primary font-bold">11h (Act)</span>
+</div>
+<!-- 12:00 Forecast -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container rounded-t h-[70%]"></div>
+<span class="font-code-data text-[10px] text-text-muted">12h</span>
+</div>
+<!-- 13:00 Forecast -->
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-surface-container rounded-t h-[60%]"></div>
+<span class="font-code-data text-[10px] text-text-muted">13h</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 40%: Active Waves -->
+<div class="lg:col-span-5 flex flex-col bg-surface-card p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[22px]">waves</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold">Olas de Picking Activas</span>
+</div>
+<span class="font-badge-status text-[11px] bg-surface-container text-text-secondary px-2 py-0.5 rounded">3 ACTIVAS</span>
+</div>
+<div class="flex flex-col gap-space-sm flex-1 justify-between">
+<!-- Wave 1 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-colors hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary">OLA-MON-240</span>
+<span class="font-badge-status text-[10px] bg-status-damaged/10 text-status-damaged px-1.5 py-0.2 rounded uppercase">Pharma Urgente</span>
+</div>
+<span class="font-code-data text-[11px] font-bold text-text-secondary">Cutoff 12:30</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-text-secondary mb-space-xs">
+<span>42 pedidos · 3 operadores asignados</span>
+<span class="font-code-data text-code-data font-bold text-primary">88%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 88%"></div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs font-caption text-[11px] text-text-muted">
+<span>Zona Frío &amp; Racks C</span>
+<button class="text-primary hover:underline font-semibold inline-flex items-center gap-0.5" type="button">
+              Ver detalle <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Wave 2 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-colors hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary">OLA-MON-241</span>
+<span class="font-badge-status text-[10px] bg-surface-container text-text-secondary px-1.5 py-0.2 rounded uppercase">B2B Mayorista</span>
+</div>
+<span class="font-code-data text-[11px] font-bold text-text-secondary">Cutoff 14:00</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-text-secondary mb-space-xs">
+<span>60 pedidos · 4 operadores asignados</span>
+<span class="font-code-data text-code-data font-bold text-status-reserved">45%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-status-reserved h-full rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs font-caption text-[11px] text-text-muted">
+<span>Pasillos 01 al 08 (Pallet Completo)</span>
+<button class="text-primary hover:underline font-semibold inline-flex items-center gap-0.5" type="button">
+              Ver detalle <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Wave 3 -->
+<div class="flex flex-col p-space-md bg-surface-container-low rounded-lg transition-colors hover:bg-surface-container">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-code-data font-bold text-text-primary">OLA-MON-242</span>
+<span class="font-badge-status text-[10px] bg-status-sync-pending/20 text-status-sync-pending px-1.5 py-0.2 rounded uppercase">E-Commerce Express</span>
+</div>
+<span class="font-code-data text-[11px] font-bold text-text-secondary">Cutoff 16:00</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm text-text-secondary mb-space-xs">
+<span>35 pedidos · En asignación</span>
+<span class="font-code-data text-code-data font-bold text-text-muted">10%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-status-sync-pending h-full rounded-full" style="width: 10%"></div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs font-caption text-[11px] text-text-muted">
+<span>Mezzanine Pick &amp; Pass</span>
+<button class="text-primary hover:underline font-semibold inline-flex items-center gap-0.5" type="button">
+              Configurar <span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-2 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Planificar Nueva Ola de Expedición</span>
+</button>
+</div>
+</div>
+<!-- Lower Row: Operator Performance & Critical Exceptions -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Operators Productivity Table (7 cols) -->
+<div class="lg:col-span-7 flex flex-col bg-surface-card p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[22px]">engineering</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold">Monitoreo de Operadores de Picking</span>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">8 Conectados / 2 en receso</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-text-secondary font-caption uppercase text-[11px] tracking-wider">
+<th class="py-2.5 px-3 rounded-l">Operador</th>
+<th class="py-2.5 px-3">Zona / Área</th>
+<th class="py-2.5 px-3">Terminal RF</th>
+<th class="py-2.5 px-3 text-right">Velocidad (L/h)</th>
+<th class="py-2.5 px-3 rounded-r text-center">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle/40">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-3 font-semibold text-text-primary flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-caption font-bold text-text-secondary">SD</div>
+                Sofía Delgado
+              </td>
+<td class="py-2.5 px-3 text-text-secondary font-code-data text-[12px]">Pasillos 02-04</td>
+<td class="py-2.5 px-3 text-text-muted font-code-data text-[12px]">RF-GUN-12</td>
+<td class="py-2.5 px-3 text-right font-code-data font-bold text-status-available">92 <span class="text-[10px] text-text-muted font-normal">/ 75</span></td>
+<td class="py-2.5 px-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-badge-status text-[10px] bg-surface-container-low text-status-available">
+                  EN RECORRIDO
+                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-3 font-semibold text-text-primary flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-caption font-bold text-text-secondary">LS</div>
+                Lucía Santos
+              </td>
+<td class="py-2.5 px-3 text-text-secondary font-code-data text-[12px]">Cámara de Frío</td>
+<td class="py-2.5 px-3 text-text-muted font-code-data text-[12px]">RF-GUN-04</td>
+<td class="py-2.5 px-3 text-right font-code-data font-bold text-status-available">84 <span class="text-[10px] text-text-muted font-normal">/ 70</span></td>
+<td class="py-2.5 px-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-badge-status text-[10px] bg-surface-container-low text-status-available">
+                  CONFIRMANDO
+                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-3 font-semibold text-text-primary flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-caption font-bold text-text-secondary">ES</div>
+                Esteban Silva
+              </td>
+<td class="py-2.5 px-3 text-text-secondary font-code-data text-[12px]">Racks APR (Nivel 4)</td>
+<td class="py-2.5 px-3 text-text-muted font-code-data text-[12px]">RF-GUN-09</td>
+<td class="py-2.5 px-3 text-right font-code-data font-bold text-status-quarantine">58 <span class="text-[10px] text-text-muted font-normal">/ 75</span></td>
+<td class="py-2.5 px-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-badge-status text-[10px] bg-surface-container text-text-secondary">
+                  PAUSA AUTORIZADA
+                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-2.5 px-3 font-semibold text-text-primary flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-caption font-bold text-text-secondary">MR</div>
+                Mateo Rodríguez
+              </td>
+<td class="py-2.5 px-3 text-text-secondary font-code-data text-[12px]">Mezzanine Pick</td>
+<td class="py-2.5 px-3 text-text-muted font-code-data text-[12px]">RF-WRIST-02</td>
+<td class="py-2.5 px-3 text-right font-code-data font-bold text-status-available">110 <span class="text-[10px] text-text-muted font-normal">/ 90</span></td>
+<td class="py-2.5 px-3 text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-badge-status text-[10px] bg-surface-container-low text-status-available">
+                  EN RECORRIDO
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Critical Alerts & Exceptions Panel (5 cols) -->
+<div class="lg:col-span-5 flex flex-col bg-surface-card p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-status-sync-error text-[22px]">notification_important</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold">Alertas &amp; Excepciones Activas</span>
+</div>
+<span class="font-badge-status text-[11px] bg-error-container text-error px-2 py-0.5 rounded">3 ACCIONES</span>
+</div>
+<div class="flex flex-col gap-space-sm flex-1 justify-between">
+<!-- Alert 1: Stock Shortage -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-badge-status text-[11px] text-status-damaged font-bold">
+<span class="w-2 h-2 rounded-full bg-status-damaged"></span>
+              QUIEBRE EN PICKING
+            </span>
+<span class="font-code-data text-[11px] text-text-muted">Hace 4 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary font-medium">
+            Quiebre en Ubicación <span class="font-code-data font-bold text-text-primary">A-02-04</span> para <span class="font-code-data font-bold">SKU-892110</span> (Orden SO-000157).
+          </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-secondary">Req: 12 un · En pallet buffer: 48 un</span>
+<button class="px-2.5 py-1 rounded bg-error hover:bg-error/90 text-on-error font-body-sm text-xs font-semibold shadow-sm transition-colors" type="button">
+              Reposición Inmediata
+            </button>
+</div>
+</div>
+<!-- Alert 2: Packing Insumos -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-badge-status text-[11px] text-status-quarantine font-bold">
+<span class="w-2 h-2 rounded-full bg-status-quarantine"></span>
+              INSUMOS PACKING
+            </span>
+<span class="font-code-data text-[11px] text-text-muted">Hace 12 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary font-medium">
+            Mesa Packing #04: Falta insumo crítico <span class="font-code-data font-bold">Caja Cartón Doble C-40</span>.
+          </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-secondary">Operador: Diego Fuentes (M-04)</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-tertiary-container font-body-sm text-xs font-semibold transition-colors" type="button">
+              Notificar Bodega
+            </button>
+</div>
+</div>
+<!-- Alert 3: Carrier Delay -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-badge-status text-[11px] text-status-reserved font-bold">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+              RETRASO DE CARRIER
+            </span>
+<span class="font-code-data text-[11px] text-text-muted">Hace 18 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary font-medium">
+            Transportista <span class="font-semibold">Mirtrans Express</span> reporta demora de 25 min para Muelle D-02.
+          </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-caption text-caption text-text-secondary">Nuevo ETA: 12:45 hs (Ruta Norte)</span>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-text-primary font-body-sm text-xs font-semibold transition-colors" type="button">
+              Reasignar Muelle
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Telemetry & Status Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm py-space-sm px-space-md bg-surface-card rounded-lg shadow-sm">
+<div class="flex items-center gap-space-md font-code-data text-[12px] text-text-secondary flex-wrap">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span>SENTAI Engine v4.8.2 // DC-Montevideo-01</span>
+</div>
+<span class="text-border-strong">|</span>
+<span>Antenas RF Gateways: <strong class="text-text-primary">14/14 Online</strong></span>
+<span class="text-border-strong">|</span>
+<span>Latencia de Escaneo: <strong class="text-status-available">18 ms</strong></span>
+<span class="text-border-strong">|</span>
+<span>Auto-Allocation Wave: <strong class="text-text-primary">ACTIVO</strong></span>
+</div>
+<div class="flex items-center gap-space-sm font-caption text-caption text-text-muted">
+<span>Última sincronización telemétrica: <strong>11:28:44 UTC-3</strong></span>
+<button class="p-1 hover:text-text-primary transition-colors" title="Forzar Sincronización" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+</button>
+</div>
+</div>
+</div></div></main></div></body></html>

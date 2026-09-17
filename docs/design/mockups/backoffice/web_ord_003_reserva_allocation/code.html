@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed":"#001d31","border-strong":"#CBD5E1","surface":"#f8f9ff","background":"#f8f9ff","on-tertiary":"#ffffff","primary-container":"#53b559","on-primary":"#ffffff","on-primary-fixed":"#002205","secondary-container":"#dae2fd","text-muted":"#94A3B8","canvas-bg":"#F8FAFC","status-expired":"#9333EA","surface-container-high":"#dce9ff","on-tertiary-container":"#003b5c","outline-variant":"#becab9","outline":"#6f7a6c","status-reserved":"#2563EB","on-secondary-fixed-variant":"#3f465c","status-sync-pending":"#F59E0B","on-background":"#0b1c30","on-error-container":"#93000a","surface-container-highest":"#d3e4fe","inverse-primary":"#79dc7b","surface-tint":"#006e20","on-secondary-fixed":"#131b2e","status-sync-error":"#E11D48","tertiary":"#006398","surface-container-lowest":"#ffffff","surface-container-low":"#eff4ff","surface-container":"#e5eeff","inverse-on-surface":"#eaf1ff","surface-dim":"#cbdbf5","border-subtle":"#E2E8F0","on-error":"#ffffff","on-surface-variant":"#3f4a3d","on-secondary":"#ffffff","error-container":"#ffdad6","on-primary-fixed-variant":"#005316","tertiary-container":"#48a8ed","error":"#ba1a1a","secondary-fixed":"#dae2fd","primary":"#006e20","status-damaged":"#DC2626","accent-focus":"#53B559","tertiary-fixed":"#cce5ff","on-primary-container":"#00420f","text-secondary":"#475569","surface-card":"#FFFFFF","text-primary":"#0F172A","surface-variant":"#d3e4fe","secondary-fixed-dim":"#bec6e0","on-secondary-container":"#5c647a","primary-fixed":"#94f994","primary-fixed-dim":"#79dc7b","on-tertiary-fixed-variant":"#004b73","status-blocked":"#475569","status-available":"#16A34A","status-quarantine":"#D97706","inverse-surface":"#213145","tertiary-fixed-dim":"#93ccff","surface-bright":"#f8f9ff","on-surface":"#0b1c30","secondary":"#565e74"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-3xl":"3rem","space-xl":"1.5rem","margin":"1rem","space-md":"0.75rem","margin-desktop":"1.5rem","space-xs":"0.25rem","gutter":"1rem","space-lg":"1rem","space-sm":"0.5rem","space-2xl":"2rem","space-2xs":"0.125rem","gutter-desktop":"1.5rem"},"fontFamily":{"title-sm":["Inter"],"body-sm":["Inter"],"badge-status":["JetBrains Mono"],"metric-stat":["Inter"],"headline-md":["Inter"],"caption":["Inter"],"body-md":["Inter"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"headline-lg-mobile":["Inter"],"headline-lg":["Inter"]},"fontSize":{"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="almacenes-red" href="#"><span class="truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos" href="#"><span class="truncate">Pedidos</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="reserva-allocation" href="#"><span class="truncate">Reserva / Allocation</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-fulfillment" href="#"><span class="truncate">Dashboard Fulfillment</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="planificacion-olas" href="#"><span class="truncate">Planificación &amp; Olas</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="tareas-picking" href="#"><span class="truncate">Tareas de Picking</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="estacion-packing" href="#"><span class="truncate">Estación de Packing</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="excepciones-fulfillment" href="#"><span class="truncate">Excepciones de Fulfillment</span><span class="font-code-data text-[11px] text-text-muted">006</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full">
+<!-- Top Operational Banner & Identifiers -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md mb-space-lg">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-code-data text-code-data px-space-xs py-0.5 rounded bg-surface-container-high text-tertiary font-bold">
+          WEB-ORD-003
+        </span>
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">
+          MOTOR DE RESERVA Y ALLOCATION DE INVENTARIO // INVENTORY ALLOCATION ENGINE
+        </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container text-text-secondary font-caption text-caption">
+<span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span>
+          Montevideo DC-01 (Sector B - Pharma &amp; Tech)
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-space-xs">
+        Motor de Reserva y Asignación de Stock (Allocation)
+      </h1>
+<p class="font-body-sm text-body-sm text-text-secondary max-w-4xl">
+        Algoritmo inteligente de reserva automática de inventario sobre órdenes de venta según políticas FEFO, FIFO, compromiso de lote de cliente y optimización de recorrido por bulto/pallet.
+      </p>
+</div>
+<!-- Action Toolbar -->
+<div class="flex items-center gap-space-sm mt-space-md md:mt-0 flex-wrap">
+<button class="h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">settings_suggest</span>
+<span>Configurar Reglas</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">science</span>
+<span>Simular Corrida</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-card hover:bg-error/10 text-error font-body-sm text-body-sm font-semibold shadow-sm transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">history_toggle_off</span>
+<span>Revertir Reservas</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors flex items-center gap-space-xs shadow-[0_2px_8px_rgba(83,181,89,0.3)]" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Ejecutar Allocation Masivo</span>
+</button>
+</div>
+</div>
+<!-- KPI Metrics Grid (Engine Status) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-bold tracking-wider">Tasa Asignación Inmediata</span>
+<span class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold">
+          Óptimo (+1.2%)
+        </span>
+</div>
+<div class="my-space-xs">
+<div class="font-metric-stat text-metric-stat text-text-primary leading-tight font-bold">94.6%</div>
+<div class="flex items-center gap-1.5 mt-1 font-body-sm text-body-sm text-text-secondary">
+<span class="font-semibold text-text-primary">156 / 165</span> líneas resueltas en 1ª pasada
+        </div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-space-2xs overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 94.6%"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-status-reserved/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-bold tracking-wider">Órdenes Listas Para Ola</span>
+<span class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-secondary-container text-status-reserved font-bold">
+          Listo Para Picking
+        </span>
+</div>
+<div class="my-space-xs">
+<div class="font-metric-stat text-metric-stat text-text-primary leading-tight font-bold">42 Órdenes</div>
+<div class="flex items-center gap-1.5 mt-1 font-body-sm text-body-sm text-text-secondary">
+<span class="material-symbols-outlined text-[14px] text-status-available">check_circle</span>
+          Stock 100% apartado en ubicaciones activas
+        </div>
+</div>
+<div class="font-caption text-caption text-text-muted flex justify-between">
+<span>Capacidad de Ola: 88%</span>
+<span class="font-code-data">VOL: 48.2 m³</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-status-quarantine/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-bold tracking-wider">Líneas Parciales / Quiebre</span>
+<span class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-status-quarantine/15 text-status-quarantine font-bold">
+          Backlog (9)
+        </span>
+</div>
+<div class="my-space-xs">
+<div class="font-metric-stat text-metric-stat text-error leading-tight font-bold">9 Líneas</div>
+<div class="flex items-center gap-1 mt-1 font-body-sm text-body-sm text-text-secondary">
+<span>3 órdenes retenidas</span>
+<span class="text-text-muted">• Lote / QA Lock</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-code-data text-status-quarantine">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+<span>Acción requerida: Divulgación a Comercial</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-tertiary/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<span class="font-caption text-caption uppercase text-text-secondary font-bold tracking-wider">Modo de Asignación</span>
+<span class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-surface-container-high text-tertiary font-bold">
+          REAL-TIME
+        </span>
+</div>
+<div class="my-space-xs">
+<div class="font-title-sm text-title-sm text-text-primary leading-snug font-bold">Event-Driven Engine</div>
+<p class="font-caption text-caption text-text-secondary mt-1">
+          Disparo por webhook al liberar órden. Prioridad FEFO estricto en biológicos y FIFO general.
+        </p>
+</div>
+<div class="flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span>Latencia: 142ms</span>
+<span class="text-status-available font-bold">SYNC OK</span>
+</div>
+</div>
+</div>
+<!-- Main Allocation Workspace Split (Grid with Matrix and Lateral Diagnostic Console) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Center Left (Cols 1-8): Policy Tabs and Matrix Table -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Interactive Policy Selector Tabs -->
+<div class="bg-surface-card rounded-xl p-space-sm shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 sm:pb-0" id="policy-tabs">
+<button class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm font-semibold bg-primary-container text-on-primary shadow-sm flex items-center gap-space-xs whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+<span>1. FEFO Estricto (Pharma/Química)</span>
+</button>
+<button class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-text-secondary hover:bg-surface-container transition-colors flex items-center gap-space-xs whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>2. FIFO Industrial</span>
+</button>
+<button class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-text-secondary hover:bg-surface-container transition-colors flex items-center gap-space-xs whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_none</span>
+<span>3. Lote Único / No Split</span>
+</button>
+<button class="px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-text-secondary hover:bg-surface-container transition-colors flex items-center gap-space-xs whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[16px]">route</span>
+<span>4. Bahía de Picking Óptima</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<span class="font-caption text-caption text-text-muted">Filtro:</span>
+<select class="h-8 bg-surface-container-low font-body-sm text-body-sm rounded-lg px-2 text-text-secondary focus:outline-none">
+<option>Todas las Órdenes (45)</option>
+<option>Solo con Excepción (3)</option>
+<option>Pendientes de Ola (42)</option>
+</select>
+</div>
+</div>
+<!-- Execution Matrix Card -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Toolbar -->
+<div class="p-space-md bg-surface-card flex items-center justify-between flex-wrap gap-space-sm border-b border-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="font-title-sm text-title-sm text-text-primary">Matriz de Asignación de Órdenes</span>
+<span class="px-2 py-0.5 rounded font-code-data text-[11px] bg-surface-container text-text-secondary font-bold">Lote Batch #ALLOC-4891</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-muted font-body-sm text-body-sm">
+<button class="p-1 hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">tune</span></button>
+<button class="p-1 hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">download</span></button>
+<button class="p-1 hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">refresh</span></button>
+</div>
+</div>
+<!-- Dense Technical Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-caption text-caption uppercase text-text-secondary h-9">
+<th class="px-space-md py-space-xs font-semibold">Prioridad / Pedido</th>
+<th class="px-space-md py-space-xs font-semibold">Cliente</th>
+<th class="px-space-md py-space-xs font-semibold">SKU Requerido</th>
+<th class="px-space-md py-space-xs font-semibold text-right">Solicitado / On-Hand</th>
+<th class="px-space-md py-space-xs font-semibold">Lote Asignado</th>
+<th class="px-space-md py-space-xs font-semibold">Ubicación</th>
+<th class="px-space-md py-space-xs font-semibold">Estado Allocation</th>
+<th class="px-space-md py-space-xs font-semibold">Regla / Conflicto</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Row 1: SO-000154 (Perfect FEFO match) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded font-code-data text-[10px] bg-error text-on-error font-bold">P1</span>
+<span class="font-code-data font-bold text-text-primary">SO-000154</span>
+</div>
+<span class="text-[11px] text-text-muted font-caption">Vence Despacho: Hoy 18:00</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap font-medium text-text-primary">
+                  BioTech Cono Sur
+                  <span class="block text-[11px] text-text-muted font-caption">Cta: AR-BIO-882</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-primary font-semibold">SKU-100245</span>
+<span class="block text-[11px] text-text-secondary truncate max-w-[140px]">Amoxicilina 500mg Polvo</span>
+</td>
+<td class="px-space-md py-space-sm text-right whitespace-nowrap">
+<span class="font-code-data font-bold text-primary">50 UN</span>
+<span class="text-[11px] text-text-muted block font-code-data">Disp: 320 UN</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data px-1.5 py-0.5 rounded bg-surface-container text-text-primary text-[12px]">LOT-2026-0916</span>
+<span class="block text-[10px] text-text-secondary font-code-data">Exp: 16-Sep-2026</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shelves</span> A-03-02-04
+                  </span>
+<span class="text-[10px] text-text-muted">Picking Activo</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/15 text-status-available font-bold">
+                    RESERVADO 100%
+                  </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1 text-[12px] text-text-secondary font-medium">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+<span>FEFO #1 (Caducidad Próxima)</span>
+</div>
+<span class="text-[11px] text-text-muted block">Compromiso vida útil &gt;180d OK</span>
+</td>
+</tr>
+<!-- Row 2: SO-000155 (Standard Clean Match) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded font-code-data text-[10px] bg-error text-on-error font-bold">P1</span>
+<span class="font-code-data font-bold text-text-primary">SO-000155</span>
+</div>
+<span class="text-[11px] text-text-muted font-caption">Vence Despacho: Mañana 10:00</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap font-medium text-text-primary">
+                  PharmaGroup Latam
+                  <span class="block text-[11px] text-text-muted font-caption">Cta: UY-PHARMA-101</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-primary font-semibold">SKU-501824</span>
+<span class="block text-[11px] text-text-secondary truncate max-w-[140px]">Sensor Glucosa Bluetooth</span>
+</td>
+<td class="px-space-md py-space-sm text-right whitespace-nowrap">
+<span class="font-code-data font-bold text-primary">120 UN</span>
+<span class="text-[11px] text-text-muted block font-code-data">Disp: 450 UN</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data px-1.5 py-0.5 rounded bg-surface-container text-text-primary text-[12px]">LOT-2027-0115</span>
+<span class="block text-[10px] text-text-secondary font-code-data">Exp: 15-Ene-2027</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shelves</span> A-02-01-03
+                  </span>
+<span class="text-[10px] text-text-muted">Pallet Completo</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/15 text-status-available font-bold">
+                    RESERVADO 100%
+                  </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1 text-[12px] text-text-secondary font-medium">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+<span>FEFO Estándar Tech</span>
+</div>
+<span class="text-[11px] text-text-muted block">Baterías testeables</span>
+</td>
+</tr>
+<!-- Row 3: SO-000157 (Single Lot Conflict - Exception Row) -->
+<tr class="bg-status-quarantine/5 hover:bg-status-quarantine/10 transition-colors">
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded font-code-data text-[10px] bg-status-quarantine text-on-primary font-bold">P2</span>
+<span class="font-code-data font-bold text-text-primary">SO-000157</span>
+</div>
+<span class="text-[11px] text-status-quarantine font-caption font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">error</span> REGLA EN CONFLICTO
+                  </span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap font-medium text-text-primary">
+                  Hospital Británico Central
+                  <span class="block text-[11px] text-text-muted font-caption">Cta: HOSP-BRIT-09</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-primary font-semibold">SKU-892110</span>
+<span class="block text-[11px] text-text-secondary truncate max-w-[140px]">Catéter Intravenoso 18G</span>
+</td>
+<td class="px-space-md py-space-sm text-right whitespace-nowrap">
+<span class="font-code-data font-bold text-status-quarantine">40 UN Req</span>
+<span class="text-[11px] text-error block font-code-data font-semibold">20 UN en Lote</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data px-1.5 py-0.5 rounded bg-surface-card text-text-primary text-[12px] border border-status-quarantine/40">LOT-2027-0412</span>
+<span class="block text-[10px] text-error font-code-data font-medium">Lote Incompleto</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shelves</span> B-02-03-01
+                  </span>
+<span class="text-[10px] text-text-muted">Reserva Parcial: 20 UN</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-quarantine/20 text-status-quarantine font-bold">
+                    RESERVA PARCIAL (SPLIT REQ)
+                  </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="text-[12px] text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">block</span>
+<span>Single Lot Restriction</span>
+</div>
+<p class="text-[11px] text-text-secondary leading-tight mt-0.5">
+                    Cliente exige 1 solo lote. Falta 20 UN. Acción: Dividir orden o habilitar multi-lote.
+                  </p>
+</td>
+</tr>
+<!-- Row 4: SO-000158 (Out of Stock / Quarantine Conflict) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded font-code-data text-[10px] bg-secondary text-on-secondary font-bold">P3</span>
+<span class="font-code-data font-bold text-text-primary">SO-000158</span>
+</div>
+<span class="text-[11px] text-text-muted font-caption">Vence Despacho: 48 hrs</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap font-medium text-text-primary">
+                  Distribuidora Médica del Sur
+                  <span class="block text-[11px] text-text-muted font-caption">Cta: DMS-819</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-primary font-semibold">SKU-330198</span>
+<span class="block text-[11px] text-text-secondary truncate max-w-[140px]">Solución Fisiológica 500ml</span>
+</td>
+<td class="px-space-md py-space-sm text-right whitespace-nowrap">
+<span class="font-code-data font-bold text-text-primary">200 UN</span>
+<span class="text-[11px] text-status-quarantine block font-code-data">Cuarentena QA: 250 UN</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data px-1.5 py-0.5 rounded bg-surface-container-high text-text-muted text-[12px]">Sin Lote Apto</span>
+<span class="block text-[10px] text-status-damaged font-code-data">QA Hold activo</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">do_not_disturb_on</span> Q-01-01-01
+                  </span>
+<span class="text-[10px] text-status-damaged">Zona Retención</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-damaged/15 text-status-damaged font-bold">
+                    SIN STOCK DISPONIBLE
+                  </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="text-[12px] text-text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-status-damaged">gavel</span>
+<span>Bloqueo Calidad (QA Quarantine)</span>
+</div>
+<span class="text-[11px] text-text-muted block">En espera de liberación técnica</span>
+</td>
+</tr>
+<!-- Row 5: SO-000160 (Optimized Path Reserved) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded font-code-data text-[10px] bg-status-reserved text-on-primary font-bold">P1</span>
+<span class="font-code-data font-bold text-text-primary">SO-000160</span>
+</div>
+<span class="text-[11px] text-text-muted font-caption">Vence Despacho: Hoy 20:00</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap font-medium text-text-primary">
+                  Farmacias del Centro
+                  <span class="block text-[11px] text-text-muted font-caption">Cta: FDC-002</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-text-primary font-semibold">SKU-772109</span>
+<span class="block text-[11px] text-text-secondary truncate max-w-[140px]">Ibuprofeno 400mg Caps.</span>
+</td>
+<td class="px-space-md py-space-sm text-right whitespace-nowrap">
+<span class="font-code-data font-bold text-primary">85 UN</span>
+<span class="text-[11px] text-text-muted block font-code-data">Disp: 600 UN</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data px-1.5 py-0.5 rounded bg-surface-container text-text-primary text-[12px]">LOT-2026-1130</span>
+<span class="block text-[10px] text-text-secondary font-code-data">Exp: 30-Nov-2026</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="font-code-data text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shelves</span> A-03-02-05
+                  </span>
+<span class="text-[10px] text-text-muted">Bahía Picking A3</span>
+</td>
+<td class="px-space-md py-space-sm whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-badge-status text-badge-status bg-status-available/15 text-status-available font-bold">
+                    RESERVADO 100%
+                  </span>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex items-center gap-1 text-[12px] text-text-secondary font-medium">
+<span class="material-symbols-outlined text-[15px] text-primary">navigation</span>
+<span>Path Optimization (Bahía A-03)</span>
+</div>
+<span class="text-[11px] text-text-muted block">Co-ubicado con SO-000154 (-38m)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Matrix Footer / Pagination & Batch Metadata -->
+<div class="p-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm font-caption text-caption text-text-secondary">
+<div class="flex items-center gap-space-sm">
+<span>Mostrando 5 de 45 registros de allocation</span>
+<span class="h-3 w-px bg-border-strong"></span>
+<span class="font-code-data text-text-muted">Tiempo de Ejecución: 0.28s</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-2 py-1 bg-surface-card rounded hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">Anterior</button>
+<span class="px-2 font-semibold text-text-primary">1 de 9</span>
+<button class="px-2 py-1 bg-surface-card rounded hover:bg-surface-container transition-colors">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- Quick Resolution Helper for Conflicts -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm border-l-4 border-status-quarantine">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-status-quarantine text-[24px]">troubleshoot</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-text-primary">Resolución Asistida para Pedido SO-000157</span>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                El cliente <strong class="text-text-primary">Hospital Británico Central</strong> tiene configurada la restricción estricta de <code class="font-code-data text-tertiary">SINGLE_LOT_ONLY</code>. Se sugiere una de las siguientes mitigaciones operativas:
+              </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mt-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between gap-space-xs">
+<div>
+<span class="font-semibold text-text-primary text-[13px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">call_split</span> Opción A: Split de Pedido
+                    </span>
+<p class="text-[12px] text-text-secondary mt-1">
+                      Generar SO-000157-B por las 20 UN faltantes y reservar las 20 UN actuales de inmediato para no demorar la ola.
+                    </p>
+</div>
+<button class="mt-2 h-7 px-3 rounded bg-surface-card hover:bg-primary/10 text-primary text-[12px] font-semibold self-start shadow-sm transition-colors" type="button">
+                    Aplicar Split de Pedido
+                  </button>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between gap-space-xs">
+<div>
+<span class="font-semibold text-text-primary text-[13px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">sync_alt</span> Opción B: Forzar Multi-Lote
+                    </span>
+<p class="text-[12px] text-text-secondary mt-1">
+                      Excepción autorizada por supervisor: Asignar 20 UN de LOT-2027-0412 + 20 UN de LOT-2027-0518 del rack B-03-01.
+                    </p>
+</div>
+<button class="mt-2 h-7 px-3 rounded bg-surface-card hover:bg-tertiary/10 text-tertiary text-[12px] font-semibold self-start shadow-sm transition-colors" type="button">
+                    Autorizar Multi-Lote
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Right (Cols 9-12): Diagnostic Console & Tie-breaker Engine -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Engine Diagnostic & Tie-Breaker Card -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-title-sm text-title-sm text-text-primary">Diagnóstico y Desempate</span>
+</div>
+<span class="font-badge-status text-badge-status px-2 py-0.5 rounded bg-surface-container text-text-secondary font-bold">
+            V4.8.2
+          </span>
+</div>
+<!-- Tie Breaker Hierarchy -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Jerarquía de Desempate Activa</span>
+<div class="flex flex-col gap-1 text-[12px]">
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-text-primary flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-primary-container text-on-primary text-[10px] flex items-center justify-center font-bold">1</span>
+                Fecha de Caducidad (FEFO)
+              </span>
+<span class="font-code-data text-text-muted">Ascendente</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-text-primary flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-surface-container-high text-tertiary text-[10px] flex items-center justify-center font-bold">2</span>
+                Mínimo Remanente Cliente
+              </span>
+<span class="font-code-data text-text-muted">&gt;180 días</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-text-primary flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-surface-container-high text-tertiary text-[10px] flex items-center justify-center font-bold">3</span>
+                Optimización de Recorrido
+              </span>
+<span class="font-code-data text-text-muted">Misma Bahía</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-text-primary flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-surface-container-high text-tertiary text-[10px] flex items-center justify-center font-bold">4</span>
+                Vaciado Completo de Ubicación
+              </span>
+<span class="font-code-data text-text-muted">Clean Pallet</span>
+</div>
+</div>
+</div>
+<!-- Simulation Tool Box -->
+<div class="p-space-sm bg-canvas-bg rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">analytics</span>
+              Simulador de Asignación
+            </span>
+<span class="font-badge-status text-[10px] text-tertiary font-bold">DRY-RUN</span>
+</div>
+<p class="font-caption text-caption text-text-secondary">
+            Evalúa el impacto de relocalizar 3 pallets del bloque C al bloque A antes de consolidar la ola de picking.
+          </p>
+<div class="flex items-center justify-between text-[11px] font-code-data text-text-muted pt-1">
+<span>Ahorro estimado:</span>
+<span class="text-status-available font-bold">-14.2 min de recorrido</span>
+</div>
+<button class="w-full mt-1 h-8 rounded bg-surface-card hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-medium shadow-sm transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>Ejecutar Dry-Run Simulado</span>
+</button>
+</div>
+<!-- Active Constraints Checklist -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Restricciones de Calidad &amp; Compliance</span>
+<div class="flex flex-col gap-2">
+<label class="flex items-start gap-2 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-accent-focus accent-primary-container" disabled="" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-text-primary leading-tight">Vida Útil Mínima (&gt;180 días)</span>
+<span class="font-caption text-caption text-text-muted">No reservar lotes con vencimiento &lt; 6 meses</span>
+</div>
+</label>
+<label class="flex items-start gap-2 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-accent-focus accent-primary-container" disabled="" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-text-primary leading-tight">Bloqueo Estricto Cuarentena (QA)</span>
+<span class="font-caption text-caption text-text-muted">Excluir stock bajo inspección técnica o retención</span>
+</div>
+</label>
+<label class="flex items-start gap-2 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-accent-focus accent-primary-container" disabled="" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-text-primary leading-tight">Segregación Inflamables / Químicos</span>
+<span class="font-caption text-caption text-text-muted">No mezclar zonas de pallet ATEX con general</span>
+</div>
+</label>
+<label class="flex items-start gap-2 cursor-pointer">
+<input checked="" class="mt-0.5 rounded text-primary focus:ring-accent-focus accent-primary-container" disabled="" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-text-primary leading-tight">Compromiso Exclusividad de Lote</span>
+<span class="font-caption text-caption text-text-muted">Verificar restricciones de cliente en perfil CRM</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Primary Commitment Action -->
+<div class="pt-space-xs border-t border-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-[11px] text-text-secondary">
+<span>Órdenes asignables: <strong class="text-text-primary">42</strong></span>
+<span>Líneas resueltas: <strong class="text-primary font-bold">156</strong></span>
+</div>
+<button class="w-full h-11 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm font-bold shadow-md transition-colors flex items-center justify-center gap-space-xs shadow-[0_4px_12px_rgba(83,181,89,0.35)]" type="button">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+<span>Consolidar Reservas y Generar Olas</span>
+</button>
+<span class="text-center font-caption text-caption text-text-muted text-[11px]">
+            Bloqueará el inventario asignado y notificará a las PDAs de almacén.
+          </span>
+</div>
+</div>
+<!-- Warehouse Section Mini Overview (Visual Micro-Context) -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Ocupación de Bahías Montevideo DC-01</span>
+<div class="space-y-2">
+<div>
+<div class="flex justify-between text-[12px] font-body-sm mb-1">
+<span class="font-medium text-text-primary">Bahía A (Pharma / Alta Rotación)</span>
+<span class="font-code-data text-primary font-bold">92%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[12px] font-body-sm mb-1">
+<span class="font-medium text-text-primary">Bahía B (Dispositivos Médicos / Racks)</span>
+<span class="font-code-data text-tertiary font-bold">78%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[12px] font-body-sm mb-1">
+<span class="font-medium text-text-primary">Bahía Q (Área Cuarentena / Control Calidad)</span>
+<span class="font-code-data text-status-quarantine font-bold">45%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-status-quarantine h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-[11px] font-code-data text-text-muted">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-available"></span> Sensores RFID: Activos
+          </span>
+<a class="text-tertiary hover:underline font-medium" href="#">Ver Mapa de Calor →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive tab toggle for policy selection
+  document.addEventListener('DOMContentLoaded', () => {
+    const policyContainer = document.getElementById('policy-tabs');
+    if (!policyContainer) return;
+    const buttons = policyContainer.querySelectorAll('button');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach((b) => {
+          b.className = 'px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-text-secondary hover:bg-surface-container transition-colors flex items-center gap-space-xs whitespace-nowrap';
+        });
+        btn.className = 'px-space-md py-space-xs rounded-lg font-body-sm text-body-sm font-semibold bg-primary-container text-on-primary shadow-sm flex items-center gap-space-xs whitespace-nowrap';
+      });
+    });
+  });
+</script></div></main></div></body></html>

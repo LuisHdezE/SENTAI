@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-xl">
+<!-- Top Context & Header Banner -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-code-data text-code-data text-text-muted bg-surface-container-high px-space-xs py-0.5 rounded-lg">WEB-BO-003</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-status-available/10 text-status-available font-badge-status text-badge-status tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span>
+            MULTISITE ROUTING ACTIVADO
+          </span>
+</div>
+<div class="flex items-center gap-space-sm text-text-muted font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-primary">cloud_sync</span>
+<span>Latencia de conmutación de nodo: <strong class="text-text-primary font-code-data text-code-data">14ms</strong></span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Selector de Almacén y Contexto Operativo</h1>
+<p class="font-body-md text-body-md text-text-secondary mt-1">Seleccione la sede operativa para filtrar inventarios, órdenes, muelles y despachos en tiempo real</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">hub</span>
+<span>Ver Topología de Red Completa</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-all shadow-[0_2px_8px_rgba(83,181,89,0.35)]" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Confirmar Cambio de Contexto</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Node Spotlight Ribbon -->
+<div class="relative overflow-hidden rounded-xl bg-inverse-surface text-inverse-on-surface p-space-lg shadow-sm">
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center shrink-0 text-primary-fixed">
+<span class="material-symbols-outlined text-[28px]">warehouse</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-badge-status text-badge-status text-primary-fixed uppercase tracking-wider">Contexto de Red Activo</span>
+<span class="w-1 h-1 rounded-full bg-surface-variant"></span>
+<span class="font-code-data text-code-data text-text-muted">ID: MVD-DC01</span>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-title-sm text-title-sm text-surface font-bold">Montevideo DC-01 (Principal)</span>
+<span class="font-caption text-caption text-text-muted">Zonamerica Ruta 8 Km 17.5, Edificio Biopark</span>
+</div>
+</div>
+</div>
+<!-- Metric micro-strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md lg:border-l lg:border-surface-variant/20 lg:pl-space-lg">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Zona Horaria</span>
+<span class="font-body-md text-body-md font-semibold text-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">schedule</span>
+              UTC -03:00
+            </span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Capacidad Ocupada</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-md text-body-md font-bold text-surface">84.2%</span>
+<div class="w-16 h-2 bg-surface/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 84.2%;"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Sync SAP / ERP</span>
+<span class="font-code-data text-code-data text-status-available flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+              LIVE (14:38:02)
+            </span>
+</div>
+<div class="flex flex-col justify-center">
+<button class="inline-flex items-center gap-space-xs font-caption text-caption text-secondary-fixed hover:text-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Bloquear como predeterminado</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="flex flex-col lg:flex-row gap-space-md items-stretch lg:items-center justify-between bg-surface-card p-space-md rounded-xl shadow-sm">
+<div class="flex items-center flex-1 max-w-md bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" id="search-input" placeholder="Filtrar por código de sede, ciudad, o vía logística..." type="text"/>
+<kbd class="hidden sm:inline-block ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">⌘ F</kbd>
+</div>
+<!-- Quick Tag Filters -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1 lg:pb-0">
+<span class="font-caption text-caption text-text-muted uppercase whitespace-nowrap">Región:</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-inverse-surface text-inverse-on-surface font-semibold shadow-xs" type="button">Todos (6)</button>
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" type="button">Uruguay</button>
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" type="button">Argentina</button>
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" type="button">Chile</button>
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" type="button">Brasil</button>
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" type="button">Colombia</button>
+<button class="px-space-sm py-1 rounded-lg font-caption text-caption bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" type="button">Perú</button>
+</div>
+<span class="font-caption text-caption text-text-muted uppercase ml-space-sm whitespace-nowrap">Tipo:</span>
+<select class="bg-surface-container-low text-text-primary font-body-sm text-body-sm rounded-lg px-space-sm py-1 focus:outline-none focus:ring-1 focus:ring-accent-focus cursor-pointer">
+<option>Todos los tipos</option>
+<option>DC Principal</option>
+<option>Hub Regional</option>
+<option>Fulfillment Center</option>
+<option>Cross-Docking</option>
+</select>
+</div>
+</div>
+<!-- 3x2 Grid of Warehouses / Facilities -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Facility Card 1 (Montevideo DC-01 - CURRENTLY SELECTED) -->
+<div class="relative bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between transition-all hover:shadow-md ring-2 ring-primary-container">
+<div class="absolute top-0 right-0 transform translate-x-0 -translate-y-0">
+<div class="bg-primary-container text-on-primary-container px-space-md py-1 rounded-bl-xl font-badge-status text-badge-status flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+            CONECTADO
+          </div>
+</div>
+<div>
+<!-- Header info -->
+<div class="flex items-start gap-space-sm mb-space-sm pr-20">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+<div>
+<span class="font-code-data text-code-data text-text-muted">MVD-01 · URUGUAY</span>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold leading-tight">Montevideo DC-01 (Principal)</h3>
+</div>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-space-md">Zonamerica Ruta 8 Km 17.5, Montevideo</p>
+<!-- Facility Metrics Bento -->
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Área Total</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">45,000 m²</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Posiciones</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">18,920 PAL</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">SLA Fulfillment</span>
+<span class="font-code-data text-code-data font-bold text-status-available">99.4%</span>
+</div>
+</div>
+<!-- Capacity Bar -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-text-secondary">Ocupación de Racks</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">84.2%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 84.2%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">3,010 ubicaciones disponibles en Nivel 1-4</span>
+</div>
+<!-- Gates & Activity -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary py-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+              8 Inbound / 12 Outbound
+            </span>
+<span class="font-badge-status text-badge-status text-status-available bg-status-available/10 px-1.5 py-0.5 rounded">
+              SIN RETRASOS
+            </span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container">
+<button class="w-full h-9 rounded-lg bg-surface-container-high text-text-muted font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Sede Activa en Esta Sesión</span>
+</button>
+</div>
+</div>
+<!-- Facility Card 2 (Buenos Aires Hub Norte) -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-all group">
+<div>
+<!-- Header info -->
+<div class="flex items-start gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">warehouse</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-code-data text-code-data text-text-muted">BUE-02 · ARGENTINA</span>
+<span class="px-1.5 py-0.2 rounded font-badge-status text-[10px] bg-surface-container text-text-secondary">HUB REGIONAL</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold leading-tight">Buenos Aires Hub Norte</h3>
+</div>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-space-md">Pacheco Industrial Park, Buenos Aires</p>
+<!-- Facility Metrics Bento -->
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Área Total</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">32,000 m²</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">En Tránsito</span>
+<span class="font-code-data text-code-data font-semibold text-status-reserved">14 Pedidos</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">SLA Fulfillment</span>
+<span class="font-code-data text-code-data font-bold text-status-available">98.1%</span>
+</div>
+</div>
+<!-- Capacity Bar -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-text-secondary">Ocupación de Racks</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">76.1%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-status-reserved rounded-full" style="width: 76.1%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">3,412 ubicaciones dinámicas libres</span>
+</div>
+<!-- Gates & Activity -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary py-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+              6 Inbound / 8 Outbound
+            </span>
+<span class="font-code-data text-code-data text-text-muted text-[11px]">Cross-Dock Activo</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container">
+<button class="w-full h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors group-hover:bg-primary-container group-hover:text-on-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">input</span>
+<span>Conectar a esta sede</span>
+</button>
+</div>
+</div>
+<!-- Facility Card 3 (Santiago Fulfillment Center) -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-all group">
+<div>
+<!-- Header info -->
+<div class="flex items-start gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-code-data text-code-data text-text-muted">SCL-03 · CHILE</span>
+<span class="px-1.5 py-0.2 rounded font-badge-status text-[10px] bg-status-damaged/10 text-status-damaged font-bold">CAPACIDAD CRÍTICA</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold leading-tight">Santiago Fulfillment Center</h3>
+</div>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-space-md">Parque Enea Pudahuel RM, Santiago</p>
+<!-- Facility Metrics Bento -->
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Área Total</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">28,000 m²</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Posiciones</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">12,400 PAL</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">SLA Fulfillment</span>
+<span class="font-code-data text-code-data font-bold text-status-quarantine">94.8%</span>
+</div>
+</div>
+<!-- Capacity Bar (Critical alert) -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-text-secondary">Ocupación de Racks</span>
+<span class="font-code-data text-code-data font-bold text-status-damaged">92.5%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-status-damaged rounded-full" style="width: 92.5%;"></div>
+</div>
+<span class="font-caption text-caption text-status-damaged font-semibold text-[11px]">Restricción temporal para put-away masivo</span>
+</div>
+<!-- Gates & Activity -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary py-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+              5 Inbound / 9 Outbound
+            </span>
+<span class="font-code-data text-code-data text-status-quarantine text-[11px]">8 Docks saturados</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container">
+<button class="w-full h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors group-hover:bg-primary-container group-hover:text-on-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">input</span>
+<span>Conectar a esta sede</span>
+</button>
+</div>
+</div>
+<!-- Facility Card 4 (São Paulo Mega-DC) -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-all group">
+<div>
+<!-- Header info -->
+<div class="flex items-start gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">factory</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-code-data text-code-data text-text-muted">GRU-04 · BRASIL</span>
+<span class="px-1.5 py-0.2 rounded font-badge-status text-[10px] bg-surface-container text-text-secondary">B2B &amp; RETAIL</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold leading-tight">São Paulo Mega-DC</h3>
+</div>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-space-md">Cajamar Log Park Anhanguera, SP</p>
+<!-- Facility Metrics Bento -->
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Área Total</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">26,000 m²</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Turno Actual</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">Turno B (48 op)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">SLA Fulfillment</span>
+<span class="font-code-data text-code-data font-bold text-status-available">99.1%</span>
+</div>
+</div>
+<!-- Capacity Bar -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-text-secondary">Ocupación de Racks</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">68.4%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 68.4%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">8,200 ubicaciones pallets disponibles</span>
+</div>
+<!-- Gates & Activity -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary py-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+              14 Inbound / 20 Outbound
+            </span>
+<span class="font-badge-status text-badge-status text-status-available bg-status-available/10 px-1.5 py-0.5 rounded">
+              OPERATIVO NORMAL
+            </span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container">
+<button class="w-full h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors group-hover:bg-primary-container group-hover:text-on-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">input</span>
+<span>Conectar a esta sede</span>
+</button>
+</div>
+</div>
+<!-- Facility Card 5 (Bogotá Regional Hub) -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-all group">
+<div>
+<!-- Header info -->
+<div class="flex items-start gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-code-data text-code-data text-text-muted">BOG-05 · COLOMBIA</span>
+<span class="px-1.5 py-0.2 rounded font-badge-status text-[10px] bg-surface-container text-text-secondary">CORREDOR ANDINO</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold leading-tight">Bogotá Regional Hub</h3>
+</div>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-space-md">Zona Siberia Industrial Cota, Cundinamarca</p>
+<!-- Facility Metrics Bento -->
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Área Total</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">14,000 m²</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Consolidación</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">8 Lotes Activos</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">SLA Fulfillment</span>
+<span class="font-code-data text-code-data font-bold text-status-available">97.6%</span>
+</div>
+</div>
+<!-- Capacity Bar -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-text-secondary">Ocupación de Racks</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">71.0%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-status-reserved rounded-full" style="width: 71.0%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">Tráfico fluido en muelles Inbound</span>
+</div>
+<!-- Gates & Activity -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary py-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+              4 Inbound / 6 Outbound
+            </span>
+<span class="font-code-data text-code-data text-text-muted text-[11px]">Aduanas Operativo</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container">
+<button class="w-full h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors group-hover:bg-primary-container group-hover:text-on-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">input</span>
+<span>Conectar a esta sede</span>
+</button>
+</div>
+</div>
+<!-- Facility Card 6 (Lima Callao Cross-Dock) -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-all group">
+<div>
+<!-- Header info -->
+<div class="flex items-start gap-space-sm mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">directions_boat</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-code-data text-code-data text-text-muted">LIM-06 · PERÚ</span>
+<span class="px-1.5 py-0.2 rounded font-badge-status text-[10px] bg-surface-container text-text-secondary">CROSS-DOCK</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary font-bold leading-tight">Lima Callao Cross-Dock</h3>
+</div>
+</div>
+<p class="font-caption text-caption text-text-secondary mb-space-md">Av. Elmer Faucett, Callao Port Corridor</p>
+<!-- Facility Metrics Bento -->
+<div class="grid grid-cols-3 gap-space-xs p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Área Total</span>
+<span class="font-code-data text-code-data font-semibold text-text-primary">10,000 m²</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">Dwell Time</span>
+<span class="font-code-data text-code-data font-semibold text-status-available">4.2 Horas</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted text-[10px] uppercase">SLA Fulfillment</span>
+<span class="font-code-data text-code-data font-bold text-status-available">99.8%</span>
+</div>
+</div>
+<!-- Capacity Bar -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-text-secondary">Ocupación de Bahías</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">54.0%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-status-available rounded-full" style="width: 54.0%;"></div>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">Capacidad óptima para transbordo rápido</span>
+</div>
+<!-- Gates & Activity -->
+<div class="flex items-center justify-between text-caption font-caption text-text-secondary py-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+              8 Inbound / 8 Outbound
+            </span>
+<span class="font-code-data text-code-data text-text-muted text-[11px]">Tránsito Marítimo/Aéreo</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container">
+<button class="w-full h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors group-hover:bg-primary-container group-hover:text-on-primary" type="button">
+<span class="material-symbols-outlined text-[18px]">input</span>
+<span>Conectar a esta sede</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Configuration: Session Preferences & Routing Parameters -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h2 class="font-title-sm text-title-sm text-text-primary font-bold">Preferencias de Sesión, Dispositivos y Ruteo</h2>
+</div>
+<span class="font-caption text-caption text-text-muted">Parámetros aplicados al confirmar la conmutación de contexto</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Control 1: Temporary Role -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center gap-1" for="temp-role">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+            Rol Operativo en este Contexto
+          </label>
+<div class="relative">
+<select class="w-full h-10 appearance-none bg-canvas-bg rounded-lg px-space-md pr-10 font-body-sm text-body-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer" id="temp-role">
+<option selected="">Director de Operaciones (Acceso Total)</option>
+<option>Supervisor WMS / Despachos</option>
+<option>Auditor de Calidad &amp; Trazabilidad</option>
+<option>Planificador de Demanda &amp; Stock</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-text-muted pointer-events-none text-[20px]">expand_more</span>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">Define los permisos de firma electrónica y autorizaciones en muelles.</span>
+</div>
+<!-- Control 2: Thermal Printer Assigned -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center gap-1" for="thermal-printer">
+<span class="material-symbols-outlined text-[16px]">print</span>
+            Impresora Térmica de Etiquetas (Default)
+          </label>
+<div class="relative">
+<select class="w-full h-10 appearance-none bg-canvas-bg rounded-lg px-space-md pr-10 font-body-sm text-body-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer" id="thermal-printer">
+<option selected="">Zebra ZT411 - Muelle 04 (Inbound Direct)</option>
+<option>Zebra ZT610 - Packing Line B (Outbound)</option>
+<option>Honeywell PM43 - Racks Nivel 1</option>
+<option>Zebra ZD621 - Oficina Central Expedición</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-text-muted pointer-events-none text-[20px]">expand_more</span>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">Ruta directa para packing slips, SSCC y marbetes de pallet.</span>
+</div>
+<!-- Control 3: RF Scanner Terminal -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center gap-1" for="rf-terminal">
+<span class="material-symbols-outlined text-[16px]">barcode_scanner</span>
+            Terminal de Radiofrecuencia Asignado
+          </label>
+<div class="relative">
+<select class="w-full h-10 appearance-none bg-canvas-bg rounded-lg px-space-md pr-10 font-body-sm text-body-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-focus cursor-pointer" id="rf-terminal">
+<option selected="">RF-Terminal-09 (Zebra TC57 - Supervisor)</option>
+<option>RF-Terminal-04 (Honeywell EDA51)</option>
+<option>RF-Terminal-12 (Zebra TC77 Rugged Industrial)</option>
+<option>Sin terminal físico (Modo Estación Desktop)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-text-muted pointer-events-none text-[20px]">expand_more</span>
+</div>
+<span class="font-caption text-caption text-text-muted text-[11px]">Sincroniza escaneos de validación con su sesión activa.</span>
+</div>
+</div>
+<!-- Action Confirmation bar inside preferences -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md mt-space-lg pt-space-md border-t border-surface-container">
+<div class="flex items-center gap-space-sm text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-status-available text-[18px]">verified_user</span>
+<span>La conmutación preserva logs de auditoría conforme a ISO 28000 y normativas aduaneras locales.</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto h-9 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container font-body-sm text-body-sm font-semibold text-text-primary transition-colors" type="button">
+            Cancelar / Revertir
+          </button>
+<button class="w-full sm:w-auto h-9 px-space-lg rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-all shadow-[0_2px_8px_rgba(83,181,89,0.35)] flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">autorenew</span>
+<span>Confirmar Cambio de Contexto</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interaction for fast search focus with keyboard shortcut
+    document.addEventListener('keydown', function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'f') {
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      }
+    });
+
+    // Ensure the Selector / Contexto navigation item in the App Shell reflects active state
+    (function highlightNav() {
+      const links = document.querySelectorAll('aside nav a[data-path="selector-contexto"]');
+      links.forEach(link => {
+        link.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold', 'rounded-lg', 'shadow-sm');
+        link.classList.remove('text-inverse-on-surface');
+      });
+    })();
+  </script>
+</div></div></main></div></body></html>

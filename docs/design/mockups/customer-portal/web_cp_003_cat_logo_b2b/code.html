@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-container": "#dae2fd",
+        "tertiary-container": "#48a8ed",
+        "background": "#f8f9ff",
+        "on-secondary-container": "#5c647a",
+        "canvas-bg": "#F8FAFC",
+        "surface-bright": "#f8f9ff",
+        "outline-variant": "#becab9",
+        "error": "#ba1a1a",
+        "on-surface-variant": "#3f4a3d",
+        "surface-container-highest": "#d3e4fe",
+        "text-muted": "#94A3B8",
+        "on-primary": "#ffffff",
+        "inverse-on-surface": "#eaf1ff",
+        "status-reserved": "#2563EB",
+        "status-expired": "#9333EA",
+        "on-primary-fixed-variant": "#005316",
+        "on-primary-container": "#00420f",
+        "surface-container-low": "#eff4ff",
+        "accent-focus": "#53B559",
+        "surface-tint": "#006e20",
+        "on-error": "#ffffff",
+        "on-tertiary-container": "#003b5c",
+        "on-surface": "#0b1c30",
+        "surface-container": "#e5eeff",
+        "status-blocked": "#475569",
+        "tertiary-fixed": "#cce5ff",
+        "tertiary-fixed-dim": "#93ccff",
+        "on-tertiary-fixed-variant": "#004b73",
+        "surface-variant": "#d3e4fe",
+        "border-subtle": "#E2E8F0",
+        "text-secondary": "#475569",
+        "secondary": "#565e74",
+        "inverse-primary": "#79dc7b",
+        "border-strong": "#CBD5E1",
+        "primary-container": "#53b559",
+        "on-error-container": "#93000a",
+        "primary": "#006e20",
+        "on-secondary-fixed-variant": "#3f465c",
+        "tertiary": "#006398",
+        "inverse-surface": "#213145",
+        "on-secondary": "#ffffff",
+        "outline": "#6f7a6c",
+        "text-primary": "#0F172A",
+        "primary-fixed": "#94f994",
+        "on-tertiary": "#ffffff",
+        "surface-container-high": "#dce9ff",
+        "on-background": "#0b1c30",
+        "on-tertiary-fixed": "#001d31",
+        "status-sync-pending": "#F59E0B",
+        "primary-fixed-dim": "#79dc7b",
+        "on-secondary-fixed": "#131b2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary-fixed-dim": "#bec6e0",
+        "error-container": "#ffdad6",
+        "surface": "#f8f9ff",
+        "secondary-fixed": "#dae2fd",
+        "status-damaged": "#DC2626",
+        "status-quarantine": "#D97706",
+        "status-available": "#16A34A",
+        "surface-dim": "#cbdbf5",
+        "surface-card": "#FFFFFF",
+        "on-primary-fixed": "#002205",
+        "status-sync-error": "#E11D48"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin": "1rem",
+        "space-xl": "1.5rem",
+        "space-2xl": "2rem",
+        "margin-desktop": "1.5rem",
+        "gutter": "1rem",
+        "space-sm": "0.5rem",
+        "space-md": "0.75rem",
+        "space-lg": "1rem",
+        "space-2xs": "0.125rem",
+        "gutter-desktop": "1.5rem",
+        "space-3xl": "3rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "metric-stat": ["Inter"],
+        "title-sm": ["Inter"],
+        "caption": ["Inter"],
+        "body-md": ["Inter"],
+        "badge-status": ["JetBrains Mono"],
+        "body-sm": ["Inter"],
+        "code-data": ["JetBrains Mono"],
+        "headline-md": ["Inter"],
+        "display-hero": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+        "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+        "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+        "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-14 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><img alt="Brand logo. - Primary color: #53b559
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><div class="flex flex-col"><span class="font-headline-md text-body-md font-bold tracking-tight text-text-primary uppercase leading-none">SENTAI</span><span class="font-badge-status text-badge-status text-primary uppercase font-bold tracking-wider mt-0.5">Portal Clientes</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low"><div class="flex items-center justify-between mb-space-xs"><span class="font-caption text-caption text-text-muted uppercase tracking-wider">Razón Social / Sucursal</span><span class="material-symbols-outlined text-[16px] text-text-muted">corporate_fare</span></div><div class="flex items-center justify-between gap-space-xs"><div class="truncate"><p class="font-title-sm text-body-sm text-text-primary truncate font-semibold">Distribuidora Central S.R.L.</p><p class="font-caption text-caption text-text-secondary truncate">Casa Central • ID #99214</p></div><span class="material-symbols-outlined text-[18px] text-text-secondary shrink-0">unfold_more</span></div></div></div><div class="px-space-md pt-space-xs"><span class="px-space-sm font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Operaciones B2B</span></div><nav class="flex flex-col gap-space-2xs px-space-md py-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span class="font-body-md text-body-md">Inicio / Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="catalogo-de-productos" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Catálogo de Productos</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mis-pedidos" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-md text-body-md">Mis Pedidos</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mis-envios-tracking" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-body-md text-body-md">Mis Envíos &amp; Tracking</span></a></nav><div class="px-space-md pt-space-sm"><span class="px-space-sm font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Finanzas &amp; Facturación</span></div><nav class="flex flex-col gap-space-2xs px-space-md py-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cuentas-por-pagar" href="#"><span class="material-symbols-outlined text-[20px]">request_quote</span><span class="font-body-md text-body-md">Cuentas por Pagar</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pagos-realizados" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-md text-body-md">Pagos Realizados</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="estado-de-cuenta" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span><span class="font-body-md text-body-md">Estado de Cuenta</span></a></nav></div><div class="p-space-md"><div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-status-available"></span><span class="font-caption text-caption text-text-secondary">Línea de Crédito Activa</span></div><span class="font-code-data text-code-data text-text-primary font-bold">82% Disp.</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #53b559
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded bg-surface-container-high"><span class="h-2 w-2 rounded-full bg-primary-container"></span><span class="font-badge-status text-badge-status text-text-primary uppercase tracking-wide">Portal B2B • Distribuidora Central</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center px-space-md py-1.5 rounded-lg bg-surface-container-low text-text-secondary cursor-pointer hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px] mr-space-xs text-primary">shopping_cart</span><span class="font-body-sm text-body-sm font-semibold text-text-primary mr-space-xs">Borrador de Pedido</span><span class="px-1.5 py-0.5 rounded-full bg-primary text-on-primary font-badge-status text-badge-status font-bold">4</span></div><div class="relative flex items-center justify-center w-9 h-9 rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] text-text-secondary cursor-pointer hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></div><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-space-sm cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Mariana Gómez</span><span class="font-caption text-caption text-text-muted leading-tight">Jefe de Compras &amp; Abastecimiento</span></div><span class="material-symbols-outlined text-[18px] text-text-muted hidden lg:inline">expand_more</span></div></div></header><main class="relative pt-14 w-full px-margin-desktop min-h-screen bg-surface"><div class="flex flex-col w-full pb-space-3xl">
+<!-- System Specification Identification Tag & Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm py-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-space-2xs rounded-lg bg-surface-container-highest text-on-surface font-badge-status text-badge-status uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+        WEB-CP-003 // CATÁLOGO DE PRODUCTOS &amp; DISPONIBILIDAD B2B
+      </span>
+<span class="inline-flex items-center gap-1 px-space-xs py-space-2xs rounded bg-surface-container-high text-text-secondary font-code-data text-caption">
+<span class="material-symbols-outlined text-[14px] text-primary">warehouse</span>
+        MONTEVIDEO DC-01 • SILO FARMACÉUTICO
+      </span>
+</div>
+<div class="flex items-center gap-space-md text-text-secondary font-caption text-caption">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-status-available">sync</span>
+        Sincronizado WMS: <strong class="text-text-primary font-code-data">14:02:18 UTC-3</strong>
+</span>
+<span class="hidden md:inline text-border-strong">•</span>
+<span class="hidden md:flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">contract</span>
+        Tarifa: <strong class="text-text-primary">Acuerdo Hospitalario L2-2024</strong>
+</span>
+</div>
+</div>
+<!-- Page Header & B2B Context Banner -->
+<header class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg p-space-xl rounded-xl bg-surface-container-lowest shadow-sm mb-space-xl relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col max-w-3xl relative z-10">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption uppercase tracking-wider mb-space-xs">
+<span>Catálogo Corporativo</span>
+<span>/</span>
+<span>Farmacia &amp; Insumos Hospitalarios</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary mb-space-xs">
+        Catálogo de Productos
+      </h1>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+        Disponibilidad en tiempo real desde <span class="font-semibold text-text-primary">Montevideo DC-01</span> con precios acordados para <span class="font-semibold text-text-primary">Distribuidora Central S.R.L.</span> (Lista de Precios Farmacia &amp; Hospitales B2B). Despachos consolidados con entrega en 24/48 hs.
+      </p>
+</div>
+<!-- Active Cart / Quick Order Floating Widget Summary -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md p-space-md rounded-lg bg-surface-container-low relative z-10 shrink-0">
+<div class="flex items-center gap-space-sm pr-space-md">
+<div class="relative w-11 h-11 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary text-on-primary font-badge-status text-badge-status flex items-center justify-center font-bold">4</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Borrador de Pedido</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$4,320.00</span>
+<span class="font-caption text-caption text-text-secondary">USD</span>
+</div>
+<span class="font-code-data text-caption text-status-available font-semibold">4 ítems • 340 unidades</span>
+</div>
+</div>
+<button class="flex items-center justify-center gap-space-xs px-space-lg py-2.5 rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-md text-body-md font-semibold transition-all shadow-sm active:scale-95 whitespace-nowrap">
+<span>Continuar Pedido (WEB-CP-005)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Filter, Search & View Controls Bar -->
+<section class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md mb-space-lg">
+<!-- Predictive Search Input -->
+<div class="relative flex-1 max-w-2xl">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-[20px] text-text-muted">search</span>
+<input class="w-full h-11 pl-11 pr-10 rounded-lg bg-surface-container-lowest shadow-sm font-body-md text-body-md text-text-primary placeholder:text-text-muted outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="product-search-input" placeholder="Buscar por SKU, denominación comercial, principio activo (ej: Cloruro de Sodio, Guantes, 18G)..." type="text"/>
+<button class="absolute right-space-sm top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Right Controls: Sorting & View Modes -->
+<div class="flex flex-wrap items-center gap-space-sm justify-between lg:justify-end">
+<!-- Sort By -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-1.5 rounded-lg shadow-sm">
+<span class="font-caption text-caption text-text-muted hidden sm:inline">Ordenar:</span>
+<select class="bg-transparent font-body-sm text-body-sm text-text-primary font-semibold outline-none cursor-pointer pr-space-xs">
+<option selected="" value="bestseller">Más vendidos &amp; Frecuentes</option>
+<option value="immediate">Disponibilidad inmediata (&gt;1,000 un)</option>
+<option value="alpha">Nombre A-Z</option>
+<option value="price_asc">Menor precio unitario</option>
+<option value="price_desc">Mayor precio unitario</option>
+</select>
+</div>
+<!-- Quick View Toggle Buttons -->
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-lg shadow-sm">
+<button class="flex items-center justify-center w-8 h-8 rounded bg-primary-container text-on-primary transition-colors" id="view-grid-btn" title="Vista Cuadrícula">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="flex items-center justify-center w-8 h-8 rounded text-text-secondary hover:text-text-primary transition-colors" id="view-list-btn" title="Vista Lista Tabular">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+</div>
+<!-- Live Stock Badge Pill -->
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-text-secondary font-code-data text-caption">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span>6 SKUs Catalogados</span>
+</div>
+</div>
+</section>
+<!-- Main Workspace: Split Filter Pane & Products Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT PANEL: Filters (3 cols on large screen) -->
+<aside class="lg:col-span-3 flex flex-col gap-space-lg p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">filter_alt</span>
+<h2 class="font-title-sm text-title-sm text-text-primary">Filtros B2B</h2>
+</div>
+<button class="font-caption text-caption text-text-muted hover:text-primary uppercase tracking-wider font-semibold transition-colors" id="reset-filters">Limpiar</button>
+</div>
+<!-- Category Filter Group -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider mb-1">Categorías de Producto</span>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-primary">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+            Salud &amp; Hospitalario
+          </span>
+<span class="font-code-data text-caption text-text-muted">14</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-primary">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+            Descartables Médicos
+          </span>
+<span class="font-code-data text-caption text-text-muted">28</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-primary">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+            Sueros y Soluciones IV
+          </span>
+<span class="font-code-data text-caption text-text-muted">8</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-primary">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+            Instrumental Quirúrgico
+          </span>
+<span class="font-code-data text-caption text-text-muted">5</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-primary">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+            Farmacia General &amp; Antisépticos
+          </span>
+<span class="font-code-data text-caption text-text-muted">19</span>
+</label>
+</div>
+<!-- Real-Time Availability Group -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider mb-1">Disponibilidad en DC-01</span>
+<label class="flex items-center gap-space-xs p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary">Solo stock inmediato (&gt;50 un)</span>
+</label>
+<label class="flex items-center gap-space-xs p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary">Entrega garantizada 24h</span>
+</label>
+<label class="flex items-center gap-space-xs p-space-xs rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-text-primary">Stock bajo reserva programada</span>
+</label>
+</div>
+<!-- Packaging Presentation Filter -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider mb-1">Empaque / Presentación B2B</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-text-primary font-caption text-caption font-semibold cursor-pointer hover:bg-surface-container-highest transition-colors">Caja x24</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-text-primary font-caption text-caption font-semibold cursor-pointer hover:bg-surface-container-highest transition-colors">Caja x100</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-text-primary font-caption text-caption font-semibold cursor-pointer hover:bg-surface-container-highest transition-colors">Paquete x50</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-text-primary font-caption text-caption font-semibold cursor-pointer hover:bg-surface-container-highest transition-colors">Bidón 5L</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-high text-text-primary font-caption text-caption font-semibold cursor-pointer hover:bg-surface-container-highest transition-colors">Pallet Cerrado</span>
+</div>
+</div>
+<!-- Agreed Price Range Slider (Mock/Visual) -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Rango Precio Pactado</span>
+<span class="font-code-data text-caption text-text-primary font-bold">$5 - $150 USD</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full relative overflow-hidden">
+<div class="bg-primary h-full w-2/3"></div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-text-muted">
+<span>Min: $5.00</span>
+<span>Max: $350.00</span>
+</div>
+</div>
+<!-- Regulatory / Traceability Banner in Sidebar -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-title-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Certificación GMP • ANMAT</span>
+</div>
+<p class="font-caption text-caption text-text-secondary leading-normal">
+          Todos los lotes despachados desde Montevideo DC-01 cuentan con certificado de análisis físico-químico y trazabilidad de temperatura.
+        </p>
+</div>
+</aside>
+<!-- RIGHT CATALOG AREA: 9 cols on desktop -->
+<main class="lg:col-span-9 flex flex-col gap-space-lg">
+<!-- Products Grid (6 SKUs) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg" id="product-catalog-grid">
+<!-- PRODUCT CARD 1: Suero Fisiologico -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="relative w-full h-44 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Medical sterile intravenous saline solution bags 500ml stacked neatly in a high-tech cleanroom warehouse setting with soft cold hospital lighting and subtle green accents in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdaEqqHjvi7AImM8vkXzFrRfzG5uqmBKiUYMWrb50iU-0OMwrH-yHkpf4EYDzAwA4-x8iu813KhZ0TtOtoZmxJqIRrnJBueaM_DZWrOjhrB6v1HOc_R3o31aHhNHuRcQWGVbK1bL5f1WLQmLcH7x0mkJ_TQ-uq3Vrku1pU0WF8I_hBtOkiJuAe9BOt7mCczKmF4iRg5-ERxjWp4FwA3_MkSRWyiI4A0BTbnTFM1V-q5QmXqL9MMEPl"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available text-on-primary font-bold tracking-wider uppercase shadow-sm">
+                EN STOCK ALTO
+              </span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-primary-container text-on-primary-container font-semibold tracking-wider uppercase">
+                -15% B2B PACTADO
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-data text-caption text-text-primary font-semibold">
+                SKU-100245
+              </span>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-space-lg">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption mb-1">
+<span class="text-tertiary font-semibold">BioTech Latam</span>
+<span>•</span>
+<span>Sueros &amp; Soluciones</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-snug group-hover:text-primary transition-colors mb-space-xs line-clamp-2">
+              Suero Fisiológico 500ml Cloruro de Sodio 0.9%
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              Presentación: <strong class="text-text-primary font-medium">Caja x24 unidades</strong> (Envase colapsable con conector estéril).
+            </p>
+<!-- Availability Data Meter -->
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-caption font-caption mb-1">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+                  Disponible DC-01:
+                </span>
+<span class="font-code-data font-bold text-text-primary">1,420 cajas</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-status-available h-full w-4/5"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted mt-1 block">Despacho Inmediato • Bahía de Carga 03</span>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-space-xs mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted line-through">$37.65 USD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$32.00</span>
+<span class="font-caption text-caption text-text-secondary">USD / caja</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>Ficha Técnica (WEB-CP-004)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Action & Quantity -->
+<div class="flex items-center gap-space-sm mt-auto">
+<div class="flex items-center rounded-lg bg-surface-container-high p-0.5">
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, -1)">-</button>
+<input class="w-12 text-center bg-transparent font-code-data text-body-sm font-semibold text-text-primary outline-none" max="1420" min="1" type="number" value="10"/>
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, 1)">+</button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>+ Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 2: Guantes Nitrilo -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="relative w-full h-44 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close-up of premium blue nitrile medical examination gloves neatly packed inside a clean hospital surgical box under sterile studio warehouse lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMlFmpbW5rS5r8SBqJzqPODZnut8vwNdAe6ZPNxDVvZ9aq30OIrbCU8mdqyLDrVNGWBNBPA2VdYR1c6JSdEHcTG_tk7dd-ueSXHzH96Niq1t2vvMKPJ08R4vg-rnibFlIE4Ahz9yXNl42tLa5pNMZY98vtYcFaMeW385k4dalRXN0AekhYRWt3RCGYN2bXcjWS4RDGgdo71HxXb78tVP08S5w78AcL-BkW5B8_1chBoGrCFzcY3uhQ"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available text-on-primary font-bold tracking-wider uppercase shadow-sm">
+                EN STOCK ALTO
+              </span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-tertiary-container text-on-tertiary-container font-semibold tracking-wider uppercase">
+                GRADO MÉDICO A
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-data text-caption text-text-primary font-semibold">
+                SKU-204918
+              </span>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-space-lg">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption mb-1">
+<span class="text-tertiary font-semibold">SafeGrip Health</span>
+<span>•</span>
+<span>Descartables Médicos</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-snug group-hover:text-primary transition-colors mb-space-xs line-clamp-2">
+              Guantes de Nitrilo Quirúrgico Talla M
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              Presentación: <strong class="text-text-primary font-medium">Caja x100 unidades</strong> (Libres de polvo, ambidiestros, microtexturados).
+            </p>
+<!-- Availability Data Meter -->
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-caption font-caption mb-1">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+                  Disponible DC-01:
+                </span>
+<span class="font-code-data font-bold text-text-primary">3,850 cajas</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-status-available h-full w-11/12"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted mt-1 block">Despacho Inmediato • Pasillo Med-08</span>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-space-xs mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted line-through">$21.80 USD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$18.50</span>
+<span class="font-caption text-caption text-text-secondary">USD / caja</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>Ficha Técnica (WEB-CP-004)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Action & Quantity -->
+<div class="flex items-center gap-space-sm mt-auto">
+<div class="flex items-center rounded-lg bg-surface-container-high p-0.5">
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, -1)">-</button>
+<input class="w-12 text-center bg-transparent font-code-data text-body-sm font-semibold text-text-primary outline-none" max="3850" min="1" type="number" value="25"/>
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, 1)">+</button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>+ Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 3: Cateter Intravenoso 18G -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="relative w-full h-44 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Packaged sterilized intravenous cannulas and catheters with injection valve in modern sterile medical blisters with green and blue hospital markings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyJk2hoExAfC_aJAQBWaffc6rY8h6ksBP_JjdlSsOjsut2pvYg6n0w0A-JXaGU3Aqh0kzQzviRa_SANC0f_cczszv5u31kEiLIJ2Rsyk9xKv9ZbIqE8FQOSQ5MoOKBcou9DMFDt4JXW2gYIr9j1sOcwgnwvM9EWTQTq7YY9MGxJsRzZ91A2n9BSVZuESeDaPictfR8rwziFaSh9ty73ABgZ2JhzsGP6EmKI3GuMK3baS5wTyP1_Cs6"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available text-on-primary font-bold tracking-wider uppercase shadow-sm">
+                EN STOCK
+              </span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-surface-container-highest text-on-surface font-semibold tracking-wider uppercase">
+                ESTÉRIL EO
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-data text-caption text-text-primary font-semibold">
+                SKU-892110
+              </span>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-space-lg">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption mb-1">
+<span class="text-tertiary font-semibold">VascularTech</span>
+<span>•</span>
+<span>Instrumental &amp; Inyección</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-snug group-hover:text-primary transition-colors mb-space-xs line-clamp-2">
+              Catéter Intravenoso 18G con Válvula de Inyección
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              Presentación: <strong class="text-text-primary font-medium">Paquete x50 unidades</strong> (Radiopaco, con alas y puerto lateral).
+            </p>
+<!-- Availability Data Meter -->
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-caption font-caption mb-1">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+                  Disponible DC-01:
+                </span>
+<span class="font-code-data font-bold text-text-primary">890 paquetes</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-status-available h-full w-3/5"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted mt-1 block">Despacho 24h • Zona Fría Regulada</span>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-space-xs mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted line-through">$27.50 USD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$24.00</span>
+<span class="font-caption text-caption text-text-secondary">USD / paq.</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>Ficha Técnica (WEB-CP-004)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Action & Quantity -->
+<div class="flex items-center gap-space-sm mt-auto">
+<div class="flex items-center rounded-lg bg-surface-container-high p-0.5">
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, -1)">-</button>
+<input class="w-12 text-center bg-transparent font-code-data text-body-sm font-semibold text-text-primary outline-none" max="890" min="1" type="number" value="5"/>
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, 1)">+</button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>+ Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 4: Jeringas Descartables 10ml -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="relative w-full h-44 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sterile disposable 10ml syringes with precise measurement graduation markings and Luer lock tip arranged in industrial logistics warehouse package" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtg603czwr5Ux4Q7Brg4ZuH4IJN0wUmUAAlGaWar6icSH3N3TUK2N0H4-i3-F09QQv3MsWtRndVlDpHjCPk9tLPg0nE62n4KhCaXB7HlIXpajxRs6_hT7bQKPozJ0Kb1jbgl6Cap4zyNb0ismsEmaRwbzM5XpyFEBC4esptJ2FvIhpzxo4WS5OePUefz7Od1lcXXYp7Vd55OhYS5dqZJBJTcE2eJDYPe8Qz2LFJLHMpbbBkbLOK68h"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available text-on-primary font-bold tracking-wider uppercase shadow-sm">
+                EN STOCK ALTO
+              </span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-reserved text-on-primary font-bold tracking-wider uppercase shadow-sm">
+                LUER LOCK
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-data text-caption text-text-primary font-semibold">
+                SKU-304112
+              </span>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-space-lg">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption mb-1">
+<span class="text-tertiary font-semibold">MedSyringe Corp</span>
+<span>•</span>
+<span>Descartables Hospitalarios</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-snug group-hover:text-primary transition-colors mb-space-xs line-clamp-2">
+              Jeringas Descartables 10ml Luer Lock
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              Presentación: <strong class="text-text-primary font-medium">Caja x100 unidades</strong> (Embolo siliconado triple contacto, libre de látex).
+            </p>
+<!-- Availability Data Meter -->
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-caption font-caption mb-1">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+                  Disponible DC-01:
+                </span>
+<span class="font-code-data font-bold text-text-primary">2,100 cajas</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-status-available h-full w-4/5"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted mt-1 block">Entrega Inmediata • Despacho 24h</span>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-space-xs mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted line-through">$16.90 USD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$14.20</span>
+<span class="font-caption text-caption text-text-secondary">USD / caja</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>Ficha Técnica (WEB-CP-004)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Action & Quantity -->
+<div class="flex items-center gap-space-sm mt-auto">
+<div class="flex items-center rounded-lg bg-surface-container-high p-0.5">
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, -1)">-</button>
+<input class="w-12 text-center bg-transparent font-code-data text-body-sm font-semibold text-text-primary outline-none" max="2100" min="1" type="number" value="20"/>
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, 1)">+</button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>+ Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 5: Alcohol Gel 70% 5L -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="relative w-full h-44 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Heavy duty transparent 5-liter sanitizing antiseptic alcohol gel container with industrial pump dispenser against clean stainless steel hospital warehouse backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJpJ03soEAEyeVN3yYvXgqqimVQ78EIh239lSUaxe4r_mvKMQKaWcB0nAjbXLwpXa8zNNMTCexKA7HBWvspMVx0Jpxedxt9FeqXWFP2qEV2rLN7xt-toIbrjiRm5Y8FWIZZ62Dpi-iDMMDUScrar_SkMNT0nuKt9P8D-8DIQ0j7KJT7pvRPQdjFd4uDbGuv5qGyyMaScctbLNCKC0ClJ1k1y-27OplI4dgNua4h0OzosEK8DGBl2uT"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-sync-pending text-text-primary font-bold tracking-wider uppercase shadow-sm">
+                STOCK MODERADO
+              </span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-secondary-container text-on-secondary-container font-semibold tracking-wider uppercase">
+                OFERTA DE LOTE
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-data text-caption text-text-primary font-semibold">
+                SKU-405221
+              </span>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-space-lg">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption mb-1">
+<span class="text-tertiary font-semibold">PharmaPure</span>
+<span>•</span>
+<span>Antisépticos &amp; Desinfección</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-snug group-hover:text-primary transition-colors mb-space-xs line-clamp-2">
+              Alcohol en Gel 70% Bidón 5L Grado Hospitalario
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              Presentación: <strong class="text-text-primary font-medium">Bidón 5 Litros</strong> (Con dosificador ergonómico y glicerina humectante).
+            </p>
+<!-- Availability Data Meter -->
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-caption font-caption mb-1">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-sync-pending"></span>
+                  Disponible DC-01:
+                </span>
+<span class="font-code-data font-bold text-text-primary">420 bidones</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-status-sync-pending h-full w-2/5"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted mt-1 block">Lote Vto: Nov-2026 • Silo Químico</span>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-space-xs mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted line-through">$34.00 USD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$28.00</span>
+<span class="font-caption text-caption text-text-secondary">USD / un</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>Ficha Técnica (WEB-CP-004)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Action & Quantity -->
+<div class="flex items-center gap-space-sm mt-auto">
+<div class="flex items-center rounded-lg bg-surface-container-high p-0.5">
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, -1)">-</button>
+<input class="w-12 text-center bg-transparent font-code-data text-body-sm font-semibold text-text-primary outline-none" max="420" min="1" type="number" value="4"/>
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, 1)">+</button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>+ Agregar</span>
+</button>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 6: Gasas Esteriles Quirurgicas -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all group overflow-hidden">
+<div class="relative w-full h-44 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Packaged white sterile medical gauze swabs sponges 10x10 cm folded cleanly in clinical laboratory setup with green precision packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT_dk2UebRr6eI8awpB0jXxdfiooqM8sMdKC_SLeQGqV1A6ICPP6rcqpKrsgHXp3YEnAbsX187nJFwT_UYtE5ezf0c-CcV4jruov0-wvFlARlkyf2AJE5FMcKwWgLsb5rFciy2w9W8PIiqEZkfEMjZzjDXBd6luy8AZOqDwKLXrH0G5sfUqlDSR666o4sER9oZKYdyRYX8MkrwrYYN1P-XK-D3qHBgBcSk5c-EWzi_1U650XZ7lj9n"/>
+<div class="absolute top-space-sm left-space-sm flex flex-col gap-1">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available text-on-primary font-bold tracking-wider uppercase shadow-sm">
+                EN STOCK ALTO
+              </span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-surface-container-highest text-on-surface font-semibold tracking-wider uppercase">
+                100% ALGODÓN
+              </span>
+</div>
+<div class="absolute top-space-sm right-space-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur font-code-data text-caption text-text-primary font-semibold">
+                SKU-501198
+              </span>
+</div>
+</div>
+<div class="flex flex-col flex-1 p-space-lg">
+<div class="flex items-center gap-space-xs text-text-muted font-caption text-caption mb-1">
+<span class="text-tertiary font-semibold">TexMed Surgical</span>
+<span>•</span>
+<span>Curación &amp; Quirófano</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary leading-snug group-hover:text-primary transition-colors mb-space-xs line-clamp-2">
+              Gasas Estériles Quirúrgicas 10x10 cm
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              Presentación: <strong class="text-text-primary font-medium">Paquete x200 unidades</strong> (Ensobradas de a 5 unidades, con hilo radiopaco).
+            </p>
+<!-- Availability Data Meter -->
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-caption font-caption mb-1">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+                  Disponible DC-01:
+                </span>
+<span class="font-code-data font-bold text-text-primary">1,800 paquetes</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-status-available h-full w-3/4"></div>
+</div>
+<span class="font-caption text-[11px] text-text-muted mt-1 block">Listo para Consolidación • Muelle 01</span>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-space-xs mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted line-through">$12.00 USD</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-headline-md text-text-primary font-bold">$9.50</span>
+<span class="font-caption text-caption text-text-secondary">USD / paq.</span>
+</div>
+</div>
+<a class="font-caption text-caption text-primary hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>Ficha Técnica (WEB-CP-004)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Action & Quantity -->
+<div class="flex items-center gap-space-sm mt-auto">
+<div class="flex items-center rounded-lg bg-surface-container-high p-0.5">
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, -1)">-</button>
+<input class="w-12 text-center bg-transparent font-code-data text-body-sm font-semibold text-text-primary outline-none" max="1800" min="1" type="number" value="30"/>
+<button class="w-8 h-8 flex items-center justify-center text-text-primary font-bold hover:bg-surface-container-highest rounded active:scale-95" onclick="adjustQty(this, 1)">+</button>
+</div>
+<button class="flex-1 flex items-center justify-center gap-1.5 h-9 px-space-md rounded-lg bg-primary-container hover:bg-[#469E4C] text-on-primary-container font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>+ Agregar</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Quick Tabular / Batch Ordering Drawer Link & Pagination -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm mt-space-md">
+<div class="flex items-center gap-space-sm text-text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">cloud_download</span>
+<span>¿Requiere importar pedidos masivos? Puede cargar su planilla Excel / CSV directamente en el portal.</span>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-text-primary hover:bg-surface-container-highest font-caption text-caption font-semibold transition-colors">
+            Plantilla CSV B2B
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-text-primary hover:bg-surface-container-highest font-caption text-caption font-semibold transition-colors">
+            Cargar Orden Masiva
+          </button>
+</div>
+</div>
+<!-- Pagination & Results Count Footer -->
+<nav class="flex items-center justify-between py-space-sm">
+<span class="font-body-sm text-body-sm text-text-muted">
+          Mostrando <strong class="text-text-primary">1-6</strong> de <strong>6</strong> productos bajo contrato
+        </span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-muted bg-surface-container-low cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center bg-primary text-on-primary font-code-data text-caption font-bold">1</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-muted bg-surface-container-low cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</nav>
+</main>
+</div>
+</div>
+<script>
+  function adjustQty(btn, delta) {
+    const container = btn.parentElement;
+    const input = container.querySelector('input');
+    let current = parseInt(input.value, 10) || 1;
+    let min = parseInt(input.min, 10) || 1;
+    let max = parseInt(input.max, 10) || 99999;
+    let next = current + delta;
+    if (next >= min && next <= max) {
+      input.value = next;
+    }
+  }
+
+  // Quick view toggle event listener
+  document.getElementById('view-list-btn')?.addEventListener('click', function() {
+    this.classList.add('bg-primary-container', 'text-on-primary');
+    this.classList.remove('text-text-secondary');
+    const gridBtn = document.getElementById('view-grid-btn');
+    gridBtn?.classList.remove('bg-primary-container', 'text-on-primary');
+    gridBtn?.classList.add('text-text-secondary');
+  });
+
+  document.getElementById('view-grid-btn')?.addEventListener('click', function() {
+    this.classList.add('bg-primary-container', 'text-on-primary');
+    this.classList.remove('text-text-secondary');
+    const listBtn = document.getElementById('view-list-btn');
+    listBtn?.classList.remove('bg-primary-container', 'text-on-primary');
+    listBtn?.classList.add('text-text-secondary');
+  });
+
+  // Simple live search filter
+  document.getElementById('product-search-input')?.addEventListener('input', function(e) {
+    const val = e.target.value.toLowerCase().trim();
+    const articles = document.querySelectorAll('#product-catalog-grid article');
+    articles.forEach(article => {
+      const text = article.textContent.toLowerCase();
+      article.style.display = text.includes(val) ? '' : 'none';
+    });
+  });
+</script></main></div></body></html>
