@@ -2,8 +2,14 @@
 
 **Blueprint Phase:** Discovery (D0)  
 **Date:** 17 de septiembre de 2026  
-**Status:** COMPLETE  
-**Primary Input:** `docs/product/SENTAI_Product_Definition_v0.1.md`  
+**Status:** READY_FOR_REVIEW  
+**Primary Inputs:** 
+- `docs/product/SENTAI_Product_Definition_v0.1.md` (Funcional y de negocio)
+- `.blueprint/project.yaml` (Decisiones técnicas y capabilities congeladas)
+
+> **Nota de precedencia (Project Truth):** El Product Definition v0.1 contiene referencias técnicas preliminares (ej. Flutter, Docker). En caso de conflicto, **`.blueprint/project.yaml` es la fuente canónica** y prevalece sobre el documento de producto. Se establecen explícitamente las siguientes Project Truths que serán formalizadas arquitectónicamente en la fase `architecture_security_data` (no constituyen `architecture_ready` en este momento):
+> - SENTAI Operator será **Kotlin Multiplatform**, `cross_platform`, para `android` e `ios`, y `offline_first`.
+> - **Docker** no forma parte de las capabilities del proyecto (`docker: false`).
 
 ---
 
@@ -40,13 +46,16 @@ SENTAI es una plataforma de gestión de almacenes (WMS) y fulfillment diseñada 
 
 ### Procesos Principales
 1. **Flujo físico:** ASN -> Recepción -> Put-away sugerido -> Ubicación -> Picking -> Packing -> Shipment -> Despacho.
-2. **Ciclo de pedido:** Draft -> Confirmación -> Reserva (Allocation) -> Ejecución -> Despacho -> Facturación (Accounts Receivable).
+2. **Ciclo de pedido:** Draft -> Confirmación -> Reserva (Allocation) -> Ejecución -> Despacho -> generación/gestión de obligación por cobrar -> pago -> aplicación del pago -> obligación saldada.
+*Nota:* Accounts Receivable forma parte del alcance MVP. Facturación fiscal (fiscal invoicing) permanece fuera del MVP.
 
 ---
 
 ## D0.3 - Context Map
 
-Se han identificado 14 Bounded Contexts iniciales que compondrán el Modular Monolith:
+Se identifican 14 candidate domain/module boundaries como hipótesis inicial de descomposición funcional.
+Estos son candidatos provenientes del Product Discovery, y deben validarse durante `requirements_domain`.
+Sus límites definitivos se formalizarán posteriormente durante `architecture_security_data`. No constituyen todavía bounded contexts arquitectónicos aprobados:
 
 1. **Identity:** Autenticación y RBAC.
 2. **Customers:** Clientes y perfiles asociados.
@@ -67,7 +76,7 @@ Se han identificado 14 Bounded Contexts iniciales que compondrán el Modular Mon
 
 ## D0.4 - MVP Baseline
 
-Las verticales obligatorias para el Baseline y la secuencia sugerida de implementación técnica serán:
+Las candidate MVP verticals / provisional delivery decomposition (sujetas a validación durante `target_definition` y `requirements_domain`) son:
 1. **Core:** Identity, Catalog, Customers y Warehousing.
 2. **Inbound & Inventory:** Recepción y control de stock básico.
 3. **Orders & Fulfillment:** Captura de pedido comercial y ejecución de picking.
@@ -75,4 +84,4 @@ Las verticales obligatorias para el Baseline y la secuencia sugerida de implemen
 5. **Mobile Operator App:** Sincronización offline e interfaz de picking/put-away para operarios de almacén.
 6. **Portal Web de Clientes:** Cuentas por pagar, creación de pedidos y estado de cuenta.
 
-*Nota:* Con este documento se da por concluida la fase de `discovery` y el proyecto se encuentra habilitado para iniciar formalmente la etapa de `target_definition` donde se validará y formalizará la arquitectura objetivo.*
+*Nota:* Discovery evidence is complete and ready for human review. `target_definition` remains NOT_STARTED until explicit human acceptance.*
