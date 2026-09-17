@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-card":"#FFFFFF","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#3f465c","on-surface":"#0b1c30","outline-variant":"#becab9","error":"#ba1a1a","surface-variant":"#d3e4fe","canvas-bg":"#F8FAFC","on-primary-fixed-variant":"#005316","surface":"#f8f9ff","status-blocked":"#475569","border-subtle":"#E2E8F0","on-secondary-fixed":"#131b2e","status-damaged":"#DC2626","on-tertiary-fixed-variant":"#004b73","background":"#f8f9ff","on-error-container":"#93000a","on-tertiary-container":"#003b5c","status-available":"#16A34A","on-background":"#0b1c30","accent-focus":"#53B559","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","surface-dim":"#cbdbf5","on-primary":"#ffffff","primary-fixed":"#94f994","primary-fixed-dim":"#79dc7b","status-quarantine":"#D97706","primary-container":"#53b559","surface-container-highest":"#d3e4fe","tertiary":"#006398","surface-tint":"#006e20","surface-container-low":"#eff4ff","primary":"#006e20","status-expired":"#9333EA","tertiary-container":"#48a8ed","text-muted":"#94A3B8","error-container":"#ffdad6","border-strong":"#CBD5E1","secondary-fixed":"#dae2fd","secondary":"#565e74","status-reserved":"#2563EB","text-primary":"#0F172A","surface-container-high":"#dce9ff","status-sync-pending":"#F59E0B","on-secondary":"#ffffff","surface-container":"#e5eeff","surface-container-lowest":"#ffffff","on-primary-container":"#00420f","outline":"#6f7a6c","tertiary-fixed":"#cce5ff","on-surface-variant":"#3f4a3d","surface-bright":"#f8f9ff","inverse-surface":"#213145","inverse-primary":"#79dc7b","on-tertiary-fixed":"#001d31","on-primary-fixed":"#002205","secondary-container":"#dae2fd","tertiary-fixed-dim":"#93ccff","status-sync-error":"#E11D48","secondary-fixed-dim":"#bec6e0","on-secondary-container":"#5c647a","text-secondary":"#475569"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-desktop":"1.5rem","space-3xl":"3rem","space-xl":"1.5rem","space-2xl":"2rem","margin":"1rem","space-lg":"1rem","gutter":"1rem","margin-desktop":"1.5rem","space-sm":"0.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-2xs":"0.125rem"},fontFamily:{"display-hero":["Inter"],"code-data":["JetBrains Mono"],"headline-lg-mobile":["Inter"],"metric-stat":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"headline-lg":["Inter"],"badge-status":["JetBrains Mono"],"body-sm":["Inter"],"headline-md":["Inter"],"body-md":["Inter"]},fontSize:{"display-hero":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"code-data":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg-mobile":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"700"}],"metric-stat":["30px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"caption":["12px",{lineHeight:"16px",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"700"}],"badge-status":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card border-r border-border-subtle z-50 flex flex-col justify-between select-none"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-14 px-space-lg flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #53b559
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><span class="font-title-sm text-title-sm text-text-primary uppercase tracking-tight">SENTAI</span></div><span class="bg-surface-container-low text-primary border border-primary-container/30 px-space-xs py-space-2xs rounded-lg font-badge-status text-badge-status">PORTAL B2B</span></div><div class="p-space-md border-b border-border-subtle"><div class="bg-canvas-bg rounded-xl p-space-sm border border-border-subtle"><div class="flex items-center justify-between"><span class="font-caption text-caption text-text-muted uppercase tracking-wider">Cuenta Activa</span><span class="material-symbols-outlined text-text-secondary text-sm cursor-pointer">swap_horiz</span></div><p class="font-title-sm text-body-md text-text-primary font-semibold truncate mt-space-2xs">Distribuidora Central S.R.L.</p><p class="font-caption text-caption text-text-secondary flex items-center gap-space-xs mt-space-2xs"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>Casa Central • ID #99214</p></div></div><div class="px-space-md py-space-sm flex-1"><div class="mb-space-md"><p class="px-space-sm py-space-xs font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Operaciones B2B</p><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="inicio" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">dashboard</span><span class="font-body-md text-body-md">Inicio / Dashboard</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="catalogo-de-productos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">inventory_2</span><span class="font-body-md text-body-md">Catálogo de Productos</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="mis-pedidos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">shopping_cart_checkout</span><span class="font-body-md text-body-md">Mis Pedidos</span></div><span class="px-space-xs py-space-2xs bg-surface-container text-primary font-badge-status text-badge-status rounded">14</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="mis-envios-&amp;-tracking" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">local_shipping</span><span class="font-body-md text-body-md">Mis Envíos &amp; Tracking</span></div></a></nav></div><div class="mb-space-md"><p class="px-space-sm py-space-xs font-caption text-caption uppercase text-text-muted font-bold tracking-wider">Finanzas &amp; Facturación</p><nav class="space-y-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="cuentas-por-pagar" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">receipt_long</span><span class="font-body-md text-body-md">Cuentas por Pagar</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="pagos-realizados" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">check_circle</span><span class="font-body-md text-body-md">Pagos Realizados</span></div></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="estado-de-cuenta" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">account_balance_wallet</span><span class="font-body-md text-body-md">Estado de Cuenta</span></div></a></nav></div></div></div><div class="p-space-md border-t border-border-subtle bg-surface-card"><div class="bg-canvas-bg p-space-sm rounded-xl border border-border-subtle"><div class="flex items-center justify-between"><span class="font-caption text-caption text-text-muted uppercase tracking-wider">Línea de Crédito</span><span class="font-badge-status text-badge-status text-status-available font-bold">82% DISP.</span></div><div class="w-full bg-border-subtle h-1.5 rounded-full overflow-hidden my-space-xs"><div class="bg-status-available h-full w-[82%]"></div></div><div class="flex justify-between items-baseline"><span class="font-code-data text-code-data text-text-primary font-bold">$15,850 USD</span><span class="font-caption text-caption text-text-muted">de $80,000</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-14 bg-surface-card/95 backdrop-blur-md border-b border-border-subtle z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-text-muted"><span class="hover:text-text-primary cursor-pointer transition-colors">Portal B2B</span><span class="material-symbols-outlined text-xs">chevron_right</span><span class="text-text-primary font-medium">Operaciones</span></div><div class="h-4 w-px bg-border-subtle"></div><div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-low border border-primary-container/30 rounded-full"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-code-data text-badge-status text-primary font-semibold">Sincronizado WMS: 14:02:18 UTC-3</span></div></div><div class="flex items-center gap-space-md"><button class="h-9 px-space-md bg-canvas-bg hover:bg-surface-container-low border border-border-strong text-text-primary rounded-lg flex items-center gap-space-xs font-body-sm text-body-sm font-medium transition-colors shadow-none"><span class="material-symbols-outlined text-primary text-base">shopping_bag</span><span>Borrador de Pedido</span><span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container text-caption font-bold flex items-center justify-center">4</span></button><button class="relative p-space-xs text-text-secondary hover:text-text-primary transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span></button><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden xl:block"><p class="font-title-sm text-body-sm text-text-primary font-semibold leading-tight">Mariana Gómez</p><p class="font-caption text-caption text-text-muted leading-tight">Jefe de Compras &amp; Abastecimiento</p></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida/AEtjO1W_EqP6G5D7uRBX3WaNLOsqnVuJuhKUUxKP3iSl8LYPUuWp6HhTe6QQNQWaXnzotE288i9bAigAc8gwAjRFqycQB_9QjXreFWEjA8GikE9fLH8vGzGa3LGybperWoYZvxp40X_Dvr3t_S1VIHVIfx3JaGoG98UwOi1NZ_NvJm7qFY5ep0vKiOnLdNqgsmip8lr7oJVSm0NE-olzQYkQcf0KkHfKCAPPQk2CjcdnYmRtlCp8a93AF-3JVrY"/></div></div></header><main class="relative pt-14 bg-surface min-h-screen p-space-xl"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Header Context & Title Area -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="flex flex-col space-y-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs font-body-sm text-body-sm text-text-secondary">
+<span class="hover:text-text-primary cursor-pointer transition-colors">Portal B2B</span>
+<span class="material-symbols-outlined text-xs text-text-muted">chevron_right</span>
+<span class="hover:text-text-primary cursor-pointer transition-colors">Finanzas &amp; Facturación</span>
+<span class="material-symbols-outlined text-xs text-text-muted">chevron_right</span>
+<span class="text-text-primary font-semibold">Cuentas por Pagar</span>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Cuentas por Pagar</h1>
+<span class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-low text-primary border border-primary-container/30 rounded-md font-badge-status text-badge-status font-bold tracking-wider uppercase">
+          WEB-CP-011 // GESTIÓN DE OBLIGACIONES COMERCIALES Y VENCIMIENTOS B2B
+        </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+        Consolidado de pasivos comerciales, facturación electrónica DGI y calendarización de cancelaciones para <strong class="text-text-primary font-semibold">Distribuidora Central S.R.L.</strong>
+</p>
+</div>
+<!-- Quick Actions -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-9 px-space-md bg-surface-card hover:bg-surface-container-low text-text-primary border border-border-strong rounded-lg flex items-center gap-space-xs font-body-sm text-body-sm font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-base text-text-secondary">download</span>
+<span>Descargar Estado de Cuenta</span>
+<span class="text-caption font-badge-status text-text-muted font-normal uppercase">(PDF/XLSX)</span>
+</button>
+<button class="h-9 px-space-md bg-accent-focus hover:bg-primary text-on-primary rounded-lg flex items-center gap-space-xs font-body-sm text-body-sm font-semibold transition-all shadow-sm active:scale-95" id="btn-notify-payment">
+<span class="material-symbols-outlined text-base">add_circle</span>
+<span>Notificar Nuevo Pago</span>
+</button>
+</div>
+</div>
+<!-- KPI Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1: Saldo Total por Pagar -->
+<div class="bg-surface-card p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">Saldo Total por Pagar</span>
+<span class="p-space-xs rounded-lg bg-surface-container text-text-secondary">
+<span class="material-symbols-outlined text-lg">receipt_long</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-xs">
+<div class="font-metric-stat text-metric-stat text-text-primary font-bold tracking-tight">
+          $64,150.00 <span class="text-title-sm font-title-sm font-medium text-text-secondary">USD</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t border-border-subtle/50 text-caption font-caption text-text-muted">
+<span class="flex items-center gap-space-2xs text-text-secondary font-medium">
+<span class="w-2 h-2 rounded-full bg-status-reserved"></span> 8 facturas activas
+        </span>
+<span>Consolidado a hoy</span>
+</div>
+</div>
+<!-- KPI 2: Por Vencer (< 15 días) -->
+<div class="bg-surface-card p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">Por Vencer (&lt; 15 días)</span>
+<span class="p-space-xs rounded-lg bg-amber-50 text-status-quarantine">
+<span class="material-symbols-outlined text-lg">schedule</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-xs">
+<div class="font-metric-stat text-metric-stat text-text-primary font-bold tracking-tight">
+          $42,300.00 <span class="text-title-sm font-title-sm font-medium text-text-secondary">USD</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t border-border-subtle/50 text-caption font-caption">
+<span class="text-status-quarantine font-semibold flex items-center gap-space-2xs font-badge-status">
+<span class="material-symbols-outlined text-xs">warning</span> Próximos 14 días
+        </span>
+<span class="text-text-muted">Prioridad media</span>
+</div>
+</div>
+<!-- KPI 3: Saldo Vencido / En Mora -->
+<div class="bg-surface-card p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">Saldo Vencido / En Mora</span>
+<span class="p-space-xs rounded-lg bg-emerald-50 text-status-available">
+<span class="material-symbols-outlined text-lg">verified</span>
+</span>
+</div>
+<div class="mt-space-md mb-space-xs">
+<div class="font-metric-stat text-metric-stat text-status-available font-bold tracking-tight">
+          $0.00 <span class="text-title-sm font-title-sm font-medium text-text-secondary">USD</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t border-border-subtle/50 text-caption font-caption">
+<span class="font-badge-status text-badge-status text-status-available font-bold uppercase tracking-wider bg-emerald-100/60 px-space-xs py-space-2xs rounded">
+          AL DÍA / ÓPTIMO
+        </span>
+<span class="text-text-muted">Cero penalidades</span>
+</div>
+</div>
+<!-- KPI 4: Línea de Crédito Otorgada -->
+<div class="bg-surface-card p-space-lg rounded-xl border border-border-subtle shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-secondary uppercase tracking-wider font-semibold">Línea de Crédito B2B</span>
+<span class="font-badge-status text-badge-status font-bold px-space-xs py-space-2xs rounded bg-surface-container-low text-primary">
+          82% UTILIZADO
+        </span>
+</div>
+<div class="mt-space-sm mb-space-2xs">
+<div class="flex items-baseline justify-between">
+<span class="font-code-data text-headline-md text-text-primary font-bold">$15,850.00 USD</span>
+<span class="text-caption font-caption text-text-secondary">Disponible</span>
+</div>
+<div class="w-full bg-border-subtle h-2 rounded-full overflow-hidden mt-space-xs">
+<div class="bg-accent-focus h-full rounded-full transition-all" style="width: 82%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t border-border-subtle/50 text-caption font-caption text-text-muted">
+<span>Límite: <strong class="text-text-primary">$80,000.00 USD</strong></span>
+<span class="text-primary font-medium hover:underline cursor-pointer">Solicitar ampliación</span>
+</div>
+</div>
+</div>
+<!-- Filters, Slicers & Operational Control Toolbar -->
+<div class="bg-surface-card p-space-md rounded-xl border border-border-subtle shadow-sm space-y-space-md">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search SKU/Doc input -->
+<div class="relative flex-1 min-w-[280px] max-w-xl">
+<span class="material-symbols-outlined absolute left-3 top-2 text-text-muted text-lg">search</span>
+<input class="w-full h-9 pl-9 pr-space-md bg-canvas-bg border border-border-strong rounded-lg text-body-sm font-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-focus focus:ring-1 focus:ring-accent-focus transition-all" id="search-invoices" placeholder="Buscar por N° Factura (e-Factura DGI), Orden de Compra (OC), N° Pedido (SO)..." type="text"/>
+</div>
+<!-- Slicers Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Status Tabs / Chips -->
+<div class="inline-flex p- space-2xs bg-canvas-bg rounded-lg border border-border-subtle p-0.5">
+<button class="px-space-sm py-1 rounded text-caption font-caption font-semibold bg-surface-card text-text-primary shadow-xs">Todos (8)</button>
+<button class="px-space-sm py-1 rounded text-caption font-caption text-text-secondary hover:text-text-primary transition-colors">Pendientes (6)</button>
+<button class="px-space-sm py-1 rounded text-caption font-caption text-status-quarantine font-medium hover:text-text-primary transition-colors">Por Vencer (2)</button>
+<button class="px-space-sm py-1 rounded text-caption font-caption text-text-secondary hover:text-text-primary transition-colors">Conciliando (0)</button>
+</div>
+<div class="h-5 w-px bg-border-subtle hidden sm:block"></div>
+<!-- Date Range Filter -->
+<button class="h-9 px-space-sm bg-canvas-bg hover:bg-surface-container border border-border-strong rounded-lg flex items-center gap-space-xs text-body-sm font-body-sm text-text-primary transition-colors">
+<span class="material-symbols-outlined text-sm text-text-secondary">calendar_today</span>
+<span>Últimos 60 días</span>
+<span class="material-symbols-outlined text-xs text-text-muted">expand_more</span>
+</button>
+<!-- Warehouse / Branch Filter -->
+<button class="h-9 px-space-sm bg-canvas-bg hover:bg-surface-container border border-border-strong rounded-lg flex items-center gap-space-xs text-body-sm font-body-sm text-text-primary transition-colors">
+<span class="material-symbols-outlined text-sm text-text-secondary">storefront</span>
+<span>Casa Central</span>
+<span class="material-symbols-outlined text-xs text-text-muted">expand_more</span>
+</button>
+<!-- Reset / Filter button -->
+<button class="h-9 w-9 flex items-center justify-center bg-canvas-bg hover:bg-surface-container border border-border-strong rounded-lg text-text-secondary transition-colors" title="Limpiar filtros">
+<span class="material-symbols-outlined text-base">filter_alt_off</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Data Table Workspace -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-canvas-bg border-b border-border-strong h-9">
+<th class="w-10 px-space-md text-center">
+<input class="rounded border-border-strong text-accent-focus focus:ring-accent-focus cursor-pointer" id="th-checkbox-all" type="checkbox"/>
+</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider">N° Factura &amp; Fiscal DGI</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider">N° Pedido &amp; OC</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider">Fecha Emisión</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider">Fecha Vencimiento</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider text-center">Días Rest.</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider text-right">Importe Bruto</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider text-right">Saldo Pendiente</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider">Estado de Pago</th>
+<th class="px-space-md font-badge-status text-badge-status text-text-secondary uppercase tracking-wider text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-canvas-bg/80 transition-colors group">
+<td class="px-space-md text-center">
+<input class="invoice-checkbox rounded border-border-strong text-accent-focus focus:ring-accent-focus cursor-pointer" data-amount="4600.80" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary font-bold group-hover:text-primary transition-colors">e-Factura A-19830</span>
+<span class="font-caption text-caption text-text-muted flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-xs text-status-available">verified</span> CAE 4892019941
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-body-sm font-semibold text-text-primary">SO-000159</span>
+<span class="font-caption text-caption text-text-secondary font-code-data">OC-CENTRAL-2024-1192</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm text-text-secondary font-code-data">25 Oct 2024</td>
+<td class="px-space-md py-space-sm text-text-primary font-semibold font-code-data">24 Nov 2024</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="font-badge-status text-badge-status px-space-xs py-space-2xs rounded bg-surface-container font-semibold text-text-primary">
+                28 días
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-secondary">$4,600.80 USD</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-primary font-bold">$4,600.80 USD</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-badge-status text-badge-status px-space-xs py-space-2xs rounded border border-blue-200 bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span> PENDIENTE A 30 DÍAS
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Ver Detalle (WEB-CP-012)">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="h-7 px-space-xs bg-canvas-bg hover:bg-surface-container border border-border-strong rounded text-caption font-caption font-semibold text-text-primary transition-colors flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">payment</span> Pagar
+                </button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Descargar PDF DGI">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-canvas-bg/80 transition-colors group">
+<td class="px-space-md text-center">
+<input class="invoice-checkbox rounded border-border-strong text-accent-focus focus:ring-accent-focus cursor-pointer" data-amount="14280.00" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary font-bold group-hover:text-primary transition-colors">e-Factura A-19824</span>
+<span class="font-caption text-caption text-text-muted flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-xs text-status-available">verified</span> CAE 4892019882
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-body-sm font-semibold text-text-primary">SO-000158</span>
+<span class="font-caption text-caption text-text-secondary font-code-data">OC-CENTRAL-892</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm text-text-secondary font-code-data">24 Oct 2024</td>
+<td class="px-space-md py-space-sm text-text-primary font-semibold font-code-data">23 Nov 2024</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="font-badge-status text-badge-status px-space-xs py-space-2xs rounded bg-surface-container font-semibold text-text-primary">
+                27 días
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-secondary">$14,280.00 USD</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-primary font-bold">$14,280.00 USD</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-badge-status text-badge-status px-space-xs py-space-2xs rounded border border-blue-200 bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span> PENDIENTE A 30 DÍAS
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Ver Detalle (WEB-CP-012)">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="h-7 px-space-xs bg-canvas-bg hover:bg-surface-container border border-border-strong rounded text-caption font-caption font-semibold text-text-primary transition-colors flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">payment</span> Pagar
+                </button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Descargar PDF DGI">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 (Por Vencer) -->
+<tr class="hover:bg-amber-50/40 bg-amber-50/15 transition-colors group">
+<td class="px-space-md text-center">
+<input class="invoice-checkbox rounded border-border-strong text-accent-focus focus:ring-accent-focus cursor-pointer" data-amount="3450.00" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary font-bold group-hover:text-primary transition-colors">e-Factura A-19799</span>
+<span class="font-caption text-caption text-text-muted flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-xs text-status-available">verified</span> CAE 4892019741
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-body-sm font-semibold text-text-primary">SO-000148</span>
+<span class="font-caption text-caption text-text-secondary font-code-data">OC-REPO-FARM-99</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm text-text-secondary font-code-data">22 Oct 2024</td>
+<td class="px-space-md py-space-sm text-status-quarantine font-bold font-code-data">06 Nov 2024</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="font-badge-status text-badge-status px-space-xs py-space-2xs rounded bg-amber-100 text-status-quarantine font-bold border border-amber-300">
+                10 días
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-secondary">$3,450.00 USD</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-status-quarantine font-bold">$3,450.00 USD</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-badge-status text-badge-status px-space-xs py-space-2xs rounded border border-amber-300 bg-amber-50 text-status-quarantine font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-quarantine animate-pulse"></span> POR VENCER (Próximo)
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Ver Detalle (WEB-CP-012)">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="h-7 px-space-xs bg-accent-focus hover:bg-primary text-on-primary rounded text-caption font-caption font-semibold transition-colors flex items-center gap-0.5 shadow-xs">
+<span class="material-symbols-outlined text-sm">bolt</span> Pagar Ahora
+                </button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Descargar PDF DGI">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-canvas-bg/80 transition-colors group">
+<td class="px-space-md text-center">
+<input class="invoice-checkbox rounded border-border-strong text-accent-focus focus:ring-accent-focus cursor-pointer" data-amount="22800.00" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary font-bold group-hover:text-primary transition-colors">e-Factura A-19750</span>
+<span class="font-caption text-caption text-text-muted flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-xs text-status-available">verified</span> CAE 4892019401
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-body-sm font-semibold text-text-primary">SO-000135</span>
+<span class="font-caption text-caption text-text-secondary font-code-data">OC-MENSUAL-09</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm text-text-secondary font-code-data">10 Oct 2024</td>
+<td class="px-space-md py-space-sm text-text-primary font-semibold font-code-data">09 Nov 2024</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="font-badge-status text-badge-status px-space-xs py-space-2xs rounded bg-surface-container font-semibold text-text-primary">
+                13 días
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-secondary">$22,800.00 USD</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-primary font-bold">$22,800.00 USD</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-badge-status text-badge-status px-space-xs py-space-2xs rounded border border-blue-200 bg-blue-50 text-status-reserved">
+<span class="w-1.5 h-1.5 rounded-full bg-status-reserved"></span> PENDIENTE
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Ver Detalle (WEB-CP-012)">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="h-7 px-space-xs bg-canvas-bg hover:bg-surface-container border border-border-strong rounded text-caption font-caption font-semibold text-text-primary transition-colors flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">payment</span> Pagar
+                </button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Descargar PDF DGI">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 (Parcial) -->
+<tr class="hover:bg-canvas-bg/80 transition-colors group">
+<td class="px-space-md text-center">
+<input class="invoice-checkbox rounded border-border-strong text-accent-focus focus:ring-accent-focus cursor-pointer" data-amount="19019.20" type="checkbox"/>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-code-data text-text-primary font-bold group-hover:text-primary transition-colors">e-Factura A-19710</span>
+<span class="font-caption text-caption text-text-muted flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-xs text-status-available">verified</span> CAE 4892019110
+                </span>
+</div>
+</td>
+<td class="px-space-md py-space-sm">
+<div class="flex flex-col">
+<span class="font-code-data text-body-sm font-semibold text-text-primary">SO-000142</span>
+<span class="font-caption text-caption text-text-secondary font-code-data">OC-REPO-MENSUAL-01</span>
+</div>
+</td>
+<td class="px-space-md py-space-sm text-text-secondary font-code-data">18 Oct 2024</td>
+<td class="px-space-md py-space-sm text-text-primary font-semibold font-code-data">17 Nov 2024</td>
+<td class="px-space-md py-space-sm text-center">
+<span class="font-badge-status text-badge-status px-space-xs py-space-2xs rounded bg-surface-container font-semibold text-text-primary">
+                21 días
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right font-code-data text-text-secondary line-through opacity-75">$31,220.00 USD</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="font-code-data text-text-primary font-bold">$19,019.20 USD</div>
+<div class="font-caption text-caption text-primary font-medium">(Abono de $12,200.80)</div>
+</td>
+<td class="px-space-md py-space-sm">
+<span class="inline-flex items-center gap-1 font-badge-status text-badge-status px-space-xs py-space-2xs rounded border border-emerald-300 bg-emerald-50 text-status-available font-bold">
+<span class="material-symbols-outlined text-xs">done</span> PAGO PARCIAL REGISTRADO
+              </span>
+</td>
+<td class="px-space-md py-space-sm text-right">
+<div class="inline-flex items-center gap-1 justify-end">
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Ver Detalle (WEB-CP-012)">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+<button class="h-7 px-space-xs bg-canvas-bg hover:bg-surface-container border border-border-strong rounded text-caption font-caption font-semibold text-text-primary transition-colors flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">savings</span> Pagar Saldo
+                </button>
+<button class="p-1 rounded text-text-secondary hover:text-text-primary hover:bg-surface-container-high transition-colors" title="Descargar PDF DGI">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-sm bg-canvas-bg border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="text-caption font-caption text-text-secondary flex items-center gap-space-xs">
+<span>Mostrando <strong>5</strong> de <strong>8</strong> documentos exigibles</span>
+<span class="text-border-strong">|</span>
+<span>Monto total listado: <strong class="text-text-primary font-code-data">$64,150.00 USD</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-7 px-space-xs bg-surface-card border border-border-strong rounded text-caption font-caption font-medium text-text-secondary disabled:opacity-40" disabled="">
+          Anterior
+        </button>
+<button class="h-7 w-7 bg-primary-container text-on-primary-container font-badge-status text-badge-status font-bold rounded flex items-center justify-center shadow-xs">
+          1
+        </button>
+<button class="h-7 w-7 bg-surface-card hover:bg-surface-container-low border border-border-subtle text-text-primary font-badge-status text-badge-status rounded flex items-center justify-center">
+          2
+        </button>
+<button class="h-7 px-space-xs bg-surface-card hover:bg-surface-container-low border border-border-strong rounded text-caption font-caption font-medium text-text-primary">
+          Siguiente
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Interactive Summary & Banking Info Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Mass Action Batch Checkout Bar -->
+<div class="lg:col-span-5 bg-surface-card rounded-xl border border-border-subtle p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">playlist_add_check</span>
+<h3 class="font-title-sm text-title-sm text-text-primary font-semibold">Selección de Pago Múltiple</h3>
+</div>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-primary font-badge-status text-badge-status font-bold" id="selected-counter-badge">
+            2 SELECCIONADAS
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+          Puede agrupar facturas pendientes para liquidación consolidada mediante una única transferencia bancaria o débito corporativo acordado.
+        </p>
+<div class="p-space-sm rounded-lg bg-canvas-bg border border-border-subtle space-y-space-2xs font-code-data text-body-sm">
+<div class="flex justify-between text-text-secondary text-caption">
+<span>Doc #1 (e-Factura A-19830):</span>
+<span class="text-text-primary font-semibold">$4,600.80 USD</span>
+</div>
+<div class="flex justify-between text-text-secondary text-caption">
+<span>Doc #2 (e-Factura A-19824):</span>
+<span class="text-text-primary font-semibold">$14,280.00 USD</span>
+</div>
+<div class="h-px bg-border-subtle my-1"></div>
+<div class="flex justify-between items-center text-text-primary font-bold text-title-sm">
+<span>Total a Liquidar:</span>
+<span class="text-primary font-code-data" id="batch-total">$18,880.80 USD</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg flex items-center gap-space-sm">
+<button class="flex-1 h-10 bg-accent-focus hover:bg-primary text-on-primary rounded-lg font-title-sm text-body-md font-semibold flex items-center justify-center gap-space-xs shadow-sm transition-all active:scale-98" id="btn-batch-pay">
+<span class="material-symbols-outlined text-lg">credit_score</span>
+<span>Pagar 2 seleccionados ($18,880.80 USD)</span>
+</button>
+<button class="h-10 px-space-md bg-canvas-bg hover:bg-surface-container text-text-secondary hover:text-text-primary border border-border-strong rounded-lg font-caption text-caption font-semibold transition-colors" title="Deseleccionar todo">
+          Limpiar
+        </button>
+</div>
+</div>
+<!-- Payment Instructions & Banking Information Card -->
+<div class="lg:col-span-7 bg-surface-card rounded-xl border border-border-subtle p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-text-secondary text-xl">account_balance</span>
+<h3 class="font-title-sm text-title-sm text-text-primary font-semibold">Cuentas Bancarias Habilitadas para Transferencias</h3>
+</div>
+<span class="font-badge-status text-badge-status text-text-secondary uppercase">SENTAI LOGISTICS S.A. • RUT 218909320019</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+          Para acreditar cancelaciones comerciales de manera inmediata, remita transferencias vía <strong class="text-text-primary">SPI / SITB</strong> referenciando el N° de Factura e ingrese el comprobante en la pantalla de conciliación <strong class="text-text-primary font-code-data">WEB-CP-013</strong>.
+        </p>
+<!-- Bank Accounts Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Santander -->
+<div class="p-space-sm rounded-lg border border-border-subtle bg-canvas-bg flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-body-md font-bold text-red-600">Banco Santander Uruguay</span>
+<span class="px-space-xs py-space-2xs bg-surface-card rounded text-caption font-badge-status text-text-secondary border border-border-subtle">USD</span>
+</div>
+<div class="mt-space-xs font-code-data text-body-sm space-y-0.5">
+<div class="text-text-muted text-caption">Cuenta Corriente USD:</div>
+<div class="font-bold text-text-primary tracking-wide">007000-1928374-101</div>
+<div class="text-caption text-text-secondary">Sucursal: 07 Ciudad Vieja • BIC: BSCHUYYM</div>
+</div>
+</div>
+<!-- Itaú -->
+<div class="p-space-sm rounded-lg border border-border-subtle bg-canvas-bg flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-body-md font-bold text-amber-600">Banco Itaú Uruguay</span>
+<span class="px-space-xs py-space-2xs bg-surface-card rounded text-caption font-badge-status text-text-secondary border border-border-subtle">USD</span>
+</div>
+<div class="mt-space-xs font-code-data text-body-sm space-y-0.5">
+<div class="text-text-muted text-caption">Cuenta Corriente USD:</div>
+<div class="font-bold text-text-primary tracking-wide">4920-8812940</div>
+<div class="text-caption text-text-secondary">Sucursal: World Trade Center • BIC: ITAUUYMM</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Support & Helpdesk Row -->
+<div class="mt-space-md pt-space-sm border-t border-border-subtle flex flex-wrap items-center justify-between gap-space-sm text-caption font-caption text-text-secondary">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-primary">support_agent</span>
+<span>Mesa de Ayuda Tesorería B2B: <strong class="text-text-primary">pagos@sentai-logistics.com</strong> | Lun a Vie 08:30 - 18:00</span>
+</div>
+<a class="text-primary hover:underline font-semibold flex items-center gap-space-2xs" href="#">
+<span>Manual de Procedimientos de Pago</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Interactive checkboxes selection logic
+    const thAll = document.getElementById('th-checkbox-all');
+    const checkboxes = document.querySelectorAll('.invoice-checkbox');
+    const counterBadge = document.getElementById('selected-counter-badge');
+    const batchButton = document.getElementById('btn-batch-pay');
+    const batchTotalDisplay = document.getElementById('batch-total');
+
+    // Preselect first two checkboxes per realistic mock
+    if (checkboxes.length >= 2) {
+      checkboxes[0].checked = true;
+      checkboxes[1].checked = true;
+    }
+
+    function updateTotal() {
+      let count = 0;
+      let sum = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          count++;
+          sum += parseFloat(cb.getAttribute('data-amount') || 0);
+        }
+      });
+
+      if (counterBadge) {
+        counterBadge.textContent = count + ' SELECCIONADA' + (count !== 1 ? 'S' : '');
+      }
+      if (batchTotalDisplay) {
+        batchTotalDisplay.textContent = '$' + sum.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' USD';
+      }
+      if (batchButton) {
+        if (count > 0) {
+          batchButton.disabled = false;
+          batchButton.classList.remove('opacity-50', 'cursor-not-allowed');
+          batchButton.innerHTML = '<span class="material-symbols-outlined text-lg">credit_score</span><span>Pagar ' + count + ' seleccionados ($' + sum.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' USD)</span>';
+        } else {
+          batchButton.disabled = true;
+          batchButton.classList.add('opacity-50', 'cursor-not-allowed');
+          batchButton.innerHTML = '<span class="material-symbols-outlined text-lg">credit_score</span><span>Seleccione documentos para pagar</span>';
+        }
+      }
+    }
+
+    if (thAll) {
+      thAll.addEventListener('change', (e) => {
+        checkboxes.forEach(cb => cb.checked = e.target.checked);
+        updateTotal();
+      });
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        if (!cb.checked && thAll) thAll.checked = false;
+        updateTotal();
+      });
+    });
+
+    const btnNotify = document.getElementById('btn-notify-payment');
+    if (btnNotify) {
+      btnNotify.addEventListener('click', () => {
+        window.alert('Redirigiendo a formulario WEB-CP-013: Notificación de Transferencia y Carga de Comprobante...');
+      });
+    }
+  })();
+</script></main></div></body></html>

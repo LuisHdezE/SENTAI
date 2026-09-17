@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#006398","surface-tint":"#006e20","on-primary":"#ffffff","primary-fixed-dim":"#79dc7b","status-reserved":"#2563EB","secondary-fixed-dim":"#bec6e0","border-strong":"#CBD5E1","error":"#ba1a1a","surface-container":"#e5eeff","on-secondary-fixed-variant":"#3f465c","on-tertiary-container":"#003b5c","tertiary-fixed-dim":"#93ccff","surface-container-low":"#eff4ff","on-background":"#0b1c30","on-error":"#ffffff","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","on-tertiary-fixed-variant":"#004b73","primary-container":"#53b559","on-secondary-fixed":"#131b2e","tertiary-container":"#48a8ed","on-tertiary":"#ffffff","text-primary":"#0F172A","status-sync-error":"#E11D48","surface-card":"#FFFFFF","surface-variant":"#d3e4fe","status-quarantine":"#D97706","on-secondary":"#ffffff","surface":"#f8f9ff","secondary-container":"#dae2fd","status-damaged":"#DC2626","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","text-muted":"#94A3B8","outline-variant":"#becab9","canvas-bg":"#F8FAFC","on-secondary-container":"#5c647a","on-primary-fixed":"#002205","on-tertiary-fixed":"#001d31","status-blocked":"#475569","outline":"#6f7a6c","status-sync-pending":"#F59E0B","secondary":"#565e74","on-surface":"#0b1c30","primary":"#006e20","text-secondary":"#475569","primary-fixed":"#94f994","inverse-on-surface":"#eaf1ff","surface-container-lowest":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#d3e4fe","on-primary-fixed-variant":"#005316","status-expired":"#9333EA","accent-focus":"#53B559","secondary-fixed":"#dae2fd","border-subtle":"#E2E8F0","inverse-surface":"#213145","status-available":"#16A34A","inverse-primary":"#79dc7b","background":"#f8f9ff","on-error-container":"#93000a","surface-bright":"#f8f9ff","on-surface-variant":"#3f4a3d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xs":"0.125rem","space-xl":"1.5rem","space-lg":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.75rem","space-3xl":"3rem","space-2xl":"2rem","gutter":"1rem","margin-desktop":"1.5rem","margin":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-md":["Inter"],"badge-status":["JetBrains Mono"],"display-hero":["Inter"],"code-data":["JetBrains Mono"],"metric-stat":["Inter"],"headline-lg":["Inter"],"title-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="flex-1 truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="material-symbols-outlined text-[18px]">hub</span><span class="flex-1 truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="material-symbols-outlined text-[18px]">group</span><span class="flex-1 truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="material-symbols-outlined text-[18px]">shield_person</span><span class="flex-1 truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs transition-all bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm" data-path="almacenes-red" href="#"><span class="material-symbols-outlined text-[18px]">warehouse</span><span class="flex-1 truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="material-symbols-outlined text-[18px]">shelves</span><span class="flex-1 truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span class="flex-1 truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span class="flex-1 truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="flex-1 truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="material-symbols-outlined text-[18px]">move_to_inbox</span><span class="flex-1 truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="material-symbols-outlined text-[18px]">archive</span><span class="flex-1 truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="material-symbols-outlined text-[18px]">layers</span><span class="flex-1 truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="material-symbols-outlined text-[18px]">sync_alt</span><span class="flex-1 truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="flex-1 truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="flex-1 truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="material-symbols-outlined text-[18px]">shopping_basket</span><span class="flex-1 truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="material-symbols-outlined text-[18px]">departure_board</span><span class="flex-1 truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS</span><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span class="flex-1 truncate">Cuentas por Cobrar</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="material-symbols-outlined text-[18px]">pending_actions</span><span class="flex-1 truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">003</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Ubicación..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Logística Web</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Consola Operativa</span></nav><div class="flex flex-col w-full">
+<!-- Sub-Header & Vista Info -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="font-badge-status text-badge-status text-primary tracking-widest uppercase bg-surface-container px-space-xs py-0.5 rounded-lg">
+          WEB-INV-003 • MAPA TOPOLÓGICO Y STOCK POR POSICIÓN FÍSICA
+        </span>
+<span class="inline-flex items-center gap-1 font-caption text-caption text-text-muted">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span> DC-01 RACK SYNC ACTIVE
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Stock por Ubicación</h1>
+<p class="font-body-md text-body-md text-text-secondary">
+        Inspección de ocupación física, coordenadas XYZ de rack, marbetes de pallet y saldos disponibles por hueco en Montevideo DC-01.
+      </p>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-xl bg-surface-card hover:bg-surface-container text-text-primary font-body-sm text-body-sm shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">print</span>
+<span>Generar Etiquetas (ZPL)</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-xl bg-surface-card hover:bg-surface-container text-text-primary font-body-sm text-body-sm shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">swap_calls</span>
+<span>Simular Rebalanceo</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-xl bg-error hover:bg-error/90 text-on-error font-body-sm text-body-sm font-semibold shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>+ Bloquear Ubicación</span>
+</button>
+</div>
+</div>
+<!-- KPI Metricas de Ocupación Industrial -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md mb-space-lg">
+<!-- Total Posiciones -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">Total Posiciones</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">grid_4x4</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">18,920</span>
+<span class="font-caption text-caption text-text-muted">huecos</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-2xs text-text-secondary font-caption text-caption">
+<span>Catálogo WMS DC-01</span>
+</div>
+<div class="absolute -right-3 -bottom-3 w-12 h-12 rounded-full bg-surface-container opacity-60"></div>
+</div>
+<!-- Ocupadas -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">Ocupadas (Allocated)</span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-primary-container/20 text-on-primary-container font-bold">84.1%</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">15,910</span>
+<span class="font-caption text-caption text-text-muted">pallets</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 mt-space-sm overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 84.1%"></div>
+</div>
+</div>
+<!-- Disponibles / Vacías -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">Disponibles / Vacías</span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">15.9%</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">3,010</span>
+<span class="font-caption text-caption text-text-muted">slots</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 mt-space-sm overflow-hidden">
+<div class="bg-status-available h-full rounded-full transition-all duration-500" style="width: 15.9%"></div>
+</div>
+</div>
+<!-- En Cuarentena / Bloqueadas -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">En Cuarentena / Lock</span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-quarantine/10 text-status-quarantine font-bold">QA CONTROL</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-stat text-metric-stat text-status-quarantine">45</span>
+<span class="font-caption text-caption text-text-muted">posiciones</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-2xs text-text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-status-quarantine">warning</span>
+<span>Requiere liberación técnica</span>
+</div>
+</div>
+<!-- Capacidad Volumétrica -->
+<div class="relative overflow-hidden rounded-xl bg-surface-card p-space-md shadow-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">Volumen Cúbico</span>
+<span class="font-code-data text-[11px] text-tertiary font-bold">84.2% UTIL</span>
+</div>
+<div class="flex items-baseline gap-space-2xs">
+<span class="font-metric-stat text-metric-stat text-text-primary">37,890</span>
+<span class="font-caption text-caption text-text-muted">/ 45k m³</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 mt-space-sm overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full transition-all duration-500" style="width: 84.2%"></div>
+</div>
+</div>
+</div>
+<!-- Barra de Filtros Topológicos en Cascada -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Selectores en Cascada -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm flex-1">
+<div class="flex flex-col">
+<label class="font-caption text-caption text-text-muted mb-1 font-semibold uppercase text-[10px]">Zona Logística</label>
+<div class="relative bg-surface-container-low rounded-lg">
+<select class="w-full h-9 bg-transparent pl-space-sm pr-space-lg font-body-sm text-body-sm text-text-primary appearance-none focus:outline-none cursor-pointer">
+<option selected="" value="A">Zona A - Racks Paletizados</option>
+<option value="B">Zona B - Dinámico Picking</option>
+<option value="C">Zona C - Cámara Frío 2-8°C</option>
+<option value="D">Zona D - Pulmón Muelle Crossdock</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-text-muted pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-caption text-caption text-text-muted mb-1 font-semibold uppercase text-[10px]">Pasillo (Aisle)</label>
+<div class="relative bg-surface-container-low rounded-lg">
+<select class="w-full h-9 bg-transparent pl-space-sm pr-space-lg font-body-sm text-body-sm text-text-primary appearance-none focus:outline-none cursor-pointer">
+<option selected="" value="03">Pasillo 03 (APR Pesado)</option>
+<option value="01">Pasillo 01</option>
+<option value="02">Pasillo 02</option>
+<option value="04">Pasillo 04</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-text-muted pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-caption text-caption text-text-muted mb-1 font-semibold uppercase text-[10px]">Rack / Módulo</label>
+<div class="relative bg-surface-container-low rounded-lg">
+<select class="w-full h-9 bg-transparent pl-space-sm pr-space-lg font-body-sm text-body-sm text-text-primary appearance-none focus:outline-none cursor-pointer">
+<option selected="" value="02">Rack 02 (Doble Fondo)</option>
+<option value="01">Rack 01</option>
+<option value="03">Rack 03</option>
+<option value="04">Rack 04</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-text-muted pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-caption text-caption text-text-muted mb-1 font-semibold uppercase text-[10px]">Nivel Altura</label>
+<div class="relative bg-surface-container-low rounded-lg">
+<select class="w-full h-9 bg-transparent pl-space-sm pr-space-lg font-body-sm text-body-sm text-text-primary appearance-none focus:outline-none cursor-pointer">
+<option value="ALL">Todos los Niveles (1-5)</option>
+<option selected="" value="04">Nivel 4 (+8.00m)</option>
+<option value="01">Nivel 1 (+0.00m)</option>
+<option value="02">Nivel 2 (+2.60m)</option>
+<option value="03">Nivel 3 (+5.30m)</option>
+<option value="05">Nivel 5 (+10.50m)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-text-muted pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Buscador de LPN / SKU / Coordenada directa -->
+<div class="flex items-center gap-space-sm w-full lg:w-96 mt-2 lg:mt-0">
+<div class="relative flex-1 bg-surface-container-low rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus transition-all">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-space-xs inline-block align-middle">qr_code_scanner</span>
+<input class="bg-transparent font-code-data text-code-data text-text-primary placeholder:text-text-muted focus:outline-none w-[80%] inline-block align-middle" placeholder="Buscar Posición o Matrícula SSCC..." type="text" value="A-03-02-04"/>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-text-primary font-body-sm text-body-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filtros</span>
+</button>
+</div>
+</div>
+<!-- Tags de Estado de Posición Rápido -->
+<div class="flex items-center gap-space-xs overflow-x-auto pt-space-md mt-space-md border-t border-border-subtle">
+<span class="font-caption text-caption text-text-muted mr-space-xs uppercase text-[10px]">Filtrar Estado:</span>
+<button class="px-space-sm py-1 rounded-lg font-badge-status text-badge-status bg-text-primary text-on-primary shadow-sm" type="button">TODOS (12)</button>
+<button class="px-space-sm py-1 rounded-lg font-badge-status text-badge-status bg-status-available/15 text-status-available hover:bg-status-available/25 transition-colors" type="button">DISPONIBLE (8)</button>
+<button class="px-space-sm py-1 rounded-lg font-badge-status text-badge-status bg-status-reserved/15 text-status-reserved hover:bg-status-reserved/25 transition-colors" type="button">RESERVADO OLAS (2)</button>
+<button class="px-space-sm py-1 rounded-lg font-badge-status text-badge-status bg-status-quarantine/15 text-status-quarantine hover:bg-status-quarantine/25 transition-colors" type="button">CUARENTENA (1)</button>
+<button class="px-space-sm py-1 rounded-lg font-badge-status text-badge-status bg-status-blocked/15 text-status-blocked hover:bg-status-blocked/25 transition-colors" type="button">VACÍO (1)</button>
+</div>
+</div>
+<!-- Layout Master-Detail Topológico (65% / 35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-2xl">
+<!-- Panel Izquierdo (65%): Master List Tabular -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden">
+<!-- Tabla Header Operativo -->
+<div class="px-space-lg py-space-md bg-surface-card flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">shelves</span>
+<h2 class="font-title-sm text-title-sm text-text-primary">Rack A-03-02 • Bahías y Celdas de Almacenamiento</h2>
+</div>
+<div class="flex items-center gap-space-xs font-code-data text-[12px] text-text-muted">
+<span>5 Registros visibles</span>
+<span class="w-1 h-1 rounded-full bg-text-muted"></span>
+<span>Estabilidad Estructural 100%</span>
+</div>
+</div>
+<!-- Tabla Industrial -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-canvas-bg font-badge-status text-badge-status text-text-secondary uppercase">
+<th class="py-space-sm px-space-md font-semibold">Ubicación / Nivel</th>
+<th class="py-space-sm px-space-md font-semibold">Pallet SSCC / LPN</th>
+<th class="py-space-sm px-space-md font-semibold">SKU Alojado</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Cant / Peso</th>
+<th class="py-space-sm px-space-md font-semibold">Lote &amp; Venc.</th>
+<th class="py-space-sm px-space-md font-semibold">Estado</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Item 1: Seleccionado (A-03-02-04) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer" onclick="selectLocation('A-03-02-04', 'DISPONIBLE', '100 UN', '225 kg', 'Pallet #21', 'SKU-100245', 'LOT-2026-0916', '16-Sep-2026', 'CD-77')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<div class="flex flex-col">
+<span class="font-code-data font-bold text-text-primary text-[14px]">A-03-02-04</span>
+<span class="font-caption text-[11px] text-text-muted">Nivel 4 • APR 1200x1000</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary font-medium text-[12px]">SSCC-88402910023</span>
+<span class="font-caption text-caption text-text-muted">Pallet Madera #21</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col max-w-[170px]">
+<span class="font-code-data text-text-primary font-semibold text-[12px] truncate">SKU-100245</span>
+<span class="font-caption text-caption text-text-secondary truncate">Sensor Telemétrico IoT v4</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data">
+<span class="font-bold text-text-primary">100 UN</span>
+<span class="block text-[11px] text-text-muted">225.0 kg</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary text-[11px]">LOT-2026-0916</span>
+<span class="font-caption text-caption text-text-muted">16-Sep-2026</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-available/15 text-status-available font-bold whitespace-nowrap">
+                    DISPONIBLE
+                  </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button aria-label="Ver detalles" class="p-1 rounded hover:bg-surface-container text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button aria-label="Mover pallet" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">drive_file_move</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 2: A-03-02-05 (Reservado) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectLocation('A-03-02-05', 'RESERVADO OLAS', '80 UN', '190 kg', 'Pallet #22', 'SKU-204918', 'LOT-2025-1102', '02-Nov-2025', 'CD-42')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col">
+<span class="font-code-data font-bold text-text-primary text-[14px]">A-03-02-05</span>
+<span class="font-caption text-[11px] text-text-muted">Nivel 5 • APR 1200x1000</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary font-medium text-[12px]">SSCC-91104829104</span>
+<span class="font-caption text-caption text-text-muted">Pallet Chep #22</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col max-w-[170px]">
+<span class="font-code-data text-text-primary font-semibold text-[12px] truncate">SKU-204918</span>
+<span class="font-caption text-caption text-text-secondary truncate">Módulo Batería Litio DC</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data">
+<span class="font-bold text-text-primary">80 UN</span>
+<span class="block text-[11px] text-text-muted">190.0 kg</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary text-[11px]">LOT-2025-1102</span>
+<span class="font-caption text-caption text-text-muted">02-Nov-2025</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-reserved/15 text-status-reserved font-bold whitespace-nowrap">
+                    RESERVADO OLAS
+                  </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button aria-label="Ver detalles" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button aria-label="Mover pallet" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">drive_file_move</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 3: A-03-02-06 (Vacío) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectLocation('A-03-02-06', 'VACÍO', '0 UN', '0 kg', 'Sin Pallet', 'HUECO LIBRE', 'N/A', 'N/A', 'CD-19')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col">
+<span class="font-code-data font-bold text-text-primary text-[14px]">A-03-02-06</span>
+<span class="font-caption text-[11px] text-text-muted">Nivel 3 • Capacidad 1,200 kg</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-caption text-caption text-text-muted italic">Sin Carga Asignada</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-caption text-caption text-text-muted">-</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data">
+<span class="font-bold text-text-muted">0 UN</span>
+<span class="block text-[11px] text-text-muted">0.0 kg</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="font-caption text-caption text-text-muted">-</span>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-blocked/10 text-status-blocked font-bold whitespace-nowrap">
+                    VACÍO
+                  </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button aria-label="Ingresar pallet" class="p-1 rounded hover:bg-surface-container text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+</button>
+<button aria-label="Bloquear" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 4: LOC-QUAR-01 (Cuarentena Jaula) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectLocation('LOC-QUAR-01', 'CUARENTENA QA', '12 UN', '45 kg', 'Bulto #14', 'SKU-774011', 'LOT-DAM-09', '30-Jun-2025', 'CD-91')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col">
+<span class="font-code-data font-bold text-status-quarantine text-[14px]">LOC-QUAR-01</span>
+<span class="font-caption text-[11px] text-text-muted">Jaula QA • Bulto Dañado</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary font-medium text-[12px]">LPN-RET-009182</span>
+<span class="font-caption text-caption text-status-damaged font-medium">Bulto #14 (Caja Golpeada)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col max-w-[170px]">
+<span class="font-code-data text-text-primary font-semibold text-[12px] truncate">SKU-774011</span>
+<span class="font-caption text-caption text-text-secondary truncate">Válvula Reguladora Hidráulica</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data">
+<span class="font-bold text-status-quarantine">12 UN</span>
+<span class="block text-[11px] text-text-muted">45.0 kg</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary text-[11px]">LOT-DAM-09</span>
+<span class="font-caption text-caption text-text-muted">30-Jun-2025</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-status-quarantine/15 text-status-quarantine font-bold whitespace-nowrap">
+                    CUARENTENA QA
+                  </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button aria-label="Inspección QA" class="p-1 rounded hover:bg-surface-container text-status-quarantine transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+<button aria-label="Mover" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">drive_file_move</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item 5: C-01-01-03 (Bóveda Frío) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectLocation('C-01-01-03', 'DISPONIBLE', '300 UN', '410 kg', 'Pallet #54', 'SKU-990145', 'LOT-COLD-88', '12-Ene-2027', 'CD-33')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col">
+<span class="font-code-data font-bold text-tertiary text-[14px]">C-01-01-03</span>
+<span class="font-caption text-[11px] text-text-muted">Cámara Frío (2-8°C) • Nivel 1</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary font-medium text-[12px]">SSCC-44910283011</span>
+<span class="font-caption text-caption text-tertiary font-medium">Pallet Térmico #54</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col max-w-[170px]">
+<span class="font-code-data text-text-primary font-semibold text-[12px] truncate">SKU-990145</span>
+<span class="font-caption text-caption text-text-secondary truncate">Reactivo Biológico Estéril</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data">
+<span class="font-bold text-text-primary">300 UN</span>
+<span class="block text-[11px] text-text-muted">410.0 kg</span>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-code-data text-text-primary text-[11px]">LOT-COLD-88</span>
+<span class="font-caption text-caption text-text-muted">12-Ene-2027</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md">
+<span class="px-space-xs py-0.5 rounded font-badge-status text-badge-status bg-tertiary-container/30 text-tertiary font-bold whitespace-nowrap">
+                    CADENA FRÍO
+                  </span>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button aria-label="Ver detalles" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button aria-label="Mover" class="p-1 rounded hover:bg-surface-container text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">drive_file_move</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginación de Tabla Industrial -->
+<div class="px-space-lg py-space-sm bg-canvas-bg flex items-center justify-between text-text-secondary font-caption text-caption">
+<div class="flex items-center gap-space-sm">
+<span>Mostrando 1-5 de 24 posiciones en Rack A-03-02</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-2 py-1 rounded bg-surface-card hover:bg-surface-container text-text-primary shadow-sm disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[14px]">chevron_left</span>
+</button>
+<span class="px-2 font-code-data text-[12px] font-bold text-text-primary">Página 1 de 5</span>
+<button class="px-2 py-1 rounded bg-surface-card hover:bg-surface-container text-text-primary shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ilustración Visual de la Bahía y Alturas -->
+<div class="rounded-xl bg-surface-card p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">layers</span>
+<span class="font-title-sm text-title-sm text-text-primary">Perfil Lateral de Pasillo 03 • Alturas de Carga</span>
+</div>
+<span class="font-caption text-caption text-text-muted">Escala Vertical 1:50</span>
+</div>
+<!-- Elevación SVG Esquemática de Rack Vertical -->
+<div class="w-full h-36 bg-surface-container-low rounded-lg p-space-sm relative overflow-hidden flex items-end justify-between px-space-xl">
+<div class="flex flex-col items-center gap-1 z-10">
+<span class="font-code-data text-[10px] text-text-muted">+10.5m</span>
+<div class="w-24 h-5 bg-surface-card rounded shadow-xs flex items-center justify-center font-code-data text-[10px] text-text-secondary">Nivel 5 (80 UN)</div>
+</div>
+<div class="flex flex-col items-center gap-1 z-10">
+<span class="font-code-data text-[10px] text-primary font-bold">+8.0m (Foco)</span>
+<div class="w-24 h-5 bg-primary-container text-on-primary font-bold rounded shadow-xs flex items-center justify-center font-code-data text-[10px]">A-03-02-04</div>
+</div>
+<div class="flex flex-col items-center gap-1 z-10">
+<span class="font-code-data text-[10px] text-text-muted">+5.3m</span>
+<div class="w-24 h-5 bg-surface-container-high rounded flex items-center justify-center font-code-data text-[10px] text-text-muted">Nivel 3 (Vacío)</div>
+</div>
+<div class="flex flex-col items-center gap-1 z-10">
+<span class="font-code-data text-[10px] text-text-muted">+2.6m</span>
+<div class="w-24 h-5 bg-surface-card rounded shadow-xs flex items-center justify-center font-code-data text-[10px] text-text-secondary">Nivel 2 (Ocupado)</div>
+</div>
+<div class="flex flex-col items-center gap-1 z-10">
+<span class="font-code-data text-[10px] text-text-muted">+0.0m Suelo</span>
+<div class="w-24 h-5 bg-surface-card rounded shadow-xs flex items-center justify-center font-code-data text-[10px] text-text-secondary">Nivel 1 (Picking)</div>
+</div>
+<!-- Linea de suelo de referencia -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-border-strong"></div>
+</div>
+</div>
+</div>
+<!-- Panel Derecho (35%): Ficha Técnica & Visualizador 2D -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Tarjeta Detalle de Posición -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<!-- Encabezado de la Ficha -->
+<div class="flex items-start justify-between pb-space-md border-b border-border-subtle">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-text-primary tracking-tight font-bold" id="detail-code">A-03-02-04</span>
+<span class="px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/15 text-status-available font-bold" id="detail-badge">
+                DISPONIBLE
+              </span>
+</div>
+<p class="font-caption text-caption text-text-muted mt-0.5">Nivel 4 (+8.00m) • Bahía Central 02 • Pasillo 03</p>
+</div>
+<div class="text-right">
+<span class="font-caption text-caption text-text-muted uppercase text-[9px] block">Radiofrecuencia</span>
+<span class="font-code-data font-bold text-primary text-[13px] bg-primary/10 px-1.5 py-0.5 rounded" id="detail-rf">CD-77</span>
+</div>
+</div>
+<!-- Matriz Topológica 2D del Rack A-03-02 -->
+<div class="py-space-md border-b border-border-subtle">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider">Matriz 2D Rack A-03-02</span>
+<span class="font-caption text-[11px] text-text-secondary">5 Niveles × 3 Módulos</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 bg-canvas-bg p-space-sm rounded-lg">
+<!-- Fila Nivel 5 -->
+<div class="h-7 rounded bg-status-reserved/30 flex items-center justify-center font-code-data text-[10px] text-text-secondary" title="05-01: Reservado">05-01</div>
+<div class="h-7 rounded bg-status-reserved/30 flex items-center justify-center font-code-data text-[10px] text-text-secondary" title="05-02: Reservado">05-02</div>
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary" title="05-03: Libre">05-03</div>
+<!-- Fila Nivel 4 (Contiene celda seleccionada) -->
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary" title="04-01: Libre">04-01</div>
+<div class="h-7 rounded bg-primary text-on-primary font-bold flex items-center justify-center font-code-data text-[10px] shadow-sm transform scale-105" id="matrix-cell-active" title="04-02: Seleccionada">04-02</div>
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary" title="04-03: Libre">04-03</div>
+<!-- Fila Nivel 3 -->
+<div class="h-7 rounded bg-status-blocked/20 flex items-center justify-center font-code-data text-[10px] text-text-muted" title="03-01: Vacío">03-01</div>
+<div class="h-7 rounded bg-status-blocked/20 flex items-center justify-center font-code-data text-[10px] text-text-muted" title="03-02: Vacío">03-02</div>
+<div class="h-7 rounded bg-status-quarantine/30 flex items-center justify-center font-code-data text-[10px] text-status-quarantine font-bold" title="03-03: QA Hold">03-03</div>
+<!-- Fila Nivel 2 -->
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary">02-01</div>
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary">02-02</div>
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary">02-03</div>
+<!-- Fila Nivel 1 -->
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary">01-01</div>
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary">01-02</div>
+<div class="h-7 rounded bg-status-available/20 flex items-center justify-center font-code-data text-[10px] text-text-secondary">01-03</div>
+</div>
+<div class="flex items-center justify-between text-[10px] font-caption text-text-muted mt-1.5 px-1">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-primary"></span> Foco</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-status-available/30"></span> Stock</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-status-reserved/30"></span> Res</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-status-quarantine/40"></span> QA</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded bg-status-blocked/30"></span> Vacío</span>
+</div>
+</div>
+<!-- Parámetros Físicos y Peso -->
+<div class="py-space-md border-b border-border-subtle">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider block mb-space-xs">Límites y Geometría del Hueco</span>
+<div class="grid grid-cols-2 gap-space-sm mb-space-sm">
+<div class="bg-canvas-bg p-space-sm rounded-lg">
+<span class="font-caption text-caption text-text-muted block text-[10px] uppercase">Dimensiones Útiles</span>
+<span class="font-code-data text-text-primary text-[13px] font-semibold">1.85m H × 1.70m W</span>
+</div>
+<div class="bg-canvas-bg p-space-sm rounded-lg">
+<span class="font-caption text-caption text-text-muted block text-[10px] uppercase">Capacidad Máxima</span>
+<span class="font-code-data text-text-primary text-[13px] font-semibold">1,200 kg / Pallet</span>
+</div>
+</div>
+<!-- Barra de Peso Actual vs Límite -->
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex justify-between items-center text-[12px] font-code-data mb-1">
+<span class="text-text-secondary">Peso Soportado:</span>
+<span class="font-bold text-text-primary"><span id="detail-weight">225</span> / 1,200 kg</span>
+</div>
+<div class="w-full bg-surface-card rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-300" id="detail-weight-bar" style="width: 18.75%"></div>
+</div>
+<span class="font-caption text-[10px] text-text-muted mt-1 block">Margen seguro estructural: 975 kg restantes</span>
+</div>
+</div>
+<!-- Mercadería Alojada en Posición -->
+<div class="py-space-md">
+<span class="font-badge-status text-badge-status text-text-muted uppercase tracking-wider block mb-space-xs">Mercadería Alojada</span>
+<div class="space-y-space-xs">
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-text-secondary">SKU / Artículo:</span>
+<span class="font-code-data text-[12px] font-bold text-text-primary" id="detail-sku">SKU-100245</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-text-secondary">Saldo en Stock:</span>
+<span class="font-code-data text-[12px] font-bold text-primary" id="detail-qty">100 UN</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-text-secondary">Lote Trazable:</span>
+<span class="font-code-data text-[12px] text-text-primary" id="detail-lot">LOT-2026-0916</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-text-secondary">Fecha Caducidad:</span>
+<span class="font-code-data text-[12px] text-text-primary" id="detail-exp">16-Sep-2026</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-caption text-caption text-text-secondary">Marbete SSCC:</span>
+<span class="font-code-data text-[11px] text-text-muted" id="detail-sscc">SSCC-88402910023</span>
+</div>
+<div class="flex justify-between items-center pt-space-xs border-t border-border-subtle">
+<span class="font-caption text-caption text-text-secondary">Propietario / Cuenta:</span>
+<span class="font-body-sm text-[12px] font-semibold text-text-primary">PharmaGroup Latam S.A.</span>
+</div>
+</div>
+</div>
+<!-- Acciones Directas sobre el Hueco -->
+<div class="pt-space-md border-t border-border-subtle flex flex-col gap-space-xs">
+<button class="w-full h-9 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">forklift</span>
+<span>Crear Tarea de Relocalización</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-caption text-caption font-semibold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-status-quarantine">biotech</span>
+<span>Muestreo QA</span>
+</button>
+<button class="h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-primary font-caption text-caption font-semibold flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">barcode</span>
+<span>Reimprimir Tag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pie de Auditoría Operativa & Tiempos de Refresco -->
+<div class="flex flex-col sm:flex-row items-center justify-between py-space-sm px-space-md bg-surface-card rounded-xl shadow-sm text-text-muted font-caption text-caption">
+<div class="flex items-center gap-space-md mb-2 sm:mb-0">
+<div class="flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+<span>Topología WMS Sincronizada (Kafka Broker ID: dc01-node-03)</span>
+</div>
+<span class="hidden sm:inline text-border-strong">|</span>
+<span>Último rebalanceo dinámico: hoy a las 05:30 UTC</span>
+</div>
+<div class="flex items-center gap-space-sm font-code-data text-[11px]">
+<span>Latencia Sensor Racks: 24ms</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-text-secondary">SENTAI Core v4.8</span>
+</div>
+</div>
+</div>
+<!-- Interacciones Vanilla JavaScript para Master-Detail Dinámico -->
+<script>
+  function selectLocation(code, status, qty, weight, pallet, sku, lot, exp, rf) {
+    // Actualizar Encabezado
+    const codeEl = document.getElementById('detail-code');
+    const badgeEl = document.getElementById('detail-badge');
+    const rfEl = document.getElementById('detail-rf');
+    const skuEl = document.getElementById('detail-sku');
+    const qtyEl = document.getElementById('detail-qty');
+    const lotEl = document.getElementById('detail-lot');
+    const expEl = document.getElementById('detail-exp');
+    const weightEl = document.getElementById('detail-weight');
+    const barEl = document.getElementById('detail-weight-bar');
+
+    if (codeEl) codeEl.innerText = code;
+    if (rfEl) rfEl.innerText = rf;
+    if (skuEl) skuEl.innerText = sku;
+    if (qtyEl) qtyEl.innerText = qty;
+    if (lotEl) lotEl.innerText = lot;
+    if (expEl) expEl.innerText = exp;
+
+    // Parseo de peso
+    const numWeight = parseFloat(weight) || 0;
+    if (weightEl) weightEl.innerText = numWeight;
+    if (barEl) {
+      const pct = Math.min(100, Math.round((numWeight / 1200) * 100));
+      barEl.style.width = pct + '%';
+      if (pct > 80) {
+        barEl.className = 'bg-status-damaged h-full rounded-full transition-all duration-300';
+      } else {
+        barEl.className = 'bg-primary-container h-full rounded-full transition-all duration-300';
+      }
+    }
+
+    // Actualizar Badge Estado
+    if (badgeEl) {
+      badgeEl.innerText = status;
+      badgeEl.className = 'px-space-xs py-0.5 rounded font-badge-status text-[10px] font-bold ';
+      if (status.includes('DISPONIBLE')) {
+        badgeEl.className += 'bg-status-available/15 text-status-available';
+      } else if (status.includes('RESERVADO')) {
+        badgeEl.className += 'bg-status-reserved/15 text-status-reserved';
+      } else if (status.includes('CUARENTENA')) {
+        badgeEl.className += 'bg-status-quarantine/15 text-status-quarantine';
+      } else {
+        badgeEl.className += 'bg-status-blocked/15 text-status-blocked';
+      }
+    }
+  }
+</script></div></main></div></body></html>

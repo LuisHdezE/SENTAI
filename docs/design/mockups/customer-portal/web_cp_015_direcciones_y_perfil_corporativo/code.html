@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#006e20","canvas-bg":"#F8FAFC","on-secondary-fixed-variant":"#3f465c","tertiary-container":"#48a8ed","outline-variant":"#becab9","background":"#f8f9ff","text-primary":"#0F172A","surface-container-high":"#dce9ff","tertiary-fixed":"#cce5ff","on-error-container":"#93000a","primary":"#006e20","accent-focus":"#53B559","surface-dim":"#cbdbf5","status-reserved":"#2563EB","inverse-primary":"#79dc7b","surface-card":"#FFFFFF","on-tertiary-fixed":"#001d31","outline":"#6f7a6c","border-strong":"#CBD5E1","on-secondary-fixed":"#131b2e","secondary-fixed-dim":"#bec6e0","surface-container":"#e5eeff","surface":"#f8f9ff","primary-fixed-dim":"#79dc7b","surface-variant":"#d3e4fe","surface-container-low":"#eff4ff","on-primary":"#ffffff","secondary-container":"#dae2fd","on-surface":"#0b1c30","on-primary-fixed-variant":"#005316","status-quarantine":"#D97706","on-background":"#0b1c30","status-available":"#16A34A","secondary-fixed":"#dae2fd","tertiary":"#006398","error":"#ba1a1a","on-error":"#ffffff","primary-container":"#53b559","border-subtle":"#E2E8F0","on-secondary-container":"#5c647a","text-secondary":"#475569","primary-fixed":"#94f994","status-damaged":"#DC2626","on-secondary":"#ffffff","status-expired":"#9333EA","on-tertiary-container":"#003b5c","status-sync-pending":"#F59E0B","error-container":"#ffdad6","on-surface-variant":"#3f4a3d","text-muted":"#94A3B8","on-primary-fixed":"#002205","tertiary-fixed-dim":"#93ccff","inverse-surface":"#213145","on-tertiary-fixed-variant":"#004b73","secondary":"#565e74","status-blocked":"#475569","surface-container-highest":"#d3e4fe","surface-container-lowest":"#ffffff","on-primary-container":"#00420f","status-sync-error":"#E11D48","surface-bright":"#f8f9ff","inverse-on-surface":"#eaf1ff","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"1.5rem","gutter-desktop":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem",margin:"1rem","margin-desktop":"1.5rem","space-2xs":"0.125rem","space-3xl":"3rem",gutter:"1rem","space-lg":"1rem","space-2xl":"2rem"},fontFamily:{caption:["Inter"],"code-data":["JetBrains Mono"],"title-sm":["Inter"],"metric-stat":["Inter"],"headline-lg-mobile":["Inter"],"badge-status":["JetBrains Mono"],"headline-lg":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"display-hero":["Inter"]},fontSize:{caption:["12px",{lineHeight:"16px",fontWeight:"500"}],"code-data":["13px",{lineHeight:"18px",letterSpacing:"-0.01em",fontWeight:"500"}],"title-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"metric-stat":["30px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"700"}],"badge-status":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"display-hero":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-text-primary min-h-screen"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-surface-card border-r border-border-subtle z-50 flex flex-col justify-between select-none"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-14 px-space-lg flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #53b559 - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><span class="font-title-sm text-title-sm tracking-tight text-text-primary">SENTAI</span></div><span class="font-badge-status text-badge-status px-space-xs py-space-2xs rounded bg-surface-container-high text-tertiary tracking-wider">PORTAL B2B</span></div><div class="p-space-sm"><div class="p-space-sm rounded-xl bg-canvas-bg border border-border-subtle flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm overflow-hidden"><div class="w-8 h-8 rounded-lg bg-surface-card border border-border-strong flex items-center justify-center text-text-secondary shrink-0"><span class="material-symbols-outlined text-[18px]">apartment</span></div><div class="truncate"><p class="font-title-sm text-[13px] leading-tight text-text-primary truncate">Distribuidora Central S.R.L.</p><p class="font-caption text-caption text-text-secondary truncate mt-0.5">Casa Central • ID #99214</p></div></div><button class="text-text-muted hover:text-text-primary p-space-2xs rounded hover:bg-surface-card transition-colors" title="Cambiar sucursal" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span></button></div></div><nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-surface-container-low text-primary font-title-sm border-l-2 border-primary"><div class="space-y-space-2xs"><p class="px-space-sm font-caption text-[11px] font-bold uppercase tracking-wider text-text-muted mb-space-xs">Operaciones B2B</p><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="inicio-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Inicio / Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="catalogo-de-productos" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-body-sm text-body-sm">Catálogo de Productos</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="mis-pedidos" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-body-sm text-body-sm">Mis Pedidos</span></div><span class="font-badge-status text-badge-status px-1.5 py-0.5 rounded-full bg-surface-container-high text-status-reserved font-semibold">14</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="mis-envios-tracking" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-body-sm text-body-sm">Mis Envíos &amp; Tracking</span></a></div><div class="space-y-space-2xs"><p class="px-space-sm font-caption text-[11px] font-bold uppercase tracking-wider text-text-muted mb-space-xs">Finanzas &amp; Facturación</p><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="cuentas-por-pagar" href="#"><span class="material-symbols-outlined text-[20px]">request_quote</span><span class="font-body-sm text-body-sm">Cuentas por Pagar</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="pagos-realizados" href="#"><span class="material-symbols-outlined text-[20px]">paid</span><span class="font-body-sm text-body-sm">Pagos Realizados</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="estado-de-cuenta" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-sm text-body-sm">Estado de Cuenta</span></a></div><div class="space-y-space-2xs"><p class="px-space-sm font-caption text-[11px] font-bold uppercase tracking-wider text-text-muted mb-space-xs">Configuración &amp; Empresa</p><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-text-secondary hover:bg-canvas-bg hover:text-text-primary transition-colors" data-path="direcciones-sucursales" href="#"><span class="material-symbols-outlined text-[20px]">pin_drop</span><span class="font-body-sm text-body-sm">Direcciones &amp; Sucursales</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-surface-container-low text-primary font-title-sm border-l-2 border-primary" data-path="direcciones-y-perfil-corporativo" href="#"><span class="material-symbols-outlined text-[20px]">domain</span><span class="font-body-sm text-body-sm">Perfil Corporativo</span></a></div></nav></div><div class="p-space-sm border-t border-border-subtle bg-canvas-bg"><div class="p-space-sm bg-surface-card rounded-xl border border-border-subtle"><div class="flex items-center justify-between mb-space-xs"><span class="font-caption text-[11px] font-bold tracking-wider uppercase text-text-secondary">Línea de Crédito</span><span class="font-code-data text-caption text-status-quarantine font-bold">82% USADO</span></div><div class="w-full bg-border-subtle h-2 rounded-full overflow-hidden mb-space-xs"><div class="bg-status-quarantine h-full rounded-full" style="width: 82%"></div></div><div class="flex justify-between items-baseline"><span class="font-code-data text-[11px] text-text-muted">Disponible</span><span class="font-code-data text-[12px] font-bold text-text-primary">$15,850 USD</span></div><div class="flex justify-between items-baseline mt-0.5 text-text-muted font-caption text-[10px]"><span>Límite aprobado</span><span>$80,000 USD</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card border-b border-border-subtle z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="font-body-sm text-body-sm text-text-muted">Portal B2B</span><span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span><span class="font-body-sm text-body-sm text-text-secondary">Cliente Corporativo</span><span class="material-symbols-outlined text-[16px] text-text-muted">chevron_right</span><span class="font-title-sm text-body-sm text-text-primary">Operaciones</span></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded bg-canvas-bg border border-border-subtle"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-code-data text-[11px] text-text-secondary">Sincronizado WMS: 14:02:18 UTC-3</span></div><button class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors border border-border-subtle" type="button"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span class="font-title-sm text-[12px]">Borrador de Pedido (4)</span></button><button aria-label="Notificaciones" class="relative p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-canvas-bg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-status-damaged ring-2 ring-surface-card"></span></button><div class="h-6 w-[1px] bg-border-subtle mx-space-2xs"></div><div class="flex items-center gap-space-sm pl-space-2xs"><div class="text-right hidden sm:block"><p class="font-title-sm text-[13px] leading-tight text-text-primary">Mariana Gómez</p><p class="font-caption text-[11px] text-text-muted leading-tight mt-0.5">Jefe de Compras &amp; Abastecimiento</p></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-14 w-full px-space-lg py-space-lg bg-background"><div class="flex flex-col w-full space-y-space-xl">
+<!-- Top Breadcrumb/Header Area -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="space-y-space-2xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high text-tertiary">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span class="font-badge-status text-badge-status tracking-wider">WEB-CP-015 // MAESTRO DE SUCURSALES, MUELLES DE RECEPCIÓN &amp; PERFIL B2B</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Direcciones y Perfil Corporativo</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-4xl">
+        Gestión de puntos de entrega autorizados, muelles receptores, protocolos sanitarios y responsables en muelle para <span class="font-title-sm text-text-primary">Distribuidora Central S.R.L.</span>
+</p>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-card hover:bg-canvas-bg text-text-primary shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">history</span>
+<span class="font-title-sm text-body-sm">Historial de Cambios</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-accent-focus hover:bg-primary text-on-primary shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">add_location_alt</span>
+<span class="font-title-sm text-body-sm font-semibold">+ Agregar Nueva Dirección / Sucursal</span>
+</button>
+</div>
+</div>
+<!-- Navigation Tabs Bar -->
+<div class="bg-surface-card rounded-xl shadow-sm p-1.5 flex flex-wrap items-center gap-1">
+<button class="relative inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low text-primary font-title-sm text-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-status-available">domain_verification</span>
+<span>Puntos de Entrega y Muelles (3 Activos)</span>
+<span class="absolute bottom-0 left-3 right-3 h-0.5 bg-accent-focus rounded-full"></span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-canvas-bg font-body-md text-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted">receipt_long</span>
+<span>Datos Legales y Fiscales DGI</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-canvas-bg font-body-md text-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted">supervisor_account</span>
+<span>Contactos Autorizados y Firmantes</span>
+<span class="font-badge-status text-[10px] px-1.5 py-0.2 rounded-full bg-surface-container text-text-secondary">6</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-canvas-bg font-body-md text-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted">key</span>
+<span>Seguridad y Tokens WMS</span>
+<span class="w-2 h-2 rounded-full bg-status-available"></span>
+</button>
+</div>
+<!-- Row 1: Address Cards Grid (Bento Style Mosaic) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Card 1: Casa Central (Principal) -->
+<div class="xl:col-span-7 bg-surface-card rounded-xl p-space-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary/5 pointer-events-none blur-2xl"></div>
+<div class="space-y-space-md">
+<!-- Header -->
+<div class="flex flex-wrap items-start justify-between gap-space-xs">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-available/10 text-status-available font-badge-status text-badge-status uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span>
+                PRINCIPAL / PREDETERMINADA
+              </span>
+<span class="font-code-data text-caption text-text-muted">ID SUC-001 • COD-DC01-M02</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Casa Central - Depósito Sanitario y Farmacia Central</h2>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[24px]">local_hospital</span>
+</div>
+</div>
+<!-- Address & Geo Info -->
+<div class="flex items-start gap-space-xs text-text-secondary">
+<span class="material-symbols-outlined text-[18px] text-text-muted mt-0.5 shrink-0">pin_drop</span>
+<p class="font-body-md text-body-md">
+            Av. 8 de Octubre 3420, La Blanqueada, Montevideo, Uruguay <span class="font-code-data text-caption text-text-muted">(CP 11600)</span>
+</p>
+</div>
+<!-- Technical Dock Specifications -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs pt-space-xs">
+<div class="p-space-sm rounded-lg bg-canvas-bg flex flex-col justify-between">
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-text-muted">dock</span>
+<span class="font-caption text-caption uppercase font-semibold">Infraestructura</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary font-medium mt-1">
+              Muelle de Recepción 02 con rampa y elevador hidráulico
+            </p>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg flex flex-col justify-between">
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-tertiary">ac_unit</span>
+<span class="font-caption text-caption uppercase font-semibold">Cadena de Frío</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary font-medium mt-1">
+              Cámaras 2°C a 8°C e Isoterma 15°C a 25°C habilitada
+            </p>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg flex flex-col justify-between">
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-text-muted">schedule</span>
+<span class="font-caption text-caption uppercase font-semibold">Horario Muelle</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-primary font-medium mt-1">
+              Lun-Vie 08:00 - 17:00 hs<br/><span class="text-text-muted font-caption text-caption">Sáb 08:00 - 12:00 hs</span>
+</p>
+</div>
+</div>
+<!-- Operational Responsible & Protocols -->
+<div class="p-space-md rounded-lg bg-surface-container-low/60 space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-caption">
+                MH
+              </div>
+<div>
+<span class="font-title-sm text-body-sm text-text-primary">Lic. Martín Herrera</span>
+<span class="font-caption text-caption text-text-muted ml-1">• Jefe de Depósito &amp; Recepción</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm font-code-data text-caption text-text-secondary">
+<span>Tel: +598 2900 1234 int. 402</span>
+<span class="text-text-muted">|</span>
+<span class="text-primary font-semibold">Muelle: +598 99 876 543</span>
+</div>
+</div>
+<div class="pt-1 flex items-start gap-space-xs text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-status-quarantine shrink-0 mt-0.5">verified</span>
+<p class="font-caption text-caption leading-relaxed">
+<strong class="text-text-primary font-semibold">Protocolos Activos:</strong> Control de precinto electrónico obligatorio • Lectura de sensor BLE termógrafo antes de descarga • Firma digital con OTP biométrico en remito SENTAI.
+            </p>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="pt-space-md mt-space-md flex flex-wrap items-center justify-between gap-space-sm bg-gradient-to-r from-transparent via-canvas-bg/50 to-transparent">
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-1 text-primary hover:text-surface-tint font-title-sm text-body-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+            Editar Muelle
+          </button>
+<span class="text-text-muted">•</span>
+<button class="inline-flex items-center gap-1 text-text-secondary hover:text-text-primary font-body-md text-body-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">map</span>
+            Ver en Mapa
+          </button>
+</div>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-card hover:bg-canvas-bg text-text-primary font-title-sm text-caption shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-status-available">event_available</span>
+          Definir Ventana Preferida
+        </button>
+</div>
+</div>
+<!-- Right Stack: Card 2 & Card 3 -->
+<div class="xl:col-span-5 space-y-space-lg">
+<!-- Card 2: Sucursal Carrasco -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm space-y-space-md relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-status-reserved/10 text-status-reserved font-badge-status text-badge-status uppercase">
+                ACTIVA
+              </span>
+<span class="font-code-data text-caption text-text-muted">SUC-002 • DÁRSENA-B</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-text-primary">Sucursal Carrasco - Hospital &amp; Dispensario</h3>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-muted">medical_services</span>
+</div>
+<div class="flex items-start gap-space-xs text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-text-muted mt-0.5 shrink-0">location_on</span>
+<p class="font-body-sm text-body-sm">
+            Av. Arocena 1420, Carrasco, Montevideo (CP 11500)
+          </p>
+</div>
+<div class="space-y-1 text-caption font-caption text-text-secondary bg-canvas-bg p-space-sm rounded-lg">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">local_shipping</span>
+<span>Dársena Sanitaria B - Acceso utilitarios hasta 3.5 tn</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">thermostat</span>
+<span>Recepción en seco y heladera de tránsito menor</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-muted">schedule</span>
+<span>Lun-Vie 09:00 - 19:00 hs <strong class="text-text-primary">(Guardia 24h)</strong></span>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-caption text-text-secondary">
+<p><strong class="text-text-primary">Contacto:</strong> Dra. Cecilia Mendez (Directora) • Tel: +598 2601 4455 int. 12</p>
+<p class="text-text-muted"><strong class="text-text-secondary font-medium">Protocolo:</strong> Prioridad hospitalaria en alistamiento • Doble chequeo lote/serie.</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="text-primary hover:text-surface-tint font-title-sm text-caption inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+            Editar Muelle
+          </button>
+<button class="text-text-secondary hover:text-text-primary font-body-sm text-caption inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span>
+            Ver en Mapa
+          </button>
+</div>
+</div>
+<!-- Card 3: Compact Depósito Logístico Sur -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm space-y-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status uppercase">
+              SECUNDARIO
+            </span>
+<h4 class="font-title-sm text-body-md text-text-primary">Depósito Logístico Sur - Regional</h4>
+</div>
+<span class="font-code-data text-[11px] text-text-muted">SUC-003</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+          Ruta 101 Km 27.500, Canelones, Uruguay
+        </p>
+<div class="grid grid-cols-2 gap-space-xs text-caption font-caption text-text-secondary bg-canvas-bg p-space-xs rounded">
+<span>Rampa 01 Carga General (14.5m)</span>
+<span class="text-right">Horario: 07:00 - 15:30 hs</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption text-caption text-text-muted">Sup: Ing. Carlos Techera</span>
+<button class="text-primary hover:text-surface-tint font-title-sm text-caption" type="button">Configurar Muelle</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Insight Banner & Facility Snapshot -->
+<div class="bg-surface-card rounded-xl shadow-sm p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center relative overflow-hidden">
+<div class="lg:col-span-8 flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-status-available/10 text-status-available flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">verified</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-title-sm text-title-sm text-text-primary">Certificación Buenas Prácticas de Distribución Farmacéutica (GDP/MSP)</h3>
+<span class="font-code-data text-badge-status px-2 py-0.5 rounded bg-status-available text-on-primary font-bold">MSP-AUDIT-2024</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+          Todas las entregas dirigidas a Casa Central y Carrasco se ejecutan bajo trazabilidad térmica continua activa por telemetría. Cualquier excursión superior a ±0.5°C bloquea el albarán digital instantáneamente.
+        </p>
+</div>
+</div>
+<div class="lg:col-span-4 flex items-center justify-end gap-space-md">
+<!-- Mini SVG Metric Ring -->
+<div class="flex items-center gap-space-sm bg-canvas-bg px-space-md py-2 rounded-lg">
+<svg class="w-10 h-10 transform -rotate-90" viewbox="0 0 36 36">
+<circle class="text-border-subtle" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-status-available" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="88" stroke-dashoffset="5" stroke-width="3"></circle>
+</svg>
+<div>
+<span class="font-title-sm text-body-md text-text-primary">99.4%</span>
+<p class="font-caption text-[11px] text-text-muted">Cumplimiento SLA Muelle</p>
+</div>
+</div>
+<button class="px-space-sm py-2 rounded bg-surface-container-high hover:bg-surface-container text-tertiary font-title-sm text-caption flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+        Ver Certificados
+      </button>
+</div>
+</div>
+<!-- Row 2: Corporate Fiscal Data & Operational Settings (Split Columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left Column: Fiscal DGI Data -->
+<div class="lg:col-span-6 bg-surface-card rounded-xl p-space-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px] text-tertiary">assured_workload</span>
+<h3 class="font-headline-md text-title-sm text-text-primary">Datos Corporativos y Razón Social ante DGI</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-available/10 text-status-available font-badge-status text-badge-status uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+            ACTIVO DGI HOMOLOGADO
+          </span>
+</div>
+<div class="space-y-space-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-canvas-bg">
+<span class="font-caption text-caption text-text-muted uppercase">Razón Social</span>
+<p class="font-title-sm text-body-md text-text-primary mt-0.5">Distribuidora Central S.R.L.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg">
+<span class="font-caption text-caption text-text-muted uppercase">RUT / Identificación Tributaria</span>
+<p class="font-code-data text-body-md text-text-primary font-bold mt-0.5">21.439.810.0014</p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg space-y-0.5">
+<span class="font-caption text-caption text-text-muted uppercase">Giro Comercial Habilitado</span>
+<p class="font-body-sm text-body-sm text-text-primary">
+              Distribución y comercialización mayorista de insumos médicos, instrumental quirúrgico y especialidades farmacéuticas.
+            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-canvas-bg">
+<span class="font-caption text-caption text-text-muted uppercase">Certificado CFE Electrónico</span>
+<div class="flex items-center gap-1 text-status-available font-title-sm text-body-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Vigente hasta Diciembre 2025
+              </div>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg">
+<span class="font-caption text-caption text-text-muted uppercase">Domicilio Fiscal Registrado</span>
+<p class="font-body-sm text-body-sm text-text-primary mt-0.5">Av. 8 de Octubre 3420, Montevideo</p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg space-y-1">
+<span class="font-caption text-caption text-text-muted uppercase">Casilla Notificación e-Factura</span>
+<div class="flex flex-wrap gap-space-xs font-code-data text-caption text-tertiary">
+<span class="px-2 py-0.5 bg-surface-card rounded shadow-2xs">compras@distribuidoracentral.com.uy</span>
+<span class="px-2 py-0.5 bg-surface-card rounded shadow-2xs">facturacion@distribuidoracentral.com.uy</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted">Última validación DGI WebService: Hoy 06:00 UTC</span>
+<button class="font-title-sm text-caption text-primary hover:text-surface-tint inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+          Revalidar Certificado CFE
+        </button>
+</div>
+</div>
+<!-- Right Column: Operational Protocols & Security -->
+<div class="lg:col-span-6 bg-surface-card rounded-xl p-space-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px] text-accent-focus">tune</span>
+<h3 class="font-headline-md text-title-sm text-text-primary">Protocolos de Recepción &amp; Preferencias</h3>
+</div>
+<span class="font-caption text-caption text-text-muted">Reglas de Operación DC-01</span>
+</div>
+<!-- Toggles List -->
+<div class="space-y-space-sm">
+<!-- Toggle 1: ON -->
+<div class="p-space-sm rounded-lg bg-canvas-bg flex items-center justify-between gap-space-md">
+<div class="space-y-0.5">
+<p class="font-title-sm text-body-sm text-text-primary">Aviso ETA por SMS / WhatsApp</p>
+<p class="font-caption text-caption text-text-secondary">Notificación automática al jefe de depósito 30 minutos antes del arribo.</p>
+</div>
+<button aria-label="Toggle Aviso ETA" class="w-11 h-6 bg-accent-focus rounded-full relative p-0.5 transition-colors shrink-0" type="button">
+<span class="block w-5 h-5 bg-surface-card rounded-full translate-x-5 transition-transform shadow-sm"></span>
+</button>
+</div>
+<!-- Toggle 2: ON -->
+<div class="p-space-sm rounded-lg bg-canvas-bg flex items-center justify-between gap-space-md">
+<div class="space-y-0.5">
+<p class="font-title-sm text-body-sm text-text-primary">Validación Térmica BLE Exigida</p>
+<p class="font-caption text-caption text-text-secondary">Exige sincronización de sensor BLE termógrafo antes de firma de remito.</p>
+</div>
+<button aria-label="Toggle Validacion BLE" class="w-11 h-6 bg-accent-focus rounded-full relative p-0.5 transition-colors shrink-0" type="button">
+<span class="block w-5 h-5 bg-surface-card rounded-full translate-x-5 transition-transform shadow-sm"></span>
+</button>
+</div>
+<!-- Toggle 3: ON -->
+<div class="p-space-sm rounded-lg bg-canvas-bg flex items-center justify-between gap-space-md">
+<div class="space-y-0.5">
+<p class="font-title-sm text-body-sm text-text-primary">Aceptar Entregas Parciales (Backorder)</p>
+<p class="font-caption text-caption text-text-secondary">Permite descargar líneas prioritarias en caso de quiebre de stock crítico.</p>
+</div>
+<button aria-label="Toggle Entregas Parciales" class="w-11 h-6 bg-accent-focus rounded-full relative p-0.5 transition-colors shrink-0" type="button">
+<span class="block w-5 h-5 bg-surface-card rounded-full translate-x-5 transition-transform shadow-sm"></span>
+</button>
+</div>
+<!-- Toggle 4: OFF -->
+<div class="p-space-sm rounded-lg bg-canvas-bg flex items-center justify-between gap-space-md">
+<div class="space-y-0.5">
+<p class="font-title-sm text-body-sm text-text-primary">Descarga Automática Sin Firma Previa</p>
+<p class="font-caption text-caption text-text-muted">Descarga en muelle sin presencia de fiscalizador para reposición habitual.</p>
+</div>
+<button aria-label="Toggle Descarga Automatica" class="w-11 h-6 bg-border-strong rounded-full relative p-0.5 transition-colors shrink-0" type="button">
+<span class="block w-5 h-5 bg-surface-card rounded-full translate-x-0 transition-transform shadow-sm"></span>
+</button>
+</div>
+</div>
+<!-- Security & e-Token -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-tertiary">key_visualizer</span>
+<div>
+<p class="font-title-sm text-body-sm text-text-primary">e-Token de Validación para Órdenes (&gt; $10,000 USD)</p>
+<p class="font-caption text-caption text-text-secondary">Token corporativo de Mariana Gómez activado con doble factor biométrico.</p>
+</div>
+</div>
+<span class="font-code-data text-badge-status text-status-available font-bold bg-surface-card px-2 py-1 rounded shadow-2xs">ACTIVO</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-end">
+<button class="px-space-md py-1.5 rounded-lg bg-canvas-bg hover:bg-surface-container text-text-primary font-title-sm text-body-sm transition-colors" type="button">
+          Guardar Preferencias Operativas
+        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Box: SENTAI Account Executive & Support Desk -->
+<div class="bg-surface-card rounded-xl p-space-xl shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="flex -space-x-3 overflow-hidden">
+<div class="w-12 h-12 rounded-full ring-2 ring-surface-card bg-surface-container flex items-center justify-center font-title-sm text-primary font-bold">
+          VS
+        </div>
+<div class="w-12 h-12 rounded-full ring-2 ring-surface-card bg-surface-container-high flex items-center justify-center font-title-sm text-tertiary font-bold">
+          DM
+        </div>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<h4 class="font-title-sm text-title-sm text-text-primary">Equipo de Soporte y Supervisión DC-01 Asignado</h4>
+<span class="font-badge-status text-badge-status px-2 py-0.2 rounded-full bg-status-available/10 text-status-available uppercase">Dedicado B2B</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
+<strong>Valeria Silva</strong> (Ejecutiva de Cuentas B2B) y <strong>Diego Méndez</strong> (Supervisor Operativo Montevideo DC-01).
+        </p>
+<p class="font-caption text-caption text-text-muted">Línea directa de despacho y coordinación: <span class="font-code-data text-text-primary">+598 2909 8800 int. 110</span> • <span class="text-tertiary">soporte.b2b@sentai-logistics.com</span></p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full lg:w-auto">
+<button class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-title-sm text-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_business</span>
+<span>Solicitar Habilitación de Muelle</span>
+</button>
+<button class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-canvas-bg hover:bg-surface-container text-text-secondary hover:text-text-primary font-title-sm text-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>Descargar Manual MSP/GDP</span>
+</button>
+</div>
+</div>
+</div></main></div></body></html>

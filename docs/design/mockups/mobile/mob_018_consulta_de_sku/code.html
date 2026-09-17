@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#006398", "on-error-container": "#93000a", "on-secondary-container": "#5c647a", "primary-fixed": "#94f994", "secondary": "#565e74", "status-sync-error": "#E11D48", "status-reserved": "#2563EB", "inverse-on-surface": "#eaf1ff", "tertiary-container": "#48a8ed", "status-damaged": "#DC2626", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#005316", "outline-variant": "#becab9", "primary": "#006e20", "on-secondary-fixed-variant": "#3f465c", "border-strong": "#CBD5E1", "surface-container-lowest": "#ffffff", "canvas-bg": "#F8FAFC", "on-tertiary": "#ffffff", "text-muted": "#94A3B8", "status-quarantine": "#D97706", "text-secondary": "#475569", "surface-container-highest": "#d3e4fe", "on-surface-variant": "#3f4a3d", "text-primary": "#0F172A", "on-tertiary-fixed-variant": "#004b73", "secondary-fixed-dim": "#bec6e0", "on-secondary-fixed": "#131b2e", "error": "#ba1a1a", "on-surface": "#0b1c30", "surface-bright": "#f8f9ff", "status-available": "#16A34A", "surface-variant": "#d3e4fe", "surface-container-high": "#dce9ff", "surface-tint": "#006e20", "secondary-fixed": "#dae2fd", "inverse-primary": "#79dc7b", "surface-card": "#FFFFFF", "on-primary-container": "#00420f", "status-expired": "#9333EA", "on-tertiary-container": "#003b5c", "status-blocked": "#475569", "primary-fixed-dim": "#79dc7b", "surface-container": "#e5eeff", "accent-focus": "#53B559", "outline": "#6f7a6c", "border-subtle": "#E2E8F0", "surface-container-low": "#eff4ff", "on-primary-fixed": "#002205", "on-background": "#0b1c30", "on-tertiary-fixed": "#001d31", "tertiary-fixed": "#cce5ff", "surface": "#f8f9ff", "on-primary": "#ffffff", "on-error": "#ffffff", "primary-container": "#53b559", "error-container": "#ffdad6", "surface-dim": "#cbdbf5", "secondary-container": "#dae2fd", "status-sync-pending": "#F59E0B", "background": "#f8f9ff", "tertiary-fixed-dim": "#93ccff", "inverse-surface": "#213145" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "gutter": "1rem", "space-2xl": "2rem", "margin": "1rem", "gutter-desktop": "1.5rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin-desktop": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-3xl": "3rem", "space-2xs": "0.125rem" }, "fontFamily": { "title-sm": ["Inter"], "headline-md": ["Inter"], "headline-lg-mobile": ["Inter"], "code-data": ["JetBrains Mono"], "body-sm": ["Inter"], "badge-status": ["JetBrains Mono"], "display-hero": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "caption": ["Inter"], "metric-stat": ["Inter"] }, "fontSize": { "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-font-smoothing:antialiased;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 px-space-md flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between text-caption font-caption text-text-secondary"><div class="flex items-center gap-space-sm font-code-data text-code-data font-bold text-text-primary"><span>09:41</span><span class="text-[10px] text-text-muted">|</span><span>TC57</span></div><div class="flex items-center gap-space-sm font-badge-status text-badge-status"><span class="flex items-center gap-space-2xs text-text-secondary"><span class="material-symbols-outlined text-[14px]">wifi</span>-48dBm</span><span class="inline-flex items-center px-space-xs py-space-2xs rounded bg-surface-container text-primary font-bold"><span class="w-1.5 h-1.5 rounded-full bg-accent-focus mr-1 animate-pulse"></span>ONLINE</span><span class="flex items-center gap-space-2xs text-text-primary font-code-data text-code-data font-bold"><span class="material-symbols-outlined text-[14px] text-accent-focus">battery_5_bar</span>92%</span></div></div><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="flex items-center gap-space-xs"><span class="text-title-sm font-title-sm font-bold tracking-tight text-text-primary">SENTAI</span><span class="w-2 h-2 rounded-full bg-accent-focus"></span></div><span class="text-border-strong">/</span><h1 class="text-title-sm font-title-sm text-text-primary truncate tracking-tight">Inventario Almacen</h1></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="flex flex-col items-end"><span class="font-code-data text-[12px] font-bold text-text-primary leading-none">C. Techera</span><span class="font-badge-status text-[10px] text-text-muted leading-tight">OP-4821</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col w-full pt-24 pb-20 bg-surface px-space-md"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Operational Banner & Fast Lookup Header -->
+<div class="flex items-center justify-between bg-surface-container-high rounded-xl p-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-code-data text-code-data font-bold text-text-primary">MOB-018 // CONSULTA DE PRODUCTO</span>
+</div>
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs bg-surface-container-lowest text-primary rounded-full font-badge-status text-badge-status shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-focus animate-ping"></span>
+      CATÁLOGO OFFLINE INDEXADO
+    </span>
+</div>
+<!-- Search Bar & Instant Trigger Barcode Scanner -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-space-xs rounded-xl shadow-sm">
+<div class="flex-1 flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-text-muted text-[20px]">search</span>
+<input class="w-full bg-transparent font-code-data text-code-data text-text-primary focus:outline-none placeholder:text-text-muted" id="skuLookupInput" placeholder="SKU-100245 o 7730981002450" type="text" value="SKU-100245"/>
+<button aria-label="Limpiar campo" class="text-text-muted hover:text-text-primary flex items-center" onclick="document.getElementById('skuLookupInput').value='';">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+<button class="h-11 px-space-md bg-primary-container text-on-primary rounded-lg flex items-center justify-center gap-space-2xs active:scale-95 transition-transform shadow-sm" id="scanTriggerBtn">
+<span class="material-symbols-outlined text-[20px]">barcode_scanner</span>
+<span class="font-badge-status text-badge-status tracking-wide">ESCANEAR</span>
+</button>
+</div>
+<!-- Main SKU Card: Identity & Visual Specs -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-28 h-28 bg-accent-focus/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md">
+<!-- Product Real Photography / Thumbnail -->
+<div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up commercial studio packshot of crystal clear pharmaceutical saline solution 0.9% infusion plastic bottle with graduation marks on white medical background, soft studio light, clinical clarity, industrial green accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-usQ3rigNAXjDoaDgi1m3iVQEXlYsKjNvvnMwd0jUOcA-E0EsiQjxJg7sp0D0lEX9Ro3F8NC3QdO-7yoSPkweAhvNlbOqRo3r05Yf__TCdZ-pFGmvxoN9O0UOgkbE7EoLSn9nCky7XuQB8kFS7Kez5v66AYKWz0rj5BE2eduesDpSPZBf0UVvoEskSbXWtBsYXNYXOe93PUD219RyV0DpNjQBwpuUxLwcnl4t2GjsGBEymGR6gods"/>
+<span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-status-available text-surface-card font-badge-status text-[9px] uppercase tracking-wider font-bold">
+          ACTIVO
+        </span>
+</div>
+<!-- Descriptive Information -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-code-data text-[11px] text-text-secondary bg-surface-container px-1.5 py-0.5 rounded font-bold">
+            GS1: 7730981002450
+          </span>
+<span class="font-code-data text-[11px] text-text-muted">SKU-100245</span>
+</div>
+<h2 class="font-title-sm text-title-sm text-text-primary truncate mt-0.5 leading-tight">
+          Suero Fisiológico 0.9% Frasco 500ml
+        </h2>
+<p class="font-caption text-caption text-text-secondary truncate mt-0.5">
+          Soluciones Parenterales / Farmacéutico
+        </p>
+<!-- Temperature & Environment Badge -->
+<div class="inline-flex items-center gap-space-2xs mt-space-xs text-status-quarantine font-caption text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[15px]">ac_unit</span>
+<span>Ambiente Controlado: 15°C a 25°C</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Inventory Multi-Metric Tiles (Montevideo DC-01) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-2xs">
+<div class="flex items-center gap-space-2xs text-text-secondary font-caption text-caption font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px] text-primary">domain</span>
+        Stock Global • Montevideo DC-01
+      </div>
+<span class="font-code-data text-[11px] text-text-muted">Sync: hace 2m</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<!-- On Hand -->
+<div class="flex flex-col p-space-sm bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="flex items-center justify-between text-text-secondary">
+<span class="font-caption text-[10px] uppercase font-bold tracking-tight">Físico Total</span>
+<span class="material-symbols-outlined text-secondary text-[14px]">inventory_2</span>
+</div>
+<span class="font-metric-stat text-[20px] text-text-primary mt-space-2xs leading-none">1,420</span>
+<span class="font-code-data text-[11px] text-text-muted mt-1">cjs (on hand)</span>
+</div>
+<!-- Reserved -->
+<div class="flex flex-col p-space-sm bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="flex items-center justify-between text-status-quarantine">
+<span class="font-caption text-[10px] uppercase font-bold tracking-tight">Reservado</span>
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+</div>
+<span class="font-metric-stat text-[20px] text-status-quarantine mt-space-2xs leading-none">340</span>
+<span class="font-code-data text-[11px] text-text-muted mt-1">cjs en picking</span>
+</div>
+<!-- Available -->
+<div class="flex flex-col p-space-sm bg-surface-container-high rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute right-0 bottom-0 w-8 h-8 bg-accent-focus/15 rounded-full blur-md pointer-events-none"></div>
+<div class="flex items-center justify-between text-primary">
+<span class="font-caption text-[10px] uppercase font-bold tracking-tight">Disponible</span>
+<span class="material-symbols-outlined text-accent-focus text-[15px]">check_circle</span>
+</div>
+<span class="font-metric-stat text-[20px] text-primary mt-space-2xs leading-none font-bold">1,080</span>
+<span class="font-code-data text-[11px] text-primary font-bold mt-1">cjs libres</span>
+</div>
+</div>
+</div>
+<!-- Physical Warehouse Slots (Tactical Location Rail) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">alt_route</span>
+<span class="font-title-sm text-title-sm text-text-primary">Ubicaciones en Almacén</span>
+</div>
+<span class="font-code-data text-code-data text-text-secondary bg-surface-container px-space-xs py-space-2xs rounded">
+        3 Slots
+      </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Slot 1: Primary Picking Floor -->
+<div class="flex flex-col bg-surface-container-low p-space-sm rounded-lg gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-accent-focus"></span>
+<span class="font-code-data text-code-data font-bold text-text-primary">Slot B-04-02-03</span>
+<span class="bg-surface-container text-text-secondary font-badge-status text-[10px] px-1 rounded">Nivel Piso</span>
+</div>
+<span class="font-code-data text-code-data font-bold text-primary">24 cjs</span>
+</div>
+<div class="flex items-center justify-between text-text-muted font-caption text-caption pl-3">
+<span>Picking Primario • Pallet Parcial</span>
+<span class="font-code-data text-[11px] text-primary bg-primary-container/20 px-1 py-0.5 rounded font-bold">
+            LOT-2026-0916 (FEFO)
+          </span>
+</div>
+</div>
+<!-- Slot 2: Secondary Picking Level 2 -->
+<div class="flex flex-col bg-surface-container-low p-space-sm rounded-lg gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-code-data text-code-data font-bold text-text-primary">Slot A-08-01-02</span>
+<span class="bg-surface-container text-text-secondary font-badge-status text-[10px] px-1 rounded">Nivel 2</span>
+</div>
+<span class="font-code-data text-code-data font-bold text-text-primary">40 cjs</span>
+</div>
+<div class="flex items-center justify-between text-text-muted font-caption text-caption pl-3">
+<span>Picking Secundario (Buffer)</span>
+<span class="font-code-data text-[11px] text-text-secondary">LOT-2026-0916</span>
+</div>
+</div>
+<!-- Slot 3: High Racks Reserve -->
+<div class="flex flex-col bg-surface-container-low p-space-sm rounded-lg gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-data text-code-data font-bold text-text-primary">Slot R-12-04-01</span>
+<span class="bg-secondary-container text-on-secondary-container font-badge-status text-[10px] px-1 rounded">Altura Rack</span>
+</div>
+<span class="font-code-data text-code-data font-bold text-tertiary">1,356 cjs</span>
+</div>
+<div class="flex items-center justify-between text-text-muted font-caption text-caption pl-3">
+<span>Reserva Completa (2 Pallets)</span>
+<span class="font-code-data text-[11px] text-text-secondary">LPN-90412 / 90413</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Logistics Packaging & Specs Grid -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">straighten</span>
+<span class="font-title-sm text-title-sm text-text-primary">Especificaciones Logísticas</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-caption text-caption text-text-muted">Unidad de Empaque</span>
+<span class="font-code-data text-[13px] text-text-primary font-bold mt-0.5">Caja x24 frascos</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-caption text-caption text-text-muted">Peso Bruto Caja</span>
+<span class="font-code-data text-[13px] text-text-primary font-bold mt-0.5">13.2 kg</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-caption text-caption text-text-muted">Dimensiones Físicas</span>
+<span class="font-code-data text-[13px] text-text-primary font-bold mt-0.5">38 × 28 × 22 cm</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container-low rounded-lg">
+<span class="font-caption text-caption text-text-muted">Apilabilidad Límite</span>
+<span class="font-code-data text-[13px] text-accent-focus font-bold mt-0.5">Máx 4 niveles</span>
+</div>
+</div>
+</div>
+<!-- Contextual Quick Action Hub -->
+<div class="flex flex-col gap-space-xs pt-space-xs pb-space-sm">
+<!-- Primary Flow Action -->
+<button class="w-full min-h-[48px] bg-primary text-on-primary rounded-xl font-title-sm text-title-sm flex items-center justify-center gap-space-xs shadow-md active:scale-98 transition-transform" id="assignTaskBtn">
+<span class="material-symbols-outlined text-[20px]">move_to_inbox</span>
+<span>Asignar a Tarea de Picking / Transf.</span>
+</button>
+<!-- Secondary Utilities Pair -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="min-h-[44px] bg-surface-container-highest text-text-primary rounded-lg font-caption text-caption font-bold flex items-center justify-center gap-space-xs active:bg-surface-container transition-colors" id="printTagBtn">
+<span class="material-symbols-outlined text-[18px] text-tertiary">print</span>
+<span>Etiqueta EAN-13</span>
+</button>
+<button class="min-h-[44px] bg-error-container text-on-error-container rounded-lg font-caption text-caption font-bold flex items-center justify-center gap-space-xs active:opacity-90 transition-opacity" id="discrepancyBtn">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+<span>Reportar Descuadre</span>
+</button>
+</div>
+</div>
+<!-- Micro Interaction Toast Feedback Container -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 hidden flex items-center gap-space-xs px-space-md py-space-sm bg-inverse-surface text-inverse-on-surface rounded-full shadow-lg font-body-sm text-body-sm transition-all duration-300" id="actionToast">
+<span class="material-symbols-outlined text-[18px] text-accent-focus" id="toastIcon">check_circle</span>
+<span id="toastMessage">Acción ejecutada correctamente</span>
+</div>
+</div>
+<script>
+  (function() {
+    const toast = document.getElementById('actionToast');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+    function showFeedback(msg, icon = 'check_circle') {
+      if (!toast) return;
+      toastMsg.textContent = msg;
+      toastIcon.textContent = icon;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 2600);
+    }
+
+    document.getElementById('assignTaskBtn')?.addEventListener('click', () => {
+      showFeedback('Creando orden de movimiento para SKU-100245...', 'assignment_turned_in');
+    });
+
+    document.getElementById('printTagBtn')?.addEventListener('click', () => {
+      showFeedback('Enviando código EAN-13 a Zebra ZD421 (Muelle 02)', 'print');
+    });
+
+    document.getElementById('discrepancyBtn')?.addEventListener('click', () => {
+      showFeedback('Abriendo reporte de ajuste y bloqueo preventivo', 'flag');
+    });
+
+    document.getElementById('scanTriggerBtn')?.addEventListener('click', () => {
+      showFeedback('Lector láser activado. Apunte al código de barras...', 'qr_code_scanner');
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-between items-center h-16 px-space-xs relative"><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-space-2xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="tareas-operativas" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-caption text-[11px] leading-none">Tareas</span></a><a aria-current="page" class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-space-2xs transition-colors text-primary font-bold" data-path="inventario-almacen" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-caption text-[11px] leading-none">Inventario</span></a><div class="flex-1 min-h-[44px] flex items-center justify-center relative"><a class="w-14 h-14 -top-5 absolute rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg transition-transform active:scale-95" data-path="escaner-codigo" href="#"><span class="material-symbols-outlined text-[28px]">barcode_scanner</span></a></div><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-space-2xs text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="sincronizacion-datos" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">sync_alt</span><span class="absolute -top-1 -right-2 px-1 py-0.2 rounded-full bg-status-sync-pending text-surface-card font-badge-status text-[9px] leading-none font-bold">4</span></div><span class="font-caption text-[11px] leading-none">Sincro</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center gap-space-2xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="turno-perfil" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-caption text-[11px] leading-none">Turno</span></a></div></nav></body></html>

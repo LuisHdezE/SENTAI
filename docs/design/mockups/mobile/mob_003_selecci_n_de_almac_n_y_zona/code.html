@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-primary": "#79dc7b", "on-tertiary-fixed": "#001d31", "tertiary-container": "#48a8ed", "surface-container": "#e5eeff", "canvas-bg": "#F8FAFC", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#003b5c", "surface-container-high": "#dce9ff", "on-primary-fixed-variant": "#005316", "text-secondary": "#475569", "primary": "#006e20", "on-surface": "#0b1c30", "accent-focus": "#53B559", "on-secondary": "#ffffff", "text-muted": "#94A3B8", "surface-tint": "#006e20", "surface-variant": "#d3e4fe", "on-tertiary-fixed-variant": "#004b73", "surface-bright": "#f8f9ff", "border-strong": "#CBD5E1", "primary-fixed": "#94f994", "on-secondary-container": "#5c647a", "on-surface-variant": "#3f4a3d", "inverse-on-surface": "#eaf1ff", "status-blocked": "#475569", "surface-card": "#FFFFFF", "tertiary": "#006398", "on-primary-container": "#00420f", "surface-dim": "#cbdbf5", "on-error-container": "#93000a", "background": "#f8f9ff", "primary-container": "#53b559", "status-available": "#16A34A", "status-damaged": "#DC2626", "surface": "#f8f9ff", "secondary-container": "#dae2fd", "tertiary-fixed-dim": "#93ccff", "outline-variant": "#becab9", "surface-container-low": "#eff4ff", "on-secondary-fixed-variant": "#3f465c", "border-subtle": "#E2E8F0", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#002205", "status-sync-error": "#E11D48", "secondary-fixed-dim": "#bec6e0", "outline": "#6f7a6c", "status-sync-pending": "#F59E0B", "on-background": "#0b1c30", "status-reserved": "#2563EB", "status-expired": "#9333EA", "inverse-surface": "#213145", "on-secondary-fixed": "#131b2e", "tertiary-fixed": "#cce5ff", "error-container": "#ffdad6", "primary-fixed-dim": "#79dc7b", "status-quarantine": "#D97706", "secondary": "#565e74", "secondary-fixed": "#dae2fd", "error": "#ba1a1a", "text-primary": "#0F172A" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "space-3xl": "3rem", "gutter-desktop": "1.5rem", "space-xl": "1.5rem", "space-2xl": "2rem", "space-sm": "0.5rem", "space-md": "0.75rem", "margin": "1rem", "gutter": "1rem", "margin-desktop": "1.5rem", "space-2xs": "0.125rem", "space-lg": "1rem" }, fontFamily: { "headline-lg": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "code-data": ["JetBrains Mono"], "metric-stat": ["Inter"], "headline-md": ["Inter"], "badge-status": ["JetBrains Mono"], "title-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "display-hero": ["Inter"], "caption": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-full antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.04)] pt-safe"><div class="h-6 px-margin flex items-center justify-between text-caption font-code-data text-text-secondary"><div class="flex items-center gap-space-xs"><span class="font-code-data text-caption font-bold text-on-surface">09:41</span><span class="px-space-xs py-0.5 rounded-sm bg-surface-container-high text-on-surface-variant font-badge-status text-badge-status uppercase">DC-01</span></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-2xs text-status-available"><span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span><span class="font-badge-status text-badge-status tracking-wider">ONLINE</span></div><span class="material-symbols-outlined text-[15px] text-text-secondary">wifi</span><span class="material-symbols-outlined text-[15px] text-text-secondary">battery_charging_full</span></div></div><div class="h-14 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface active:scale-95 transition-transform flex-shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #53b559 - Font: inter - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WctFvHYORHVzqD5AAf6F4pMq1x9NaH53Au-kYG6o3_HeIjgVBpqhfzQTd7_DTyuIhoq7J2ooS-n_WeK53amHzSPqltGIRG-GuTq6iEl0vMv8cgK7NfPUiw8n8gTLWAB025NicrsifvMzJtuD0aEr1xAClAaXu7NXf06Muy--P5nlvO2pGKt82FpH_yv0Oiep-7KnGbMebD3WZ1vK8ON5ZWTQH60ZskmuWKMioMRN7nfpkOIyCU9W3bco0"/><h1 class="font-title-sm text-title-sm text-on-surface truncate">Warehouse Selection</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-safe px-margin bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Operator Profile Banner & System Identifier -->
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="flex items-center justify-between">
+<span class="font-badge-status text-badge-status text-text-muted tracking-wider uppercase">MOB-003 // SELECCIÓN DE TURNO</span>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-badge-status text-badge-status">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-ping"></span>
+<span>TERMINAL LISTA</span>
+</div>
+</div>
+<!-- User Badge -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Carlos Techera</span>
+<span class="font-code-data text-code-data text-text-secondary">Carnet #OP-4821 • Turno Mañana</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px] flex-shrink-0">verified_user</span>
+</div>
+</div>
+<!-- Warehouse Selection Section -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">warehouse</span>
+        Centro de Distribución
+      </h2>
+<span class="font-badge-status text-badge-status text-text-muted">1 SELECCIONADO</span>
+</div>
+<!-- Warehouse Card 1 (Selected State) -->
+<div class="relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer" id="wh-card-1" onclick="selectWarehouse(1)">
+<div class="absolute -top-1.5 -right-1.5 bg-primary text-on-primary rounded-full p-0.5 shadow-sm flex items-center justify-center" id="wh-indicator-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Montevideo DC-01</span>
+<span class="px-1.5 py-0.5 rounded-sm bg-primary-fixed text-on-primary-fixed font-badge-status text-badge-status flex-shrink-0 uppercase">Principal</span>
+</div>
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0" id="wh-radio-1">
+<span class="w-2 h-2 rounded-full bg-on-primary"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">Ruta 101 Km 23.500 • 24 Muelles activos</p>
+<!-- Sub stats pills -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-tertiary font-code-data text-caption">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available"></span>
+          ONLINE • 48 tareas en cola
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-text-secondary font-code-data text-caption">
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+          5GHz Óptimo (-48 dBm)
+        </span>
+</div>
+</div>
+<!-- Warehouse Card 2 (Unselected State) -->
+<div class="relative flex flex-col p-space-md rounded-xl bg-surface-container-low transition-all cursor-pointer opacity-85 hover:opacity-100" id="wh-card-2" onclick="selectWarehouse(2)">
+<div class="hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary rounded-full p-0.5 shadow-sm items-center justify-center" id="wh-indicator-2">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Depósito Logístico Sur</span>
+<span class="px-1.5 py-0.5 rounded-sm bg-surface-container-high text-on-surface-variant font-badge-status text-badge-status flex-shrink-0 uppercase">Regional</span>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0" id="wh-radio-2">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-sm">Ruta Interbalnearia Km 27 • Cross-docking</p>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-surface-container text-text-secondary font-code-data text-caption">
+<span class="material-symbols-outlined text-[13px]">sync</span>
+          Sincronizado hace 12 min
+        </span>
+</div>
+</div>
+</div>
+<!-- Operational Zone Selection -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-title-sm text-title-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+        Zona Operativa Asignada
+      </h2>
+<span class="font-caption text-caption text-text-secondary">Paso 2 de 3</span>
+</div>
+<!-- Zones Stack -->
+<div class="flex flex-col gap-2">
+<!-- Zone A -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-all cursor-pointer" id="zone-A" onclick="selectZone('A')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-code-data font-bold text-caption flex-shrink-0" id="zone-badge-A">
+            01
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Zona A - Inbound &amp; Dársenas</span>
+<span class="font-caption text-caption text-text-secondary">12 tareas pendientes de recepción</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 ml-2" id="zone-radio-A">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+<!-- Zone B (Selected) -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer" id="zone-B" onclick="selectZone('B')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-code-data font-bold text-caption flex-shrink-0" id="zone-badge-B">
+            02
+          </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Zona B - Racks Palletizado</span>
+<span class="material-symbols-outlined text-[16px] text-status-available">verified</span>
+</div>
+<span class="font-caption text-caption text-text-secondary truncate">Pasillos 01 al 14 • 26 tareas en cola</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-2" id="zone-radio-B">
+<span class="w-2 h-2 rounded-full bg-on-primary"></span>
+</div>
+</div>
+<!-- Zone C -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-all cursor-pointer" id="zone-C" onclick="selectZone('C')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-code-data font-bold text-caption flex-shrink-0" id="zone-badge-C">
+            03
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Zona C - Cámara Frigorífica</span>
+<div class="flex items-center gap-1 font-caption text-caption text-tertiary">
+<span class="material-symbols-outlined text-[13px]">ac_unit</span>
+<span>Pharma 2°C a 8°C (BLE Activo)</span>
+</div>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 ml-2" id="zone-radio-C">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+<!-- Zone D -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-all cursor-pointer" id="zone-D" onclick="selectZone('D')">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-code-data font-bold text-caption flex-shrink-0" id="zone-badge-D">
+            04
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Zona D - Mesas de Packing</span>
+<span class="font-caption text-caption text-text-secondary">Expedición y verificación final</span>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 ml-2" id="zone-radio-D">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Machine / Equipment Assignment (Optional) -->
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<label class="font-caption text-caption font-semibold text-text-secondary uppercase tracking-wider flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">forklift</span>
+        Maquinaria Asignada
+      </span>
+<span class="text-text-muted font-normal">Opcional</span>
+</label>
+<div class="relative">
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-medium text-on-surface truncate">Montacargas Crown #FLT-03</span>
+<div class="flex items-center gap-2 font-code-data text-caption text-status-available">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">battery_5_bar</span>
+                88%
+              </span>
+<span class="text-text-muted">•</span>
+<span class="text-text-secondary">Cap: 2.500 Kg</span>
+</div>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-highest text-on-surface font-caption text-caption font-semibold flex items-center gap-1 active:scale-95 transition-transform" onclick="toggleMachinePicker()">
+          Cambiar
+          <span class="material-symbols-outlined text-[16px]">unfold_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Offline State & Master Sync Card -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low mb-space-xl">
+<div class="w-8 h-8 rounded-full bg-status-available/10 flex items-center justify-center text-status-available flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">offline_pin</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Offline Ready • Datos Sincronizados</span>
+<span class="font-caption text-caption text-text-secondary truncate">Maestro de ubicaciones y mapas descargados para DC-01</span>
+</div>
+</div>
+<!-- Tactile Primary Action Fixed Footer Area -->
+<div class="mt-auto pt-space-xs flex flex-col gap-space-xs">
+<button class="w-full h-[52px] rounded-xl bg-primary-container text-on-primary font-title-sm text-title-sm font-semibold flex items-center justify-center gap-space-sm shadow-md active:scale-[0.98] transition-all" onclick="confirmShift()">
+<span>Confirmar Turno e Iniciar Operaciones</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-1 text-center py-1">
+<span class="material-symbols-outlined text-text-muted text-[14px]">lock</span>
+<span class="font-caption text-caption text-text-muted">Acceso auditado por SENTAI Security Core</span>
+</div>
+</div>
+</div>
+<script>
+  let selectedWh = 1;
+  let selectedZone = 'B';
+
+  function selectWarehouse(id) {
+    selectedWh = id;
+    const isOne = id === 1;
+    
+    // Wh 1 Styles
+    document.getElementById('wh-card-1').className = isOne
+      ? 'relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer'
+      : 'relative flex flex-col p-space-md rounded-xl bg-surface-container-low transition-all cursor-pointer opacity-85 hover:opacity-100';
+    document.getElementById('wh-radio-1').className = isOne
+      ? 'w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0'
+      : 'w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0';
+    document.getElementById('wh-radio-1').innerHTML = isOne
+      ? '<span class="w-2 h-2 rounded-full bg-on-primary"></span>'
+      : '<span class="w-2 h-2 rounded-full bg-transparent"></span>';
+    document.getElementById('wh-indicator-1').style.display = isOne ? 'flex' : 'none';
+
+    // Wh 2 Styles
+    document.getElementById('wh-card-2').className = !isOne
+      ? 'relative flex flex-col p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer'
+      : 'relative flex flex-col p-space-md rounded-xl bg-surface-container-low transition-all cursor-pointer opacity-85 hover:opacity-100';
+    document.getElementById('wh-radio-2').className = !isOne
+      ? 'w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0'
+      : 'w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0';
+    document.getElementById('wh-radio-2').innerHTML = !isOne
+      ? '<span class="w-2 h-2 rounded-full bg-on-primary"></span>'
+      : '<span class="w-2 h-2 rounded-full bg-transparent"></span>';
+    document.getElementById('wh-indicator-2').style.display = !isOne ? 'flex' : 'none';
+  }
+
+  function selectZone(zone) {
+    selectedZone = zone;
+    const zones = ['A', 'B', 'C', 'D'];
+    
+    zones.forEach(z => {
+      const card = document.getElementById(`zone-${z}`);
+      const badge = document.getElementById(`zone-badge-${z}`);
+      const radio = document.getElementById(`zone-radio-${z}`);
+      
+      if (z === zone) {
+        card.className = 'flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest shadow-md transition-all cursor-pointer';
+        badge.className = 'w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-code-data font-bold text-caption flex-shrink-0';
+        radio.className = 'w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-2';
+        radio.innerHTML = '<span class="w-2 h-2 rounded-full bg-on-primary"></span>';
+      } else {
+        card.className = 'flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low transition-all cursor-pointer';
+        badge.className = 'w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-code-data font-bold text-caption flex-shrink-0';
+        radio.className = 'w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 ml-2';
+        radio.innerHTML = '<span class="w-2 h-2 rounded-full bg-transparent"></span>';
+      }
+    });
+  }
+
+  function toggleMachinePicker() {
+    alert("Lista de montacargas disponibles en DC-01:\n1. Crown #FLT-03 (88% Batería) [Actual]\n2. Toyota Traigo #FLT-09 (100% Batería)\n3. Linde Reach #RCH-01 (65% Batería)");
+  }
+
+  function confirmShift() {
+    const btn = event.currentTarget;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Iniciando Turno...</span>';
+    setTimeout(() => {
+      alert(`Turno inicializado exitosamente en ${selectedWh === 1 ? 'Montevideo DC-01' : 'Depósito Sur'} - Zona ${selectedZone}.`);
+      btn.innerHTML = '<span>Confirmar Turno e Iniciar Operaciones</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>';
+    }, 750);
+  }
+</script></main></body></html>

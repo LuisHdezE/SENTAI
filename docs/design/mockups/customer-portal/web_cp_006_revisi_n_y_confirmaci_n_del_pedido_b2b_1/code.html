@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-container": "#dae2fd",
+        "tertiary-container": "#48a8ed",
+        "background": "#f8f9ff",
+        "on-secondary-container": "#5c647a",
+        "canvas-bg": "#F8FAFC",
+        "surface-bright": "#f8f9ff",
+        "outline-variant": "#becab9",
+        "error": "#ba1a1a",
+        "on-surface-variant": "#3f4a3d",
+        "surface-container-highest": "#d3e4fe",
+        "text-muted": "#94A3B8",
+        "on-primary": "#ffffff",
+        "inverse-on-surface": "#eaf1ff",
+        "status-reserved": "#2563EB",
+        "status-expired": "#9333EA",
+        "on-primary-fixed-variant": "#005316",
+        "on-primary-container": "#00420f",
+        "surface-container-low": "#eff4ff",
+        "accent-focus": "#53B559",
+        "surface-tint": "#006e20",
+        "on-error": "#ffffff",
+        "on-tertiary-container": "#003b5c",
+        "on-surface": "#0b1c30",
+        "surface-container": "#e5eeff",
+        "status-blocked": "#475569",
+        "tertiary-fixed": "#cce5ff",
+        "tertiary-fixed-dim": "#93ccff",
+        "on-tertiary-fixed-variant": "#004b73",
+        "surface-variant": "#d3e4fe",
+        "border-subtle": "#E2E8F0",
+        "text-secondary": "#475569",
+        "secondary": "#565e74",
+        "inverse-primary": "#79dc7b",
+        "border-strong": "#CBD5E1",
+        "primary-container": "#53b559",
+        "on-error-container": "#93000a",
+        "primary": "#006e20",
+        "on-secondary-fixed-variant": "#3f465c",
+        "tertiary": "#006398",
+        "inverse-surface": "#213145",
+        "on-secondary": "#ffffff",
+        "outline": "#6f7a6c",
+        "text-primary": "#0F172A",
+        "primary-fixed": "#94f994",
+        "on-tertiary": "#ffffff",
+        "surface-container-high": "#dce9ff",
+        "on-background": "#0b1c30",
+        "on-tertiary-fixed": "#001d31",
+        "status-sync-pending": "#F59E0B",
+        "primary-fixed-dim": "#79dc7b",
+        "on-secondary-fixed": "#131b2e",
+        "surface-container-lowest": "#ffffff",
+        "secondary-fixed-dim": "#bec6e0",
+        "error-container": "#ffdad6",
+        "surface": "#f8f9ff",
+        "secondary-fixed": "#dae2fd",
+        "status-damaged": "#DC2626",
+        "status-quarantine": "#D97706",
+        "status-available": "#16A34A",
+        "surface-dim": "#cbdbf5",
+        "surface-card": "#FFFFFF",
+        "on-primary-fixed": "#002205",
+        "status-sync-error": "#E11D48"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "margin": "1rem",
+        "space-xl": "1.5rem",
+        "space-2xl": "2rem",
+        "margin-desktop": "1.5rem",
+        "gutter": "1rem",
+        "space-sm": "0.5rem",
+        "space-md": "0.75rem",
+        "space-lg": "1rem",
+        "space-2xs": "0.125rem",
+        "gutter-desktop": "1.5rem",
+        "space-3xl": "3rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-lg": ["Inter"],
+        "headline-lg-mobile": ["Inter"],
+        "metric-stat": ["Inter"],
+        "title-sm": ["Inter"],
+        "caption": ["Inter"],
+        "body-md": ["Inter"],
+        "badge-status": ["JetBrains Mono"],
+        "body-sm": ["Inter"],
+        "code-data": ["JetBrains Mono"],
+        "headline-md": ["Inter"],
+        "display-hero": ["Inter"]
+      },
+      "fontSize": {
+        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+        "metric-stat": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+        "badge-status": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+        "code-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+        "display-hero": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex items-center justify-center min-h-screen"><main class="w-full max-w-md mx-auto px-margin"><div class="flex flex-col w-full">
+<!-- Top Technical Identification Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-code-data text-caption bg-surface-container text-on-surface-variant px-space-xs py-space-2xs rounded tracking-wider uppercase">
+        WEB-CP-006 // REVISIÓN Y CONFIRMACIÓN DE PEDIDO // AUTORIZACIÓN B2B
+      </span>
+<span class="inline-flex items-center gap-1.5 font-badge-status text-badge-status text-status-available bg-status-available/10 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-status-available animate-pulse"></span>
+        STOCK CONGELADO 59:42 MIN
+      </span>
+</div>
+<div class="flex items-center gap-space-sm text-caption font-code-data text-text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+        Montevideo DC-01
+      </span>
+<span>|</span>
+<span>ACC-2024-HOSP-L2</span>
+</div>
+</div>
+<!-- Stepper / Order Workflow Rail -->
+<div class="w-full bg-surface-card rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm relative">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-code-data text-body-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<p class="font-title-sm text-caption text-text-muted uppercase tracking-wider">Paso 1 // Completado</p>
+<p class="font-title-sm text-body-sm text-text-primary truncate">Configuración de Productos y Entrega</p>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex items-center gap-space-sm bg-primary-container/10 p-space-xs rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-code-data text-body-sm font-bold shrink-0">
+          02
+        </div>
+<div class="min-w-0">
+<p class="font-title-sm text-caption text-primary font-bold uppercase tracking-wider">Paso 2 // En Curso</p>
+<p class="font-title-sm text-body-sm text-text-primary font-semibold truncate">Revisión y Validación Crediticia</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-sm opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container text-text-secondary flex items-center justify-center font-code-data text-body-sm shrink-0">
+          03
+        </div>
+<div class="min-w-0">
+<p class="font-title-sm text-caption text-text-muted uppercase tracking-wider">Paso 3 // Siguiente</p>
+<p class="font-title-sm text-body-sm text-text-secondary truncate">Confirmación y Envío a Almacén</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Institutional Pre-approval Banner -->
+<div class="bg-surface-container-low rounded-xl p-space-md mb-space-xl flex items-start gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-status-available/15 flex items-center justify-center text-status-available shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-title-sm text-title-sm text-text-primary">Pedido listo para emisión oficial B2B</h2>
+<p class="font-body-md text-body-sm text-text-secondary mt-0.5">
+          Stock reservado preventivamente por <span class="font-code-data text-status-available font-bold">60 minutos</span> en <span class="font-semibold text-text-primary">Montevideo DC-01</span>. Condición financiera: <span class="font-medium text-text-primary">Pago a 30 días neto contra e-Factura DGI</span>.
+        </p>
+</div>
+<div class="shrink-0 flex items-center gap-space-xs font-code-data text-badge-status bg-surface-card px-space-sm py-space-xs rounded shadow-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-accent-focus">lock_clock</span>
+        HOLD DC-01 ACTIVE
+      </div>
+</div>
+</div>
+<!-- 2-Column Responsive Workspace Grid (65% / 35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Order Details & Physical Audit (65% ~ 8 cols on lg) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Card 1: Identification & Logistics Dispatch Info -->
+<div class="bg-surface-card rounded-xl p-space-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md bg-surface-container-low/60 -mx-space-xl -mt-space-xl px-space-xl pt-space-lg rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">local_shipping</span>
+<h3 class="font-title-sm text-title-sm text-text-primary">Identificación y Parámetros de Despacho</h3>
+</div>
+<span class="font-code-data text-caption bg-surface-card px-2 py-0.5 rounded text-text-secondary shadow-sm">OC-CENTRAL-2024-1192</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-space-xl gap-y-space-md">
+<div class="space-y-1">
+<span class="font-caption text-caption uppercase text-text-muted">Razón Social &amp; Cliente</span>
+<p class="font-title-sm text-body-md text-text-primary">Distribuidora Central S.R.L.</p>
+<p class="font-code-data text-caption text-text-secondary">RUT: 21.439.810.0014 <span class="text-text-muted">•</span> CLI-0492</p>
+</div>
+<div class="space-y-1">
+<span class="font-caption text-caption uppercase text-text-muted">Ventana de Entrega Comprometida</span>
+<p class="font-title-sm text-body-md text-status-available flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+              Viernes 25 de Octubre 2024
+            </p>
+<p class="font-code-data text-caption text-text-secondary">Banda Horaria: 09:00 a 13:00 hs</p>
+</div>
+<div class="space-y-1 md:col-span-2 bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="font-caption text-caption uppercase text-text-muted">Punto de Entrega (Recepción Hospitalaria)</span>
+<p class="font-body-md text-text-primary font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-text-muted">pin_drop</span>
+              Casa Central - Depósito Sanitario, Av. 8 de Octubre 3420, Montevideo
+            </p>
+</div>
+<div class="space-y-1">
+<span class="font-caption text-caption uppercase text-text-muted">Operador Logístico Asignado</span>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-sm text-text-primary font-semibold">Flota Propia SENTAI Logistics</span>
+<span class="font-code-data text-caption text-status-available bg-status-available/10 px-1.5 py-0.5 rounded">DAC Express</span>
+</div>
+<p class="font-caption text-caption text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">ac_unit</span>
+              Monitoreo y trazabilidad térmica activa
+            </p>
+</div>
+<div class="space-y-1">
+<span class="font-caption text-caption uppercase text-text-muted">Contacto en Muelle Receptor</span>
+<p class="font-title-sm text-body-md text-text-primary">Lic. Martín Herrera</p>
+<p class="font-code-data text-caption text-text-secondary">Tel: +598 2900 1234 int. 402</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Merchandise Breakdown Table & Allocated Batches -->
+<div class="bg-surface-card rounded-xl p-space-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">inventory_2</span>
+<h3 class="font-title-sm text-title-sm text-text-primary">Desglose Definitivo de Mercadería &amp; Lotes</h3>
+</div>
+<span class="font-badge-status text-badge-status bg-surface-container px-2 py-1 rounded text-on-surface-variant">
+            4 LÍNEAS AUDITADAS
+          </span>
+</div>
+<!-- Table Responsive Container -->
+<div class="overflow-x-auto -mx-space-xl px-space-xl pb-space-sm">
+<table class="w-full text-left font-body-md text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-text-secondary font-code-data text-caption uppercase">
+<th class="py-2.5 px-3 rounded-l">SKU / Lote</th>
+<th class="py-2.5 px-3">Descripción &amp; Presentación</th>
+<th class="py-2.5 px-3 text-right">Bultos</th>
+<th class="py-2.5 px-3 text-right">Unidades</th>
+<th class="py-2.5 px-3 text-right">P. Unit</th>
+<th class="py-2.5 px-3 text-center">IVA</th>
+<th class="py-2.5 px-3 text-right rounded-r">Subtotal</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-3">
+<div class="font-code-data text-body-sm font-semibold text-text-primary">SKU-100245</div>
+<div class="font-code-data text-caption text-status-available font-bold">LOT-2026-0916</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-text-primary">Suero Fisiológico 500ml</div>
+<div class="font-caption text-caption text-text-muted">Caja x24 unidades</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">40 cjs</td>
+<td class="py-3 px-3 text-right font-code-data font-medium text-text-primary">960 un</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">$32.00</td>
+<td class="py-3 px-3 text-center font-code-data text-caption text-text-secondary">10%</td>
+<td class="py-3 px-3 text-right font-code-data font-bold text-text-primary">$1,280.00</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-3">
+<div class="font-code-data text-body-sm font-semibold text-text-primary">SKU-204918</div>
+<div class="font-code-data text-caption text-status-available font-bold">LOT-2025-1102</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-text-primary">Guantes Nitrilo M</div>
+<div class="font-caption text-caption text-text-muted">Caja x100 unidades</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">80 cjs</td>
+<td class="py-3 px-3 text-right font-code-data font-medium text-text-primary">8,000 un</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">$18.50</td>
+<td class="py-3 px-3 text-center font-code-data text-caption text-text-secondary">22%</td>
+<td class="py-3 px-3 text-right font-code-data font-bold text-text-primary">$1,480.00</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-3">
+<div class="font-code-data text-body-sm font-semibold text-text-primary">SKU-892110</div>
+<div class="font-code-data text-caption text-status-available font-bold">LOT-2026-0418</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-text-primary">Catéter Intravenoso 18G</div>
+<div class="font-caption text-caption text-text-muted">Paquete x50 unidades</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">30 paq</td>
+<td class="py-3 px-3 text-right font-code-data font-medium text-text-primary">1,500 un</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">$24.00</td>
+<td class="py-3 px-3 text-center font-code-data text-caption text-text-secondary">10%</td>
+<td class="py-3 px-3 text-right font-code-data font-bold text-text-primary">$720.00</td>
+</tr>
+<!-- Item 4 -->
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 px-3">
+<div class="font-code-data text-body-sm font-semibold text-text-primary">SKU-304112</div>
+<div class="font-code-data text-caption text-status-available font-bold">LOT-2027-0105</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-text-primary">Jeringas Luer Lock 10ml</div>
+<div class="font-caption text-caption text-text-muted">Caja x100 unidades</div>
+</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">60 cjs</td>
+<td class="py-3 px-3 text-right font-code-data font-medium text-text-primary">6,000 un</td>
+<td class="py-3 px-3 text-right font-code-data text-text-secondary">$14.20</td>
+<td class="py-3 px-3 text-center font-code-data text-caption text-text-secondary">22%</td>
+<td class="py-3 px-3 text-right font-code-data font-bold text-text-primary">$852.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Physical Totals Banner (Dock Specs) -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex flex-wrap items-center justify-between gap-space-sm text-caption font-code-data text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-text-muted">package_2</span>
+<span>Totales Físicos: <strong class="text-text-primary">210 bultos</strong> (16,460 unidades)</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap">
+<span>Peso: <strong class="text-text-primary">1,180 kg</strong></span>
+<span>Volumen: <strong class="text-text-primary">3.4 m³</strong></span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded font-bold">2 Pallets Completos</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Commercial Terms & Legal Compliance -->
+<div class="bg-surface-card rounded-xl p-space-xl shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-sm mb-space-md">
+<span class="material-symbols-outlined text-primary text-[22px]">gavel</span>
+<h3 class="font-title-sm text-title-sm text-text-primary">Condiciones Comerciales y Cumplimiento B2B</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-1.5 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="font-title-sm text-caption uppercase tracking-wider text-text-primary font-semibold">Términos de Pago</span>
+</div>
+<p class="font-body-md text-body-sm text-text-secondary">
+              30 Días Fecha Factura Fiscal.<br/>
+<span class="font-code-data text-caption text-primary font-bold">Vencimiento: 24/11/2024</span>
+</p>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-1.5 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span class="font-title-sm text-caption uppercase tracking-wider text-text-primary font-semibold">Facturación DGI</span>
+</div>
+<p class="font-body-md text-caption text-text-secondary">
+              e-Factura remitida a:<br/>
+<span class="font-code-data text-text-primary break-all">compras@distribuidoracentral.com.uy</span>
+</p>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-1.5 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+<span class="font-title-sm text-caption uppercase tracking-wider text-text-primary font-semibold">Recepción Digital</span>
+</div>
+<p class="font-body-md text-caption text-text-secondary">
+              Remito electrónico (e-REM) con firma biométrica y conformidad en muelle.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Financial Settlement, Credit Validation & Confirmation (35% ~ 4 cols on lg) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-6">
+<!-- Card: Financial Settlement Summary -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-title-sm text-title-sm text-text-primary">Liquidación de Orden</h3>
+<span class="font-code-data text-caption bg-surface-container text-text-secondary px-2 py-0.5 rounded">USD</span>
+</div>
+<div class="space-y-2.5 font-body-md text-body-sm text-text-secondary pb-space-md">
+<div class="flex justify-between items-center">
+<span>Subtotal Bruto (4 ítems)</span>
+<span class="font-code-data text-text-primary font-medium">$4,332.00</span>
+</div>
+<div class="flex justify-between items-center text-status-available">
+<span class="flex items-center gap-1">
+<span>Descuento Hospitalario</span>
+<span class="font-code-data text-caption bg-status-available/10 px-1 py-0.2 rounded font-bold">-5%</span>
+</span>
+<span class="font-code-data font-bold">-$216.60</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Subtotal Imponible</span>
+<span class="font-code-data text-text-primary">$4,115.40</span>
+</div>
+<div class="flex justify-between items-center">
+<span>IVA Computado DGI</span>
+<span class="font-code-data text-text-primary">$485.40</span>
+</div>
+</div>
+<div class="pt-space-md bg-surface-container-low/80 -mx-space-lg -mb-space-lg p-space-lg rounded-b-xl">
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-caption text-caption text-text-secondary uppercase font-bold tracking-wider">Total a Facturar</span>
+<span class="font-metric-stat text-metric-stat text-text-primary leading-none">$4,600.80</span>
+</div>
+<p class="font-code-data text-caption text-text-muted text-right">Valores expresados en Dólares Americanos</p>
+</div>
+</div>
+<!-- Card: Credit Validation (AP / Financial Perspective) -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div>
+<h4 class="font-title-sm text-body-sm font-semibold text-text-primary">Validación Crediticia Corporativa</h4>
+<p class="font-caption text-caption text-status-available font-semibold flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              Línea Habilitada sin Retención
+            </p>
+</div>
+<span class="font-badge-status text-badge-status bg-status-available/10 text-status-available px-2 py-0.5 rounded">
+            PASS
+          </span>
+</div>
+<!-- Credit Meter Progress Graphic -->
+<div class="space-y-1.5 mb-space-md">
+<div class="flex justify-between text-caption font-code-data">
+<span class="text-text-muted">Disponible: $15,850.00</span>
+<span class="text-text-primary font-bold">Línea: $80,000.00</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden flex">
+<!-- Used credit (64,150 / 80,000 = ~80.1%) -->
+<div class="h-full bg-secondary" style="width: 80.2%;"></div>
+<!-- Current Order Allocation (4,600.80 / 80,000 = ~5.75%) -->
+<div class="h-full bg-accent-focus" style="width: 5.8%;"></div>
+</div>
+<div class="flex justify-between items-center pt-1">
+<span class="font-caption text-caption text-text-secondary">Disponible post-emisión:</span>
+<span class="font-code-data text-body-sm font-bold text-text-primary">$11,249.20 USD</span>
+</div>
+</div>
+<div class="p-space-xs bg-surface-container-low rounded flex items-center gap-space-xs text-caption font-code-data text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span>WMS Interlock: Liberación automática</span>
+</div>
+</div>
+<!-- Card: Digital Authorization & Primary Confirmation Actions -->
+<div class="bg-surface-card rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h4 class="font-title-sm text-body-sm font-semibold text-text-primary">Firma &amp; Autorización B2B</h4>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-md">
+<p class="font-caption text-caption text-text-muted uppercase">Usuario Autorizante</p>
+<p class="font-title-sm text-body-sm text-text-primary font-semibold">Mariana Gómez</p>
+<p class="font-caption text-caption text-text-secondary">Jefe de Compras y Abastecimiento</p>
+<span class="inline-flex items-center gap-1 font-code-data text-caption text-status-available mt-1">
+<span class="material-symbols-outlined text-[14px]">key</span>
+            Certificado e-Token Activo
+          </span>
+</div>
+<!-- Required Terms Checkbox -->
+<label class="flex items-start gap-space-xs mb-space-lg cursor-pointer select-none">
+<input checked="" class="mt-1 w-4 h-4 rounded text-accent-focus focus:ring-accent-focus cursor-pointer" id="agreeCheckbox" type="checkbox"/>
+<span class="font-body-md text-caption text-text-secondary">
+            Confirmo la emisión de la orden de compra conforme a los precios y términos vigentes del <strong class="text-text-primary">Acuerdo Hospitalario L2-2024</strong>.
+          </span>
+</label>
+<!-- Primary Green Button -->
+<button class="w-full bg-primary-container hover:bg-accent-focus active:scale-[0.99] text-on-primary font-title-sm text-title-sm py-3 px-space-md rounded-xl transition-all duration-200 shadow-md flex items-center justify-center gap-2 mb-space-sm group" id="confirmOrderBtn">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">check_circle</span>
+<span>Confirmar y Emitir Pedido B2B</span>
+</button>
+<!-- Secondary Back to Edit Button -->
+<a class="w-full bg-surface-container-low hover:bg-surface-container text-text-primary font-title-sm text-body-sm py-2 px-space-md rounded-lg transition-colors flex items-center justify-center gap-2 mb-space-sm" href="#modify-products">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Modificar Productos (WEB-CP-005)</span>
+</a>
+<!-- Tertiary Download PDF Proforma Button -->
+<button class="w-full bg-transparent hover:bg-surface-container-lowest text-text-secondary hover:text-text-primary font-code-data text-caption py-1.5 px-space-md rounded transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>Descargar Proforma / Borrador PDF</span>
+</button>
+</div>
+<!-- Support Footnote -->
+<div class="p-space-sm bg-surface-container-lowest rounded-lg flex items-start gap-2 text-caption text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0 mt-0.5">info</span>
+<p class="font-body-md text-caption">
+          Una vez emitido, se generará la orden <span class="font-code-data font-bold text-text-secondary">SO-000159</span> y se notificará automáticamente a la mesa de planificación en Montevideo DC-01.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const confirmBtn = document.getElementById('confirmOrderBtn');
+    const agreeCheckbox = document.getElementById('agreeCheckbox');
+
+    if (agreeCheckbox && confirmBtn) {
+      agreeCheckbox.addEventListener('change', function() {
+        if (!this.checked) {
+          confirmBtn.classList.add('opacity-50', 'pointer-events-none');
+        } else {
+          confirmBtn.classList.remove('opacity-50', 'pointer-events-none');
+        }
+      });
+    }
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const originalContent = confirmBtn.innerHTML;
+        confirmBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+          <span>Transmitiendo a DC-01...</span>
+        `;
+        confirmBtn.disabled = true;
+
+        setTimeout(function() {
+          confirmBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[20px]">done_all</span>
+            <span>¡Pedido SO-000159 Emitido!</span>
+          `;
+          confirmBtn.classList.replace('bg-primary-container', 'bg-primary');
+        }, 1200);
+      });
+    }
+  })();
+</script></main></body></html>

@@ -1,0 +1,605 @@
+Diseña el sistema visual completo de una plataforma logística llamada SENTAI.
+
+SENTAI es una plataforma de gestión de almacenes, inventario, pedidos, fulfillment, picking, packing, planificación de envíos y control financiero de clientes.
+
+La solución tiene tres experiencias diferenciadas:
+
+1. SENTAI Backoffice Web
+   Para administradores, supervisores de almacén, personal de operaciones, planificación, comercial y finanzas.
+
+2. SENTAI Customer Portal
+   Para clientes que consultan catálogo, disponibilidad, crean pedidos, revisan envíos, saldos, cuentas por pagar y estado de cuenta.
+
+3. SENTAI Operator Mobile
+   Aplicación operativa para Android e iOS utilizada por personal de almacén para recepción, put-away, picking, movimientos, conteos y otras tareas físicas.
+
+IDENTIDAD VISUAL
+
+Marca: SENTAI
+
+Color principal:
+#53B559
+
+El verde debe ser el color de marca dominante para:
+- acciones principales;
+- estado activo;
+- navegación seleccionada;
+- indicadores positivos;
+- elementos de identidad;
+- botones primarios.
+
+No saturar toda la interfaz de verde.
+
+Crear una paleta profesional complementaria basada en:
+- blanco;
+- grises neutros;
+- grafito;
+- fondos claros;
+- colores semánticos para warning, error, information y success.
+
+Estética:
+- profesional;
+- moderna;
+- empresarial;
+- logística;
+- limpia;
+- tecnológica;
+- visualmente atractiva;
+- alta legibilidad;
+- evitar aspecto genérico de template SaaS;
+- evitar interfaces recargadas.
+
+WEB
+
+Diseñar inicialmente para desktop 1440px.
+Debe adaptarse posteriormente a tablet y resoluciones menores.
+
+Backoffice:
+- sidebar izquierda;
+- topbar;
+- breadcrumb cuando corresponda;
+- búsqueda;
+- selector de almacén;
+- notificaciones;
+- usuario activo;
+- contenido central amplio.
+
+Mantener exactamente el mismo shell visual entre todas las pantallas del Backoffice.
+
+Customer Portal:
+usar una navegación más sencilla y orientada al cliente.
+No mostrar herramientas internas del almacén.
+
+MÓVIL
+
+Diseñar para aproximadamente 390x844 px.
+
+La app móvil NO debe ser una miniatura del Backoffice.
+
+Debe estar optimizada para:
+- operación con una mano;
+- botones grandes;
+- lectura rápida;
+- escaneo;
+- pocos pasos;
+- alta visibilidad;
+- conexión intermitente;
+- feedback inmediato de éxito/error.
+
+Debe contemplar visualmente estados:
+ONLINE
+OFFLINE
+SYNC PENDING
+SYNC ERROR
+
+REGLAS DE DOMINIO VISUAL
+
+No inventar nuevas funcionalidades fuera de las especificadas.
+
+Diferenciar claramente:
+- pedido del cliente;
+- reserva de inventario;
+- picking;
+- packing;
+- shipment;
+- despacho.
+
+Inventario debe poder mostrar:
+- On Hand;
+- Reserved;
+- Available;
+- ubicación;
+- lote;
+- serie;
+- estado.
+
+Estados de stock posibles:
+AVAILABLE
+RESERVED
+QUARANTINE
+DAMAGED
+BLOCKED
+EXPIRED
+
+Desde Backoffice:
+las obligaciones de clientes se llaman CUENTAS POR COBRAR.
+
+Desde Customer Portal:
+esas mismas obligaciones se presentan como CUENTAS POR PAGAR.
+
+No mostrar “Cuentas por cobrar” al cliente.
+
+Mantener consistencia absoluta en:
+- colores;
+- botones;
+- tablas;
+- cards;
+- modales;
+- filtros;
+- estados;
+- tipografía;
+- iconografía;
+- espaciado;
+- navegación.
+
+DATOS
+
+Usar datos ficticios pero realistas relacionados con logística.
+
+Ejemplos:
+Almacén: Montevideo DC-01
+SKU: SKU-100245
+Ubicación: A-03-02-04
+Lote: LOT-2026-0916
+Pedido: SO-000154
+Picking: PICK-000932
+Shipment: SHP-000078
+
+No usar lorem ipsum.
+
+OBJETIVO
+
+Estas vistas serán referencias visuales oficiales para que posteriormente una IA de desarrollo implemente el sistema.
+
+Por lo tanto:
+- privilegiar consistencia sobre experimentación;
+- no rediseñar el sistema entre pantallas;
+- no cambiar arbitrariamente componentes existentes;
+- reutilizar patrones;
+- mantener navegación coherente.
+
+Cada vista debe mostrar claramente su ID y nombre para poder identificarla posteriormente.
+2. Inventario maestro de vistas
+
+Propongo 60 vistas iniciales. Parece mucho, pero no significa desarrollar 60 módulos independientes. Muchas comparten componentes y layouts.
+
+Además, las produciríamos en lotes máximos de 10, que coincide muy bien con la disciplina que ya contempla el Blueprint para mockups.
+
+A. Backoffice web: estructura y administración
+ID	Vista
+WEB-BO-001	Login
+WEB-BO-002	Dashboard general
+WEB-BO-003	Selector de almacén / contexto
+WEB-BO-004	Perfil de usuario
+WEB-BO-005	Usuarios
+WEB-BO-006	Detalle / edición de usuario
+WEB-BO-007	Roles y permisos
+WEB-BO-008	Almacenes
+WEB-BO-009	Detalle de almacén
+WEB-BO-010	Zonas, pasillos, racks y ubicaciones
+B. Catálogo y maestros
+ID	Vista
+WEB-MD-001	Productos / SKU
+WEB-MD-002	Crear / editar producto
+WEB-MD-003	Detalle del producto
+WEB-MD-004	Clientes
+WEB-MD-005	Detalle del cliente
+WEB-MD-006	Proveedores
+WEB-MD-007	Detalle del proveedor
+WEB-MD-008	Transportistas
+WEB-MD-009	Unidades de medida / empaques
+WEB-MD-010	Reglas logísticas
+C. Inbound / recepción
+ID	Vista
+WEB-IN-001	ASN / recepciones esperadas
+WEB-IN-002	Detalle ASN
+WEB-IN-003	Crear recepción / ASN
+WEB-IN-004	Recepción física
+WEB-IN-005	Control de líneas recibidas
+WEB-IN-006	Incidencias / no conformidades
+WEB-IN-007	Etiquetado
+WEB-IN-008	Sugerencia de put-away
+WEB-IN-009	Tareas de put-away
+WEB-IN-010	Detalle de put-away
+D. Inventario
+ID	Vista
+WEB-INV-001	Dashboard de inventario
+WEB-INV-002	Stock por producto
+WEB-INV-003	Stock por ubicación
+WEB-INV-004	Detalle de posición de inventario
+WEB-INV-005	Historial de movimientos
+WEB-INV-006	Transferencia interna
+WEB-INV-007	Ajuste de inventario
+WEB-INV-008	Conteos cíclicos
+WEB-INV-009	Detalle / ejecución de conteo
+WEB-INV-010	Lotes, series y trazabilidad
+E. Pedidos y fulfillment
+ID	Vista
+WEB-ORD-001	Pedidos
+WEB-ORD-002	Detalle de pedido
+WEB-ORD-003	Reserva / allocation
+WEB-ORD-004	Pedido en Credit Hold
+WEB-FUL-001	Dashboard fulfillment
+WEB-FUL-002	Planificación de picking
+WEB-FUL-003	Olas de picking
+WEB-FUL-004	Tareas de picking
+WEB-FUL-005	Estación de packing
+WEB-FUL-006	Excepciones de fulfillment
+F. Shipping
+ID	Vista
+WEB-SHP-001	Dashboard de despachos
+WEB-SHP-002	Planificador de shipments
+WEB-SHP-003	Calendario / slots de muelle
+WEB-SHP-004	Detalle de shipment
+WEB-SHP-005	Consolidación de pedidos
+WEB-SHP-006	Confirmación de carga
+WEB-SHP-007	Despacho
+WEB-SHP-008	Historial de envíos
+G. Finanzas
+ID	Vista
+WEB-FIN-001	Dashboard financiero
+WEB-FIN-002	Cuentas por cobrar
+WEB-FIN-003	Aging de cartera
+WEB-FIN-004	Cuenta financiera del cliente
+WEB-FIN-005	Documento por cobrar
+WEB-FIN-006	Registrar pago
+WEB-FIN-007	Aplicación de pagos
+WEB-FIN-008	Clientes en Credit Hold
+WEB-FIN-009	Estado de cuenta
+WEB-FIN-010	Historial de pagos
+
+Eso ya nos da un Backoffice bastante completo.
+
+3. Portal del cliente
+
+Aquí usaría otra serie de IDs:
+
+ID	Vista
+WEB-CP-001	Login cliente
+WEB-CP-002	Inicio / dashboard
+WEB-CP-003	Catálogo
+WEB-CP-004	Detalle de producto
+WEB-CP-005	Nuevo pedido
+WEB-CP-006	Revisión y confirmación del pedido
+WEB-CP-007	Mis pedidos
+WEB-CP-008	Detalle de pedido
+WEB-CP-009	Mis envíos
+WEB-CP-010	Detalle / tracking de envío
+WEB-CP-011	Cuentas por pagar
+WEB-CP-012	Detalle de obligación
+WEB-CP-013	Pagos
+WEB-CP-014	Estado de cuenta
+WEB-CP-015	Direcciones y perfil
+
+Aquí quiero insistir en algo visualmente:
+
+Backoffice:
+CUENTAS POR COBRAR
+
+Portal del cliente:
+CUENTAS POR PAGAR
+
+Stitch debe respetarlo siempre.
+
+4. App móvil SENTAI Operator
+
+La móvil merece un diseño específico.
+
+ID	Vista
+MOB-001	Splash
+MOB-002	Login
+MOB-003	Selección de almacén
+MOB-004	Inicio / Mis tareas
+MOB-005	Lista de tareas
+MOB-006	Escáner universal
+MOB-007	Recepción
+MOB-008	Recepción de línea
+MOB-009	Put-away
+MOB-010	Picking
+MOB-011	Confirmación de picking
+MOB-012	Packing
+MOB-013	Transferencia interna
+MOB-014	Replenishment
+MOB-015	Conteo cíclico
+MOB-016	Incidencia
+MOB-017	Detalle de ubicación
+MOB-018	Consulta de SKU
+MOB-019	Operaciones pendientes de sincronizar
+MOB-020	Error / conflicto de sincronización
+MOB-021	Perfil / turno
+MOB-022	Resultado exitoso de operación
+
+Con estas 22 tenemos prácticamente todo el lenguaje móvil.
+
+5. No le pediría las 97 pantallas de una vez
+
+Aquí está la estrategia.
+
+Batch 01
+WEB-BO-001
+WEB-BO-002
+WEB-BO-003
+WEB-BO-005
+WEB-BO-007
+WEB-BO-008
+WEB-BO-009
+WEB-BO-010
+WEB-MD-001
+WEB-MD-003
+
+Objetivo:
+
+Definir shell, navegación, tablas, formularios, cards, filtros y detalle.
+
+Ese lote establece el ADN visual.
+
+No sigas con el Batch 02 hasta aprobarlo.
+
+6. Prompt para cada batch
+
+Una vez aprobado el primer estilo, utiliza algo así:
+
+Continúa el diseño de SENTAI usando EXACTAMENTE el mismo sistema visual aprobado en el batch anterior.
+
+No rediseñes:
+- sidebar;
+- topbar;
+- tipografía;
+- paleta;
+- cards;
+- tablas;
+- botones;
+- inputs;
+- badges;
+- spacing;
+- iconografía.
+
+Genera las siguientes vistas:
+
+WEB-IN-001 — ASN / Recepciones esperadas
+WEB-IN-002 — Detalle ASN
+WEB-IN-003 — Crear recepción / ASN
+WEB-IN-004 — Recepción física
+WEB-IN-005 — Control de líneas recibidas
+WEB-IN-006 — Incidencias / no conformidades
+WEB-IN-007 — Etiquetado
+WEB-IN-008 — Sugerencia de put-away
+WEB-IN-009 — Tareas de put-away
+WEB-IN-010 — Detalle de put-away
+
+Usar datos ficticios pero realistas.
+
+Cada pantalla debe incluir su ID de referencia.
+
+Estas imágenes serán usadas posteriormente como especificación visual de implementación.
+
+Y repetimos el procedimiento para cada grupo.
+
+7. Haría una cosa adicional muy importante
+
+No guardemos simplemente:
+
+imagen1.png
+imagen2.png
+final.png
+final2.png
+
+Eso en seis semanas se convierte en sopa digital. 🥣
+
+Usaría exactamente:
+
+docs/design/mockups/
+│
+├── backoffice/
+│   ├── WEB-BO-001-login.png
+│   ├── WEB-BO-002-dashboard.png
+│   ├── WEB-INV-001-inventory-dashboard.png
+│   └── ...
+│
+├── customer-portal/
+│   ├── WEB-CP-001-login.png
+│   ├── WEB-CP-002-dashboard.png
+│   └── ...
+│
+└── mobile/
+    ├── MOB-001-splash.png
+    ├── MOB-002-login.png
+    └── ...
+
+Después, cuando Blueprint 0.5.4 esté listo, determinaremos si esos activos pasan a:
+
+.blueprint/mockups/
+
+o si quedan como referencias versionadas y los manifests del Blueprint los apuntan allí.
+
+No adelantaría esa decisión hasta ver el contrato definitivo de 0.5.4.
+
+8. Cada vista necesita una pequeña ficha
+
+Además de la imagen, Antigravity debería conocer qué significa.
+
+Ejemplo:
+
+WEB-INV-002
+Stock por producto
+
+Actor:
+Warehouse Supervisor
+
+Objetivo:
+Consultar disponibilidad global del inventario.
+
+Debe mostrar:
+SKU
+Producto
+On Hand
+Reserved
+Available
+Warehouse
+Status
+
+Acciones:
+Ver detalle
+Filtrar
+Buscar
+Exportar
+
+API:
+Todavía no definida.
+
+Referencia visual:
+WEB-INV-002-stock-by-product.png
+
+Eso posteriormente encaja maravillosamente con el Interface Inventory del Blueprint.
+
+9. Para el diseño, distinguiría cuatro tipos de pantalla
+
+Así evitamos que Stitch haga 97 composiciones totalmente distintas:
+
+LIST
+DETAIL
+WORKSPACE
+DASHBOARD
+
+Más:
+
+FORM
+
+Por ejemplo:
+
+Productos            → LIST
+Producto              → DETAIL
+Crear producto        → FORM
+Picking planner       → WORKSPACE
+Inventory overview    → DASHBOARD
+
+Entonces tenemos quizá 8-12 patrones visuales fundamentales reutilizados en todo SENTAI.
+
+Eso mejora muchísimo la consistencia.
+
+10. Una pantalla que yo trataría con especial cariño
+
+La trazabilidad.
+
+WEB-INV-010
+
+Le pediría explícitamente:
+
+Diseñar una vista de trazabilidad end-to-end de lote/serie.
+
+Debe permitir visualizar cronológicamente:
+
+ASN
+↓
+Receipt
+↓
+Put-away
+↓
+Inventory Location
+↓
+Internal Movements
+↓
+Reservation
+↓
+Picking
+↓
+Packing
+↓
+Shipment
+↓
+Dispatch
+
+Usar una timeline visual clara.
+
+Permitir seleccionar un lote o número de serie.
+
+Mostrar:
+producto
+SKU
+lote
+estado
+ubicación actual
+cantidad
+eventos
+usuario
+fecha/hora
+
+La pantalla debe comunicar claramente trazabilidad completa del almacén.
+
+Esa puede convertirse en una de las imágenes estrella de tu portfolio.
+
+11. Otra pantalla estrella: shipment planning
+
+WEB-SHP-002.
+
+Le pediría algo tipo:
+
+Diseñar el planificador operativo de despachos.
+
+Mostrar columnas o timeline por muelle:
+
+Dock 01
+Dock 02
+Dock 03
+
+Cada shipment debe aparecer como una card operativa con:
+
+Shipment number
+hora planificada
+transportista
+cantidad de pedidos
+cantidad de paquetes
+peso
+estado
+
+Estados:
+PLANNED
+PACKING
+READY
+LOADING
+DISPATCHED
+
+Permitir representar visualmente drag-and-drop entre slots.
+
+No diseñar un TMS ni navegación GPS.
+
+La pantalla pertenece a planificación de salida de almacén.
+
+Esa otra también tiene enorme potencia visual.
+
+12. Y las cuentas por cobrar
+
+WEB-FIN-001 y WEB-FIN-002 deberían ser bastante elegantes:
+
+Total Receivable
+Overdue
+Due This Week
+Customers on Hold
+
+con aging:
+
+Current
+1–30
+31–60
+61–90
+90+
+
+Mientras que el cliente en WEB-CP-011 ve:
+
+Saldo pendiente
+Saldo vencido
+Próximo vencimiento
+
+Mis cuentas por pagar
+
+Misma verdad financiera, perspectiva diferente.

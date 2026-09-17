@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#48a8ed","on-error":"#ffffff","outline-variant":"#becab9","error":"#ba1a1a","primary-container":"#53b559","text-primary":"#0F172A","on-tertiary-fixed-variant":"#004b73","status-available":"#16A34A","on-surface":"#0b1c30","surface-container-highest":"#d3e4fe","tertiary-fixed-dim":"#93ccff","secondary-container":"#dae2fd","on-tertiary-container":"#003b5c","surface-dim":"#cbdbf5","surface":"#f8f9ff","status-expired":"#9333EA","inverse-surface":"#213145","error-container":"#ffdad6","status-damaged":"#DC2626","border-strong":"#CBD5E1","on-secondary-fixed-variant":"#3f465c","on-background":"#0b1c30","secondary-fixed":"#dae2fd","status-sync-error":"#E11D48","surface-tint":"#006e20","surface-container-lowest":"#ffffff","status-sync-pending":"#F59E0B","primary-fixed-dim":"#79dc7b","inverse-on-surface":"#eaf1ff","status-reserved":"#2563EB","border-subtle":"#E2E8F0","surface-container-low":"#eff4ff","background":"#f8f9ff","status-blocked":"#475569","surface-container-high":"#dce9ff","surface-card":"#FFFFFF","on-surface-variant":"#3f4a3d","secondary":"#565e74","on-primary-fixed":"#002205","on-error-container":"#93000a","inverse-primary":"#79dc7b","status-quarantine":"#D97706","primary":"#006e20","on-tertiary-fixed":"#001d31","on-primary-container":"#00420f","tertiary-fixed":"#cce5ff","tertiary":"#006398","surface-bright":"#f8f9ff","accent-focus":"#53B559","text-muted":"#94A3B8","on-secondary-container":"#5c647a","surface-container":"#e5eeff","surface-variant":"#d3e4fe","on-tertiary":"#ffffff","on-primary":"#ffffff","canvas-bg":"#F8FAFC","on-primary-fixed-variant":"#005316","outline":"#6f7a6c","on-secondary":"#ffffff","primary-fixed":"#94f994","text-secondary":"#475569","secondary-fixed-dim":"#bec6e0","on-secondary-fixed":"#131b2e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-2xl":"2rem","margin":"1rem","margin-desktop":"1.5rem","space-lg":"1rem","space-md":"0.75rem","space-sm":"0.5rem","gutter":"1rem","space-xl":"1.5rem","gutter-desktop":"1.5rem","space-2xs":"0.125rem","space-3xl":"3rem","space-xs":"0.25rem"},"fontFamily":{"title-sm":["Inter"],"body-sm":["Inter"],"caption":["Inter"],"body-md":["Inter"],"badge-status":["JetBrains Mono"],"headline-lg-mobile":["Inter"],"metric-stat":["Inter"],"headline-md":["Inter"],"code-data":["JetBrains Mono"],"display-hero":["Inter"],"headline-lg":["Inter"]},"fontSize":{"title-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"badge-status":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"metric-stat":["30px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"code-data":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"display-hero":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}};</script></head><body class="bg-canvas-bg font-body-md text-text-primary antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-inverse-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col h-full"><div class="h-14 px-space-lg flex items-center justify-between bg-inverse-surface"><div class="flex items-center gap-space-sm"><img alt="SENTAI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYR1RSZFxitWj_eQV9xpgp8X09Ra3unfSEHjxLRoPGBOLLVRWGrrqtAzNKObPyLj-dkzDK3lYHN8eNn3nfHmQ23g-kYclwr0Dnt41lEcEpsJauwWBeSYT_3_7jLqzwcA_sLD1sq0z2FQ96G-wXKs1-TP28lK-mUCRK7MZnXSczjrRb-6qc7oqI0C5U9v_0cItuxg1JvhNKCJpwvAuFtrzkDDEEhBlYNYrQyy5cCccwCwWQ20H6SYVn71E"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-surface tracking-tight leading-none">SENTAI</span><span class="font-caption text-caption text-text-muted tracking-wide text-[10px] uppercase mt-0.5">Logistics Core</span></div></div><button aria-label="Colapsar menú lateral" class="text-text-muted hover:text-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-space-sm py-space-sm"><nav class="flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg shadow-sm"><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">DASHBOARD &amp; GENERAL</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-general" href="#"><span class="truncate">Dashboard General</span><span class="font-code-data text-[11px] text-text-muted">002</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">ADMINISTRACIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="selector-contexto" href="#"><span class="truncate">Selector / Contexto</span><span class="font-code-data text-[11px] text-text-muted">003</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="usuarios-permisos" href="#"><span class="truncate">Usuarios &amp; Permisos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="roles" href="#"><span class="truncate">Roles</span><span class="font-code-data text-[11px] text-text-muted">007</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="almacenes-red" href="#"><span class="truncate">Almacenes &amp; Red</span><span class="font-code-data text-[11px] text-text-muted">008</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="ubicaciones-racks" href="#"><span class="truncate">Ubicaciones &amp; Racks</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">CATÁLOGO &amp; MAESTROS</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="productos-sku" href="#"><span class="truncate">Productos / SKU</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-cuentas" href="#"><span class="truncate">Clientes &amp; Cuentas</span><span class="font-code-data text-[11px] text-text-muted">004</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="proveedores-carriers" href="#"><span class="truncate">Proveedores &amp; Carriers</span><span class="font-code-data text-[11px] text-text-muted">006</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INBOUND &amp; RECEPCIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="asn-recepciones" href="#"><span class="truncate">ASN &amp; Recepciones</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="put-away" href="#"><span class="truncate">Put-away</span><span class="font-code-data text-[11px] text-text-muted">009</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">INVENTARIO &amp; STOCK</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="stock-producto" href="#"><span class="truncate">Stock por Producto</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="movimientos-conteos" href="#"><span class="truncate">Movimientos &amp; Conteos</span><span class="font-code-data text-[11px] text-text-muted">005</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="trazabilidad-lotes-series" href="#"><span class="truncate">Trazabilidad Lotes/Series</span><span class="font-code-data text-[11px] text-text-muted">010</span></a></div><div class="flex flex-col gap-space-2xs"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FULFILLMENT &amp; EXPEDICIÓN</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="pedidos-allocation" href="#"><span class="truncate">Pedidos &amp; Allocation</span><span class="font-code-data text-[11px] text-text-muted">001</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="picking-packing" href="#"><span class="truncate">Picking &amp; Packing</span><span class="font-code-data text-[11px] text-text-muted">002</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="despachos-muelles" href="#"><span class="truncate">Despachos &amp; Muelles</span><span class="font-code-data text-[11px] text-text-muted">001</span></a></div><div class="flex flex-col gap-space-2xs pb-space-lg"><span class="px-space-md py-space-2xs font-badge-status text-badge-status text-text-muted tracking-wider uppercase">FINANZAS &amp; CUENTAS POR COBRAR</span><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="dashboard-financiero" href="#"><span class="truncate">Dashboard Financiero</span><span class="font-code-data text-[11px] text-text-muted">FIN-01</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="cuentas-por-cobrar" href="#"><span class="truncate">Cuentas por Cobrar</span><span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-status-sync-pending text-on-primary font-bold">14 PEND</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="aging-cartera" href="#"><span class="truncate">Aging de Cartera</span><span class="font-code-data text-[11px] text-text-muted">FIN-03</span></a><a class="flex items-center justify-between px-space-md py-space-xs rounded-lg font-body-sm text-body-sm text-inverse-on-surface hover:bg-surface/10 hover:text-surface transition-all" data-path="clientes-credit-hold" href="#"><span class="truncate">Clientes en Credit Hold</span><span class="px-1.5 py-0.5 rounded font-badge-status text-[10px] bg-status-damaged text-on-primary font-bold">6 BLOQ</span></a></div></nav></div><div class="p-space-md bg-inverse-surface/80 flex items-center justify-between shadow-[0_-1px_8px_rgba(0,0,0,0.06)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-available animate-pulse"></span><span class="font-caption text-caption text-text-muted text-[11px]">WMS Core v4.8.2</span></div><span class="font-code-data text-code-data text-text-muted text-[11px]">1440px DESK</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-card z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">location_city</span><div class="flex flex-col"><span class="font-caption text-caption text-text-muted text-[10px] uppercase leading-none font-bold">Almacén Activo</span><span class="font-body-sm text-body-sm font-semibold text-text-primary leading-tight">Montevideo DC-01 (Principal)</span></div><span class="ml-space-xs px-space-xs py-0.5 rounded font-badge-status text-[10px] bg-status-available/10 text-status-available font-bold">OPERATIVO</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></div><div class="relative flex items-center w-80 bg-canvas-bg rounded-lg px-space-md py-1.5 focus-within:ring-2 focus-within:ring-accent-focus"><span class="material-symbols-outlined text-text-muted text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none" placeholder="Buscar SKU, Pedido, Factura, Cliente..." type="text"/><kbd class="ml-auto px-1.5 py-0.5 rounded font-code-data text-[10px] bg-surface-card text-text-muted shadow-sm">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary font-body-sm text-body-sm font-semibold text-on-primary shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Nueva Operación</span></button><button aria-label="Notificaciones del sistema" class="relative p-space-xs text-text-secondary hover:text-text-primary rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-0.5 right-0.5 flex items-center justify-center min-w-4 h-4 px-1 rounded-full bg-error text-on-error font-badge-status text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-md cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXtWUKitsiL3MKvf4Limz_tMThjo4zGajfrgyFENEV32bRbbX7asxTSbZp0gzelH39XDZ5W9Y0wxlilNV-XdR9EWNd2wwYMyKT6CZE2tQLULyssVxOzw_Fuw3glVqL0RFYGt4dtpko0759lvdJRyJsOx-ciHtSVa9Zlc-eK3FuoCb_H8rb-DPcqTNSb5BxzP7as-z9ktfOOkY2IMu5kVb-iITGHefEGzv_yezLrEY4o7OuRIK0Xe_g"/><div class="flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-text-primary group-hover:text-primary transition-colors leading-tight">Carlos Méndez</span><span class="font-caption text-caption text-text-muted text-[11px] leading-tight">Director de Operaciones</span></div><span class="material-symbols-outlined text-text-muted text-[18px] group-hover:text-text-primary transition-colors">keyboard_arrow_down</span></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="w-full max-w-[1440px] mx-auto px-space-xl py-space-lg"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-text-muted mb-space-sm"><span class="hover:text-text-primary transition-colors cursor-pointer">SENTAI</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="hover:text-text-primary transition-colors cursor-pointer">Finanzas &amp; Cuentas por Cobrar</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-text-primary font-semibold">Módulo Financiero</span></nav><div class="flex flex-col w-full">
+<!-- ENCABEZADO Y ACCIONES PRINCIPALES -->
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center flex-wrap gap-space-xs mb-space-2xs">
+<span class="px-space-xs py-0.5 rounded bg-inverse-surface text-on-primary font-badge-status text-badge-status">WEB-FIN-009</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-tertiary font-badge-status text-badge-status">ESTADO DE CUENTA CORRIENTE</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-text-secondary font-badge-status text-badge-status">MONEDA: USD ($)</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Estado de Cuenta Corriente del Cliente</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-4xl">
+        Extracto cronológico unificado de facturación fiscal (e-FAC), notas de crédito (e-NC), notas de débito (e-ND), recibos de cobro y saldo evolutivo conciliado.
+      </p>
+</div>
+<!-- Barra de Herramientas de Auditoría -->
+<div class="flex items-center flex-wrap gap-space-xs pt-space-xs">
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container-low text-text-primary shadow-sm transition-colors font-body-sm text-body-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">picture_as_pdf</span>
+<span>Descargar PDF Oficial (DGI/Firma)</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container-low text-text-primary shadow-sm transition-colors font-body-sm text-body-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">file_download</span>
+<span>Exportar CSV</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-surface-card hover:bg-surface-container-low text-text-primary shadow-sm transition-colors font-body-sm text-body-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">forward_to_inbox</span>
+<span>Enviar a Tesorería</span>
+</button>
+<button class="flex items-center gap-space-xs h-9 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary shadow-sm transition-colors font-body-sm text-body-sm font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>+ Registrar Cobro / Imputación</span>
+</button>
+</div>
+</div>
+<!-- SELECTOR DE CONTEXTO COMERCIAL, PERÍODO FISCAL Y MONEDA -->
+<div class="bg-surface-card rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- Selector de Cliente -->
+<div class="md:col-span-5 flex flex-col gap-space-2xs">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-text-muted">corporate_fare</span>
+          Titular de la Cuenta / Razón Social
+        </label>
+<div class="flex items-center justify-between px-space-md py-space-xs rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-text-primary truncate">Distribuidora Central S.R.L.</span>
+<span class="font-code-data text-[12px] text-text-secondary truncate">RUT 21.439.810.0014 · Cta: CLI-0492 · Montevideo</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px] ml-space-xs">unfold_more</span>
+</div>
+</div>
+<!-- Período Fiscal y Rangos Rápidos -->
+<div class="md:col-span-5 flex flex-col gap-space-2xs">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center justify-between">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-text-muted">calendar_today</span>
+            Ventana Temporal de Auditoría
+          </span>
+<div class="flex items-center gap-space-xs text-[11px] font-caption">
+<button class="text-text-muted hover:text-text-primary transition-colors" type="button">Mes actual</button>
+<span class="text-border-strong">·</span>
+<button class="text-primary font-bold" type="button">Últimos 90 Días</button>
+<span class="text-border-strong">·</span>
+<button class="text-text-muted hover:text-text-primary transition-colors" type="button">Año en curso</button>
+</div>
+</label>
+<div class="flex items-center justify-between px-space-md py-space-xs rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-text-muted text-[18px]">date_range</span>
+<span class="font-body-sm text-body-sm font-semibold text-text-primary">01/08/2024 — 31/10/2024 (90 días cerrados)</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Moneda & Estado Rápido -->
+<div class="md:col-span-2 flex flex-col gap-space-2xs">
+<label class="font-caption text-caption text-text-secondary uppercase font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-text-muted">paid</span>
+          Moneda de Base
+        </label>
+<div class="flex items-center justify-between px-space-md py-space-xs rounded-lg bg-surface-container-high/60">
+<div class="flex items-center gap-space-xs">
+<span class="font-bold text-text-primary font-code-data text-body-sm">USD</span>
+<span class="font-caption text-caption text-text-secondary">(Dólar USA)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RESUMEN EJECUTIVO DE LA CUENTA (BANNER FINANCIERO BENTO) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md mb-space-lg">
+<!-- Panel Métrico Principal -->
+<div class="xl:col-span-8 bg-surface-card rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-status-damaged animate-ping"></span>
+<span class="font-caption text-caption font-bold text-text-secondary uppercase tracking-wide">Conciliación Contable en Tiempo Real</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-error/10 text-status-damaged font-badge-status text-badge-status">
+<span class="material-symbols-outlined text-[14px]">block</span>
+<span>CREDIT HOLD ACTIVO // RETENCIÓN LOGÍSTICA VINCULADA</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md py-space-sm">
+<!-- Saldo Inicial -->
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Saldo Inicial (01/08)</span>
+<span class="font-title-sm text-title-sm font-semibold text-text-primary mt-space-2xs">$32,400.00</span>
+<span class="font-caption text-caption text-text-muted mt-0.5">Saldo base auditado</span>
+</div>
+<!-- Facturación Período -->
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Cargos (+)</span>
+<span class="font-title-sm text-title-sm font-semibold text-text-primary mt-space-2xs">$124,750.00</span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">6 facturas e-DGI</span>
+</div>
+<!-- Cobranzas -->
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Abonos Cobrados (-)</span>
+<span class="font-title-sm text-title-sm font-semibold text-status-available mt-space-2xs">$68,000.00</span>
+<span class="font-caption text-caption text-text-secondary mt-0.5">4 recibos imputados</span>
+</div>
+<!-- Notas de Crédito -->
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Notas Crédito (-)</span>
+<span class="font-title-sm text-title-sm font-semibold text-text-primary mt-space-2xs">$0.00</span>
+<span class="font-caption text-caption text-text-muted mt-0.5">Sin devoluciones</span>
+</div>
+</div>
+<!-- Barra de Exceso Crediticio -->
+<div class="pt-space-md mt-space-xs bg-surface-container-low/70 rounded-lg p-space-md">
+<div class="flex items-center justify-between mb-space-2xs">
+<span class="font-caption text-caption text-text-secondary font-semibold">Consumo de Línea de Crédito: $89,150.00 / $80,000.00 USD</span>
+<span class="font-code-data text-body-sm font-bold text-status-damaged">111.4% (Exceso: +$9,150.00)</span>
+</div>
+<div class="w-full h-2 rounded bg-surface-container-highest overflow-hidden flex">
+<div class="bg-primary-container h-full" style="width: 89.8%;"></div>
+<div class="bg-status-damaged h-full" style="width: 10.2%;"></div>
+</div>
+</div>
+</div>
+<!-- Card de Saldo Deudor Total y Aging Rápido -->
+<div class="xl:col-span-4 bg-inverse-surface rounded-xl p-space-lg shadow-sm text-surface flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-text-muted uppercase tracking-wider">Saldo Final Deudor Consolidado</span>
+<span class="px-space-xs py-0.5 rounded bg-surface/10 text-surface-dim font-code-data text-[11px]">OCT 2024</span>
+</div>
+<div class="my-space-sm">
+<div class="font-display-hero text-display-hero text-surface tracking-tight font-bold">$89,150.00</div>
+<span class="font-code-data text-body-sm text-surface-dim uppercase">Dólares Estadounidenses (USD)</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-md bg-surface/5 p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Al Día / No Vencido</span>
+<span class="font-title-sm text-title-sm text-surface mt-0.5 font-bold">$40,550.00</span>
+<span class="font-caption text-caption text-status-available text-[11px]">En plazo acordado</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-text-muted uppercase">Vencido en Mora</span>
+<span class="font-title-sm text-title-sm text-status-damaged mt-0.5 font-bold">$48,600.00</span>
+<span class="font-caption text-caption text-status-damaged text-[11px]">2 e-Facturas en mora</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TABLA PRINCIPAL DEL MAYOR / EXTRACTO CRONOLÓGICO (LEDGER TABLE) -->
+<div class="bg-surface-card rounded-xl shadow-sm overflow-hidden mb-space-lg">
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<h2 class="font-title-sm text-title-sm text-text-primary">Mayor Cronológico de Cuenta Corriente (Extracto Auditado)</h2>
+<span class="font-code-data text-caption text-text-secondary bg-surface-card px-space-xs py-0.5 rounded">8 Movimientos</span>
+</div>
+<div class="flex items-center gap-space-xs text-text-secondary font-caption text-caption">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-status-available"></span> Conciliado</span>
+<span class="mx-1 text-border-strong">•</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-status-damaged"></span> Vencido</span>
+<span class="mx-1 text-border-strong">•</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-status-reserved"></span> Corriente</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-lowest text-text-secondary uppercase font-caption text-caption">
+<th class="py-space-sm px-space-md font-semibold">Fecha</th>
+<th class="py-space-sm px-space-md font-semibold">Comprobante Fiscal</th>
+<th class="py-space-sm px-space-md font-semibold">Detalle Comercial &amp; Ref. Logística</th>
+<th class="py-space-sm px-space-md font-semibold">Vencimiento</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Estado / Días</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Débito (+)</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Crédito (-)</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Saldo Progresivo</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Acción</th>
+</tr>
+</thead>
+<tbody class="text-text-primary">
+<!-- Fila 1: Saldo Inicial -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/30">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary font-medium">01/08/2024</td>
+<td class="py-space-sm px-space-md">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status">SALDO INI</span>
+</td>
+<td class="py-space-sm px-space-md text-text-secondary">
+              Saldo deudor acumulado al cierre del período fiscal anterior
+            </td>
+<td class="py-space-sm px-space-md font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-text-secondary font-badge-status text-badge-status">BALANCE BASE</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$32,400.00</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="material-symbols-outlined text-text-muted text-[18px]">verified</span>
+</td>
+</tr>
+<!-- Fila 2: Cobro Itaú -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">12/08/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>REC-2024-00712</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium">Cobro Transferencia Bancaria Itaú</span>
+<span class="font-code-data text-[12px] text-text-muted">Ref. TX-8812 · Cancelación Saldo Inicial</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">12/08/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-status-available/10 text-status-available font-badge-status text-badge-status">CONCILIADO</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-status-available">$32,400.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$0.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-text-secondary hover:text-text-primary rounded hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">receipt_long</span></button>
+</td>
+</tr>
+<!-- Fila 3: e-FAC 8695 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">28/08/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>e-FAC-2024-8695</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium">Despacho SHP-000048 / Pedido SO-000118</span>
+<span class="font-code-data text-[12px] text-text-muted">Lote Sueros Fisiológicos x500 · Remito REM-0921</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">28/09/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-error/10 text-status-damaged font-badge-status text-badge-status">VENCIDO (-26D)</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-text-primary">$13,800.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$13,800.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-text-secondary hover:text-text-primary rounded hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</td>
+</tr>
+<!-- Fila 4: e-FAC 8740 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-error/5">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">12/09/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-status-damaged hover:underline flex items-center gap-1" href="#">
+<span>e-FAC-2024-8740</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-text-primary">Despacho SHP-000062 / Pedido SO-000142</span>
+<span class="font-code-data text-[12px] text-text-secondary">Insumos Quirúrgicos y Prótesis (DGI CAE 948102)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-status-damaged font-semibold">12/10/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-error/15 text-status-damaged font-badge-status text-badge-status font-bold">VENCIDO (-12D)</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-text-primary">$34,800.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$48,600.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-status-damaged hover:bg-error/20 rounded" type="button"><span class="material-symbols-outlined text-[18px]">notification_important</span></button>
+</td>
+</tr>
+<!-- Fila 5: Recibo BROU -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">20/09/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>REC-2024-00780</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium">Cobro Cheque BROU #4412 (Acreditado)</span>
+<span class="font-code-data text-[12px] text-text-muted">Imputado a cuenta general</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">20/09/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-status-available/10 text-status-available font-badge-status text-badge-status">CONCILIADO</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-status-available">$10,600.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$38,000.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-text-secondary hover:text-text-primary rounded hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">receipt_long</span></button>
+</td>
+</tr>
+<!-- Fila 6: e-FAC 8890 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">05/10/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>e-FAC-2024-8890</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium">Despacho SHP-000071 / Pedido SO-000149</span>
+<span class="font-code-data text-[12px] text-text-muted">Despacho Muelle D-02 · Carrier Rápido Sur</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">05/11/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-status-reserved/10 text-status-reserved font-badge-status text-badge-status">CORRIENTE (+12D)</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-text-primary">$18,200.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$56,200.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-text-secondary hover:text-text-primary rounded hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</td>
+</tr>
+<!-- Fila 7: e-FAC 8915 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">15/10/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>e-FAC-2024-8915</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium">Despacho SHP-000075 / Pedido SO-000152</span>
+<span class="font-code-data text-[12px] text-text-muted">Material Descartable Clínico x120 Cajas</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">15/11/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-status-reserved/10 text-status-reserved font-badge-status text-badge-status">CORRIENTE (+22D)</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-text-primary">$22,350.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$78,550.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-text-secondary hover:text-text-primary rounded hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</td>
+</tr>
+<!-- Fila 8: e-FAC 8940 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">22/10/2024</td>
+<td class="py-space-sm px-space-md">
+<a class="font-code-data font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>e-FAC-2024-8940</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium">Despacho SHP-000077 / Pedido SO-000155</span>
+<span class="font-code-data text-[12px] text-text-muted">Reabastecimiento Sucursal Maldonado</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-code-data text-text-secondary">22/11/2024</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="px-space-xs py-0.5 rounded bg-status-reserved/10 text-status-reserved font-badge-status text-badge-status">CORRIENTE (+29D)</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-semibold text-text-primary">$10,600.00</td>
+<td class="py-space-sm px-space-md text-right font-code-data text-text-muted">—</td>
+<td class="py-space-sm px-space-md text-right font-code-data font-bold text-text-primary">$89,150.00</td>
+<td class="py-space-sm px-space-md text-center">
+<button class="p-1 text-text-secondary hover:text-text-primary rounded hover:bg-surface-container" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</td>
+</tr>
+</tbody>
+<!-- Totales de la Tabla (Footer) -->
+<tfoot>
+<tr class="bg-surface-container font-title-sm text-title-sm text-text-primary font-bold">
+<td class="py-space-md px-space-md text-right uppercase tracking-wider font-caption text-caption text-text-secondary" colspan="5">
+              Totales Período &amp; Balance Deudor Auditado:
+            </td>
+<td class="py-space-md px-space-md text-right font-code-data text-text-primary">
+              +$124,750.00
+            </td>
+<td class="py-space-md px-space-md text-right font-code-data text-status-available">
+              -$68,000.00
+            </td>
+<td class="py-space-md px-space-md text-right font-code-data text-metric-stat font-metric-stat text-text-primary">
+              $89,150.00
+            </td>
+<td class="py-space-md px-space-md text-center">
+<span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!-- PANEL INFERIOR: AUDITORÍA FISCAL, BLOQUEO WMS Y FICHA DE CONTACTO -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-lg">
+<!-- Certificación y Sello Fiscal DGI -->
+<div class="lg:col-span-5 bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">encrypted</span>
+<span class="font-caption text-caption font-bold uppercase tracking-wider">Certificación y Sello Fiscal Digital</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+          Extracto oficial generado de acuerdo con la <strong class="text-text-primary">Resolución DGI N° 798/2012</strong> y modificativas para sistemas de facturación electrónica. Todos los comprobantes cuentan con CAE vigente.
+        </p>
+</div>
+<div class="mt-space-md bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-code-data text-[11px] text-text-muted">
+<span>HASH SHA-256</span>
+<span class="text-text-primary font-bold">4f89ac99201f...e18b</span>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-text-muted">
+<span>Latencia ERP Contable</span>
+<span class="text-status-available font-bold font-code-data">Sincronizado (14ms)</span>
+</div>
+</div>
+</div>
+<!-- Alerta Operativa WMS (Credit Hold & Regla de Negocio) -->
+<div class="lg:col-span-4 bg-error-container/40 rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start gap-space-sm">
+<div class="p-space-xs rounded-lg bg-status-damaged text-on-error shrink-0">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-on-error-container font-bold">Alerta Operativa WMS</span>
+<span class="font-caption text-caption text-status-damaged font-semibold mt-0.5">Regla FIN-RULE-04 Disparada</span>
+<p class="font-body-sm text-body-sm text-on-error-container mt-space-xs leading-normal">
+            El saldo deudor excede el límite asignado en <strong class="font-bold font-code-data">$9,150.00 USD</strong>.
+            El despacho del <strong class="underline">Pedido SO-000158</strong> ha sido bloqueado en muelles hasta recibir cobro confirmatorio.
+          </p>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<button class="text-status-damaged font-semibold font-body-sm hover:underline flex items-center gap-1" type="button">
+<span>Solicitar Excepción Gerencial</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+<span class="font-code-data text-[11px] text-on-error-container font-semibold">REF: BLK-4921</span>
+</div>
+</div>
+<!-- Contactos de Tesorería & Cobranzas -->
+<div class="lg:col-span-3 bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">contact_phone</span>
+<span class="font-caption text-caption font-bold uppercase tracking-wider">Interlocutores de Cuenta</span>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-sm">
+<!-- Responsable Cliente -->
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-tertiary text-caption">MH</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary truncate">Lic. Martín Herrera</span>
+<span class="font-caption text-caption text-text-muted truncate">Tesorería Distribuidora Central</span>
+</div>
+</div>
+<!-- Ejecutivo SENTAI -->
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center font-bold text-primary text-caption">VS</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-text-primary truncate">Valeria Silva</span>
+<span class="font-caption text-caption text-text-muted truncate">Ejecutiva Cuentas Clave (KAM)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-caption text-caption text-text-muted">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-status-available"></span> Canales Activos</span>
+<a class="text-primary font-semibold hover:underline" href="mailto:tesoreria@distribuidoracentral.com.uy">Enviar Recordatorio</a>
+</div>
+</div>
+</div>
+</div></div></main></div></body></html>
