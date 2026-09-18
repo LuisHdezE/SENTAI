@@ -15,8 +15,11 @@ phases:
       Evidencia de Discovery revisada y aceptada. Product Vision y MVP Scope
       aprobados humanamente. Fase Discovery formalmente cerrada.
   target_definition:
-    status: NOT_STARTED
-    progress: 0
+    status: READY_FOR_REVIEW
+    progress: 100
+    note: >-
+      El TO-BE del producto SENTAI fue documentado como Target Definition
+      y está pendiente de revisión humana.
   requirements_domain:
     status: NOT_STARTED
     progress: 0
@@ -179,3 +182,6 @@ artifacts:
   - id: EVD-DISCOVERY-001
     type: discovery_evidence
     value: .blueprint/evidence/discovery-report.md
+  - id: EVD-TARGET-001
+    type: target_definition_evidence
+    value: .blueprint/evidence/target-definition.md
