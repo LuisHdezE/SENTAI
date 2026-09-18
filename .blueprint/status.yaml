@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-18T03:22:19Z"
+updated_at: "2026-09-18T04:37:22Z"
 
 phases:
   discovery:
@@ -20,15 +20,16 @@ phases:
     note: >-
       Evidencia Target Definition revisada y aprobada humanamente. Fase Target Definition formalmente cerrada.
   requirements_domain:
-    status: NOT_STARTED
-    progress: 0
+    status: COMPLETE
+    progress: 100
     note: >-
+      EVD-REQ-001 revisado y aprobado humanamente.
+      Fase Requirements & Domain formalmente cerrada.
+      gate requirements_ready ha sido aprobado.
       Product Definition v0.1 es Product Truth inicial como input.
-      No equivale a requirements_ready PASS.
       Arquitectura objetivo (Clean Architecture + Modular Monolith) es
       decision aprobada del proyecto pendiente de formalizacion.
-      requirements.mobile_licensing_decision aplica (android=true);
-      se resolvera PASS con evidencia de decision explicita mobile_licensing=false.
+      requirements.mobile_licensing_decision ha sido resuelta formalmente en EVD-REQ-001 (mobile_licensing: false).
   interface_scope_baseline:
     status: NOT_STARTED
     progress: 0
@@ -137,14 +138,55 @@ checks:
     verification: manual
     evidence_ids:
       - EVD-DISCOVERY-001
+  requirements.actors_authorization:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.functional:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.non_functional:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.business_rules:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.use_cases:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.acceptance_criteria:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.traceability:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
+  requirements.mobile_licensing_decision:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-REQ-001
 
 gates:
   requirements_ready:
-    status: PENDING
+    status: PASS
+    evaluated_at: "2026-09-18T04:33:24Z"
     note: >-
-      Product Definition v0.1 es input; gate requiere evidencia formal.
-      requirements.mobile_licensing_decision aplica (android=true) y se
-      resolvera PASS con evidencia de la decision explicita mobile_licensing=false.
+      Gate aprobado humanamente sobre EVD-REQ-001.
+    evidence_ids:
+      - EVD-REQ-001
   interface_scope_ready:
     status: PENDING
   architecture_ready:
@@ -184,3 +226,6 @@ artifacts:
   - id: EVD-TARGET-001
     type: target_definition_evidence
     value: .blueprint/evidence/target-definition.md
+  - id: EVD-REQ-001
+    type: requirements_domain_evidence
+    value: .blueprint/evidence/requirements-domain.md
