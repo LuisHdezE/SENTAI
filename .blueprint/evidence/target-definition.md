@@ -51,7 +51,7 @@ Las siguientes superficies componen la solución y están formalmente aprobadas:
 - **Shipment / dispatch:** Planificación y ejecución de salidas físicas.
 - **Accounts Receivable / payment application:** Gestión de deuda generada y aplicación de pagos recibidos.
 - **Customer Accounts Payable perspective:** Visibilidad del estado de cuenta desde el cliente.
-- **Mobile offline operation and synchronization:** Ejecución de tareas operativas sin conexión y sincronización determinista de datos.
+- **Mobile offline operation and synchronization:** Operación offline-first asegurando persistencia y continuidad operativa durante pérdida de conectividad, con sincronización posterior al recuperar conexión. Las reglas exactas de conflicto, reintento e idempotencia están pendientes de formalización posterior.
 
 ## 6. Target Actor Perspectives
 - **Cliente:** Interactúa a través del Customer Portal para generar pedidos y revisar deudas.
