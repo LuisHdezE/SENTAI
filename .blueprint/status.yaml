@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-18T04:37:22Z"
+updated_at: "2026-09-18T22:56:00Z"
 
 phases:
   discovery:
@@ -31,8 +31,14 @@ phases:
       decision aprobada del proyecto pendiente de formalizacion.
       requirements.mobile_licensing_decision ha sido resuelta formalmente en EVD-REQ-001 (mobile_licensing: false).
   interface_scope_baseline:
-    status: NOT_STARTED
-    progress: 0
+    status: READY_FOR_REVIEW
+    progress: 100
+    note: >
+      EVD-UI-SCOPE-001 creado. Tres superficies canonicas (Backoffice Web, Customer Portal Web,
+      Operator Mobile KMP) con areas de intencion derivadas exclusivamente de EVD-REQ-001.
+      Shells reutilizables documentados conceptualmente. Catalogo Central de Navegacion como
+      intencion futura registrada. Cinco unresolved_needs registrados explicitamente.
+      Pendiente de revision por Dalila y aprobacion humana por Luis.
   architecture_security_data:
     status: NOT_STARTED
     progress: 0
@@ -178,6 +184,16 @@ checks:
     verification: evidence
     evidence_ids:
       - EVD-REQ-001
+  ui.interface_scope_baseline:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-UI-SCOPE-001
+  ui.interface_scope_traceability:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-UI-SCOPE-001
 
 gates:
   requirements_ready:
@@ -188,7 +204,10 @@ gates:
     evidence_ids:
       - EVD-REQ-001
   interface_scope_ready:
-    status: PENDING
+    status: READY_FOR_REVIEW
+    note: >
+      EVD-UI-SCOPE-001 listo para revision humana. Gate no aprobado todavia.
+      Pendiente de revision por Dalila y aprobacion humana de Luis.
   architecture_ready:
     status: PENDING
     note: >-
@@ -229,3 +248,6 @@ artifacts:
   - id: EVD-REQ-001
     type: requirements_domain_evidence
     value: .blueprint/evidence/requirements-domain.md
+  - id: EVD-UI-SCOPE-001
+    type: interface_scope_baseline_evidence
+    value: .blueprint/evidence/interface-scope-baseline.md

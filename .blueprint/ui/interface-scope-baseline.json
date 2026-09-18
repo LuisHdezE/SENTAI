@@ -1,0 +1,492 @@
+{
+  "$schema": "https://eliasworks.dev/blueprint/0.5.4/interface-scope-baseline.schema.json",
+  "artifact_id": "EVD-UI-SCOPE-001",
+  "artifact_type": "interface_scope_baseline",
+  "blueprint_version": "0.5.4",
+  "blueprint_canonical_ref": "LuisHdezE/SoftwareDevelopmentBlueprint@8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4",
+  "project": "SENTAI",
+  "mode": "greenfield",
+  "status": "READY_FOR_REVIEW",
+  "created_at": "2026-09-18",
+  "derived_from": ["EVD-REQ-001"],
+  "phase": "interface_scope_baseline",
+
+  "scope_note": "Esta baseline es DESCRIPTIVA y de PLANIFICACION. No constituye backlog ejecutable, no define routes definitivas, no prescribe endpoints, operationIds, componentes React/KMP ni contratos API. Toda especificacion tecnica queda diferida a las fases interface_inventory, api_contract_design y client_architecture. Los contenidos aqui presentes se derivan exclusivamente de ACT, FR, NFR, BR, UC y AC aprobados en EVD-REQ-001.",
+
+  "surfaces": [
+    {
+      "id": "SURF-BO",
+      "name": "Backoffice Web",
+      "platform": "web",
+      "technology_note": "Aplicacion web. Tecnologia concreta diferida a client_architecture.",
+      "primary_actors": ["ACT-003", "ACT-004", "ACT-005", "ACT-006", "ACT-007"],
+      "shell": {
+        "concept": "BackofficeShell",
+        "description": "Contenedor global compartido por todas las areas del Backoffice. Ninguna vista individual concibe Sidebar, Topbar ni BottomBar como parte propia. Toda navegacion global se gestiona en este shell.",
+        "regions": [
+          {
+            "name": "Sidebar",
+            "role": "Navegacion principal compartida. Implementa o consume el Catalogo Central de Navegacion filtrado por surface=backoffice."
+          },
+          {
+            "name": "Topbar",
+            "role": "Barra superior compartida. Identidad, contexto de sesion, notificaciones y acciones globales."
+          },
+          {
+            "name": "ContentOutlet",
+            "role": "Zona de contenido intercambiable. Las vistas individuales renderizan unicamente dentro de este outlet."
+          },
+          {
+            "name": "BottomBar",
+            "role": "Bloque inferior compartido cuando aplique (acciones de contexto global, paginacion persistente). Su necesidad concreta se determina en interface_inventory."
+          }
+        ]
+      },
+      "intent_areas": [
+        {
+          "id": "BO-AUTH",
+          "intent": "Autenticacion y acceso autorizado",
+          "description": "Flujo de autenticacion funcional. El actor ingresa credenciales y el sistema establece sesion validada segun privilegios. Aplica a todos los actores del Backoffice.",
+          "traceability": {
+            "actors": ["ACT-003", "ACT-004", "ACT-005", "ACT-006", "ACT-007"],
+            "functional_requirements": ["FR-022"],
+            "use_cases": ["UC-001"],
+            "non_functional_requirements": ["NFR-001"],
+            "acceptance_criteria": ["AC-020"]
+          }
+        },
+        {
+          "id": "BO-MASTERS",
+          "intent": "Maestros autorizados",
+          "description": "Gestion de entidades de referencia: productos, clientes, almacenes, zonas y posiciones fisicas. Operado exclusivamente por ACT-007 con privilegios de administracion.",
+          "traceability": {
+            "actors": ["ACT-007"],
+            "functional_requirements": ["FR-001"],
+            "use_cases": ["UC-002"],
+            "acceptance_criteria": ["AC-001"]
+          }
+        },
+        {
+          "id": "BO-INVENTORY",
+          "intent": "Consulta y control de inventario",
+          "description": "Visibilidad granular del stock: OnHand, Reservas, Disponibilidad, Estados (bloqueado, cuarentena, danado), por Ubicacion, Producto, Lote y Numero de Serie cuando aplique.",
+          "traceability": {
+            "actors": ["ACT-003"],
+            "functional_requirements": ["FR-004"],
+            "business_rules": ["BR-003", "BR-004"],
+            "use_cases": ["UC-005"],
+            "acceptance_criteria": ["AC-004"]
+          }
+        },
+        {
+          "id": "BO-MOVEMENTS",
+          "intent": "Movimientos y ajustes",
+          "description": "Registro de traslados entre ubicaciones y ajustes de inventario (aumentos, disminuciones, cambios de estado). Requiere justificacion del actor y genera trazabilidad auditable.",
+          "traceability": {
+            "actors": ["ACT-003"],
+            "functional_requirements": ["FR-005", "FR-019"],
+            "use_cases": ["UC-006"],
+            "acceptance_criteria": ["AC-005", "AC-017"]
+          }
+        },
+        {
+          "id": "BO-ALLOCATION",
+          "intent": "Allocation / Reserva",
+          "description": "Asignacion/reserva de inventario elegible para satisfacer un pedido comercial confirmado. Respeta la invariante Reserved <= OnHand. El actor puede ser el Sistema o el Supervisor. La interaccion exacta automatica/manual queda pendiente de Architecture/API/Interface Inventory (ver unresolved_needs).",
+          "traceability": {
+            "actors": ["ACT-003"],
+            "functional_requirements": ["FR-006"],
+            "business_rules": ["BR-001", "BR-002", "BR-003"],
+            "use_cases": ["UC-009"],
+            "acceptance_criteria": ["AC-006"],
+            "non_functional_requirements": ["NFR-002", "NFR-004"]
+          }
+        },
+        {
+          "id": "BO-ORDER-VALIDATION",
+          "intent": "Validacion comercial de pedidos",
+          "description": "Revision y aprobacion de pedidos ingresados por clientes segun condiciones comerciales y limites de credito. Pedidos aprobados pasan a procesamiento logistico.",
+          "traceability": {
+            "actors": ["ACT-005"],
+            "functional_requirements": ["FR-008"],
+            "business_rules": ["BR-009"],
+            "use_cases": ["UC-008"],
+            "acceptance_criteria": ["AC-008"]
+          }
+        },
+        {
+          "id": "BO-SHIPPING-PLAN",
+          "intent": "Planificacion de envio",
+          "description": "Consolidacion de bultos/paquetes listos en planes de envio. El planificador agrupa pedidos de multiples clientes en un plan de transporte comun.",
+          "traceability": {
+            "actors": ["ACT-004"],
+            "functional_requirements": ["FR-011"],
+            "use_cases": ["UC-012"],
+            "acceptance_criteria": ["AC-011"]
+          }
+        },
+        {
+          "id": "BO-DISPATCH",
+          "intent": "Despacho",
+          "description": "Registro de la salida fisica y legal del almacen. Confirma la salida definitiva de bultos, deduce OnHand permanentemente y genera la obligacion financiera de cobro (AR). Desencadena FR-013.",
+          "traceability": {
+            "actors": ["ACT-004"],
+            "functional_requirements": ["FR-012", "FR-013"],
+            "business_rules": ["BR-005"],
+            "use_cases": ["UC-013"],
+            "acceptance_criteria": ["AC-012", "AC-013"]
+          }
+        },
+        {
+          "id": "BO-AR",
+          "intent": "Accounts Receivable / Cartera",
+          "description": "Visibilidad del estado general de cartera: saldos pendientes, vencimientos y aging de cuentas por cobrar. Permite a Finanzas revisar la salud financiera del portafolio de clientes.",
+          "traceability": {
+            "actors": ["ACT-006"],
+            "functional_requirements": ["FR-016"],
+            "use_cases": ["UC-014"],
+            "acceptance_criteria": ["AC-016"]
+          }
+        },
+        {
+          "id": "BO-PAYMENT-REGISTER",
+          "intent": "Registro de pagos",
+          "description": "Asentamiento de ingresos de pagos recibidos de clientes. El pago puede existir como saldo a favor sin aplicacion inmediata, desacoplando recepcion de fondos de su imputacion a obligaciones.",
+          "traceability": {
+            "actors": ["ACT-006"],
+            "functional_requirements": ["FR-014"],
+            "business_rules": ["BR-006"],
+            "use_cases": ["UC-015"],
+            "acceptance_criteria": ["AC-014"]
+          }
+        },
+        {
+          "id": "BO-PAYMENT-APPLY",
+          "intent": "Aplicacion de pagos",
+          "description": "Imputacion parcial o total de un pago registrado contra obligaciones financieras abiertas. Una obligacion se cierra cuando la suma de pagos aplicados iguala el monto total de la deuda.",
+          "traceability": {
+            "actors": ["ACT-006"],
+            "functional_requirements": ["FR-015"],
+            "business_rules": ["BR-007"],
+            "use_cases": ["UC-016"],
+            "acceptance_criteria": ["AC-015"]
+          }
+        },
+        {
+          "id": "BO-STATEMENT",
+          "intent": "Estado de cuenta (Finanzas)",
+          "description": "Historial consolidado de obligaciones contraidas, pagos aplicados y saldos de periodo para un cliente, desde la perspectiva de Finanzas (ACT-006).",
+          "traceability": {
+            "actors": ["ACT-006"],
+            "functional_requirements": ["FR-018"],
+            "use_cases": ["UC-018"],
+            "acceptance_criteria": ["AC-016"]
+          }
+        },
+        {
+          "id": "BO-AUDIT",
+          "intent": "Trazabilidad / Auditoria",
+          "description": "Acceso a registros de trazabilidad auditable: quien realizo cada cambio critico, cuando, que datos cambiaron y el motivo. Aplica transversalmente a cambios de inventario, estados de pedido y transacciones financieras.",
+          "traceability": {
+            "actors": ["ACT-003", "ACT-006", "ACT-007"],
+            "functional_requirements": ["FR-019"],
+            "non_functional_requirements": ["NFR-003"],
+            "acceptance_criteria": ["AC-017"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "SURF-CP",
+      "name": "Customer Portal Web",
+      "platform": "web",
+      "technology_note": "Aplicacion web orientada al cliente externo. Tecnologia concreta diferida a client_architecture.",
+      "primary_actors": ["ACT-001"],
+      "shell": {
+        "concept": "CustomerPortalShell",
+        "description": "Contenedor global compartido del Customer Portal. Posee su propio shell, independiente del BackofficeShell. La forma visual definitiva (Sidebar, Topbar, BottomBar y estilo) queda diferida a Design System. Ninguna vista individual del portal gestiona su propia navegacion global.",
+        "regions": [
+          {
+            "name": "Topbar",
+            "role": "Barra superior compartida del portal. Identidad de marca, sesion del cliente y acceso a navegacion principal."
+          },
+          {
+            "name": "NavigationRegion",
+            "role": "Zona de navegacion global (puede manifestarse como Sidebar, menu colapsable, barra horizontal u otra forma). Forma visual diferida a Design System."
+          },
+          {
+            "name": "ContentOutlet",
+            "role": "Zona de contenido intercambiable del portal. Las vistas individuales renderizan unicamente dentro de este outlet."
+          },
+          {
+            "name": "FooterRegion",
+            "role": "Bloque inferior compartido del portal cuando aplique. Necesidad concreta determinada en interface_inventory."
+          }
+        ]
+      },
+      "intent_areas": [
+        {
+          "id": "CP-AUTH",
+          "intent": "Autenticacion",
+          "description": "Flujo de autenticacion funcional para el cliente externo. Acceso a las capacidades autorizadas del Customer Portal.",
+          "traceability": {
+            "actors": ["ACT-001"],
+            "functional_requirements": ["FR-022"],
+            "use_cases": ["UC-001"],
+            "non_functional_requirements": ["NFR-001"],
+            "acceptance_criteria": ["AC-020"]
+          }
+        },
+        {
+          "id": "CP-CATALOG",
+          "intent": "Catalogo",
+          "description": "Acceso de lectura al catalogo activo de productos. El cliente puede explorar productos disponibles como paso previo a la creacion de pedidos.",
+          "traceability": {
+            "actors": ["ACT-001"],
+            "functional_requirements": ["FR-007"],
+            "use_cases": ["UC-007"],
+            "non_functional_requirements": ["NFR-009"]
+          }
+        },
+        {
+          "id": "CP-ORDER-CREATE",
+          "intent": "Creacion de pedidos",
+          "description": "El cliente arma y confirma su intencion de pedido a partir del catalogo disponible. El pedido queda registrado a la espera de validacion comercial en el Backoffice.",
+          "traceability": {
+            "actors": ["ACT-001"],
+            "functional_requirements": ["FR-007"],
+            "use_cases": ["UC-007"],
+            "non_functional_requirements": ["NFR-008", "NFR-009"],
+            "acceptance_criteria": ["AC-007"]
+          }
+        },
+        {
+          "id": "CP-AP",
+          "intent": "Obligaciones financieras (Accounts Payable)",
+          "description": "Visibilidad de las obligaciones financieras pendientes del cliente desde su perspectiva (Accounts Payable). Una misma obligacion es vista como AR en el Backoffice y como AP en el Customer Portal, sin duplicacion logica (BR-005). NOTA: No se introduce 'Cuentas por Cobrar' en esta superficie.",
+          "traceability": {
+            "actors": ["ACT-001"],
+            "functional_requirements": ["FR-017"],
+            "business_rules": ["BR-005"],
+            "use_cases": ["UC-017"],
+            "non_functional_requirements": ["NFR-009"],
+            "acceptance_criteria": ["AC-016"]
+          }
+        },
+        {
+          "id": "CP-STATEMENT",
+          "intent": "Estado de cuenta propio",
+          "description": "Historial consolidado de las obligaciones y pagos aplicados del propio cliente. Permite revisar el comportamiento financiero acumulado.",
+          "traceability": {
+            "actors": ["ACT-001"],
+            "functional_requirements": ["FR-018"],
+            "use_cases": ["UC-018"],
+            "non_functional_requirements": ["NFR-009"],
+            "acceptance_criteria": ["AC-016"]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "SURF-MOB",
+      "name": "Operator Mobile KMP",
+      "platform": "mobile",
+      "sub_platforms": ["android", "ios"],
+      "technology_note": "Kotlin Multiplatform Mobile (KMP). Android e iOS son plataformas de la misma superficie funcional movil. La arquitectura concreta de KMP queda diferida a client_architecture. mobile_licensing: false segun EVD-REQ-001 seccion 9.",
+      "primary_actors": ["ACT-002"],
+      "shell": {
+        "concept": "OperatorMobileNavContext",
+        "description": "Contexto y navegacion global reutilizable de la aplicacion movil. Ninguna pantalla individual recrea la navegacion global. El Top/App Bar y el Bottom Navigation (cuando corresponda) son parte de este contexto global compartido.",
+        "regions": [
+          {
+            "name": "TopAppBar",
+            "role": "Barra de aplicacion superior compartida. Titulo de seccion, acciones de contexto global (sincronizacion, estado de conexion, notificaciones de conflicto)."
+          },
+          {
+            "name": "BottomNavigation",
+            "role": "Navegacion inferior compartida cuando corresponda. Acceso rapido a secciones principales del operario. Necesidad y estructura concreta determinada en interface_inventory."
+          },
+          {
+            "name": "ContentArea",
+            "role": "Area de contenido de cada pantalla. Las pantallas individuales renderizan unicamente dentro de esta zona."
+          }
+        ]
+      },
+      "intent_areas": [
+        {
+          "id": "MOB-AUTH",
+          "intent": "Autenticacion",
+          "description": "Flujo de autenticacion funcional del operario de almacen en la app movil. Permite el acceso a las funciones operativas autorizadas.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-022"],
+            "use_cases": ["UC-001"],
+            "non_functional_requirements": ["NFR-001"],
+            "acceptance_criteria": ["AC-020"]
+          }
+        },
+        {
+          "id": "MOB-RECEPTION",
+          "intent": "Recepcion contra ASN",
+          "description": "Registro de entrada de mercancia validada contra un ASN aprobado. El operario selecciona el ASN, verifica cantidades fisicamente y confirma la recepcion. Las discrepancias se registran segun politicas.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-002"],
+            "business_rules": ["BR-004"],
+            "use_cases": ["UC-003"],
+            "acceptance_criteria": ["AC-002"]
+          }
+        },
+        {
+          "id": "MOB-PUTAWAY",
+          "intent": "Put-away",
+          "description": "Registro del traslado de mercancia desde la zona de recepcion a la ubicacion definitiva en el almacen. La ubicacion destino puede ser sugerida por el sistema o indicada manualmente.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-003", "FR-004"],
+            "use_cases": ["UC-004"],
+            "acceptance_criteria": ["AC-003"]
+          }
+        },
+        {
+          "id": "MOB-PICKING",
+          "intent": "Picking",
+          "description": "Guia y confirmacion de la recoleccion de stock reservado desde sus ubicaciones en el almacen. La tarea de picking es descargada al dispositivo. Soporta operacion offline.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-009", "FR-020"],
+            "use_cases": ["UC-010", "UC-019"],
+            "non_functional_requirements": ["NFR-006"],
+            "acceptance_criteria": ["AC-009", "AC-018"]
+          }
+        },
+        {
+          "id": "MOB-PACKING",
+          "intent": "Packing",
+          "description": "Registro del empaquetado del stock recolectado en bultos identificables. El operario declara que productos van en que bulto/paquete.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-010"],
+            "use_cases": ["UC-011"],
+            "acceptance_criteria": ["AC-010"]
+          }
+        },
+        {
+          "id": "MOB-OFFLINE-TASKS",
+          "intent": "Operacion con tareas descargadas / Estado offline",
+          "description": "La app descarga tareas operativas mientras tiene conexion. Ante perdida de conectividad, el operario continua ejecutando tareas registrando movimientos localmente. El estado offline es visible y manejado explicitamente por la interfaz.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-020"],
+            "use_cases": ["UC-019"],
+            "non_functional_requirements": ["NFR-006"],
+            "acceptance_criteria": ["AC-018"]
+          }
+        },
+        {
+          "id": "MOB-SYNC",
+          "intent": "Cola / Sincronizacion posterior",
+          "description": "Al recuperar conectividad, la app procesa y concilia las operaciones pendientes en cola local contra el servidor (SSOT). Las operaciones idempotentes no generan efectos duplicados.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-021"],
+            "business_rules": ["BR-008", "BR-010"],
+            "use_cases": ["UC-020"],
+            "non_functional_requirements": ["NFR-005", "NFR-007"],
+            "acceptance_criteria": ["AC-019"]
+          }
+        },
+        {
+          "id": "MOB-CONFLICTS",
+          "intent": "Visibilidad de conflictos de sincronizacion",
+          "description": "Cuando el servidor rechaza una operacion offline por conflicto con el estado actualizado (stock ya utilizado), la app presenta el conflicto de forma visible y rastreable al operario. El conflicto no fuerza una violacion silenciosa de invariantes de negocio.",
+          "traceability": {
+            "actors": ["ACT-002"],
+            "functional_requirements": ["FR-021"],
+            "business_rules": ["BR-010"],
+            "use_cases": ["UC-020"],
+            "non_functional_requirements": ["NFR-007"],
+            "acceptance_criteria": ["AC-019"]
+          }
+        }
+      ]
+    }
+  ],
+
+  "navigation_catalog_intent": {
+    "description": "Intencion futura de una unica fuente canonica de destinos de navegacion. No implementar en esta fase. Su diseno definitivo, validacion y registro formal corresponden a interface_inventory y client_architecture.",
+    "status": "pending_definition",
+    "conceptual_fields": [
+      { "field": "id",                 "description": "Identificador unico del destino de navegacion." },
+      { "field": "label",              "description": "Etiqueta legible del destino." },
+      { "field": "icon",               "description": "Referencia conceptual al icono asociado. Tokens diferidos a Design System." },
+      { "field": "route",              "description": "Ruta logica del destino. Definicion concreta diferida a interface_inventory." },
+      { "field": "section",            "description": "Agrupacion o seccion a la que pertenece dentro de la superficie." },
+      { "field": "surface",            "description": "Superficie a la que pertenece: backoffice | customer_portal | operator_mobile." },
+      { "field": "requiredPermission", "description": "Permiso funcional requerido para acceder al destino. Definicion tecnica diferida a architecture_security_data." },
+      { "field": "maturity",           "description": "Madurez de la interfaz correspondiente al destino. Valores minimos: pending | ready." },
+      { "field": "enabled",            "description": "Indica si el destino esta activo/visible en la navegacion actual." }
+    ],
+    "independence_rule": {
+      "rule": "requiredPermission != maturity",
+      "rationale": "La autorizacion funcional (requiredPermission) y la madurez de la interfaz (maturity) son dimensiones completamente independientes. Una capacidad puede estar autorizada funcionalmente aunque su interfaz permanezca en estado pending. No se amplian permisos para hacer coincidir la navegacion disponible con las vistas existentes."
+    }
+  },
+
+  "unresolved_needs": [
+    {
+      "id": "UNRES-001",
+      "description": "ACT-001 menciona 'rastreo de despachos del cliente' como responsabilidad, pero EVD-REQ-001 no contiene un FR/UC explicito equivalente. No se ha convertido en backlog ejecutable ni en area de interfaz en esta baseline.",
+      "source": "ACT-001 seccion Responsabilidades",
+      "action_required": "Reconciliar en requirements_domain o crear FR/UC explicito antes de incluirlo en interface_inventory.",
+      "blocking": false
+    },
+    {
+      "id": "UNRES-002",
+      "description": "UC-003 exige un ASN valido/aprobado como precondicion, pero EVD-REQ-001 no define quien crea o aprueba el ASN ni el flujo de su creacion. Esta baseline no inventa ese actor ni disena su API.",
+      "source": "UC-003 seccion Precondiciones",
+      "action_required": "Definir origen del ASN (actor, flujo, superficie) en la fase correspondiente (interface_inventory o api_contract_design).",
+      "blocking": false
+    },
+    {
+      "id": "UNRES-003",
+      "description": "UC-009 permite Allocation por Sistema o Supervisor, pero la interaccion exacta automatica/manual queda indefinida. Esta baseline registra ambos actores sin prescribir la UX ni el trigger.",
+      "source": "UC-009 seccion Actor",
+      "action_required": "Definir modo de triggering (automatico post-aprobacion comercial, manual, hibrido) en Architecture/API/Interface Inventory.",
+      "blocking": false
+    },
+    {
+      "id": "UNRES-004",
+      "description": "Los 102 mockups preexistentes (docs/design/mockups/) son inputs GENERATED. No son la fuente contractual de esta baseline y no quedan aprobados por esta fase. Su reconciliacion formal ocurrira en mockup_planning y mockup_review.",
+      "source": "status.yaml secciones interface_inventory.note y mockups.note",
+      "action_required": "Reconciliar mockups con la baseline aprobada durante interface_inventory y mockup_planning.",
+      "blocking": false
+    },
+    {
+      "id": "UNRES-005",
+      "description": "Los IDs legacy WEB-BO-###, WEB-CP-###, MOB-### no se canonizan en esta fase. Son referencias de diseno informales. La canonizacion corresponde a interface_inventory.",
+      "source": "status.yaml seccion interface_inventory.note",
+      "action_required": "Canonizar IDs en interface_inventory, reconciliando con los intent_area IDs definidos en esta baseline.",
+      "blocking": false
+    }
+  ],
+
+  "explicit_exclusions": [
+    "numero final de pantallas",
+    "routes definitivas",
+    "endpoints",
+    "operationIds",
+    "payloads de API",
+    "componentes visuales concretos",
+    "tokens de diseno",
+    "layout visual definitivo",
+    "aprobacion de mockups",
+    "arquitectura React/KMP",
+    "permisos tecnicos definitivos",
+    "implementacion de cualquier tipo",
+    "backlog ejecutable",
+    "brownfield_observed_interface_scope (no aplica: proyecto Greenfield)"
+  ]
+}
