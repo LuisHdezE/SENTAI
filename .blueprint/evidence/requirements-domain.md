@@ -113,7 +113,7 @@ Las siguientes definiciones representan la autorización funcional a nivel de in
 * **BR-003 Cálculo de Disponibilidad Comercial:** Una nueva reserva comercial solamente puede consumir inventario elegible. El stock bloqueado, cuarentena, dañado o vencido no participa en la disponibilidad comercial. El `Available` representa el inventario elegible no comprometido.
 * **BR-004 Estados de Bloqueo:** El inventario marcado explícitamente como bloqueado o cuarentena debe inhibir su manipulación estándar hasta su liberación.
 * **BR-005 Deuda Consolidada por Perspectiva:** Una misma obligación financiera generada por un despacho existe como una única entidad, visible como "Cuentas por Cobrar" internamente y "Cuentas por Pagar" externamente, sin duplicación lógica.
-* **BR-006 Desacoplamiento de Pagos:** El ingreso de un pago y la liquidación contable de una obligación son independientes. Un pago puede existir como saldo a favor sin aplicarse inmediatamente.
+* **BR-006 Desacoplamiento de Pagos:** El ingreso de un pago y su aplicación a una obligación financiera son independientes. Un pago puede existir como saldo a favor sin aplicarse inmediatamente.
 * **BR-007 Obligación Saldada:** Una obligación/documento financiero se considera cerrado únicamente cuando el total de sus pagos aplicados iguala el monto de la obligación.
 * **BR-008 Regla de Idempotencia de Reintentos:** Un reintento técnico de una operación ya consumada no debe aplicar repetidas deducciones físicas ni registros financieros paralelos.
 * **BR-009 Restricciones de Crédito:** La aprobación comercial de un pedido debe respetar los límites de deuda tolerados para el cliente.
@@ -366,7 +366,7 @@ Las siguientes definiciones representan la autorización funcional a nivel de in
 |---|---|
 | **EVD-DISCOVERY-001 (MVP Scope)** | FR-001 a FR-018 (Operaciones de flujo físico y AR). |
 | **EVD-TARGET-001 (Target Outcomes)** | FR-019, FR-020, FR-021, NFR-006, NFR-007, UC-019, UC-020. |
-| **Product Truth (Product Definition)** | ACT-001 a ACT-007, BR-001 a BR-010 (Invariantes core). |
+| **Product Truth (Product Definition)** | ACT-001 a ACT-007, BR-001 a BR-010 (Invariantes core), FR-022 (Identity/Accesos). |
 
 ---
 
@@ -391,5 +391,5 @@ Revisión formal de los 14 candidatos funcionales del Discovery:
 Blueprint v0.5.4 define el check `requirements.mobile_licensing_decision` aplicable dado que `android: true`.
 
 * **Decisión explícita:** `mobile_licensing: false`
-* **Sustento:** La aplicación SENTAI Operator Mobile tiene habilitado soporte Android. Sin embargo, la decisión del producto es no depender del esquema público de licensing (DRM de app stores) para operar en los dispositivos del almacén.
+* **Sustento:** La aplicación SENTAI Operator Mobile tiene habilitado soporte Android. Sin embargo, la decisión del producto es que SENTAI no utilizará ni dependerá del sistema opcional de mobile licensing definido por Blueprint.
 * **Implicaciones:** Esta exclusión resuelve satisfactoriamente el check condicional para el Blueprint, dejando `PASS` el requisito y excluyendo este control específico de los bloqueos de release. Las obligaciones normativas para garantizar la identidad del operario siguen cubiertas estrictamente por `NFR-001` y FR-022.
