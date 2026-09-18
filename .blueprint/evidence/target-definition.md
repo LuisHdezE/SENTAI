@@ -1,7 +1,7 @@
 # SENTAI - Target Definition
 
 **Blueprint Phase:** Target Definition
-**Status:** READY_FOR_REVIEW  
+**Status:** COMPLETE  
 **Artifact ID:** EVD-TARGET-001  
 
 ## 1. Target Product Statement
@@ -111,6 +111,6 @@ Las siguientes superficies componen la solución y están formalmente aprobadas:
 - Decisiones operativas pendientes de formalización (e.g. validaciones en recepción).
 
 ## 10. Exit Statement
-La fase de Target Definition está completa como propuesta y queda lista para revisión humana.
+La fase de Target Definition fue revisada y aprobada humanamente, quedando formalmente cerrada.
 La fase `requirements_domain` permanece **NOT_STARTED**.
 Ningún gate posterior se considera aprobado por esta evidencia.
