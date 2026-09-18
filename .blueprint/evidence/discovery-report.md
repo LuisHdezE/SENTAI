@@ -2,7 +2,7 @@
 
 **Blueprint Phase:** Discovery (D0)  
 **Date:** 17 de septiembre de 2026  
-**Status:** READY_FOR_REVIEW  
+**Status:** COMPLETE  
 **Primary Inputs:** 
 - `docs/product/SENTAI_Product_Definition_v0.1.md` (Funcional y de negocio)
 - `.blueprint/project.yaml` (Decisiones técnicas y capabilities congeladas)
@@ -84,4 +84,4 @@ Las candidate MVP verticals / provisional delivery decomposition (sujetas a vali
 5. **Mobile Operator App:** Sincronización offline e interfaz de picking/put-away para operarios de almacén.
 6. **Portal Web de Clientes:** Cuentas por pagar, creación de pedidos y estado de cuenta.
 
-*Nota:* Discovery evidence is complete and ready for human review. `target_definition` remains NOT_STARTED until explicit human acceptance.*
+*Nota de cierre:* La **Product Vision** fue revisada y aprobada humanamente. El **MVP Scope** fue revisado y aprobado humanamente. La fase **Discovery (D0) queda formalmente cerrada**. `target_definition` permanece en estado `NOT_STARTED` y deberá iniciarse únicamente en un boundary/PR posterior dedicado, previa autorización explícita.*
