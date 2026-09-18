@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-18T03:37:04Z"
+updated_at: "2026-09-18T04:05:08Z"
 
 phases:
   discovery:
@@ -28,8 +28,7 @@ phases:
       No equivale a requirements_ready PASS.
       Arquitectura objetivo (Clean Architecture + Modular Monolith) es
       decision aprobada del proyecto pendiente de formalizacion.
-      requirements.mobile_licensing_decision aplica (android=true);
-      se resolvera PASS con evidencia de decision explicita mobile_licensing=false.
+      requirements.mobile_licensing_decision ha sido resuelta formalmente en EVD-REQ-001 (mobile_licensing: false).
   interface_scope_baseline:
     status: NOT_STARTED
     progress: 0
