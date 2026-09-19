@@ -20,7 +20,7 @@ Los siguientes términos forman el lenguaje ubicuo del dominio, sustentados por 
 - **Stock**: Existencias físicas de un producto.
 - **OnHand**: Cantidad física total disponible en el almacén.
 - **Reserved**: Cantidad de inventario bloqueada o comprometida para órdenes.
-- **Available**: Cantidad de inventario libre (OnHand - Reserved).
+- **Available**: Inventario elegible y no comprometido. Se obtiene conceptualmente sobre el inventario elegible descontando compromisos o reservas aplicables. El inventario bloqueado, en cuarentena, dañado o vencido no participa en la disponibilidad comercial.
 - **Allocation**: Proceso de reservar inventario específico para una Customer Order.
 - **Customer Order**: Pedido realizado por un cliente que requiere preparación y envío.
 - **Picking**: Proceso de recolectar el inventario asignado desde sus ubicaciones.
@@ -112,7 +112,7 @@ Identificación inicial de Aggregate Roots para transacciones consistentes:
 - **Customer**: (Master Data) Consistencia de datos del cliente, límite transaccional para perfiles y configuraciones comerciales.
 - **Product**: (Master Data) Consistencia de atributos base del SKU (candidate/TBD: dimensions y classification).
 - **Location**: (Master Data) Consistencia estructural (candidate/TBD: type, capacity).
-- **InventoryItem**: (Inventory) Agrupación transaccional de Stock por Product + Location. Invariante crítica de cantidades `OnHand` vs `Reserved`.
+- **InventoryItem**: (Inventory) Agrupación transaccional de Stock. Su límite de consistencia (consistency boundary) debe preservar trazabilidad granular por Product, Location, Lot, Serial Number (cuando aplique) y State (derivado de FR-004). Invariante crítica de cantidades `OnHand` vs `Reserved`.
 - **ASN**: (Inventory) Límite de consistencia para el proceso de recepción esperada (Receipt lines).
 - **CustomerOrder**: (Commercial Orders) Agrupación de líneas de pedido y estado global del requerimiento del cliente.
 - **FulfillmentPlan**: (Fulfillment) Agrega las operaciones de Allocation, Picking y Packing para una orden. Coordina el flujo operativo.
@@ -127,7 +127,7 @@ Las siguientes reglas de negocio son invariantes críticas que la arquitectura d
 
 1. **`Reserved <= OnHand`**: La cantidad de inventario reservado nunca puede exceder el inventario físico total.
 2. **OnHand y Dispatch**: Allocation no reduce OnHand. Picking no constituye salida definitiva del almacén. Packing no constituye salida definitiva. Dispatch confirmado reduce definitivamente OnHand. (Derivado de FR-012, AC-012, BR-002).
-3. **Elegibilidad de Reserva**: Solo el inventario con estado elegible puede reservarse. El stock bloqueado o en cuarentena no participa normalmente en el cálculo de `Available`.
+3. **Elegibilidad de Reserva y Disponibilidad**: Solo el inventario con estado elegible puede reservarse. El inventario bloqueado, en cuarentena, dañado o vencido no participa en la disponibilidad comercial mientras mantenga dicho estado (BR-003). Se aplican restricciones adicionales de manipulación para inventario bloqueado/cuarentena (BR-004).
 4. **Unidad Financiera**: Una obligación financiera es una sola entidad de negocio. El Backoffice la visualiza como `Accounts Receivable`, mientras que el Customer Portal la visualiza como `Accounts Payable` (proyección de la misma verdad).
 5. **Register Payment vs Apply Payment**: 
    - **Register Payment** es una operación independiente que crea/registra Payment, puede dejar saldo disponible/no aplicado y no exige una obligación destino inmediata.
