@@ -13,42 +13,42 @@ Se propone la siguiente partición en módulos, reglas de dependencia cruzada y 
 
 1. **Identity & Access**
    - Propósito: Seguridad, resolución de permisos.
-   - Trazabilidad: FR-011, BR-010.
+   - Trazabilidad: FR-022, NFR-001, UC-001.
 2. **Master Data**
    - Propósito: Catálogos transversales (Product, Customer, Location).
-   - Trazabilidad: Catálogos requeridos por BR-002, FR-001, etc.
+   - Trazabilidad: FR-001, UC-002.
 3. **Inventory / Warehouse Operations**
    - Propósito: Control de stock físico y sus movimientos, invariantes de cantidad.
-   - Trazabilidad: FR-001, FR-002, UC-003, Invariante de Stock (BR).
+   - Trazabilidad: FR-002, FR-003, FR-004, FR-005, UC-003, UC-004, UC-005, UC-006, BR-001, BR-003, BR-004, FR-019 (cuando corresponda a auditoría de cambios críticos).
 4. **Commercial Orders**
    - Propósito: Ciclo de vida de órdenes del cliente.
-   - Trazabilidad: UC-008.
+   - Trazabilidad: FR-007, FR-008, UC-007, UC-008, BR-009.
 5. **Fulfillment**
    - Propósito: Logística de preparación interna (Allocation, Picking, Packing).
-   - Trazabilidad: UC-009, UC-010, BR-003, BR-004.
+   - Trazabilidad: FR-006, FR-009, FR-010, UC-009, UC-010, UC-011, BR-001, BR-002, BR-003, BR-004 (cuando corresponda).
 6. **Shipping / Dispatch**
    - Propósito: Salida y entrega final (Dispatch).
-   - Trazabilidad: BR-005.
+   - Trazabilidad: FR-011, FR-012, UC-012, UC-013.
 7. **Finance**
    - Propósito: Cuentas por cobrar/pagar y aplicación de pagos.
-   - Trazabilidad: FR-009, BR-008, BR-009.
+   - Trazabilidad: FR-013, FR-014, FR-015, FR-016, FR-017, FR-018, UC-014, UC-015, UC-016, UC-017, UC-018, BR-005, BR-006, BR-007, BR-008 (cuando corresponda), BR-009 (únicamente donde crédito comercial interactúe con Finance/Orders).
 8. **Audit / Compliance**
    - Propósito: Registro histórico auditable transversal.
-   - Trazabilidad: FR-019, AC-017.
+   - Trazabilidad: FR-019, NFR-003, NFR-012, AC-017.
 
 ### Dependency Rules
 
-- **Independencia Operacional:** Ningún módulo de operaciones (Inventory, Fulfillment, Shipping) dependerá del módulo Finance. Finance puede observar los eventos de operaciones y Orders para generar obligaciones, pero la logística física nunca debe fallar porque falle la facturación.
+- **Independencia Operacional:** Ningún módulo de operaciones (Inventory, Fulfillment, Shipping) dependerá del módulo Finance.
 - **Topología Jerárquica Lógica:**
   - `Master Data` y `Identity` forman la base (no dependen de otros).
   - `Commercial Orders` e `Inventory` dependen de `Master Data`.
   - `Fulfillment` depende de `Inventory` y `Commercial Orders`.
   - `Shipping` depende de `Fulfillment`.
   - `Finance` depende de `Commercial Orders` y `Master Data`.
-- **Integración Asíncrona (Domain Events):** Los efectos cruzados donde no se necesite consistencia fuerte (transaccional inmediata) se resolverán con Domain Events asíncronos en-proceso.
+- **Integración y Coordinación:** Los módulos pueden coordinarse mediante Application Contracts y, cuando sea apropiado, Domain Events internos. La semántica síncrona, deferred/after-commit o eventual se decidirá según las garantías de consistencia de cada caso de uso. No se usarán eventos para debilitar invariantes o postcondiciones obligatorias.
 
 ## Trade-offs
-- **Acoplamiento vs. Duplicidad:** Referenciar datos maestros desde otros módulos acopla dependencias lógicas, pero evita duplicar masivamente los catálogos en este MVP, reduciendo la complejidad inicial que exigiría Event Sourcing y replicación de datos en un contexto distribuido.
+- **Acoplamiento vs. Duplicidad:** Referenciar datos maestros desde otros módulos acopla dependencias lógicas, pero evita duplicar masivamente los catálogos en este MVP, reduciendo la complejidad inicial.
 - **Transaccionalidad Cruzada:** El patrón de modular monolith sobre la misma base de datos física tentará a los desarrolladores a usar transacciones globales cruzadas, ignorando los límites de los módulos, lo cual requerirá disciplina férrea en Code Reviews.
 
 ## Alternatives Considered
@@ -56,7 +56,10 @@ Se propone la siguiente partición en módulos, reglas de dependencia cruzada y 
 2. **Finance totalmente agnóstico mediante eventos:** Rechazado temporalmente para simplificar la lectura inicial de clientes. Finance apuntará a Master Data de Customer, balanceando pureza con simplicidad práctica en el MVP.
 
 ## Unresolved Questions
-1. **UNRES-001, UNRES-002, UNRES-003, UNRES-006:** Aún persisten necesidades no resueltas heredadas de la fase Requirements que impactarán eventualmente estos límites (Ej: origen de creación del ASN o la autorización sobre la consulta de Auditoría). Su resolución dictaminará cómo evolucionarán las interacciones entre los módulos mencionados.
+Se mantienen explicitamente documentados (y sin resolver en A1):
+- **UNRES-001, UNRES-002, UNRES-003**: Impactarán interacciones futuras.
+- **UNRES-004, UNRES-005**: No afectan directamente los module boundaries de A1 y se resolverán en la fase Interface Inventory.
+- **UNRES-006**: Permanece pendiente para la fase A2 Security/Auth.
 
 ## Traceability
 Documento derivado y anclado estrictamente en:

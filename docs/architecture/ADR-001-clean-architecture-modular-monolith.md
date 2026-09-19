@@ -21,7 +21,7 @@ Se adoptará una aproximación combinada de **Clean Architecture** (para el desa
 ### Dependency Direction
 - La regla de dependencia estricta es hacia adentro (Presentation -> Application -> Domain, Infrastructure -> Application -> Domain).
 - Domain y Application **no conocen** a Infrastructure ni Presentation.
-- Las dependencias entre módulos se realizarán a nivel de Application Contracts (Ports) o mediante Domain Events asíncronos en-memoria.
+- Las dependencias entre módulos se realizarán a nivel de Application Contracts (Ports) o mediante Domain Events internos. La semántica síncrona, deferred/after-commit o eventual se decidirá según las garantías de consistencia de cada caso de uso.
 
 ### Laravel Boundary
 - Laravel es un detalle de implementación (Infrastructure/Presentation). Se usará su Dependency Injection Container para conectar las implementaciones de Infrastructure con los Ports de Application.
