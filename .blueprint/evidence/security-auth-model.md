@@ -148,3 +148,24 @@ The system must **never record**:
 * `saas=false`
 * `multi_tenant=false`
 * No Redis, No Docker.
+
+---
+
+## Traceability
+
+| Requirement | A2 Security & Auth Mapping |
+| :--- | :--- |
+| **ACT-001..ACT-007** | capability-oriented authorization and actor-to-capability mapping |
+| **FR-019** | Security Audit Obligations |
+| **FR-020** | provisional offline authorization for downloaded/local operational work |
+| **FR-021** | mandatory reauthentication/reauthorization and reconciliation during synchronization |
+| **FR-022** | authenticated and authorized access across all registered actors |
+| **NFR-001** | authentication, authorization, secure session/token handling, ownership enforcement |
+| **NFR-003** | durable security audit evidence |
+| **NFR-005** | replay protection/idempotent synchronized processing principle |
+| **NFR-007** | rejected/stale offline operations become traceable conflicts instead of silently committing |
+| **NFR-012** | correlation identifiers and security/audit observability support |
+| **BR-008** | security alignment with idempotent retry semantics |
+| **BR-010** | server SSOT and authoritative reconciliation of offline work |
+| **UC-001** | authentication establishes access constrained by authorization |
+| **UNRES-006** | formally resolved via `audit.global.read` + `AuditViewer`, without implicit Administrator access |
