@@ -40,6 +40,8 @@ SENTAI opera sobre tres superficies canonicas:
 
 Android e iOS son **plataformas** de la misma superficie funcional movil (KMP), no superficies separadas.
 
+**Stack aprobado (Web):** React + TypeScript + Tailwind. La arquitectura cliente concreta se formalizara en `client_architecture`. Esta baseline no prescribe implementacion.
+
 ---
 
 ## 2. Shells Reutilizables
@@ -100,7 +102,7 @@ Contexto y navegacion global reutilizable de la app movil. Ninguna pantalla indi
 | BO-PAYMENT-REGISTER | Registro de pagos                 | ACT-006        | FR-014                  | UC-015          |
 | BO-PAYMENT-APPLY    | Aplicacion de pagos               | ACT-006        | FR-015                  | UC-016          |
 | BO-STATEMENT        | Estado de cuenta (Finanzas)       | ACT-006        | FR-018                  | UC-018          |
-| BO-AUDIT            | Trazabilidad / Auditoria          | ACT-003, 006, 007 | FR-019               | -               |
+| BO-AUDIT            | Trazabilidad / Auditoria          | TBD (ver UNRES-006) | FR-019               | -               |
 
 ### 3.2 Customer Portal Web (SURF-CP)
 
@@ -216,8 +218,9 @@ Los siguientes puntos son explicitamente pendientes y **no se han convertido en 
 | UNRES-001  | ACT-001 menciona "rastreo de despachos del cliente", pero EVD-REQ-001 no tiene FR/UC explicito equivalente.              | ACT-001 Responsabilidades     | Reconciliar en requirements_domain o crear FR/UC explicito antes de incluir en interface_inventory.          |
 | UNRES-002  | UC-003 exige ASN valido, pero EVD-REQ-001 no define quien crea o aprueba el ASN. Esta baseline no inventa ese flujo.     | UC-003 Precondiciones         | Definir origen del ASN (actor, flujo, superficie) en interface_inventory o api_contract_design.              |
 | UNRES-003  | UC-009 permite Allocation por Sistema o Supervisor, pero la interaccion automatica/manual exacta queda indefinida.       | UC-009 Actor                  | Definir modo de triggering en Architecture/API/Interface Inventory.                                          |
-| UNRES-004  | Los 102 mockups preexistentes son inputs GENERATED, no fuente contractual. No quedan aprobados por esta fase.            | status.yaml mockups.note      | Reconciliar en mockup_planning y mockup_review, despues de interface_inventory.                              |
+| UNRES-004  | Los 102 mockups preexistentes son inputs GENERATED (GENERATED != REVIEWED != APPROVED). La reconciliacion contractual formal **comienza en `interface_inventory`**: se decidira cuales vistas son necesarias, cuales corresponden a requisitos, cuales son redundantes, cuales descartar y cuales pueden usarse como referencias visuales. Las fases `mockup_planning`, `mockups` y `mockup_review` trabajan sobre el inventario reconciliado, no sobre los assets legacy como fuente de verdad. | status.yaml mockups.note | Iniciar reconciliacion formal en interface_inventory. Fases de mockups posteriores trabajan sobre el resultado reconciliado. |
 | UNRES-005  | IDs legacy WEB-BO-###, WEB-CP-###, MOB-### no se canonizan. Son referencias informales preexistentes.                   | status.yaml interface_inventory.note | Canonizar en interface_inventory, reconciliando con intent_area IDs de esta baseline.               |
+| UNRES-006  | FR-019 y AC-017 requieren trazabilidad auditable consultable, pero EVD-REQ-001 no define que actores internos pueden consultar el registro global de auditoria. La autorizacion de acceso a BO-AUDIT no se infiere de Requirements Domain. | FR-019, AC-017, EVD-REQ-001 | Formalizar autorizacion de actores para consulta de auditoria en `architecture_security_data`. No modificar Requirements Domain en esta PR. |
 
 ---
 

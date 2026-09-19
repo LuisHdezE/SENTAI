@@ -1,5 +1,4 @@
 {
-  "$schema": "https://eliasworks.dev/blueprint/0.5.4/interface-scope-baseline.schema.json",
   "artifact_id": "EVD-UI-SCOPE-001",
   "artifact_type": "interface_scope_baseline",
   "blueprint_version": "0.5.4",
@@ -18,7 +17,7 @@
       "id": "SURF-BO",
       "name": "Backoffice Web",
       "platform": "web",
-      "technology_note": "Aplicacion web. Tecnologia concreta diferida a client_architecture.",
+      "technology_note": "Stack aprobado: React + TypeScript + Tailwind. La arquitectura cliente concreta, organizacion estructural, routing, state management y API client strategy se formalizaran en client_architecture. Esta fase no prescribe implementacion.",
       "primary_actors": ["ACT-003", "ACT-004", "ACT-005", "ACT-006", "ACT-007"],
       "shell": {
         "concept": "BackofficeShell",
@@ -186,9 +185,10 @@
         {
           "id": "BO-AUDIT",
           "intent": "Trazabilidad / Auditoria",
-          "description": "Acceso a registros de trazabilidad auditable: quien realizo cada cambio critico, cuando, que datos cambiaron y el motivo. Aplica transversalmente a cambios de inventario, estados de pedido y transacciones financieras.",
+          "description": "Acceso a registros de trazabilidad auditable: quien realizo cada cambio critico, cuando, que datos cambiaron y el motivo. Aplica transversalmente a cambios de inventario, estados de pedido y transacciones financieras. NOTA: EVD-REQ-001 exige que exista registro auditable (FR-019, AC-017) pero no define explicitamente que actores internos pueden consultar el registro global. La autorizacion de acceso a esta area queda pendiente de formalizacion en architecture_security_data. Ver UNRES-006.",
           "traceability": {
-            "actors": ["ACT-003", "ACT-006", "ACT-007"],
+            "actors": [],
+            "authorized_internal_actor": "TBD — pendiente de formalizacion en architecture_security_data",
             "functional_requirements": ["FR-019"],
             "non_functional_requirements": ["NFR-003"],
             "acceptance_criteria": ["AC-017"]
@@ -201,7 +201,7 @@
       "id": "SURF-CP",
       "name": "Customer Portal Web",
       "platform": "web",
-      "technology_note": "Aplicacion web orientada al cliente externo. Tecnologia concreta diferida a client_architecture.",
+      "technology_note": "Stack aprobado: React + TypeScript + Tailwind. La arquitectura cliente concreta, organizacion estructural, routing, state management y API client strategy se formalizaran en client_architecture. Esta fase no prescribe implementacion.",
       "primary_actors": ["ACT-001"],
       "shell": {
         "concept": "CustomerPortalShell",
@@ -459,9 +459,9 @@
     },
     {
       "id": "UNRES-004",
-      "description": "Los 102 mockups preexistentes (docs/design/mockups/) son inputs GENERATED. No son la fuente contractual de esta baseline y no quedan aprobados por esta fase. Su reconciliacion formal ocurrira en mockup_planning y mockup_review.",
+      "description": "Los 102 mockups preexistentes (docs/design/mockups/) son inputs GENERATED. GENERATED != REVIEWED != APPROVED. No son la fuente contractual de esta baseline y no quedan aprobados por esta fase. La reconciliacion contractual formal comienza en interface_inventory: alli se decidira cuales vistas siguen siendo necesarias, cuales corresponden a requisitos actuales, cuales son redundantes, cuales deben descartarse, cuales requieren modificacion y cuales pueden convertirse en referencias visuales. Las fases posteriores mockup_planning, mockups y mockup_review trabajaran sobre el inventario reconciliado y no sobre los assets legacy como fuente de verdad.",
       "source": "status.yaml secciones interface_inventory.note y mockups.note",
-      "action_required": "Reconciliar mockups con la baseline aprobada durante interface_inventory y mockup_planning.",
+      "action_required": "Iniciar reconciliacion formal en interface_inventory. Las fases de mockups posteriores trabajan sobre el resultado reconciliado.",
       "blocking": false
     },
     {
@@ -469,6 +469,13 @@
       "description": "Los IDs legacy WEB-BO-###, WEB-CP-###, MOB-### no se canonizan en esta fase. Son referencias de diseno informales. La canonizacion corresponde a interface_inventory.",
       "source": "status.yaml seccion interface_inventory.note",
       "action_required": "Canonizar IDs en interface_inventory, reconciliando con los intent_area IDs definidos en esta baseline.",
+      "blocking": false
+    },
+    {
+      "id": "UNRES-006",
+      "description": "FR-019 y AC-017 requieren que todo cambio critico sea registrado con trazabilidad auditable (quien, cuando, que, motivo). Sin embargo, EVD-REQ-001 no define explicitamente que actores internos tienen permiso para consultar el registro global de auditoria. La autorizacion de acceso a BO-AUDIT no se infiere de Requirements Domain y no debe ser inventada en esta baseline. La autorizacion concreta debe formalizarse en architecture_security_data.",
+      "source": "FR-019, AC-017, EVD-REQ-001",
+      "action_required": "Formalizar la autorizacion de actores para consulta de registros de auditoria en architecture_security_data. No modificar Requirements Domain en esta PR.",
       "blocking": false
     }
   ],
