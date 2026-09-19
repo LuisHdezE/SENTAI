@@ -202,6 +202,21 @@ checks:
     evidence_ids:
       - EVD-ARCH-ADR-001
       - EVD-ARCH-ADR-002
+  architecture.security_model:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-SEC-001
+  api.auth_strategy:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-ADR-003
+  architecture.threat_model:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-THREAT-001
 
 gates:
   requirements_ready:
@@ -270,3 +285,12 @@ artifacts:
   - id: EVD-ARCH-ADR-002
     type: architecture_decision_record
     value: docs/architecture/ADR-002-domain-module-boundaries.md
+  - id: EVD-ARCH-SEC-001
+    type: architecture_security_model
+    value: .blueprint/evidence/security-auth-model.md
+  - id: EVD-ARCH-ADR-003
+    type: architecture_decision_record
+    value: docs/architecture/ADR-003-authentication-authorization-strategy.md
+  - id: EVD-ARCH-THREAT-001
+    type: architecture_threat_model
+    value: .blueprint/evidence/threat-model.md
