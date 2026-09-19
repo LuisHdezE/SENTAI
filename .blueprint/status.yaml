@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-19T03:03:45Z"
+updated_at: "2026-09-19T05:01:33Z"
 
 phases:
   discovery:
@@ -39,15 +39,12 @@ phases:
       Tres superficies canonicas con areas de intencion derivadas de EVD-REQ-001.
       Los seis unresolved needs permanecen registrados y no se resuelven en este cierre.
   architecture_security_data:
-    status: NOT_STARTED
-    progress: 0
+    status: IN_PROGRESS
+    progress: 25
     note: >-
-      Decision arquitectonica aprobada: Clean Architecture + Modular Monolith.
-      Esta decision pertenece al proyecto SENTAI, no es una regla del Blueprint.
-      Formalizacion mediante artefactos y ADRs exigidos por Blueprint v0.5.4 pendiente.
-      architecture_ready NO esta en PASS. No existen modulos Laravel ni
-      estructura de codigo todavia. Bounded contexts y aggregates definitivos
-      se determinaran durante esta fase a partir de requirements_domain.
+      A1 iniciado; Domain Model y ADRs fundacionales producidos.
+      Security, Data, Audit, Auth/Error/Versioning permanecen pendientes.
+      API Contract todavia no iniciado.
   api_contract_design:
     status: NOT_STARTED
     progress: 0
@@ -194,6 +191,18 @@ checks:
     evidence_ids:
       - EVD-UI-SCOPE-001
 
+  architecture.domain_model:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-001
+  architecture.decision_records:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-ADR-001
+      - EVD-ARCH-ADR-002
+
 gates:
   requirements_ready:
     status: PASS
@@ -252,3 +261,12 @@ artifacts:
   - id: EVD-UI-SCOPE-001
     type: interface_scope_baseline_evidence
     value: .blueprint/evidence/interface-scope-baseline.md
+  - id: EVD-ARCH-001
+    type: architecture_domain_model_evidence
+    value: .blueprint/evidence/architecture-domain-model.md
+  - id: EVD-ARCH-ADR-001
+    type: architecture_decision_record
+    value: docs/architecture/ADR-001-clean-architecture-modular-monolith.md
+  - id: EVD-ARCH-ADR-002
+    type: architecture_decision_record
+    value: docs/architecture/ADR-002-domain-module-boundaries.md
