@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-19T05:01:33Z"
+updated_at: "2026-09-19T07:42:03Z"
 
 phases:
   discovery:
@@ -40,11 +40,11 @@ phases:
       Los seis unresolved needs permanecen registrados y no se resuelven en este cierre.
   architecture_security_data:
     status: IN_PROGRESS
-    progress: 25
+    progress: 50
     note: >-
-      A1 iniciado; Domain Model y ADRs fundacionales producidos.
-      Security, Data, Audit, Auth/Error/Versioning permanecen pendientes.
-      API Contract todavia no iniciado.
+      A1 Domain/ADRs completado. A2 Security/Auth/Threat Model completado.
+      A3 Data/Audit/Error/Versioning permanece pendiente.
+      API Contract todavía no iniciado.
   api_contract_design:
     status: NOT_STARTED
     progress: 0
@@ -237,7 +237,7 @@ gates:
     status: PENDING
     note: >-
       Decision aprobada: Clean Architecture + Modular Monolith.
-      Requiere formalizacion en architecture_security_data. No PASS todavia.
+      A1 y A2 completados. A3 todavia bloquea el gate. No PASS todavia.
   api_contract_ready:
     status: PENDING
   api_implemented:

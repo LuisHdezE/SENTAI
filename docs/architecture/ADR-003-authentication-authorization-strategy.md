@@ -11,7 +11,7 @@ SENTAI requires a robust security model to protect its authoritative boundary (t
 
 ### Authentication
 We will implement distinct, platform-appropriate authentication mechanisms without substituting authorization:
-- **Web (Backoffice & Customer Portal):** We will use secure, backend-managed HTTP sessions leveraging `HttpOnly` and `Secure` cookies with strict `SameSite` policies. We mandate CSRF protection for state-changing requests and explicitly forbid storing authentication secrets in browser `localStorage`.
+- **Web (Backoffice & Customer Portal):** We will use secure, backend-managed HTTP sessions leveraging `HttpOnly` and `Secure` cookies with strict `SameSite` policies. We mandate CSRF protection for state-changing requests and explicitly forbid storing authentication secrets in browser `localStorage`. Session lifecycle mandates include: regenerating session identifiers after authentication/privilege changes, server-side invalidation on logout or revocation, and enforcing both idle and absolute expirations. Authorization is strictly evaluated against current server-side privileges, independent of stale client state.
 - **Mobile (Operator Mobile):** We will use short-lived access credentials/tokens supported by server-revocable, rotating refresh sessions. Tokens will be stored in secure platform storage (Android Keystore/iOS Keychain).
 
 ### Authorization

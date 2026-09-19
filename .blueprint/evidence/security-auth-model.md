@@ -27,6 +27,14 @@
 
 ### Web (Backoffice & Customer Portal)
 * **Session Management:** Secure backend-managed browser sessions.
+* **Lifecycle & Expiration:**
+  * Session identifiers must be regenerated after successful authentication and relevant privilege changes.
+  * Logout invalidates the server-side session.
+  * Administrative/security revocation must be able to invalidate active sessions.
+  * Sessions must have idle expiration and absolute expiration.
+  * Concrete expiration durations remain configuration/deployment decisions and are NOT defined in A2.
+  * Credential/password reset or equivalent security-sensitive account recovery must invalidate affected active sessions where appropriate.
+  * Authorization is evaluated against current server-side privileges and must not depend solely on stale client state.
 * **Cookies:** `HttpOnly` and `Secure` cookies.
 * **CSRF:** CSRF protection enforced for state-changing browser requests.
 * **SameSite:** Appropriate `SameSite` policy applied.
@@ -92,7 +100,44 @@ ACT-007 (Administrator) may manage role/permission assignments but does NOT auto
 
 ---
 
-## 4. Preservation of Baseline Constraints
+## 4. Security Audit Obligations (FR-019, NFR-003)
+
+A2 defines *what* categories of events require durable evidence. The exact audit event catalog, persistence mechanism, retention policy, physical schema, and tamper-resistance storage mechanism are explicitly deferred to A3.
+
+### Required Audit Events
+At a minimum, the system must durably record:
+* Successful/failed authentication events where security-relevant.
+* Session/token revocation.
+* Password/account recovery security events where applicable.
+* Role assignment changes.
+* Permission/capability assignment changes.
+* Creation/update/disablement of privileged users.
+* Significant authorization denials.
+* Privileged administrative actions.
+* Access to global Audit/Compliance capability.
+* Security-sensitive configuration changes.
+* Offline synchronization rejection caused by revoked/stale authorization.
+* Suspected replay/idempotency rejection where security-relevant.
+
+### Audit Record Obligations
+Each audit record must capture:
+* Actor/account identity when available.
+* Timestamp.
+* Action/event category.
+* Target/resource context when applicable.
+* Outcome.
+* Correlation identifier when applicable.
+
+### Forbidden Audit Content (NFR-001)
+The system must **never record**:
+* Passwords or plaintext credentials.
+* Refresh/access tokens or session secrets.
+* Cryptographic private material.
+* Unnecessary sensitive payloads (PII).
+
+---
+
+## 5. Preservation of Baseline Constraints
 * All A1 domain/module decisions preserved.
 * All inventory invariants preserved.
 * Financial Obligation AR/AP single-truth rule preserved.
