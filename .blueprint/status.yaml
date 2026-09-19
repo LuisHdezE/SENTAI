@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-19T01:59:08Z"
+updated_at: "2026-09-19T03:03:45Z"
 
 phases:
   discovery:
@@ -207,6 +207,8 @@ gates:
     evaluated_at: "2026-09-19T01:59:08Z"
     note: >-
       Gate aprobado humanamente por Luis tras revision de Dalila.
+    evidence_ids:
+      - EVD-UI-SCOPE-001
   architecture_ready:
     status: PENDING
     note: >-
