@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-19T23:00:00Z"
+updated_at: "2026-09-20T14:25:00Z"
 
 phases:
   discovery:
@@ -48,8 +48,11 @@ phases:
       Estado UNRES: UNRES-001..005 unresolved, UNRES-006 resolved (A2), UNRES-007 unresolved (A3).
       API Contract permanece NOT_STARTED.
   api_contract_design:
-    status: NOT_STARTED
-    progress: 0
+    status: IN_PROGRESS
+    progress: 25
+    note: >-
+      Primer incremento del API Contract Baseline (EVD-API-002) generado,
+      cubriendo alcance y el inventario inicial de endpoints.
   api_implementation:
     status: NOT_STARTED
     progress: 0
@@ -259,6 +262,26 @@ checks:
     verification: evidence
     evidence_ids:
       - EVD-ARCH-API-001
+  api.scope_defined:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-002
+  api.endpoint_inventory:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-002
+  api.auth_contract:
+    status: PENDING
+  api.permission_matrix:
+    status: PENDING
+  api.audit_event_mapping:
+    status: PENDING
+  api.idempotency_matrix:
+    status: PENDING
+  api.contract_traceability:
+    status: PENDING
 
 gates:
   requirements_ready:
@@ -356,3 +379,6 @@ artifacts:
   - id: EVD-ARCH-ADR-005
     type: architecture_decision_record
     value: docs/architecture/ADR-005-audit-persistence-strategy.md
+  - id: EVD-API-002
+    type: api_contract_baseline_evidence
+    value: .blueprint/evidence/api-contract-baseline.md
