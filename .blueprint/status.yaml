@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-19T07:42:03Z"
+updated_at: "2026-09-19T23:00:00Z"
 
 phases:
   discovery:
@@ -40,11 +40,20 @@ phases:
       Los seis unresolved needs permanecen registrados y no se resuelven en este cierre.
   architecture_security_data:
     status: IN_PROGRESS
-    progress: 50
+    progress: 85
     note: >-
       A1 Domain/ADRs completado. A2 Security/Auth/Threat Model completado.
-      A3 Data/Audit/Error/Versioning permanece pendiente.
-      API Contract todavía no iniciado.
+      A3 Data/Audit/Transactional/API Policies completado (READY_FOR_REVIEW).
+      Correcciones A3 aplicadas: CORRECTION-1 (lock ordering), CORRECTION-2 (dispatch reserved lifecycle),
+      CORRECTION-3 (idempotency concurrency-safe), CORRECTION-4 (payment application uniqueness removed),
+      CORRECTION-5 (MySQL RR precision), CORRECTION-6 (DDL accuracy), CORRECTION-7 (UNRES-007 introducido),
+      CORRECTION-8 (retention provider-neutral), CORRECTION-9 (external side effects by criticality),
+      CORRECTION-10 (RFC 9745/8594), CORRECTION-11 (breaking/non-breaking precision),
+      CORRECTION-12 (ADR-004 Laravel claim + DDL), CORRECTION-13 (ADR-005 audit wording),
+      CORRECTION-14 (decision_records updated), CORRECTION-15 (status/gate), CORRECTION-16 (no new blueprint checks).
+      Estado UNRES: UNRES-001..005 unresolved, UNRES-006 resolved (A2), UNRES-007 unresolved (A3).
+      architecture_ready permanece PENDING hasta aprobacion explicita de Luis.
+      API Contract permanece NOT_STARTED.
   api_contract_design:
     status: NOT_STARTED
     progress: 0
@@ -202,6 +211,9 @@ checks:
     evidence_ids:
       - EVD-ARCH-ADR-001
       - EVD-ARCH-ADR-002
+      - EVD-ARCH-ADR-003
+      - EVD-ARCH-ADR-004
+      - EVD-ARCH-ADR-005
   architecture.security_model:
     status: PASS
     verification: evidence
@@ -217,6 +229,43 @@ checks:
     verification: evidence
     evidence_ids:
       - EVD-ARCH-THREAT-001
+
+  data.architecture:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-DATA-001
+  data.authoritative_database:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-DATA-001
+      - EVD-ARCH-ADR-004
+  data.schema_migrations:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-TXN-001
+  audit.event_catalog:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-AUDIT-001
+  audit.retention_policy:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-AUDIT-001
+  api.error_contract:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-API-001
+  api.versioning_policy:
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-ARCH-API-001
 
 gates:
   requirements_ready:
@@ -237,7 +286,10 @@ gates:
     status: PENDING
     note: >-
       Decision aprobada: Clean Architecture + Modular Monolith.
-      A1 y A2 completados. A3 todavia bloquea el gate. No PASS todavia.
+      A1, A2 y A3 completados (READY_FOR_REVIEW).
+      A3 correcciones aplicadas (16 correcciones de auditoria de Dalila).
+      Gate requiere aprobacion explicita de Luis.
+      No PASS hasta que esa aprobacion ocurra explicitamente.
   api_contract_ready:
     status: PENDING
   api_implemented:
@@ -294,3 +346,21 @@ artifacts:
   - id: EVD-ARCH-THREAT-001
     type: architecture_threat_model
     value: .blueprint/evidence/threat-model.md
+  - id: EVD-ARCH-DATA-001
+    type: architecture_data_evidence
+    value: .blueprint/evidence/data-architecture.md
+  - id: EVD-ARCH-TXN-001
+    type: architecture_transactional_evidence
+    value: .blueprint/evidence/transactional-consistency.md
+  - id: EVD-ARCH-AUDIT-001
+    type: architecture_audit_evidence
+    value: .blueprint/evidence/audit-architecture.md
+  - id: EVD-ARCH-API-001
+    type: architecture_api_policy_evidence
+    value: .blueprint/evidence/api-policies.md
+  - id: EVD-ARCH-ADR-004
+    type: architecture_decision_record
+    value: docs/architecture/ADR-004-mysql-innodb-authoritative-persistence.md
+  - id: EVD-ARCH-ADR-005
+    type: architecture_decision_record
+    value: docs/architecture/ADR-005-audit-persistence-strategy.md
