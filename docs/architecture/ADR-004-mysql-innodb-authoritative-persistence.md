@@ -1,4 +1,4 @@
-﻿# ADR-004: MySQL/InnoDB as Authoritative Transactional Persistence
+# ADR-004: MySQL/InnoDB as Authoritative Transactional Persistence
 
 **Status:** ACCEPTED
 **Artifact ID:** EVD-ARCH-ADR-004
@@ -43,7 +43,7 @@ A1 (EVD-ARCH-001) established that the server is the SSOT for all synchronized m
 | **Row-Level Locking** | InnoDB row-level locking supports concurrent operations without full table locks; critical for inventory reservation concurrency |
 | **MVCC** | Multi-version concurrency control reduces reader/writer contention |
 | **Foreign Key Support** | Enforces relational integrity at database level as defense-in-depth |
-| **Laravel Integration** | MySQL is the primary supported database for Laravel's ORM and Migration system |
+| **Laravel Ecosystem Alignment** | MySQL is well-supported by Laravel's Eloquent ORM and Migration system; the combination is a common and documented deployment pattern for the chosen framework |
 | **Operational Simplicity** | A single authoritative relational database is appropriate for a Modular Monolith; distributed data stores are not warranted at this scale |
 | **Existing Constraints** | `redis=false`, `saas=false`, `multi_tenant=false`; no additional infrastructure components needed |
 
@@ -58,7 +58,7 @@ A1 (EVD-ARCH-001) established that the server is the SSOT for all synchronized m
 - Framework-native integration reduces impedance mismatch.
 
 ### Constraints and Accepted Trade-offs
-- MySQL DDL operations (ALTER TABLE, etc.) are not transactional; schema changes require careful migration planning and rollback strategies.
+- Many MySQL DDL statements (e.g., `ALTER TABLE`, `DROP TABLE`, `CREATE TABLE`) cause **implicit commits**: any open transaction is committed before the DDL executes, and normal application `ROLLBACK` cannot undo the DDL change. Migration rollback must not assume ACID application transaction semantics for DDL. Risky migrations require forward recovery, explicit reverse migrations, or backup/restore strategies (documented in EVD-ARCH-TXN-001).
 - InnoDB row locking requires correct lock ordering to prevent deadlocks (documented in EVD-ARCH-TXN-001).
 - Horizontal read scaling via replicas may be considered in a future operational phase but is not part of the current architecture scope.
 - Full-text search and time-series capabilities are limited; if required in future, specialized tools may be considered at that time.
@@ -81,5 +81,7 @@ A1 (EVD-ARCH-001) established that the server is the SSOT for all synchronized m
 
 - EVD-ARCH-001 (A1): Modular Monolith; shared database; module-owned table groups.
 - EVD-ARCH-SEC-001 (A2): Server SSOT; mobile provisional only.
-- EVD-ARCH-TXN-001 (A3): Concurrency strategy, isolation levels, lock ordering.
+- EVD-ARCH-TXN-001 (A3): Concurrency strategy, isolation levels, lock ordering, DDL implicit commit behavior.
 - Blueprint issue #40: Transactional consistency debt tracked in canonical Blueprint.
+
+**Corrections Applied:** A3-CORRECTION-12 (Laravel ecosystem claim softened; DDL wording corrected to reflect implicit commit, not absolute non-transactional statement).

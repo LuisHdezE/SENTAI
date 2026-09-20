@@ -1,9 +1,10 @@
-﻿# SENTAI – API Error Contract & Versioning Policy
+# SENTAI – API Error Contract & Versioning Policy
 
 **Artifact ID:** EVD-ARCH-API-001
 **Blueprint Phase:** Architecture & Security Data (A3)
 **Status:** READY_FOR_REVIEW
 **Bases en:** EVD-ARCH-001, EVD-ARCH-SEC-001, EVD-ARCH-TXN-001, EVD-REQ-001
+**Corrections Applied:** A3-CORRECTION-10 (RFC 9745 / RFC 8594 references), A3-CORRECTION-11 (breaking/non-breaking classification precision)
 
 ---
 
@@ -78,22 +79,24 @@ The initial SENTAI API version family is:
 
 All API endpoints will be prefixed with `/api/v1/` unless a future governance decision establishes an exception.
 
-### 2.2 Breaking vs. Non-Breaking Changes
+### 2.2 Breaking vs. Non-Breaking Changes (Corrected — A3-CORRECTION-11)
 
-| Change Type | Classification | Policy |
+The following classification applies as API contract compatibility principles. These are conservative guidelines, not universal absolutes; edge cases should be evaluated against the published stable contract and the tolerance expectations of known consumers.
+
+| Change Type | Classification | Policy / Notes |
 |---|---|---|
-| Removing a field from a response | Breaking | Requires new version; deprecated field must be maintained until v_old is sunset |
-| Renaming a field | Breaking | Requires new version |
-| Changing a field's type | Breaking | Requires new version |
-| Removing an endpoint | Breaking | Requires new version |
-| Changing required fields to optional | Non-breaking | May be deployed in-version |
-| Adding a new optional field to request | Non-breaking | May be deployed in-version |
-| Adding a new optional field to response | Non-breaking | May be deployed in-version |
-| Adding a new endpoint | Non-breaking | May be deployed in-version |
-| Changing HTTP status codes for the same semantic outcome | Breaking | Requires new version |
-| Changing error `type` URIs | Breaking | Requires new version |
-| Relaxing validation constraints | Non-breaking | May be deployed in-version with care |
-| Tightening validation constraints | Breaking (for existing clients) | Requires coordination or new version |
+| Removing a field from a response | **Breaking** | Requires new version; deprecated field must be maintained until v_old is sunset |
+| Renaming a field | **Breaking** | Requires new version |
+| Changing a field's type | **Breaking** | Requires new version |
+| Removing an endpoint | **Breaking** | Requires new version |
+| Changing required fields to optional | Generally **non-breaking** for request compatibility; may affect generated clients or schema-strict consumers. Evaluate against known consumers before deploying in-version. |
+| Adding a new optional field to request | **Non-breaking** | May be deployed in-version |
+| Adding a new optional field to response | Generally **non-breaking** for tolerant clients. Clients must be designed to ignore unknown response fields (additive evolution). Strict schema validators may require coordination. |
+| Adding a new endpoint | **Non-breaking** | May be deployed in-version |
+| Changing HTTP status codes for the same semantic outcome | **Breaking** | Requires new version |
+| Changing error `type` URIs | **Breaking** if the URI is part of the published stable contract. Changes to unstable or internal URIs not yet contractually published require evaluation. |
+| Relaxing validation constraints | **Non-breaking** | May be deployed in-version with care |
+| Tightening validation constraints | **Breaking** (for existing clients) | Requires coordination or new version |
 
 ### 2.3 Contract Evolution
 
@@ -102,13 +105,16 @@ All API endpoints will be prefixed with `/api/v1/` unless a future governance de
 - Both versions must run concurrently for the duration of the deprecation window.
 - A new version is not introduced speculatively; it is introduced when a breaking change is actually required.
 
-### 2.4 Deprecation Policy
+### 2.4 Deprecation Policy (Corrected — A3-CORRECTION-10)
 
 When a version is to be deprecated:
 1. Announce deprecation with the target sunset date to all active API consumers.
-2. Include a `Deprecation` header (per RFC 8594) in responses from the deprecated version.
-3. Maintain the deprecated version for a deprecation window (exact duration is a product/governance decision; not fabricated here).
-4. After the sunset date, the deprecated version may be removed.
+2. Include a `Deprecation` header (per **RFC 9745** — The Deprecation HTTP Header Field) in responses from the deprecated version.
+3. Include a `Sunset` header (per **RFC 8594** — The Sunset HTTP Header Field) to indicate the date after which the deprecated version may no longer be available.
+4. Maintain the deprecated version for a deprecation window (exact duration is a product/governance decision; not fabricated here).
+5. After the sunset date, the deprecated version may be removed.
+
+Exact rollout behavior and header values remain governed by API Contract and Operations decisions.
 
 ### 2.5 Compatibility Expectations
 
@@ -146,3 +152,6 @@ This document does not alter:
 | EVD-ARCH-TXN-001 | Concurrency conflict and transient infrastructure error families |
 | EVD-ARCH-AUDIT-001 | Correlation ID links error responses to audit events |
 | RFC 9457 | Canonical error response structure |
+| RFC 9745 | `Deprecation` header standard (A3-CORRECTION-10) |
+| RFC 8594 | `Sunset` header standard (A3-CORRECTION-10) |
+| A3-CORRECTION-11 | Breaking/non-breaking classification as compatibility principles, not universal absolutes |

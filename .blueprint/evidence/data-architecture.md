@@ -1,4 +1,4 @@
-﻿# SENTAI – Data Architecture
+# SENTAI – Data Architecture
 
 **Artifact ID:** EVD-ARCH-DATA-001
 **Blueprint Phase:** Architecture & Security Data (A3)
@@ -135,8 +135,9 @@ Owns: `shipping_plans`, `dispatch_records`, `dispatch_lines`.
 
 Key invariants (critical, UC-013):
 - A Dispatch transitions to `Completed` only when all mandatory effects are committed atomically (see `transactional-consistency.md`).
-- Dispatch completion triggers `OnHand` decrement in Inventory and Financial Obligation creation/update in Finance, within the same atomic transaction.
-- `Dispatch = Completed` without consistent Inventory and Finance effects is **forbidden by architecture**.
+- Dispatch completion triggers `OnHand` decrement in Inventory, **reservation reconciliation** (reserved quantities corresponding to dispatched allocations are released/consumed), and Financial Obligation creation/update in Finance, all within the same atomic transaction.
+- After a confirmed Dispatch: `Reserved <= OnHand` and `Reserved >= 0` must hold; no orphaned reserved quantities may exceed the post-dispatch `OnHand`.
+- `Dispatch = Completed` without consistent Inventory decrement, reservation reconciliation, and Finance effects is **forbidden by architecture**.
 
 ### 3.7 Finance
 
@@ -147,7 +148,7 @@ Key invariants (preserved from A1, BR-005 through BR-009):
 - Register Payment is an independent operation creating a `payments` record; it may leave a non-zero unapplied balance.
 - Apply Payment creates `payment_applications` records and reduces both the payment's available balance and the obligation's outstanding balance.
 - Obligation closes only when applied payments cover the total (BR-007).
-- Double application of the same payment to the same obligation is prevented by idempotency and unique constraint (see `transactional-consistency.md`).
+- Duplicate-effect protection for Apply Payment is enforced via idempotency identity (see `transactional-consistency.md` Section 5). A `UNIQUE(payment_id, obligation_id)` constraint is **not** applied globally, as UC-016 permits multiple legitimate partial applications between the same Payment and Financial Obligation over time.
 
 ### 3.8 Audit / Compliance
 
@@ -196,4 +197,5 @@ This document does not alter:
 | EVD-ARCH-001 section 6 | Transaction boundary principles formalized in transactional-consistency.md |
 | EVD-ARCH-SEC-001 section 3 | Audit obligations and forbidden audit content |
 | UC-013 | Dispatch atomicity requirement |
-| UNRES-001..UNRES-005 | Preserved; no resolution attempted in A3 |
+| UNRES-001..UNRES-006 | Preserved; no resolution attempted in A3 (UNRES-006 resolved in A2) |
+| UNRES-007 | Exact audit retention periods: unresolved pending legal/regulatory/fiscal/product evidence (see `audit-architecture.md`) |

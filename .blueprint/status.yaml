@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-19T15:20:00Z"
+updated_at: "2026-09-19T23:00:00Z"
 
 phases:
   discovery:
@@ -44,7 +44,14 @@ phases:
     note: >-
       A1 Domain/ADRs completado. A2 Security/Auth/Threat Model completado.
       A3 Data/Audit/Transactional/API Policies completado (READY_FOR_REVIEW).
-      architecture_ready permanece PENDING hasta auditoria de Dalila y aprobacion explicita de Luis.
+      Correcciones A3 aplicadas: CORRECTION-1 (lock ordering), CORRECTION-2 (dispatch reserved lifecycle),
+      CORRECTION-3 (idempotency concurrency-safe), CORRECTION-4 (payment application uniqueness removed),
+      CORRECTION-5 (MySQL RR precision), CORRECTION-6 (DDL accuracy), CORRECTION-7 (UNRES-007 introducido),
+      CORRECTION-8 (retention provider-neutral), CORRECTION-9 (external side effects by criticality),
+      CORRECTION-10 (RFC 9745/8594), CORRECTION-11 (breaking/non-breaking precision),
+      CORRECTION-12 (ADR-004 Laravel claim + DDL), CORRECTION-13 (ADR-005 audit wording),
+      CORRECTION-14 (decision_records updated), CORRECTION-15 (status/gate), CORRECTION-16 (no new blueprint checks).
+      architecture_ready permanece PENDING hasta aprobacion explicita de Luis.
       API Contract permanece NOT_STARTED.
   api_contract_design:
     status: NOT_STARTED
@@ -203,6 +210,9 @@ checks:
     evidence_ids:
       - EVD-ARCH-ADR-001
       - EVD-ARCH-ADR-002
+      - EVD-ARCH-ADR-003
+      - EVD-ARCH-ADR-004
+      - EVD-ARCH-ADR-005
   architecture.security_model:
     status: PASS
     verification: evidence
@@ -276,7 +286,8 @@ gates:
     note: >-
       Decision aprobada: Clean Architecture + Modular Monolith.
       A1, A2 y A3 completados (READY_FOR_REVIEW).
-      Gate requiere auditoria independiente de Dalila y aprobacion explicita de Luis.
+      A3 correcciones aplicadas (16 correcciones de auditoria de Dalila).
+      Gate requiere aprobacion explicita de Luis.
       No PASS hasta que esa aprobacion ocurra explicitamente.
   api_contract_ready:
     status: PENDING

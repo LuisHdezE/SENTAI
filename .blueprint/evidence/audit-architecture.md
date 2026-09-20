@@ -1,10 +1,11 @@
-﻿# SENTAI – Audit Architecture
+# SENTAI – Audit Architecture
 
 **Artifact ID:** EVD-ARCH-AUDIT-001
 **Blueprint Phase:** Architecture & Security Data (A3)
 **Status:** READY_FOR_REVIEW
 **Bases en:** EVD-ARCH-SEC-001 (Security Model), EVD-ARCH-TXN-001 (Transactional Consistency), EVD-REQ-001
 **A2 continuity:** EVD-ARCH-SEC-001 section 4 defined audit obligations; A3 formalizes the catalog, persistence, retention, and traceability model.
+**Corrections Applied:** A3-CORRECTION-7 (UNRES-007 introduced), A3-CORRECTION-8 (retention/purge provider-neutral)
 
 ---
 
@@ -43,7 +44,7 @@ The relationship between audit evidence and the business transaction it describe
 ### 1.4 Tamper Resistance
 
 - Application-layer controls prevent updates and deletes.
-- Database-level GRANT configuration must restrict DELETE/UPDATE privileges on audit tables to DBA-only access.
+- Database-level GRANT configuration must restrict DELETE/UPDATE privileges on audit tables to privileged/DBA-only access (an administrative control, not an application feature).
 - Access to global audit data requires the `audit.global.read` capability (resolved in UNRES-006, EVD-ARCH-SEC-001).
 - Physical tamper-resistance mechanisms (e.g., write-once storage, cryptographic chaining) are not required at this architecture stage but may be added as a future hardening measure if regulatory requirements dictate.
 
@@ -227,23 +228,32 @@ This architecture defines the *responsibility* of correlation but does not presc
 
 ## 5. Audit Retention Policy
 
-### 5.1 Retention Categories
+### 5.1 Unresolved Item: UNRES-007 (A3-CORRECTION-7)
+
+> **UNRES-007 — Exact audit retention periods require legal, regulatory, fiscal, and product evidence before implementation.**
+>
+> Exact retention durations (in days, months, or years) are **not** defined in this architecture document. Legal, regulatory, and fiscal requirements have not been evidenced for this project. Retention durations must be determined through formal product/legal input before implementation. Architecture establishes the category structure and the requirement to define durations; it does not fabricate them.
+
+This is a new unresolved item introduced in A3.
+
+### 5.2 Retention Categories
 
 | Category | Events | Retention Guidance |
 |---|---|---|
-| **Security-Critical** | Authentication events, session revocations, privilege changes, security denials | Long retention. Exact duration: **UNRESOLVED — legal/regulatory requirement not yet evidenced** |
-| **Financial** | Payment registration, payment application, obligation creation/closure | Long retention. Exact duration: **UNRESOLVED — legal/regulatory and fiscal requirement not yet evidenced** |
-| **Inventory-Operational** | Inventory adjustments, dispatch confirmation, allocation changes | Medium retention. Exact duration: **UNRESOLVED** |
-| **Sync/Conflict** | Offline sync events, conflict records | Operational retention. Exact duration: **UNRESOLVED** |
-| **Administrative** | User creation/modification, master data changes, role/permission changes | Long retention. Exact duration: **UNRESOLVED** |
+| **Security-Critical** | Authentication events, session revocations, privilege changes, security denials | Long retention. Exact duration: **UNRESOLVED — UNRES-007** |
+| **Financial** | Payment registration, payment application, obligation creation/closure | Long retention. Exact duration: **UNRESOLVED — UNRES-007** |
+| **Inventory-Operational** | Inventory adjustments, dispatch confirmation, allocation changes | Medium retention. Exact duration: **UNRESOLVED — UNRES-007** |
+| **Sync/Conflict** | Offline sync events, conflict records | Operational retention. Exact duration: **UNRESOLVED — UNRES-007** |
+| **Administrative** | User creation/modification, master data changes, role/permission changes | Long retention. Exact duration: **UNRESOLVED — UNRES-007** |
 
-> **IMPORTANT:** Exact retention durations (in days, months, or years) are NOT fabricated in this architecture document. Legal, regulatory, and fiscal requirements have not been evidenced for this project. Retention durations must be defined through a formal product/legal input before implementation. Architecture establishes the category structure and the requirement to define durations; it does not invent them.
-
-### 5.2 Retention Architecture Constraints
+### 5.3 Retention Architecture Constraints (Corrected — A3-CORRECTION-8)
 
 - Audit records are not deleted by application business logic under any operational scenario.
-- Retention enforcement (archival or purge) is a governed operational procedure, not an application feature.
-- If retention purge is eventually required by policy, it must operate on a physically separate audit archive, not on the live audit table, and must be explicitly authorized per governance rules.
+- Retention enforcement is a **governed operational procedure**, not an application feature.
+- When retention action is required by policy, permitted mechanisms include: archival, partitioning, anonymization where legally appropriate, or purge — but only under an approved retention procedure that satisfies applicable legal, financial, and security requirements.
+- The exact physical mechanism for retention enforcement (e.g., whether records are archived to a separate store, partitioned within the same database, anonymized in place, or purged) is deferred to the Operations/Data implementation phase and must be approved before execution.
+- Application business logic must not casually delete audit evidence.
+- Any retention operation must preserve applicable legal, financial, and security obligations for the relevant category (UNRES-007).
 - Backup/recovery procedures must include the audit store.
 
 ---
@@ -256,6 +266,9 @@ This document does not alter:
 - Module boundaries and aggregate candidates from EVD-ARCH-001.
 - `redis=false`, `mobile_licensing=false`, `saas=false`, `multi_tenant=false`.
 - UNRES-001 through UNRES-005 remain unresolved.
+
+New unresolved item introduced in A3:
+- **UNRES-007** — Exact audit retention periods require legal/regulatory/fiscal/product evidence before implementation (Section 5.1).
 
 ---
 
@@ -270,6 +283,9 @@ This document does not alter:
 | NFR-007 | Sync rejection and conflict audit events |
 | EVD-ARCH-SEC-001 section 4 | Catalog extends A2 security audit obligations |
 | UNRES-006 | AuditViewer capability enforced; access auditable via `authz.audit.access` |
+| UNRES-007 | Exact retention periods unresolved; category structure defined (Section 5.1) |
 | UC-013 | `dispatch.confirmed` mandatory audit within Dispatch transaction |
 | UC-014..UC-016 | Finance audit events within respective transactions |
 | BR-001..BR-004 | Inventory audit events within adjustment/allocation transactions |
+| A3-CORRECTION-7 | UNRES-007 introduced; retention durations not fabricated |
+| A3-CORRECTION-8 | Retention mechanism provider-neutral; not restricted to physical archive only |

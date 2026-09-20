@@ -1,4 +1,4 @@
-﻿# ADR-005: Audit Persistence Strategy
+# ADR-005: Audit Persistence Strategy
 
 **Status:** ACCEPTED
 **Artifact ID:** EVD-ARCH-ADR-005
@@ -56,9 +56,9 @@ Non-mandatory audit events (e.g., authentication events that do not participate 
 
 ### Constraints and Accepted Trade-offs
 - Audit table growth must be managed; INSERT-only tables require a retention/archival strategy (documented in EVD-ARCH-AUDIT-001).
-- Database-admin-level access bypasses application INSERT-only policy; this is a residual risk documented in the threat model.
-- Physical tamper-resistance (cryptographic chaining, write-once storage) is not introduced at this stage; may be required by future regulatory input.
-- High-volume audit event rates could create write contention; mitigated by batch-friendly audit writes and separate table group (potentially separate tablespace for performance isolation).
+- Database-admin-level access bypasses application INSERT-only policy; this is a residual risk documented in the threat model. Mitigation via database GRANT restrictions on audit tables is required; additional physical hardening mechanisms (e.g., write-once storage, cryptographic chaining) may be added if later required by regulatory input.
+- Physical tamper-resistance mechanisms beyond GRANT-level access control are not introduced at this stage; they are deferred to a future hardening phase pending regulatory evidence.
+- High-volume audit event rates could create write contention; this is a known trade-off of the co-located, INSERT-only model. Mitigation strategies (e.g., table partitioning, indexing strategy) are deferred to implementation.
 
 ---
 
@@ -79,3 +79,5 @@ Non-mandatory audit events (e.g., authentication events that do not participate 
 - EVD-ARCH-DATA-001 (A3): MySQL/InnoDB as authoritative persistence.
 - EVD-ARCH-TXN-001 (A3): Mandatory audit within business transaction.
 - EVD-ARCH-AUDIT-001 (A3): Full audit catalog and retention policy.
+
+**Corrections Applied:** A3-CORRECTION-13 (tablespace prescription removed; batching assumption removed; DBA-only hardening broadened to permit other physical hardening mechanisms).
