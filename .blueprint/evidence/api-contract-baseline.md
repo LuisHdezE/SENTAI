@@ -4,7 +4,7 @@
 **Artifact ID:** EVD-API-002
 **Type:** api_contract_baseline_evidence
 
-Este documento define el inventario inicial del contrato API derivado estrictamente de EVD-REQ-001 (Requirements & Domain) y EVD-ARCH-001 (Architecture Domain Model). NO define implementación.
+Este documento define el inventario inicial del contrato API derivado estrictamente del Product Truth y Architecture Truth aprobados, incluyendo: EVD-REQ-001, EVD-ARCH-001, EVD-UI-SCOPE-001, EVD-ARCH-SEC-001, EVD-ARCH-TXN-001, EVD-ARCH-AUDIT-001 y EVD-ARCH-API-001. NO define implementación.
 
 ## 1. Alcance General
 

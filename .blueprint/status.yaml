@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-20T15:15:00Z"
+updated_at: "2026-09-20T15:25:00Z"
 
 phases:
   discovery:
@@ -46,7 +46,7 @@ phases:
       A3 Data/Audit/Transactional/API Policies completado. PR #10 mergeado.
       Auditoria independiente post-merge PASS. Arquitectura aprobada humanamente.
       Estado UNRES: UNRES-001..005 unresolved, UNRES-006 resolved (A2), UNRES-007 unresolved (A3).
-      API Contract permanece NOT_STARTED.
+      API Contract Design iniciado posteriormente tras el cierre del architecture_ready gate.
   api_contract_design:
     status: IN_PROGRESS
     progress: 25
