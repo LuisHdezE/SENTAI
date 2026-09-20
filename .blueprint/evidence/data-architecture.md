@@ -197,5 +197,6 @@ This document does not alter:
 | EVD-ARCH-001 section 6 | Transaction boundary principles formalized in transactional-consistency.md |
 | EVD-ARCH-SEC-001 section 3 | Audit obligations and forbidden audit content |
 | UC-013 | Dispatch atomicity requirement |
-| UNRES-001..UNRES-006 | Preserved; no resolution attempted in A3 (UNRES-006 resolved in A2) |
+| UNRES-001..UNRES-005 | Preserved; no resolution attempted in A3 |
+| UNRES-006 | Preserved as RESOLVED in A2 |
 | UNRES-007 | Exact audit retention periods: unresolved pending legal/regulatory/fiscal/product evidence (see `audit-architecture.md`) |

@@ -51,6 +51,7 @@ phases:
       CORRECTION-10 (RFC 9745/8594), CORRECTION-11 (breaking/non-breaking precision),
       CORRECTION-12 (ADR-004 Laravel claim + DDL), CORRECTION-13 (ADR-005 audit wording),
       CORRECTION-14 (decision_records updated), CORRECTION-15 (status/gate), CORRECTION-16 (no new blueprint checks).
+      Estado UNRES: UNRES-001..005 unresolved, UNRES-006 resolved (A2), UNRES-007 unresolved (A3).
       architecture_ready permanece PENDING hasta aprobacion explicita de Luis.
       API Contract permanece NOT_STARTED.
   api_contract_design:

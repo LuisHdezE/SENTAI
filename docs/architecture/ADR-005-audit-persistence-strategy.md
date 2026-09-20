@@ -4,7 +4,7 @@
 **Artifact ID:** EVD-ARCH-ADR-005
 **Type:** architecture_decision_record
 **Date:** 2026-09-19
-**Authors:** Antigravity (execution), pending Dalila audit and Luis approval
+**Authors:** Prepared by Antigravity; governed through PR review and explicit merge approval.
 **Related Evidence:** EVD-ARCH-AUDIT-001, EVD-ARCH-TXN-001, EVD-ARCH-SEC-001
 
 ---

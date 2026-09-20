@@ -15,10 +15,11 @@
 
 Audit evidence must be durable, immutable after commit, and decoupled from application data lifecycle. Audit records are proof of what happened; they must survive independently of the business objects they describe.
 
-### 1.2 Storage
+### 1.2 Storage and Operational Immutability
 
 - Audit events are stored in MySQL/InnoDB in a dedicated audit table group (e.g., logically separated within the same database, or a dedicated schema partition).
-- Audit records are **INSERT-only** from the application layer. No `UPDATE` or `DELETE` is permitted via application code.
+- **Operational immutability:** Normal application/business code cannot `UPDATE` or `DELETE` committed audit events. Audit records are **INSERT-only** from the application layer.
+- **Governed retention exception:** A separately authorized retention/compliance procedure may archive, anonymize, transform, or purge audit records if required by an approved retention policy. Such actions are NOT normal application mutation, must themselves be governed and auditable, and must satisfy legal/security/financial obligations. This preserves NFR-003 without creating a contradiction.
 - Audit records are never cascaded-deleted due to deletion of related business entities.
 - Physical audit table(s) may be separated from operational tables for retention management and access control purposes.
 
@@ -262,13 +263,11 @@ This is a new unresolved item introduced in A3.
 
 This document does not alter:
 - EVD-ARCH-SEC-001 section 4 (audit obligations and forbidden content).
-- UNRES-006 resolution (AuditViewer role / `audit.global.read` capability).
 - Module boundaries and aggregate candidates from EVD-ARCH-001.
 - `redis=false`, `mobile_licensing=false`, `saas=false`, `multi_tenant=false`.
 - UNRES-001 through UNRES-005 remain unresolved.
-
-New unresolved item introduced in A3:
-- **UNRES-007** — Exact audit retention periods require legal/regulatory/fiscal/product evidence before implementation (Section 5.1).
+- UNRES-006 remains RESOLVED from A2 and is preserved unchanged.
+- UNRES-007 was introduced in A3 and remains unresolved.
 
 ---
 
@@ -285,7 +284,7 @@ New unresolved item introduced in A3:
 | UNRES-006 | AuditViewer capability enforced; access auditable via `authz.audit.access` |
 | UNRES-007 | Exact retention periods unresolved; category structure defined (Section 5.1) |
 | UC-013 | `dispatch.confirmed` mandatory audit within Dispatch transaction |
-| UC-014..UC-016 | Finance audit events within respective transactions |
+| UC-015..UC-016 | Finance audit events within respective transactions |
 | BR-001..BR-004 | Inventory audit events within adjustment/allocation transactions |
 | A3-CORRECTION-7 | UNRES-007 introduced; retention durations not fabricated |
 | A3-CORRECTION-8 | Retention mechanism provider-neutral; not restricted to physical archive only |

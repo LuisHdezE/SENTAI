@@ -89,12 +89,12 @@ The following classification applies as API contract compatibility principles. T
 | Renaming a field | **Breaking** | Requires new version |
 | Changing a field's type | **Breaking** | Requires new version |
 | Removing an endpoint | **Breaking** | Requires new version |
-| Changing required fields to optional | Generally **non-breaking** for request compatibility; may affect generated clients or schema-strict consumers. Evaluate against known consumers before deploying in-version. |
+| Changing required fields to optional | Generally **non-breaking** | May affect generated clients or schema-strict consumers. Evaluate against known consumers before deploying in-version. |
 | Adding a new optional field to request | **Non-breaking** | May be deployed in-version |
-| Adding a new optional field to response | Generally **non-breaking** for tolerant clients. Clients must be designed to ignore unknown response fields (additive evolution). Strict schema validators may require coordination. |
+| Adding a new optional field to response | Generally **non-breaking** | Clients must be designed to ignore unknown response fields (additive evolution). Strict schema validators may require coordination. |
 | Adding a new endpoint | **Non-breaking** | May be deployed in-version |
 | Changing HTTP status codes for the same semantic outcome | **Breaking** | Requires new version |
-| Changing error `type` URIs | **Breaking** if the URI is part of the published stable contract. Changes to unstable or internal URIs not yet contractually published require evaluation. |
+| Changing error `type` URIs | **Breaking** if part of stable contract | Changes to unstable or internal URIs not yet contractually published require evaluation. |
 | Relaxing validation constraints | **Non-breaking** | May be deployed in-version with care |
 | Tightening validation constraints | **Breaking** (for existing clients) | Requires coordination or new version |
 
@@ -138,6 +138,8 @@ This document does not alter:
 - Security model constraints from EVD-ARCH-SEC-001.
 - `redis=false`, `mobile_licensing=false`, `saas=false`, `multi_tenant=false`.
 - UNRES-001 through UNRES-005 remain unresolved.
+- UNRES-006 remains RESOLVED from A2 and is preserved unchanged.
+- UNRES-007 was introduced in A3 and remains unresolved.
 
 ---
 

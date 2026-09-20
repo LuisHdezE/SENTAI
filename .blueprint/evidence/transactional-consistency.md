@@ -90,7 +90,7 @@ dispatch_records (the target dispatch, FOR UPDATE) → inventory_items (PK ASC, 
 
 Any other operation that must lock both `dispatch_records` and `inventory_items` must acquire them in this same order: Dispatch first, then Inventory.
 
-**Apply Payment (UC-015/UC-016):**
+**Apply Payment (UC-016):**
 
 Lock `payments` first (to assert control over the payment being applied), then `financial_obligations` in ascending PK order.
 
@@ -202,10 +202,10 @@ This is the highest-criticality transactional boundary in SENTAI.
 | Field | Detail |
 |---|---|
 | **Use Case / Operation** | Confirm physical dispatch of packages (UC-013) |
-| **Atomic Effects** | (1) Validate Dispatch record current state (must be `Ready`/`Pending`, not already `Completed` or `Cancelled`); (2) Lock Dispatch record (`FOR UPDATE`); (3) Validate all included InventoryItem states; (4) Lock `inventory_items` rows in ascending PK order (`FOR UPDATE`); (5) Decrement `on_hand_qty` by dispatched quantity for each item; (6) **Release/consume the corresponding reserved quantities** consistent with dispatched amounts — see Dispatch Reserved Lifecycle note below; (7) Validate post-decrement invariants: `OnHand >= 0`, `Reserved <= OnHand`; (8) Transition Dispatch to `Completed`; (9) Create or update Financial Obligation where required (BR-005), locking existing obligations in PK ASC order if applicable; (10) Write mandatory audit event |
+| **Atomic Effects** | (1) Validate Dispatch record current state (must be in a valid pre-completion state, not already Completed or in a state that forbids confirmation); (2) Lock Dispatch record (`FOR UPDATE`); (3) Validate all included InventoryItem states; (4) Lock `inventory_items` rows in ascending PK order (`FOR UPDATE`); (5) Decrement `on_hand_qty` by dispatched quantity for each item; (6) **Release/consume the corresponding reserved quantities** consistent with dispatched amounts — see Dispatch Reserved Lifecycle note below; (7) Validate post-decrement invariants: `OnHand >= 0`, `Reserved <= OnHand`; (8) Transition Dispatch to `Completed`; (9) Create or update Financial Obligation where required (FR-013 / UC-013), locking existing obligations in PK ASC order if applicable; (10) Write mandatory audit event |
 | **Transaction Required** | **YES – mandatory**. No partial commit allowed. `Dispatch = Completed` must never be observable without all mandatory effects (inventory decrement, reservation release, finance effect, audit) committed in the same transaction. |
 | **Persistence Resources** | `dispatch_records`, `dispatch_lines`, `inventory_items`, `allocations`, `financial_obligations`, `audit_events` |
-| **Domain Invariants** | `OnHand` decremented exactly once per dispatch line; `Reserved <= OnHand` after decrement and reservation release; `Reserved >= 0`; Financial Obligation created/updated per BR-005; Dispatch state machine: `Completed` only reachable through this transaction |
+| **Domain Invariants** | `OnHand` decremented exactly once per dispatch line; `Reserved <= OnHand` after decrement and reservation release; `Reserved >= 0`; Financial Obligation created/updated per FR-013 / UC-013; Dispatch state machine: `Completed` only reachable through this transaction |
 | **Concurrency Risk** | Concurrent allocation or another dispatch consuming the same inventory; concurrent dispatch of the same record (idempotency) |
 | **Locking / Concurrency Strategy** | Canonical order (Section 2.4.2): (1) `SELECT ... FOR UPDATE` on `dispatch_records` first; (2) `SELECT ... FOR UPDATE` on `inventory_items` in ascending PK order; (3) lock `financial_obligations` in ascending PK order if an existing obligation is being updated. |
 | **Isolation Requirement** | REPEATABLE READ with explicit pessimistic row locks; all validation occurs after locks acquired; correctness does not depend on snapshot read alone |
@@ -236,7 +236,7 @@ No new product lifecycle state is introduced; this is a consistency requirement 
 
 | Field | Detail |
 |---|---|
-| **Use Case / Operation** | Register an incoming payment (UC-014, FR-014) |
+| **Use Case / Operation** | Register an incoming payment (UC-015, FR-014, BR-006) |
 | **Atomic Effects** | (1) Validate actor capability (`finance.payment.register`); (2) Create `payments` record with full amount and zero applied amount; (3) Write audit event |
 | **Transaction Required** | **YES** – payment creation and audit are coupled |
 | **Persistence Resources** | `payments`, `audit_events` |
@@ -255,7 +255,7 @@ No new product lifecycle state is introduced; this is a consistency requirement 
 
 | Field | Detail |
 |---|---|
-| **Use Case / Operation** | Apply a registered payment to one or more Financial Obligations (UC-015/UC-016, FR-015/FR-016) |
+| **Use Case / Operation** | Apply a registered payment to one or more Financial Obligations (UC-016, FR-015, BR-007) |
 | **Atomic Effects** | (1) Lock `payments` row (`FOR UPDATE`); (2) Validate available unapplied balance >= application amount; (3) Lock `financial_obligations` rows in ascending PK order (`FOR UPDATE`); (4) Validate each obligation is open and has outstanding balance; (5) Create `payment_applications` record(s); (6) Decrement payment's available balance; (7) Decrement each obligation's outstanding balance by the applied amount; (8) Close obligation if fully satisfied (BR-007); (9) Write audit event |
 | **Transaction Required** | **YES** – multiple rows; race conditions on available balance must be prevented |
 | **Persistence Resources** | `payments`, `financial_obligations`, `payment_applications`, `audit_events` |
@@ -371,7 +371,7 @@ The architecture requires:
 3. **Storage:** The server persists the idempotency record alongside the result of the committed operation, within the same atomic transaction.
 4. **Atomic detection:** On receiving a request, the idempotency record insertion (or equivalent unique constraint evaluation) is the atomic gate — not merely a pre-check read.
 5. **Response:** If a prior committed result exists (detected via the unique constraint or a locked read of the existing record), return it without re-executing the business operation.
-6. **Expiry:** Idempotency records are not permanent. Retention of idempotency records is a configuration/deployment decision, documented under audit/retention policy. They must persist long enough to cover realistic retry windows.
+6. **Expiry:** Idempotency records are not permanent. Idempotency record retention is an operational/API consistency policy; it must cover the maximum supported retry/replay window; exact duration is deferred to API Contract / Operations configuration; audit retention policy applies only to audit evidence. They must persist long enough to cover realistic retry windows.
 
 ### 5.4 Idempotency Outcomes
 
@@ -408,7 +408,9 @@ The architecture requires:
 This document does not alter:
 - Module boundaries, aggregate candidates, or critical invariants from EVD-ARCH-001.
 - Security model constraints from EVD-ARCH-SEC-001.
-- All `UNRES-001..UNRES-006` remain unresolved unless noted.
+- UNRES-001 through UNRES-005 remain unresolved.
+- UNRES-006 remains RESOLVED from A2 and is preserved unchanged.
+- UNRES-007 was introduced in A3 and remains unresolved.
 - `redis=false`, `mobile_licensing=false`, `saas=false`, `multi_tenant=false`.
 - No outbox, saga, or message broker introduced.
 
@@ -421,7 +423,7 @@ This document does not alter:
 | BR-001 | `Reserved <= OnHand` enforced via pessimistic lock in Allocation and Dispatch transactions |
 | BR-002 | OnHand decrement only on confirmed Dispatch; enforced by Dispatch atomicity (3.3) |
 | BR-003, BR-004 | Inventory eligibility validated inside locked transaction |
-| BR-005 | Financial Obligation creation within Dispatch transaction (3.3) |
+| BR-005 | Single obligation truth (Accounts Receivable internally vs Accounts Payable externally) |
 | BR-006 | Register Payment independence from Apply Payment (separate transactions 3.4, 3.5) |
 | BR-007 | Obligation closure condition validated inside Apply Payment transaction |
 | BR-008 | Idempotent retry semantics for sync operations |
@@ -430,7 +432,7 @@ This document does not alter:
 | NFR-007 | Conflict generation on stale sync; not silent commit |
 | NFR-012 | Correlation ID flows through all transaction boundaries |
 | UC-013 | Dispatch atomicity including reservation release (Section 3.3) |
-| UC-014..UC-016 | Payment transaction boundaries (3.4, 3.5); partial repeated application permitted |
+| UC-015..UC-016 | Payment transaction boundaries (3.4, 3.5); partial repeated application permitted (UC-014 is Consultar Cartera) |
 | EVD-ARCH-DATA-001 | MySQL/InnoDB as authoritative persistence |
 | Blueprint issue #40 | Concrete InnoDB transactional architecture delivered in A3 |
 | A3-CORRECTION-1 | Lock ordering reconciled; no conflicting global table order |

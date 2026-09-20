@@ -4,7 +4,7 @@
 **Artifact ID:** EVD-ARCH-ADR-004
 **Type:** architecture_decision_record
 **Date:** 2026-09-19
-**Authors:** Antigravity (execution), pending Dalila audit and Luis approval
+**Authors:** Prepared by Antigravity; governed through PR review and explicit merge approval.
 **Related Evidence:** EVD-ARCH-DATA-001, EVD-ARCH-TXN-001
 
 ---
@@ -59,7 +59,7 @@ A1 (EVD-ARCH-001) established that the server is the SSOT for all synchronized m
 
 ### Constraints and Accepted Trade-offs
 - Many MySQL DDL statements (e.g., `ALTER TABLE`, `DROP TABLE`, `CREATE TABLE`) cause **implicit commits**: any open transaction is committed before the DDL executes, and normal application `ROLLBACK` cannot undo the DDL change. Migration rollback must not assume ACID application transaction semantics for DDL. Risky migrations require forward recovery, explicit reverse migrations, or backup/restore strategies (documented in EVD-ARCH-TXN-001).
-- InnoDB row locking requires correct lock ordering to prevent deadlocks (documented in EVD-ARCH-TXN-001).
+- InnoDB row locking requires consistent deterministic lock ordering to reduce deadlock probability; bounded whole-transaction retry remains required because deadlocks can still occur (documented in EVD-ARCH-TXN-001).
 - Horizontal read scaling via replicas may be considered in a future operational phase but is not part of the current architecture scope.
 - Full-text search and time-series capabilities are limited; if required in future, specialized tools may be considered at that time.
 
@@ -72,7 +72,7 @@ A1 (EVD-ARCH-001) established that the server is the SSOT for all synchronized m
 | PostgreSQL | Not rejected on technical grounds; MySQL chosen for Laravel ecosystem alignment and existing infrastructure context |
 | MySQL with MyISAM | No ACID guarantees; incompatible with domain invariant requirements |
 | Separate MySQL instance per module | Premature distribution; cross-module atomic transactions would be impossible; Modular Monolith shares a single database |
-| NoSQL (MongoDB, etc.) | No transactional guarantees compatible with inventory/finance invariants |
+| NoSQL (MongoDB, etc.) | NoSQL/document databases were not selected because SENTAI's approved relational domain model, cross-module consistency needs, FK/constraint expectations, Laravel/MySQL infrastructure context, and multi-row transactional requirements are better served by the selected MySQL/InnoDB architecture. |
 | Redis as primary store | `redis=false`; Redis excluded from architecture |
 
 ---
