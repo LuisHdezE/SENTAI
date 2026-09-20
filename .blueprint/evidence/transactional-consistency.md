@@ -21,7 +21,7 @@ For SENTAI, MySQL/InnoDB transactional guarantees are the mechanism that enforce
 
 ### 2.1 Row-Level Locking
 
-InnoDB provides row-level locking. This allows high concurrency for operations touching different rows, but requires careful ordering to prevent deadlocks when multiple rows are involved.
+InnoDB provides row-level locking. This allows high concurrency for operations touching different rows, but requires consistent deterministic lock ordering to reduce deadlock probability when multiple rows are involved. Because deadlocks may still occur and InnoDB may abort one transaction, bounded whole-transaction retry remains mandatory for transient deadlock failures.
 
 ### 2.2 Isolation Level
 

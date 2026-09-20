@@ -110,7 +110,6 @@ All events listed below must produce a durable audit record. "Mandatory TX" = mu
 | Event Type | Actor Context | Mandatory TX | Key Fields |
 |---|---|---|---|
 | `dispatch.confirmed` | Dispatch planner (dispatch.confirm) | Yes | actor_id, dispatch_id, order_refs, items_dispatched_ref, qty_dispatched_ref, financial_obligation_created_ref, timestamp, correlation_id |
-| `dispatch.cancelled` | Dispatch planner | Yes | actor_id, dispatch_id, reason_ref, timestamp, correlation_id |
 
 ### 2.7 Finance Events
 
