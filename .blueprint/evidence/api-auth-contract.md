@@ -14,14 +14,14 @@ SENTAI define dos contratos de autenticación separados estructuralmente y semá
 Las superficies Web (Backoffice y Customer Portal) emplean sesiones administradas en el backend (backend-managed browser sessions).
 
 **Endpoints Contractuales:**
-- `POST /api/v1/auth/web/login`: Establece la sesión en el servidor. El identificador de sesión es regenerado. El response retornará contexto seguro del principal autenticado si es requerido para el bootstrap del cliente, o HTTP 204 si no lo es.
+- `POST /api/v1/auth/web/login`: Establece la sesión en el servidor. El identificador de sesión es regenerado. El response es `204 No Content`. Si en el futuro surge evidencia de necesidad de contexto de bootstrap, será diseñada en una operación propia.
 - `POST /api/v1/auth/web/logout`: Invalida la sesión backend y purga las cookies del cliente.
-- `GET /api/v1/auth/web/csrf`: Endpoint versionado propio cuya semántica contractual es proporcionar o preparar material CSRF. (Su implementación concreta queda diferida; no se prescribe Sanctum contractualmente).
+- `GET /api/v1/auth/web/csrf`: Endpoint versionado propio cuya semántica contractual es proporcionar o preparar material CSRF. Su implementación concreta queda diferida; no se prescribe Sanctum contractualmente.
 
 **Reglas Web (Browser):**
 - **Cookies:** Todo identificador de sesión se transporta exclusivamente en cookies `HttpOnly` y `Secure`.
 - **SameSite:** El valor exacto se define según la topología final Web/API y la política de despliegue como deployment/security configuration.
-- **CSRF:** Requerido para toda operación state-changing (POST, PUT, DELETE) web.
+- **CSRF:** Requerido para todas las operaciones browser state-changing.
 - **Expiración:** Idle expiration y absolute expiration administradas por el backend.
 - **Storage:** No se exponen credenciales, identificadores de sesión ni secretos en `localStorage` o código JS.
 - **Revocación:** La sesión Web es server-revocable.
@@ -31,8 +31,8 @@ La superficie Mobile emplea credenciales de acceso de corta duración complement
 
 **Endpoints Contractuales:**
 - `POST /api/v1/auth/mobile/login`: Retorna un payload JSON con credencial de acceso (short-lived access credential) y material de refresh.
-- `POST /api/v1/auth/mobile/refresh`: Recibe el material de refresh vigente, emite un nuevo par de credenciales (access + refresh). El material de refresh anterior queda inválido tras una rotación exitosa.
-- `POST /api/v1/auth/mobile/logout`: La sesión móvil server-revocable queda terminada y el material de refresh deja de ser válido. Las credenciales posteriores deben ser rechazadas según el mecanismo de revocación elegido en implementación.
+- `POST /api/v1/auth/mobile/refresh`: Requiere material de refresh válido. Emite un nuevo par de credenciales (access + refresh). El material de refresh anterior queda inválido tras una rotación exitosa.
+- `POST /api/v1/auth/mobile/logout`: Mobile session terminated; refresh material invalidated; subsequent credentials rejected according to revocation semantics.
 
 **Reglas Mobile:**
 - **Almacenamiento:** Secure platform storage local.
