@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-20T21:47:04Z"
+updated_at: "2026-09-20T22:57:15Z"
 
 phases:
   discovery:
@@ -53,8 +53,7 @@ phases:
     note: >-
       C2 ejecutado. EVD-API-003 (Auth Contract) y EVD-API-004 (Reconciliation) generados.
       api.auth_contract alcanza PASS.
-      api.endpoint_inventory permanece PENDING debido a blockers de funcionalidad
-      no definida en Master Data, Offline Tasks y Customer Portal.
+      api.endpoint_inventory permanece PENDING por necesidades contractuales upstream aún no resueltas, incluyendo customer.order.read/tracking, commercial.customer.maintain, distribución de trabajo offline y modalidad independiente de consulta de conflictos.
   api_implementation:
     status: NOT_STARTED
     progress: 0
