@@ -39,20 +39,13 @@ phases:
       Tres superficies canonicas con areas de intencion derivadas de EVD-REQ-001.
       Los seis unresolved needs permanecen registrados y no se resuelven en este cierre.
   architecture_security_data:
-    status: IN_PROGRESS
-    progress: 85
+    status: COMPLETE
+    progress: 100
     note: >-
       A1 Domain/ADRs completado. A2 Security/Auth/Threat Model completado.
-      A3 Data/Audit/Transactional/API Policies completado (READY_FOR_REVIEW).
-      Correcciones A3 aplicadas: CORRECTION-1 (lock ordering), CORRECTION-2 (dispatch reserved lifecycle),
-      CORRECTION-3 (idempotency concurrency-safe), CORRECTION-4 (payment application uniqueness removed),
-      CORRECTION-5 (MySQL RR precision), CORRECTION-6 (DDL accuracy), CORRECTION-7 (UNRES-007 introducido),
-      CORRECTION-8 (retention provider-neutral), CORRECTION-9 (external side effects by criticality),
-      CORRECTION-10 (RFC 9745/8594), CORRECTION-11 (breaking/non-breaking precision),
-      CORRECTION-12 (ADR-004 Laravel claim + DDL), CORRECTION-13 (ADR-005 audit wording),
-      CORRECTION-14 (decision_records updated), CORRECTION-15 (status/gate), CORRECTION-16 (no new blueprint checks).
+      A3 Data/Audit/Transactional/API Policies completado. PR #10 mergeado.
+      Auditoria independiente post-merge PASS. Arquitectura aprobada humanamente.
       Estado UNRES: UNRES-001..005 unresolved, UNRES-006 resolved (A2), UNRES-007 unresolved (A3).
-      architecture_ready permanece PENDING hasta aprobacion explicita de Luis.
       API Contract permanece NOT_STARTED.
   api_contract_design:
     status: NOT_STARTED
@@ -283,13 +276,12 @@ gates:
     evidence_ids:
       - EVD-UI-SCOPE-001
   architecture_ready:
-    status: PENDING
+    status: PASS
+    evaluated_at: "2026-09-20T03:49:49Z"
     note: >-
-      Decision aprobada: Clean Architecture + Modular Monolith.
-      A1, A2 y A3 completados (READY_FOR_REVIEW).
-      A3 correcciones aplicadas (16 correcciones de auditoria de Dalila).
-      Gate requiere aprobacion explicita de Luis.
-      No PASS hasta que esa aprobacion ocurra explicitamente.
+      A1, A2 y A3 fueron revisados y aprobados.
+      El gate de arquitectura queda formalmente cerrado.
+      No se altera ninguna decision arquitectonica existente.
   api_contract_ready:
     status: PENDING
   api_implemented:
