@@ -21,7 +21,7 @@ Este documento define la matriz formal que reconcilia las operaciones provisoria
 | BO-MASTERS | API_OPERATION_REQUIRED | API-MAST-001..003, API-MAST-005..007, API-MAST-012..020 | Maintenance CRUD for Product, Customer, Warehouse, Zone, Location. Consumes `admin.masters.maintain`. |
 | BO-MASTERS (Product Delete) | NO_SEPARATE_API_OPERATION_REQUIRED | RETIRED_FROM_DRAFT_C1 (API-MAST-004) | Delete unsupported by approved requirements. |
 | BO-MASTERS (Customer Delete) | NO_SEPARATE_API_OPERATION_REQUIRED | RETIRED_FROM_DRAFT_C1 (API-MAST-008) | Delete unsupported by approved requirements. |
-| BO-MASTERS (Admin Identity) | API_OPERATION_REQUIRED | API-ADM-001..006 | Derived from ACT-007 responsibility. Consumes `admin.identity.manage`, `admin.roles.manage`. |
+| ACT-007 / Admin Identity & Roles | API_OPERATION_REQUIRED | API-ADM-001..006 | Derived from ACT-007 responsibility + EVD-ARCH-SEC-001 capability model; no dedicated approved Interface Scope intent-area or explicit FR/UC currently exists. |
 | BO-INVENTORY | API_OPERATION_REQUIRED | API-INV-003 | Inventory list query. Consumes `inventory.read`. |
 | BO-MOVEMENTS | API_OPERATION_REQUIRED | API-INV-004, API-INV-005, API-INV-006, API-INV-007 | Adjust, Move, Block, Unblock. Consumes `inventory.adjust`, `inventory.location.block`. |
 | BO-ALLOCATION | API_OPERATION_REQUIRED | API-FUL-001 | Order allocation. Capability contractual is TBD / gap A2. |
@@ -49,7 +49,7 @@ Este documento define la matriz formal que reconcilia las operaciones provisoria
 | MOB-SYNC | API_OPERATION_REQUIRED | API-SYNC-001 | Envelope for offline operations. Reauthorization uses capability of each original operation. |
 | MOB-CONFLICTS | UNRESOLVED_CONTRACT_GAP | Gap | Interface intent exists (FR-021/UC-020). `/sync` communicates per-operation outcomes. Evidence doesn't prove separate persistent/query endpoint is required. Gap specifically on independent query mechanism. |
 | **A2 Canonical Capabilities** | | | |
-| `catalog.read` | API_OPERATION_REQUIRED | API-ORD-001 | Consumed by BO / CP Catalog queries. |
+| `catalog.read` | API_OPERATION_REQUIRED | API-ORD-001 | Consumed by CP-CATALOG via API-ORD-001. |
 | `customer.order.create` | API_OPERATION_REQUIRED | API-ORD-002 | Consumed by CP-ORDER-CREATE. |
 | `customer.order.read` | UNRESOLVED_CONTRACT_GAP | Gap | ACT-001 responsibility, A2 capability exists, UNRES-001. No FR/UC defines order read/tracking properly yet. |
 | `customer.finance.read` | API_OPERATION_REQUIRED | API-FIN-004, API-FIN-006 | Consumed by CP-AP and CP-STATEMENT. |
