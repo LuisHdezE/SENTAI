@@ -7,15 +7,15 @@ use Sentai\Modules\Identity\Domain\Entities\AdminUser;
 interface AdminIdentityRepository
 {
     /**
-     * @param array<string, mixed> $filters
+     * @param  array<string, mixed>  $filters
      * @return array{items: list<AdminUser>, page: int, per_page: int, total: int}
      */
     public function list(array $filters): array;
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     public function create(array $payload): AdminUser;
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     public function update(string $id, array $payload): AdminUser;
 
     public function disable(string $id): AdminUser;
