@@ -115,7 +115,7 @@ final readonly class MasterDataService
 
     private function canonicalize(mixed $value): mixed
     {
-        if (!is_array($value)) {
+        if (is_array($value) === false) {
             return $value;
         }
 
