@@ -33,6 +33,9 @@ jobs:
       - name: Validate Composer manifest and lock
         run: composer validate --no-check-publish
 
+      - name: Prepare ephemeral Laravel environment
+        run: cp .env.example .env
+
       - name: Install locked dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
 
