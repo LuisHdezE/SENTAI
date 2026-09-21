@@ -14,8 +14,7 @@ final readonly class WebLogoutController
     public function __construct(
         private CredentialVerifier $credentials,
         private AuthenticationAudit $audit,
-    ) {
-    }
+    ) {}
 
     public function __invoke(Request $request): Response
     {
@@ -23,7 +22,7 @@ final readonly class WebLogoutController
         $identity = $userId === null ? null : $this->credentials->byId((string) $userId);
 
         if ($identity === null) {
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         $sessionRef = hash('sha256', $request->session()->getId());

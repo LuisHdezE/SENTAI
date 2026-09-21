@@ -9,9 +9,7 @@ use Sentai\Modules\Identity\Application\DTO\SecurityAuditEvent;
 
 final readonly class AuthenticationAudit
 {
-    public function __construct(private SecurityAuditSink $sink)
-    {
-    }
+    public function __construct(private SecurityAuditSink $sink) {}
 
     public function loginSuccess(AuthenticatedIdentity $identity, string $operation, string $surface, string $correlationId): void
     {

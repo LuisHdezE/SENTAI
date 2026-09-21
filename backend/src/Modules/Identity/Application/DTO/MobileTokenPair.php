@@ -11,6 +11,5 @@ final readonly class MobileTokenPair
         public DateTimeImmutable $accessExpiresAt,
         public string $refreshToken,
         public DateTimeImmutable $refreshExpiresAt,
-    ) {
-    }
+    ) {}
 }

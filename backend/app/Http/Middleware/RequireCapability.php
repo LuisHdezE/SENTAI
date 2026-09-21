@@ -19,8 +19,7 @@ final readonly class RequireCapability
         private AuthorizationService $authorization,
         private AuthorizationAudit $audit,
         private CredentialVerifier $credentials,
-    ) {
-    }
+    ) {}
 
     public function handle(Request $request, Closure $next, string $capability): Response
     {
@@ -30,13 +29,13 @@ final readonly class RequireCapability
             $webId = Auth::guard('web')->id();
 
             if ($webId === null) {
-                throw new AuthenticationFailed();
+                throw new AuthenticationFailed;
             }
 
             $identity = $this->credentials->byId((string) $webId);
 
             if ($identity === null) {
-                throw new AuthenticationFailed();
+                throw new AuthenticationFailed;
             }
         }
 

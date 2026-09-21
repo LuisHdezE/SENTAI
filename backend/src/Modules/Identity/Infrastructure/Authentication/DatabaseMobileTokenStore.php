@@ -15,9 +15,7 @@ use Sentai\Modules\Identity\Domain\Authorization\RoleCodes;
 
 final readonly class DatabaseMobileTokenStore implements MobileTokenStore
 {
-    public function __construct(private CredentialVerifier $credentials)
-    {
-    }
+    public function __construct(private CredentialVerifier $credentials) {}
 
     public function issue(AuthenticatedIdentity $identity): MobileTokenPair
     {

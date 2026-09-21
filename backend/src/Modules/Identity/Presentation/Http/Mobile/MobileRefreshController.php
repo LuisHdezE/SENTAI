@@ -8,9 +8,7 @@ use Sentai\Modules\Identity\Application\Services\MobileAuthenticationService;
 
 final readonly class MobileRefreshController
 {
-    public function __construct(private MobileAuthenticationService $authentication)
-    {
-    }
+    public function __construct(private MobileAuthenticationService $authentication) {}
 
     public function __invoke(Request $request): JsonResponse
     {

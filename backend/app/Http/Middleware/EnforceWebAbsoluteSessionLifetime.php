@@ -13,9 +13,7 @@ final readonly class EnforceWebAbsoluteSessionLifetime
 {
     public const AUTHENTICATED_AT = 'sentai.authenticated_at';
 
-    public function __construct(private CredentialVerifier $credentials)
-    {
-    }
+    public function __construct(private CredentialVerifier $credentials) {}
 
     public function handle(Request $request, Closure $next): Response
     {
@@ -33,7 +31,7 @@ final readonly class EnforceWebAbsoluteSessionLifetime
             $request->session()->invalidate();
             $request->session()->regenerateToken();
 
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         return $next($request);

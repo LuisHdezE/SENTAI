@@ -8,6 +8,5 @@ final readonly class MobileAccessContext
         public AuthenticatedIdentity $identity,
         public string $sessionId,
         public string $tokenId,
-    ) {
-    }
+    ) {}
 }

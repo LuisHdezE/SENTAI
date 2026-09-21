@@ -10,16 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class MobileLogoutController
 {
-    public function __construct(private MobileAuthenticationService $authentication)
-    {
-    }
+    public function __construct(private MobileAuthenticationService $authentication) {}
 
     public function __invoke(Request $request): Response
     {
         $context = $request->attributes->get('sentai.mobile_access');
 
         if (! $context instanceof MobileAccessContext) {
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         $this->authentication->logout(

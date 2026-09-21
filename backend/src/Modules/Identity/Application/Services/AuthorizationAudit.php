@@ -9,9 +9,7 @@ use Sentai\Modules\Identity\Application\DTO\SecurityAuditEvent;
 
 final readonly class AuthorizationAudit
 {
-    public function __construct(private SecurityAuditSink $sink)
-    {
-    }
+    public function __construct(private SecurityAuditSink $sink) {}
 
     public function denied(
         AuthenticatedIdentity $identity,

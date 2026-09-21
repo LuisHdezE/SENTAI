@@ -7,8 +7,8 @@ use DateTimeImmutable;
 final readonly class SecurityAuditEvent
 {
     /**
-     * @param list<string> $actorRoleSnapshot
-     * @param array<string, scalar|null> $context
+     * @param  list<string>  $actorRoleSnapshot
+     * @param  array<string, scalar|null>  $context
      */
     public function __construct(
         public string $eventType,
@@ -22,6 +22,5 @@ final readonly class SecurityAuditEvent
         public ?string $aggregateType = null,
         public ?string $aggregateId = null,
         public array $context = [],
-    ) {
-    }
+    ) {}
 }

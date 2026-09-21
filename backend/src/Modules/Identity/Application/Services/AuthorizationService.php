@@ -7,9 +7,7 @@ use Sentai\Modules\Identity\Application\Exceptions\AuthorizationDenied;
 
 final readonly class AuthorizationService
 {
-    public function __construct(private CapabilityLookup $capabilities)
-    {
-    }
+    public function __construct(private CapabilityLookup $capabilities) {}
 
     public function assertCapability(string $userId, string $capability): void
     {

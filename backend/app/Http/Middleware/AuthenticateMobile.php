@@ -10,22 +10,20 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class AuthenticateMobile
 {
-    public function __construct(private MobileTokenStore $tokens)
-    {
-    }
+    public function __construct(private MobileTokenStore $tokens) {}
 
     public function handle(Request $request, Closure $next): Response
     {
         $token = $request->bearerToken();
 
         if ($token === null || $token === '') {
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         $context = $this->tokens->authenticateAccess($token);
 
         if ($context === null) {
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         $request->attributes->set('sentai.identity', $context->identity);

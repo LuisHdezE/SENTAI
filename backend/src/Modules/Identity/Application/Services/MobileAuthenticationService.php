@@ -16,8 +16,7 @@ final readonly class MobileAuthenticationService
         private CredentialVerifier $credentials,
         private MobileTokenStore $tokens,
         private AuthenticationAudit $audit,
-    ) {
-    }
+    ) {}
 
     public function login(string $email, string $password, string $correlationId): MobileTokenPair
     {
@@ -25,7 +24,7 @@ final readonly class MobileAuthenticationService
 
         if ($identity === null || ! $identity->hasRole(RoleCodes::WAREHOUSE_OPERATOR)) {
             $this->audit->loginFailure($email, 'mobileLogin', 'mobile', $correlationId);
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         $pair = $this->tokens->issue($identity);
@@ -47,7 +46,7 @@ final readonly class MobileAuthenticationService
         $pair = $this->tokens->rotate($refreshToken);
 
         if ($pair === null) {
-            throw new AuthenticationFailed();
+            throw new AuthenticationFailed;
         }
 
         return $pair;

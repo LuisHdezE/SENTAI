@@ -30,7 +30,7 @@ return Application::configure(basePath: dirname(__DIR__))
             fn (Request $request): bool => $request->is('api/*') || $request->expectsJson(),
         );
 
-        $exceptions->render(function (\Throwable $throwable, Request $request) {
+        $exceptions->render(function (Throwable $throwable, Request $request) {
             if (! $request->is('api/*')) {
                 return null;
             }
