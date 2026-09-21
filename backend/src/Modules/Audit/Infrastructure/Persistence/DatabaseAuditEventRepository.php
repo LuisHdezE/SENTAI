@@ -103,7 +103,10 @@ final class DatabaseAuditEventRepository implements AuditEventRepository
         return is_array($decoded) ? $decoded : [];
     }
 
-    /** @param array<string|int, mixed> $context @return array<string|int, mixed> */
+    /**
+     * @param array<string|int, mixed> $context
+     * @return array<string|int, mixed>
+     */
     private function sanitizeContext(array $context): array
     {
         $sanitized = [];
