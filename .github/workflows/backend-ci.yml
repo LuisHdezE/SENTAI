@@ -47,7 +47,7 @@ jobs:
       - name: Prepare native MySQL test database
         run: |
           sudo systemctl start mysql.service
-          sudo mysql <<'SQL'
+          mysql -uroot -proot <<'SQL'
           CREATE DATABASE IF NOT EXISTS sentai_test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
           CREATE USER IF NOT EXISTS 'sentai_ci'@'%' IDENTIFIED BY 'sentai_ci';
           GRANT ALL PRIVILEGES ON sentai_test.* TO 'sentai_ci'@'%';
