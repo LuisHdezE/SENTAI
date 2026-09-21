@@ -105,6 +105,7 @@ final class DatabaseAuditEventRepository implements AuditEventRepository
 
     /**
      * @param array<string|int, mixed> $context
+     *
      * @return array<string|int, mixed>
      */
     private function sanitizeContext(array $context): array
