@@ -6,8 +6,10 @@ use Tests\TestCase;
 
 final class ApplicationBootTest extends TestCase
 {
-    public function test_laravel_application_boots_and_health_endpoint_is_available(): void
+    public function test_laravel_application_boots_and_json_health_endpoint_is_available(): void
     {
-        $this->get('/up')->assertOk();
+        $this->getJson('/up')
+            ->assertOk()
+            ->assertExactJson(['status' => 'up']);
     }
 }
