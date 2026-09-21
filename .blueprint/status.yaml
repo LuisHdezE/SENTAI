@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-20T15:25:00Z"
+updated_at: "2026-09-20T22:57:15Z"
 
 phases:
   discovery:
@@ -51,8 +51,9 @@ phases:
     status: IN_PROGRESS
     progress: 25
     note: >-
-      Primer incremento del API Contract Baseline (EVD-API-002) generado,
-      cubriendo alcance y el inventario inicial de endpoints.
+      C2 ejecutado. EVD-API-003 (Auth Contract) y EVD-API-004 (Reconciliation) generados.
+      api.auth_contract alcanza PASS.
+      api.endpoint_inventory permanece PENDING por necesidades contractuales upstream aún no resueltas, incluyendo customer.order.read/tracking, commercial.customer.maintain, distribución de trabajo offline y modalidad independiente de consulta de conflictos.
   api_implementation:
     status: NOT_STARTED
     progress: 0
@@ -270,7 +271,10 @@ checks:
   api.endpoint_inventory:
     status: PENDING
   api.auth_contract:
-    status: PENDING
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-003
   api.permission_matrix:
     status: PENDING
   api.audit_event_mapping:
@@ -379,3 +383,9 @@ artifacts:
   - id: EVD-API-002
     type: api_contract_baseline_evidence
     value: .blueprint/evidence/api-contract-baseline.md
+  - id: EVD-API-003
+    type: api_auth_contract_evidence
+    value: .blueprint/evidence/api-auth-contract.md
+  - id: EVD-API-004
+    type: api_reconciliation_evidence
+    value: .blueprint/evidence/api-endpoint-inventory-reconciliation.md
