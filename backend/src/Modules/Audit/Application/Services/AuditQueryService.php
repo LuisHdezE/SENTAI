@@ -8,10 +8,11 @@ use Sentai\Modules\Audit\Domain\Entities\AuditEvent;
 
 final readonly class AuditQueryService
 {
-    public function __construct(private AuditEventRepository $repository) {}
+    public function __construct(private AuditEventRepository $repository)
+    {}
 
     /**
-     * @param array<string, mixed> $filters
+     * @param  array<string, mixed>  $filters
      * @return array{data: list<array<string, mixed>>, meta: array{page: int, per_page: int, total: int}}
      */
     public function list(array $filters, AuditAccessContext $context): array
