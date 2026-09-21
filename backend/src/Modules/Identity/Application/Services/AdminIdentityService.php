@@ -54,7 +54,10 @@ final readonly class AdminIdentityService
                     'createAdminUser',
                     $user->id,
                     $context,
-                    ['changed_fields' => $this->changedFields($payload)],
+                    [
+                        'created_user_id' => $user->id,
+                        'created_by' => $context->actorId,
+                    ],
                 );
 
                 return new IdempotentResponse(['data' => $user->toArray()], 201);
@@ -76,8 +79,21 @@ final readonly class AdminIdentityService
                     'updateAdminUser',
                     $user->id,
                     $context,
-                    ['changed_fields' => $this->changedFields($payload)],
+                    [
+                        'updated_user_id' => $user->id,
+                        'fields_changed' => $this->changedFields($payload),
+                        'updated_by' => $context->actorId,
+                    ],
                 );
+
+                if (array_key_exists('password', $payload)) {
+                    $this->recordRevocations(
+                        $user->id,
+                        'updateAdminUser',
+                        $context,
+                        $this->repository->revokeSessions($user->id),
+                    );
+                }
 
                 return new IdempotentResponse(['data' => $user->toArray()], 200);
             },
@@ -90,14 +106,23 @@ final readonly class AdminIdentityService
             'disableAdminUser',
             $context->idempotencyKey,
             $this->hashRequest(['id' => $id, 'reason' => $reason]),
-            function () use ($id, $reason, $context): IdempotentResponse {
+            function () use ($id, $context): IdempotentResponse {
                 $user = $this->repository->disable($id);
                 $this->record(
                     'admin.user.disabled',
                     'disableAdminUser',
                     $user->id,
                     $context,
-                    $reason === null ? [] : ['reason' => $reason],
+                    [
+                        'disabled_user_id' => $user->id,
+                        'disabled_by' => $context->actorId,
+                    ],
+                );
+                $this->recordRevocations(
+                    $user->id,
+                    'disableAdminUser',
+                    $context,
+                    $this->repository->revokeSessions($user->id),
                 );
 
                 return new IdempotentResponse(['data' => $user->toArray()], 200);
@@ -118,7 +143,18 @@ final readonly class AdminIdentityService
                     'assignUserRole',
                     $userId,
                     $context,
-                    ['role_id' => $roleId, 'role_code' => $assignment['role_code']],
+                    [
+                        'target_user_id' => $userId,
+                        'role_id' => $roleId,
+                        'role_code' => $assignment['role_code'],
+                        'assigned_by' => $context->actorId,
+                    ],
+                );
+                $this->recordRevocations(
+                    $userId,
+                    'assignUserRole',
+                    $context,
+                    $this->repository->revokeSessions($userId),
                 );
 
                 return new IdempotentResponse(['data' => $assignment], 200);
@@ -139,12 +175,62 @@ final readonly class AdminIdentityService
                     'revokeUserRole',
                     $userId,
                     $context,
-                    ['role_id' => $roleId, 'role_code' => $assignment['role_code']],
+                    [
+                        'target_user_id' => $userId,
+                        'role_id' => $roleId,
+                        'role_code' => $assignment['role_code'],
+                        'revoked_by' => $context->actorId,
+                    ],
+                );
+                $this->recordRevocations(
+                    $userId,
+                    'revokeUserRole',
+                    $context,
+                    $this->repository->revokeSessions($userId),
                 );
 
                 return new IdempotentResponse(['data' => $assignment + ['revoked' => true]], 200);
             },
         );
+    }
+
+    /**
+     * @param array{web_sessions: int, mobile_sessions: int, mobile_tokens: int} $revocations
+     */
+    private function recordRevocations(
+        string $targetUserId,
+        string $operation,
+        AdminMutationContext $context,
+        array $revocations,
+    ): void {
+        if ($revocations['web_sessions'] > 0 || $revocations['mobile_sessions'] > 0) {
+            $this->record(
+                'auth.session.revoked',
+                $operation,
+                $targetUserId,
+                $context,
+                [
+                    'revoked_session_ref' => 'all_active_sessions',
+                    'revoked_by' => $context->actorId,
+                    'web_session_count' => $revocations['web_sessions'],
+                    'mobile_session_count' => $revocations['mobile_sessions'],
+                ],
+            );
+        }
+
+        if ($revocations['mobile_tokens'] > 0) {
+            $this->record(
+                'auth.token.revoked',
+                $operation,
+                $targetUserId,
+                $context,
+                [
+                    'token_ref' => 'all_active_tokens',
+                    'revoked_by' => $context->actorId,
+                    'token_count' => $revocations['mobile_tokens'],
+                ],
+            );
+        }
     }
 
     /** @param array<string, scalar|null> $eventContext */

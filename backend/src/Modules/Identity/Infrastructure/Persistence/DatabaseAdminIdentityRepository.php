@@ -87,9 +87,7 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
             $user->email = $email;
         }
 
-        $credentialChanged = array_key_exists('password', $payload);
-
-        if ($credentialChanged) {
+        if (array_key_exists('password', $payload)) {
             $user->password = (string) $payload['password'];
         }
 
@@ -98,10 +96,6 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
         } catch (QueryException $exception) {
             $this->rethrowDuplicateEmail($exception);
             throw $exception;
-        }
-
-        if ($credentialChanged) {
-            $this->revokeSessions($id);
         }
 
         return $this->toEntity($user->fresh() ?? $user);
@@ -121,7 +115,6 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
 
         $user->is_active = false;
         $user->save();
-        $this->revokeSessions($id);
 
         return $this->toEntity($user);
     }
@@ -145,8 +138,6 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
             'role_id' => $roleId,
         ]);
 
-        $this->revokeSessions($userId);
-
         return [
             'user_id' => $userId,
             'role_id' => $roleId,
@@ -168,12 +159,46 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
             throw new DomainConflict('The role is not assigned to this user.');
         }
 
-        $this->revokeSessions($userId);
-
         return [
             'user_id' => $userId,
             'role_id' => $roleId,
             'role_code' => (string) $role->code,
+        ];
+    }
+
+    public function revokeSessions(string $userId): array
+    {
+        $webSessions = DB::table('sessions')->where('user_id', $userId)->delete();
+
+        $mobileSessionIds = DB::table('mobile_sessions')
+            ->where('user_id', $userId)
+            ->whereNull('revoked_at')
+            ->pluck('id')
+            ->map(static fn (mixed $id): string => (string) $id)
+            ->all();
+
+        if ($mobileSessionIds === []) {
+            return [
+                'web_sessions' => $webSessions,
+                'mobile_sessions' => 0,
+                'mobile_tokens' => 0,
+            ];
+        }
+
+        $now = now();
+        $mobileTokens = DB::table('mobile_access_tokens')
+            ->whereIn('mobile_session_id', $mobileSessionIds)
+            ->whereNull('revoked_at')
+            ->update(['revoked_at' => $now, 'updated_at' => $now]);
+        $mobileSessions = DB::table('mobile_sessions')
+            ->whereIn('id', $mobileSessionIds)
+            ->whereNull('revoked_at')
+            ->update(['revoked_at' => $now, 'updated_at' => $now]);
+
+        return [
+            'web_sessions' => $webSessions,
+            'mobile_sessions' => $mobileSessions,
+            'mobile_tokens' => $mobileTokens,
         ];
     }
 
@@ -234,32 +259,5 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
         }
 
         return $role;
-    }
-
-    private function revokeSessions(string $userId): void
-    {
-        DB::table('sessions')->where('user_id', $userId)->delete();
-
-        $mobileSessionIds = DB::table('mobile_sessions')
-            ->where('user_id', $userId)
-            ->pluck('id')
-            ->map(static fn (mixed $id): string => (string) $id)
-            ->all();
-
-        if ($mobileSessionIds === []) {
-            return;
-        }
-
-        $now = now();
-
-        DB::table('mobile_access_tokens')
-            ->whereIn('mobile_session_id', $mobileSessionIds)
-            ->whereNull('revoked_at')
-            ->update(['revoked_at' => $now, 'updated_at' => $now]);
-
-        DB::table('mobile_sessions')
-            ->whereIn('id', $mobileSessionIds)
-            ->whereNull('revoked_at')
-            ->update(['revoked_at' => $now, 'updated_at' => $now]);
     }
 }

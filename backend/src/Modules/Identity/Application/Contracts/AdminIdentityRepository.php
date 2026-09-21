@@ -25,4 +25,7 @@ interface AdminIdentityRepository
 
     /** @return array{user_id: string, role_id: string, role_code: string} */
     public function revokeRole(string $userId, string $roleId): array;
+
+    /** @return array{web_sessions: int, mobile_sessions: int, mobile_tokens: int} */
+    public function revokeSessions(string $userId): array;
 }

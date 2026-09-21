@@ -116,7 +116,7 @@ final class AdminAuditApiTest extends TestCase
         self::assertStringNotContainsString('ReplacementCredential!45', $auditJson);
     }
 
-    public function test_password_change_disable_and_role_changes_revoke_target_sessions(): void
+    public function test_password_change_disable_and_role_changes_revoke_target_sessions_with_durable_evidence(): void
     {
         $target = $this->createUserWithRole('session-target@example.test', RoleCodes::WAREHOUSE_OPERATOR);
         $targetId = (string) $target->getKey();
@@ -147,6 +147,31 @@ final class AdminAuditApiTest extends TestCase
 
         $this->assertSessionsRevoked($targetId);
         self::assertSame(1, DB::table('audit_events')->where('event_type', 'authz.role.revoked')->count());
+        self::assertSame(3, DB::table('audit_events')->where('event_type', 'auth.session.revoked')->count());
+        self::assertSame(3, DB::table('audit_events')->where('event_type', 'auth.token.revoked')->count());
+
+        $revocationAudit = DB::table('audit_events')
+            ->whereIn('event_type', ['auth.session.revoked', 'auth.token.revoked'])
+            ->pluck('context')
+            ->implode(' ');
+        self::assertStringNotContainsString('before-password-refresh', $revocationAudit);
+        self::assertStringNotContainsString('before-role-access', $revocationAudit);
+    }
+
+    public function test_disable_revokes_existing_target_sessions_and_records_revocation_events(): void
+    {
+        $target = $this->createUserWithRole('disable-target@example.test', RoleCodes::WAREHOUSE_OPERATOR);
+        $targetId = (string) $target->getKey();
+        $this->seedSessionsFor($targetId, 'before-disable');
+
+        $this->putJson('/api/v1/admin/users/'.$targetId.'/disable', ['reason' => 'access revoked'], ['Idempotency-Key' => 'disable-with-session-001'])
+            ->assertOk()
+            ->assertJsonPath('data.is_active', false);
+
+        $this->assertSessionsRevoked($targetId);
+        self::assertSame(1, DB::table('audit_events')->where('event_type', 'admin.user.disabled')->where('aggregate_id', $targetId)->count());
+        self::assertSame(1, DB::table('audit_events')->where('event_type', 'auth.session.revoked')->where('aggregate_id', $targetId)->count());
+        self::assertSame(1, DB::table('audit_events')->where('event_type', 'auth.token.revoked')->where('aggregate_id', $targetId)->count());
     }
 
     public function test_audit_global_read_is_exclusive_to_audit_viewer_and_access_is_itself_audited(): void
