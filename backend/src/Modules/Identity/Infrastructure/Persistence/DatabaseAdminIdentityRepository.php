@@ -218,7 +218,9 @@ final class DatabaseAdminIdentityRepository implements AdminIdentityRepository
 
     private function lockUser(string $userId): void
     {
-        if (! UserRecord::query()->whereKey($userId)->lockForUpdate()->exists()) {
+        $user = UserRecord::query()->whereKey($userId)->lockForUpdate()->first();
+
+        if (! $user instanceof UserRecord) {
             throw new ResourceNotFound('User not found.');
         }
     }
