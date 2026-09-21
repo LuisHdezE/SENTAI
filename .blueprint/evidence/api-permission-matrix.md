@@ -10,7 +10,7 @@
 * **Contract IDs RESOLVED:** 49
 * **Contract IDs GAP:** 1 (`API-FUL-001`)
 
-The following matrix contains 20 grouping rows that exhaustively map all 50 Contract IDs.
+The following matrix contains 21 grouping rows that exhaustively map all 50 Contract IDs.
 
 ## 2. Matrix
 
@@ -31,7 +31,7 @@ The following matrix contains 20 grouping rows that exhaustively map all 50 Cont
 | API-ORD-001 | CP | ACT-001 | authenticated Web session | `catalog.read` | N/A | global | server-side | N/A | conditional: `authz.denial.significant` | RESOLVED | Catalog |
 | API-ORD-002 | CP | ACT-001 | authenticated Web session | `customer.order.create` | OWN data only | own | server-side | N/A | conditional: `authz.denial.significant` | RESOLVED | CustomerID forced |
 | API-ORD-003 | BO | ACT-005 | authenticated Web session | `commercial.order.approve` | N/A | global | server-side | N/A | conditional: `authz.denial.significant` | RESOLVED | Approve |
-| API-FUL-001 | BO | ACT-003 / Sys | authenticated Web session | `TBD` | N/A | global | server-side | N/A | conditional: `authz.denial.significant` | GAP | PERMISSION GAP |
+| API-FUL-001 | BO / System | ACT-003 / System | BO: authenticated Web session; System: internal/system execution context TBD (UNRES-003) | `TBD` | N/A | global | server-side | N/A | conditional: `authz.denial.significant` | GAP | Permission and system-trigger authorization model unresolved; do not infer a new capability or service identity contract. |
 | API-FUL-002..003 | MOB | ACT-002 | access credential | `warehouse.picking` / `warehouse.packing` | N/A | global | server-side | required | conditional: `authz.denial.significant` | RESOLVED | Picking / Packing |
 | API-SHP-001..002 | BO | ACT-004 | authenticated Web session | `dispatch.plan` / `dispatch.confirm` | N/A | global | server-side | N/A | conditional: `authz.denial.significant` | RESOLVED | Shipping |
 | API-FIN-001..003, 005 | BO | ACT-006 | authenticated Web session | `finance.receivables.read` / `register` / `apply` | N/A | global | server-side | N/A | conditional: `authz.denial.significant` | RESOLVED | Finance BO |
