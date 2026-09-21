@@ -51,6 +51,7 @@ final class ModuleBoundaryTest extends TestCase
 
                 if (! in_array($targetModule, self::ALLOWED_DEPENDENCIES[$sourceModule], true)) {
                     $violations[] = "$relative: $sourceModule may not depend on $targetModule";
+
                     continue;
                 }
 
