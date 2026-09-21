@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-21T03:35:00Z"
+updated_at: "2026-09-21T04:46:00Z"
 
 phases:
   discovery:
@@ -37,7 +37,7 @@ phases:
       EVD-UI-SCOPE-001 creado y revisado. Revision de Dalila completada satisfactoriamente.
       Luis otorgo aprobacion humana explicita. Fase Interface Scope Baseline formalmente cerrada.
       Tres superficies canonicas con areas de intencion derivadas de EVD-REQ-001.
-      Los seis unresolved needs permanecen registrados y no se resuelven en este cierre.
+      Los unresolved needs no resueltos en esta fase se preservan para su disposition posterior.
   architecture_security_data:
     status: COMPLETE
     progress: 100
@@ -45,17 +45,22 @@ phases:
       A1 Domain/ADRs completado. A2 Security/Auth/Threat Model completado.
       A3 Data/Audit/Transactional/API Policies completado. PR #10 mergeado.
       Auditoria independiente post-merge PASS. Arquitectura aprobada humanamente.
-      Estado UNRES: UNRES-001..005 unresolved, UNRES-006 resolved (A2), UNRES-007 unresolved (A3).
-      API Contract Design iniciado posteriormente tras el cierre del architecture_ready gate.
+      ADR-006 agrega decisiones aditivas requeridas para cerrar el contrato API inicial:
+      fulfillment.allocate para ACT-003, feed de trabajo movil, seis eventos de auditoria
+      y transaction coupling explicito. No debilita ni reabre las decisiones A1-A3 previas.
+      UNRES-003 queda resuelto para v1 mediante Allocation manual de ACT-003; auto-trigger System queda deferred.
+      UNRES-001, UNRES-002 y UNRES-007 permanecen deferred con disposition explicita.
   api_contract_design:
-    status: IN_PROGRESS
-    progress: 25
+    status: COMPLETE
+    progress: 100
     note: >-
-      C3 ejecutado. EVD-API-005 (Permission Matrix) y EVD-API-006 (Audit Event Mapping) generados con mapeo exhaustivo.
-      api.permission_matrix permanece PENDING por gap en API-FUL-001.
-      api.audit_event_mapping permanece PENDING por los seis audit catalog gaps.
-      api.endpoint_inventory continúa PENDING por gaps C2.
-      api_contract_ready continúa PENDING.
+      Consolidated API Contract Closure completado en EVD-API-007 sobre C1-C3.
+      Inventario inicial v1: 51 Contract IDs activos. Permission coverage 51/51.
+      Audit mapping 51/51 sin catalog gaps. Idempotency Matrix y Contract Traceability completas.
+      MOB-OFFLINE-TASKS resuelto mediante API-MOB-001. customer.order.read,
+      commercial.customer.maintain y conflicto persistente independiente permanecen explicitamente deferred
+      y no autorizan inventar endpoints. api_contract_ready queda PASS en este estado propuesto.
+      API Implementation permanece NOT_STARTED hasta merge humano de este cierre.
   api_implementation:
     status: NOT_STARTED
     progress: 0
@@ -213,11 +218,13 @@ checks:
       - EVD-ARCH-ADR-003
       - EVD-ARCH-ADR-004
       - EVD-ARCH-ADR-005
+      - EVD-ARCH-ADR-006
   architecture.security_model:
     status: PASS
     verification: evidence
     evidence_ids:
       - EVD-ARCH-SEC-001
+      - EVD-ARCH-ADR-006
   api.auth_strategy:
     status: PASS
     verification: evidence
@@ -250,6 +257,7 @@ checks:
     verification: evidence
     evidence_ids:
       - EVD-ARCH-AUDIT-001
+      - EVD-ARCH-ADR-006
   audit.retention_policy:
     status: PASS
     verification: evidence
@@ -270,21 +278,43 @@ checks:
     verification: evidence
     evidence_ids:
       - EVD-API-002
+      - EVD-API-007
   api.endpoint_inventory:
-    status: PENDING
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-004
+      - EVD-API-007
   api.auth_contract:
     status: PASS
     verification: evidence
     evidence_ids:
       - EVD-API-003
   api.permission_matrix:
-    status: PENDING
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-005
+      - EVD-API-007
+      - EVD-ARCH-ADR-006
   api.audit_event_mapping:
-    status: PENDING
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-006
+      - EVD-API-007
+      - EVD-ARCH-ADR-006
   api.idempotency_matrix:
-    status: PENDING
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-007
+      - EVD-ARCH-TXN-001
   api.contract_traceability:
-    status: PENDING
+    status: PASS
+    verification: evidence
+    evidence_ids:
+      - EVD-API-007
 
 gates:
   requirements_ready:
@@ -306,10 +336,25 @@ gates:
     evaluated_at: "2026-09-20T03:49:49Z"
     note: >-
       A1, A2 y A3 fueron revisados y aprobados.
-      El gate de arquitectura queda formalmente cerrado.
-      No se altera ninguna decision arquitectonica existente.
+      ADR-006 es una extension aditiva de Architecture Truth para resolver gaps descubiertos
+      durante API Contract Design; preserva los invariants y decisiones existentes y no reabre el gate.
+    evidence_ids:
+      - EVD-ARCH-ADR-006
   api_contract_ready:
-    status: PENDING
+    status: PASS
+    evaluated_at: "2026-09-21T04:46:00Z"
+    note: >-
+      Consolidated API Contract Closure: 51 operaciones activas con endpoint inventory,
+      auth, permission, audit, idempotency, payload intent y traceability explicitamente cerrados.
+      Los gaps sin Product Truth suficiente estan deferred y no autorizan implementacion especulativa.
+    evidence_ids:
+      - EVD-API-002
+      - EVD-API-003
+      - EVD-API-004
+      - EVD-API-005
+      - EVD-API-006
+      - EVD-API-007
+      - EVD-ARCH-ADR-006
   api_implemented:
     status: PENDING
   openapi_valid:
@@ -382,6 +427,9 @@ artifacts:
   - id: EVD-ARCH-ADR-005
     type: architecture_decision_record
     value: docs/architecture/ADR-005-audit-persistence-strategy.md
+  - id: EVD-ARCH-ADR-006
+    type: architecture_decision_record
+    value: docs/architecture/ADR-006-api-contract-closure-decisions.md
   - id: EVD-API-002
     type: api_contract_baseline_evidence
     value: .blueprint/evidence/api-contract-baseline.md
@@ -397,3 +445,6 @@ artifacts:
   - id: EVD-API-006
     type: api_audit_event_mapping_evidence
     value: .blueprint/evidence/api-audit-event-mapping.md
+  - id: EVD-API-007
+    type: api_contract_closure_evidence
+    value: .blueprint/evidence/api-contract-closure.md
