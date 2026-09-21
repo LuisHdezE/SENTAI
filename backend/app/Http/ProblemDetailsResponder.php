@@ -11,6 +11,9 @@ use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
 use Sentai\Modules\Identity\Application\Exceptions\AuthenticationFailed;
 use Sentai\Modules\Identity\Application\Exceptions\AuthorizationDenied;
+use Sentai\Shared\Application\Exceptions\DomainConflict;
+use Sentai\Shared\Application\Exceptions\IdempotencyConflict;
+use Sentai\Shared\Application\Exceptions\ResourceNotFound;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
@@ -32,7 +35,15 @@ final class ProblemDetailsResponder
             return self::response($request, 'authorization', 403, 'Authorization denied', 'The authenticated request is not authorized for this operation.');
         }
 
-        if ($throwable instanceof ModelNotFoundException || $throwable instanceof NotFoundHttpException) {
+        if ($throwable instanceof IdempotencyConflict) {
+            return self::response($request, 'idempotency_conflict', 409, 'Idempotency conflict', $throwable->getMessage());
+        }
+
+        if ($throwable instanceof DomainConflict) {
+            return self::response($request, 'domain_conflict', 409, 'Domain conflict', $throwable->getMessage());
+        }
+
+        if ($throwable instanceof ResourceNotFound || $throwable instanceof ModelNotFoundException || $throwable instanceof NotFoundHttpException) {
             return self::response($request, 'resource_not_found', 404, 'Resource not found', 'The requested resource was not found.');
         }
 
