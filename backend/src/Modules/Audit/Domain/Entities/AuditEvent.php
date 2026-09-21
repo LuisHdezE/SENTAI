@@ -5,8 +5,8 @@ namespace Sentai\Modules\Audit\Domain\Entities;
 final readonly class AuditEvent
 {
     /**
-     * @param list<string> $actorRoleSnapshot
-     * @param array<string, mixed> $context
+     * @param  list<string>  $actorRoleSnapshot
+     * @param  array<string, mixed>  $context
      */
     public function __construct(
         public string $id,
