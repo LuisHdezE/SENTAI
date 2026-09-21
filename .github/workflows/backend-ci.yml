@@ -1,0 +1,51 @@
+name: Backend CI
+
+on:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-ci.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - name: Validate Composer manifest
+        run: composer validate --no-check-publish
+
+      - name: Install dependencies
+        run: |
+          if [ -f composer.lock ]; then
+            composer install --no-interaction --prefer-dist --no-progress
+          else
+            composer update --no-interaction --prefer-dist --no-progress
+          fi
+
+      - name: Run backend tests
+        run: composer test
+
+      - name: Run architecture fitness tests
+        run: composer test:architecture
+
+      - name: Check formatting
+        run: composer lint
