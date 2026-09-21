@@ -1,0 +1,11 @@
+/.phpunit.cache
+/.phpunit.result.cache
+/.env
+/.env.backup
+/.env.production
+/vendor
+/auth.json
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
