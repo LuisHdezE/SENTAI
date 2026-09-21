@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Middleware\EnforceWebAbsoluteSessionLifetime;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
@@ -28,6 +29,9 @@ final class MasterDataApiTest extends TestCase
         $this->administrator = $this->createUserWithRole('master-admin@example.test', RoleCodes::ADMINISTRATOR);
         $this->withoutMiddleware(PreventRequestForgery::class);
         $this->actingAs($this->administrator, 'web');
+        $this->withSession([
+            EnforceWebAbsoluteSessionLifetime::AUTHENTICATED_AT => time(),
+        ]);
     }
 
     public function test_all_fifteen_master_data_contract_routes_are_registered(): void
