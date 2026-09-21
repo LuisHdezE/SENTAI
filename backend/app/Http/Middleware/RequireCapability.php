@@ -54,6 +54,13 @@ final readonly class RequireCapability
             throw $exception;
         }
 
+        $request->attributes->set('sentai.actor_id', $identity->id);
+        $request->attributes->set('sentai.actor_roles', $identity->roleCodes);
+        $request->attributes->set(
+            'sentai.source_surface',
+            $request->attributes->has('sentai.mobile_access') ? 'mobile' : $identity->webSurface(),
+        );
+
         return $next($request);
     }
 }

@@ -5,6 +5,9 @@ namespace App\Providers;
 use App\Infrastructure\Audit\DatabaseMasterDataAuditSink;
 use App\Infrastructure\Audit\DatabaseSecurityAuditSink;
 use Illuminate\Support\ServiceProvider;
+use Sentai\Modules\Audit\Application\Contracts\AuditEventRepository;
+use Sentai\Modules\Audit\Infrastructure\Persistence\DatabaseAuditEventRepository;
+use Sentai\Modules\Identity\Application\Contracts\AdminIdentityRepository;
 use Sentai\Modules\Identity\Application\Contracts\CapabilityLookup;
 use Sentai\Modules\Identity\Application\Contracts\CredentialVerifier;
 use Sentai\Modules\Identity\Application\Contracts\MobileTokenStore;
@@ -12,6 +15,7 @@ use Sentai\Modules\Identity\Application\Contracts\SecurityAuditSink;
 use Sentai\Modules\Identity\Infrastructure\Authentication\DatabaseMobileTokenStore;
 use Sentai\Modules\Identity\Infrastructure\Authentication\EloquentCredentialVerifier;
 use Sentai\Modules\Identity\Infrastructure\Authorization\EloquentCapabilityLookup;
+use Sentai\Modules\Identity\Infrastructure\Persistence\DatabaseAdminIdentityRepository;
 use Sentai\Modules\MasterData\Application\Contracts\MasterDataAuditSink;
 use Sentai\Modules\MasterData\Application\Contracts\MasterDataRepository;
 use Sentai\Modules\MasterData\Infrastructure\Persistence\DatabaseMasterDataRepository;
@@ -27,6 +31,8 @@ final class AppServiceProvider extends ServiceProvider
         $this->app->singleton(MobileTokenStore::class, DatabaseMobileTokenStore::class);
         $this->app->singleton(SecurityAuditSink::class, DatabaseSecurityAuditSink::class);
         $this->app->singleton(IdempotencyGate::class, DatabaseIdempotencyGate::class);
+        $this->app->singleton(AdminIdentityRepository::class, DatabaseAdminIdentityRepository::class);
+        $this->app->singleton(AuditEventRepository::class, DatabaseAuditEventRepository::class);
         $this->app->singleton(MasterDataRepository::class, DatabaseMasterDataRepository::class);
         $this->app->singleton(MasterDataAuditSink::class, DatabaseMasterDataAuditSink::class);
     }
