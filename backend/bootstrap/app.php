@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Middleware\AuthenticateMobile;
+use App\Http\Middleware\CorrelationIdMiddleware;
+use App\Http\Middleware\EnforceWebAbsoluteSessionLifetime;
+use App\Http\Middleware\RequireCapability;
+use App\Http\ProblemDetailsResponder;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,11 +18,24 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Cross-cutting middleware is introduced only when its approved contract is implemented.
+        $middleware->prepend(CorrelationIdMiddleware::class);
+        $middleware->web(append: [EnforceWebAbsoluteSessionLifetime::class]);
+        $middleware->alias([
+            'mobile.auth' => AuthenticateMobile::class,
+            'capability' => RequireCapability::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request): bool => $request->is('api/*') || $request->expectsJson(),
         );
+
+        $exceptions->render(function (\Throwable $throwable, Request $request) {
+            if (! $request->is('api/*')) {
+                return null;
+            }
+
+            return ProblemDetailsResponder::fromThrowable($throwable, $request);
+        });
     })
     ->create();
