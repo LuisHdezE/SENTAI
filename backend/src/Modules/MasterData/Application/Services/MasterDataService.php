@@ -30,7 +30,7 @@ final readonly class MasterDataService
     }
 
     /**
-     * @param array<string, mixed> $filters
+     * @param  array<string, mixed>  $filters
      * @return array{data: list<array<string, mixed>>, meta: array{page: int, per_page: int, total: int}}
      */
     public function list(MasterType $type, array $filters): array
@@ -50,7 +50,7 @@ final readonly class MasterDataService
         ];
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     public function create(
         MasterType $type,
         string $operationId,
@@ -82,7 +82,7 @@ final readonly class MasterDataService
         );
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     public function update(
         MasterType $type,
         string $operationId,
@@ -116,7 +116,7 @@ final readonly class MasterDataService
         );
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     private function hashRequest(array $payload): string
     {
         return hash('sha256', json_encode($this->canonicalize($payload), JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES));
