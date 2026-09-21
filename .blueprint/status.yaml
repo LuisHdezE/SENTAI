@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-21T04:46:00Z"
+updated_at: "2026-09-21T15:43:30Z"
 
 phases:
   discovery:
@@ -62,8 +62,15 @@ phases:
       y no autorizan inventar endpoints. api_contract_ready queda PASS en este estado propuesto.
       API Implementation permanece NOT_STARTED hasta merge humano de este cierre.
   api_implementation:
-    status: NOT_STARTED
-    progress: 0
+    status: IN_PROGRESS
+    progress: 5
+    note: >-
+      I1 Foundation & Architecture Guard completado y READY_FOR_REVIEW en EVD-API-IMPL-001.
+      Backend Laravel 13 reproducible establecido en backend/ con composer.lock, MySQL/InnoDB,
+      los ocho modulos canonicos y fitness tests ejecutables para dependency direction y module boundaries.
+      CI exacta del backend PASS: 35 tests / 36 assertions / 0 warnings; architecture guard 34/34 PASS; Pint PASS.
+      I1 no implementa endpoints de negocio. Las 51 operaciones contractuales, AuthN/AuthZ, auditoria durable
+      y el resto de evidencia de implementacion permanecen pendientes; api_implemented continua PENDING.
   openapi_validation:
     status: NOT_STARTED
     progress: 0
@@ -315,6 +322,22 @@ checks:
     verification: evidence
     evidence_ids:
       - EVD-API-007
+  api.endpoints_implemented:
+    status: PENDING
+  api.auth_authorization:
+    status: PENDING
+  api.audit_logging:
+    status: PENDING
+  api.backend_tests:
+    status: PENDING
+    note: >-
+      I1 foundation suite is green, but this project-level check remains PENDING until
+      backend tests cover the contracted API implementation rather than only the foundation.
+  api.architecture_implementation_conformance:
+    status: PENDING
+    note: >-
+      Executable fitness tests are established and green in I1; final PASS requires proof
+      over the implemented API, not only the empty module foundation.
 
 gates:
   requirements_ready:
@@ -357,6 +380,9 @@ gates:
       - EVD-ARCH-ADR-006
   api_implemented:
     status: PENDING
+    note: >-
+      I1 Foundation & Architecture Guard is ready for review, but no contracted business endpoint
+      is implemented yet; this gate remains PENDING by design.
   openapi_valid:
     status: PENDING
   postman_ready:
@@ -448,3 +474,6 @@ artifacts:
   - id: EVD-API-007
     type: api_contract_closure_evidence
     value: .blueprint/evidence/api-contract-closure.md
+  - id: EVD-API-IMPL-001
+    type: api_implementation_evidence
+    value: .blueprint/evidence/api-implementation-i1-foundation.md
