@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-20T22:57:15Z"
+updated_at: "2026-09-21T03:35:00Z"
 
 phases:
   discovery:
@@ -51,9 +51,11 @@ phases:
     status: IN_PROGRESS
     progress: 25
     note: >-
-      C2 ejecutado. EVD-API-003 (Auth Contract) y EVD-API-004 (Reconciliation) generados.
-      api.auth_contract alcanza PASS.
-      api.endpoint_inventory permanece PENDING por necesidades contractuales upstream aún no resueltas, incluyendo customer.order.read/tracking, commercial.customer.maintain, distribución de trabajo offline y modalidad independiente de consulta de conflictos.
+      C3 ejecutado. EVD-API-005 (Permission Matrix) y EVD-API-006 (Audit Event Mapping) generados con mapeo exhaustivo.
+      api.permission_matrix permanece PENDING por gap en API-FUL-001.
+      api.audit_event_mapping permanece PENDING por los seis audit catalog gaps.
+      api.endpoint_inventory continúa PENDING por gaps C2.
+      api_contract_ready continúa PENDING.
   api_implementation:
     status: NOT_STARTED
     progress: 0
@@ -389,3 +391,9 @@ artifacts:
   - id: EVD-API-004
     type: api_reconciliation_evidence
     value: .blueprint/evidence/api-endpoint-inventory-reconciliation.md
+  - id: EVD-API-005
+    type: api_permission_matrix_evidence
+    value: .blueprint/evidence/api-permission-matrix.md
+  - id: EVD-API-006
+    type: api_audit_event_mapping_evidence
+    value: .blueprint/evidence/api-audit-event-mapping.md
