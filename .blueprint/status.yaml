@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-21T15:43:30Z"
+updated_at: "2026-09-21T17:58:00Z"
 
 phases:
   discovery:
@@ -63,14 +63,16 @@ phases:
       API Implementation permanece NOT_STARTED hasta merge humano de este cierre.
   api_implementation:
     status: IN_PROGRESS
-    progress: 5
+    progress: 15
     note: >-
-      I1 Foundation & Architecture Guard completado y READY_FOR_REVIEW en EVD-API-IMPL-001.
-      Backend Laravel 13 reproducible establecido en backend/ con composer.lock, MySQL/InnoDB,
-      los ocho modulos canonicos y fitness tests ejecutables para dependency direction y module boundaries.
-      CI exacta del backend PASS: 35 tests / 36 assertions / 0 warnings; architecture guard 34/34 PASS; Pint PASS.
-      I1 no implementa endpoints de negocio. Las 51 operaciones contractuales, AuthN/AuthZ, auditoria durable
-      y el resto de evidencia de implementacion permanecen pendientes; api_implemented continua PENDING.
+      I1 Foundation & Architecture Guard completado en EVD-API-IMPL-001.
+      I2 Identity & Cross-Cutting Foundation completado y READY_FOR_REVIEW en EVD-API-IMPL-002.
+      Se implementaron las seis operaciones Auth contractuales API-AUTH-001..006, sesiones Web backend,
+      credenciales Mobile opacas con refresh rotation/revocation, las 23 capabilities canonicas,
+      authorization middleware sin Administrator bypass, RFC 9457 y correlation ID.
+      MySQL/InnoDB ejecuta las pruebas reales de Identity/Audit. CI exact-head PASS: 47 tests / 149 assertions;
+      architecture guard 34/34 PASS; Pint PASS. Restan 45 operaciones contractuales de negocio;
+      api_implemented continua PENDING.
   openapi_validation:
     status: NOT_STARTED
     progress: 0
@@ -324,20 +326,38 @@ checks:
       - EVD-API-007
   api.endpoints_implemented:
     status: PENDING
+    note: >-
+      I2 implements API-AUTH-001..006. The remaining 45 contracted operations are pending.
   api.auth_authorization:
     status: PENDING
+    note: >-
+      I2 implements and tests the canonical Web/Mobile AuthN model and capability authorization foundation.
+      Project-level PASS is deferred until authorization is evidenced across all contracted operations.
+    evidence_ids:
+      - EVD-API-IMPL-002
   api.audit_logging:
     status: PENDING
+    note: >-
+      I2 persists the authentication and significant authorization-denial audit events for this slice.
+      Project-level PASS requires durable audit coverage across the remaining business operations.
+    evidence_ids:
+      - EVD-API-IMPL-002
   api.backend_tests:
     status: PENDING
     note: >-
-      I1 foundation suite is green, but this project-level check remains PENDING until
-      backend tests cover the contracted API implementation rather than only the foundation.
+      I2 exact-head suite is green on native MySQL: 47 tests / 149 assertions plus architecture 34/34.
+      Project-level PASS remains pending until tests cover the complete contracted API implementation.
+    evidence_ids:
+      - EVD-API-IMPL-001
+      - EVD-API-IMPL-002
   api.architecture_implementation_conformance:
     status: PENDING
     note: >-
-      Executable fitness tests are established and green in I1; final PASS requires proof
-      over the implemented API, not only the empty module foundation.
+      Architecture fitness remains green after the first real Identity implementation slice.
+      Final PASS requires proof over the complete implemented API.
+    evidence_ids:
+      - EVD-API-IMPL-001
+      - EVD-API-IMPL-002
 
 gates:
   requirements_ready:
@@ -381,8 +401,11 @@ gates:
   api_implemented:
     status: PENDING
     note: >-
-      I1 Foundation & Architecture Guard is ready for review, but no contracted business endpoint
-      is implemented yet; this gate remains PENDING by design.
+      I1 foundation and I2 Identity/Cross-Cutting are ready for review. Six of 51 contracted operations
+      are implemented; the remaining business API is still pending, so this gate remains PENDING.
+    evidence_ids:
+      - EVD-API-IMPL-001
+      - EVD-API-IMPL-002
   openapi_valid:
     status: PENDING
   postman_ready:
@@ -477,3 +500,6 @@ artifacts:
   - id: EVD-API-IMPL-001
     type: api_implementation_evidence
     value: .blueprint/evidence/api-implementation-i1-foundation.md
+  - id: EVD-API-IMPL-002
+    type: api_implementation_evidence
+    value: .blueprint/evidence/api-implementation-i2-identity-cross-cutting.md
