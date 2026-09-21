@@ -17,7 +17,8 @@ final readonly class MasterDataService
         private MasterDataRepository $repository,
         private MasterDataAuditSink $audit,
         private IdempotencyGate $idempotency,
-    ) {}
+    ) {
+    }
 
     /**
      * @param array<string, mixed> $filters
