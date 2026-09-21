@@ -13,11 +13,21 @@ use Sentai\Shared\Application\DTO\IdempotentResponse;
 
 final readonly class MasterDataService
 {
+    private MasterDataRepository $repository;
+
+    private MasterDataAuditSink $audit;
+
+    private IdempotencyGate $idempotency;
+
     public function __construct(
-        private MasterDataRepository $repository,
-        private MasterDataAuditSink $audit,
-        private IdempotencyGate $idempotency,
-    ) {}
+        MasterDataRepository $repository,
+        MasterDataAuditSink $audit,
+        IdempotencyGate $idempotency,
+    ) {
+        $this->repository = $repository;
+        $this->audit = $audit;
+        $this->idempotency = $idempotency;
+    }
 
     /**
      * @param array<string, mixed> $filters
