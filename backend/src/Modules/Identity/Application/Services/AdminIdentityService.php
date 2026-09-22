@@ -20,7 +20,7 @@ final readonly class AdminIdentityService
     ) {}
 
     /**
-     * @param array<string, mixed> $filters
+     * @param  array<string, mixed>  $filters
      * @return array{data: list<array<string, mixed>>, meta: array{page: int, per_page: int, total: int}}
      */
     public function list(array $filters): array
@@ -40,7 +40,7 @@ final readonly class AdminIdentityService
         ];
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     public function create(array $payload, AdminMutationContext $context): IdempotentResponse
     {
         return $this->idempotency->execute(
@@ -65,7 +65,7 @@ final readonly class AdminIdentityService
         );
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     public function update(string $id, array $payload, AdminMutationContext $context): IdempotentResponse
     {
         return $this->idempotency->execute(
@@ -195,7 +195,7 @@ final readonly class AdminIdentityService
     }
 
     /**
-     * @param array{web_sessions: int, mobile_sessions: int, mobile_tokens: int} $revocations
+     * @param  array{web_sessions: int, mobile_sessions: int, mobile_tokens: int}  $revocations
      */
     private function recordRevocations(
         string $targetUserId,
@@ -233,7 +233,7 @@ final readonly class AdminIdentityService
         }
     }
 
-    /** @param array<string, scalar|null> $eventContext */
+    /** @param  array<string, scalar|null>  $eventContext */
     private function record(
         string $eventType,
         string $operation,
@@ -256,7 +256,7 @@ final readonly class AdminIdentityService
         ));
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     private function changedFields(array $payload): string
     {
         $fields = array_map(
@@ -269,7 +269,7 @@ final readonly class AdminIdentityService
         return implode(',', $fields);
     }
 
-    /** @param array<string, mixed> $payload */
+    /** @param  array<string, mixed>  $payload */
     private function hashRequest(array $payload): string
     {
         return hash('sha256', json_encode($this->canonicalize($payload), JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES));
