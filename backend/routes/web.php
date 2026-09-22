@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Sentai\Modules\Audit\Presentation\Http\AuditEventController;
 use Sentai\Modules\Identity\Domain\Authorization\Capabilities;
+use Sentai\Modules\Identity\Presentation\Http\Web\AdminIdentityController;
 use Sentai\Modules\Identity\Presentation\Http\Web\WebCsrfController;
 use Sentai\Modules\Identity\Presentation\Http\Web\WebLoginController;
 use Sentai\Modules\Identity\Presentation\Http\Web\WebLogoutController;
@@ -38,5 +40,26 @@ Route::prefix('api/v1')
         Route::post('/locations', [MasterDataController::class, 'createLocation'])->name('api.v1.createLocation');
         Route::put('/locations/{id}', [MasterDataController::class, 'updateLocation'])->name('api.v1.updateLocation');
     });
+
+Route::prefix('api/v1/admin/users')
+    ->middleware(['auth:web', 'capability:'.Capabilities::ADMIN_IDENTITY_MANAGE])
+    ->group(function (): void {
+        Route::get('/', [AdminIdentityController::class, 'listUsers'])->name('api.v1.listAdminUsers');
+        Route::post('/', [AdminIdentityController::class, 'createUser'])->name('api.v1.createAdminUser');
+        Route::put('/{id}', [AdminIdentityController::class, 'updateUser'])->name('api.v1.updateAdminUser');
+        Route::put('/{id}/disable', [AdminIdentityController::class, 'disableUser'])->name('api.v1.disableAdminUser');
+    });
+
+Route::post('/api/v1/admin/users/{userId}/roles', [AdminIdentityController::class, 'assignRole'])
+    ->middleware(['auth:web', 'capability:'.Capabilities::ADMIN_ROLES_MANAGE])
+    ->name('api.v1.assignUserRole');
+
+Route::delete('/api/v1/admin/users/{userId}/roles/{roleId}', [AdminIdentityController::class, 'revokeRole'])
+    ->middleware(['auth:web', 'capability:'.Capabilities::ADMIN_ROLES_MANAGE])
+    ->name('api.v1.revokeUserRole');
+
+Route::get('/api/v1/audit/events', AuditEventController::class)
+    ->middleware(['auth:web', 'capability:'.Capabilities::AUDIT_GLOBAL_READ])
+    ->name('api.v1.listAuditEvents');
 
 // Remaining browser business routes under /api/v1 are contract-driven and added incrementally.

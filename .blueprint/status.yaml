@@ -5,7 +5,7 @@
 # Canonical ref: LuisHdezE/SoftwareDevelopmentBlueprint @ 8d29ba4c6caf0a382b80310dc0e88c8f1e7fb3c4
 
 blueprint_version: "0.5.4"
-updated_at: "2026-09-21T19:22:00Z"
+updated_at: "2026-09-22T00:07:00Z"
 
 phases:
   discovery:
@@ -63,17 +63,19 @@ phases:
       API Implementation permanece NOT_STARTED hasta merge humano de este cierre.
   api_implementation:
     status: IN_PROGRESS
-    progress: 41
+    progress: 55
     note: >-
       I1 Foundation & Architecture Guard completado en EVD-API-IMPL-001.
       I2 Identity & Cross-Cutting Foundation completado en EVD-API-IMPL-002.
-      I3 Master Data completado y READY_FOR_REVIEW en EVD-API-IMPL-003.
-      I2 aporta API-AUTH-001..006. I3 aporta quince operaciones Master Data para Products,
-      Customers, Warehouses, Zones y Locations, con Web session, admin.masters.maintain,
-      idempotencia durable en mutaciones y admin.masters.changed transaccional.
-      Cobertura contractual acumulada: 21/51 operaciones activas; restan 30.
-      CI del implementation head I3 PASS: 52 tests / 230 assertions; architecture guard 34/34 PASS; Pint PASS.
-      El 41% expresa solamente avance por conteo de Contract IDs y no release readiness.
+      I3 Master Data completado en EVD-API-IMPL-003.
+      I4 Administration & Audit completado y READY_FOR_REVIEW en EVD-API-IMPL-004.
+      I2 aporta API-AUTH-001..006; I3 aporta quince operaciones Master Data; I4 aporta
+      API-ADM-001..006 y API-AUDIT-001 con Web session, capacidades exactas,
+      idempotencia durable en mutaciones, revocacion de sesiones/tokens ante cambios sensibles
+      y auditoria transaccional sin secretos.
+      Cobertura contractual acumulada: 28/51 operaciones activas; restan 23.
+      CI del implementation head I4 PASS: 58 tests / 312 assertions; architecture guard 34/34 PASS; Pint PASS / 92 files.
+      El 55% expresa solamente avance por conteo de Contract IDs y no release readiness.
       api_implemented continua PENDING.
   openapi_validation:
     status: NOT_STARTED
@@ -329,47 +331,57 @@ checks:
   api.endpoints_implemented:
     status: PENDING
     note: >-
-      I2 implements API-AUTH-001..006 and I3 implements fifteen approved Master Data operations.
-      Accumulated coverage is 21/51 active Contract IDs; the remaining 30 operations are pending.
+      I2 implements API-AUTH-001..006, I3 implements fifteen approved Master Data operations,
+      and I4 implements API-ADM-001..006 plus API-AUDIT-001.
+      Accumulated coverage is 28/51 active Contract IDs; the remaining 23 operations are pending.
     evidence_ids:
       - EVD-API-IMPL-002
       - EVD-API-IMPL-003
+      - EVD-API-IMPL-004
   api.auth_authorization:
     status: PENDING
     note: >-
       I2 implements the canonical Web/Mobile AuthN model and capability authorization foundation.
-      I3 requires an authenticated Web session and exact admin.masters.maintain authorization on all fifteen routes.
+      I3 requires an authenticated Web session and exact admin.masters.maintain authorization.
+      I4 enforces admin.identity.manage, admin.roles.manage and audit.global.read without Administrator bypass,
+      including explicit Administrator/AuditViewer isolation.
       Project-level PASS is deferred until authorization is evidenced across all contracted operations.
     evidence_ids:
       - EVD-API-IMPL-002
       - EVD-API-IMPL-003
+      - EVD-API-IMPL-004
   api.audit_logging:
     status: PENDING
     note: >-
       I2 persists authentication and significant authorization-denial audit events.
       I3 transactionally couples admin.masters.changed with every successful Master Data mutation.
+      I4 transactionally couples administration/role mutations with mandatory audit evidence,
+      records session/token revocations for sensitive changes and audits global audit access.
       Project-level PASS requires durable audit coverage across the remaining business operations.
     evidence_ids:
       - EVD-API-IMPL-002
       - EVD-API-IMPL-003
+      - EVD-API-IMPL-004
   api.backend_tests:
     status: PENDING
     note: >-
-      I3 implementation-head suite is green on native MySQL: 52 tests / 230 assertions plus architecture 34/34 and Pint PASS.
+      I4 implementation-head suite is green on native MySQL: 58 tests / 312 assertions plus architecture 34/34 and Pint PASS / 92 files.
       Project-level PASS remains pending until tests cover the complete contracted API implementation.
     evidence_ids:
       - EVD-API-IMPL-001
       - EVD-API-IMPL-002
       - EVD-API-IMPL-003
+      - EVD-API-IMPL-004
   api.architecture_implementation_conformance:
     status: PENDING
     note: >-
-      Architecture fitness remains green through Identity and Master Data implementation slices.
+      Architecture fitness remains green through Identity, Master Data, Administration and Audit implementation slices.
       Final PASS requires proof over the complete implemented API.
     evidence_ids:
       - EVD-API-IMPL-001
       - EVD-API-IMPL-002
       - EVD-API-IMPL-003
+      - EVD-API-IMPL-004
 
 gates:
   requirements_ready:
@@ -413,12 +425,13 @@ gates:
   api_implemented:
     status: PENDING
     note: >-
-      I1 Foundation, I2 Identity/Cross-Cutting and I3 Master Data are ready for review.
-      21 of 51 contracted operations are implemented; 30 remain, so this gate stays PENDING.
+      I1 Foundation, I2 Identity/Cross-Cutting, I3 Master Data and I4 Administration/Audit are ready for review.
+      28 of 51 contracted operations are implemented; 23 remain, so this gate stays PENDING.
     evidence_ids:
       - EVD-API-IMPL-001
       - EVD-API-IMPL-002
       - EVD-API-IMPL-003
+      - EVD-API-IMPL-004
   openapi_valid:
     status: PENDING
   postman_ready:
@@ -519,3 +532,6 @@ artifacts:
   - id: EVD-API-IMPL-003
     type: api_implementation_evidence
     value: .blueprint/evidence/api-implementation-i3-master-data.md
+  - id: EVD-API-IMPL-004
+    type: api_implementation_evidence
+    value: .blueprint/evidence/api-implementation-i4-admin-audit.md
