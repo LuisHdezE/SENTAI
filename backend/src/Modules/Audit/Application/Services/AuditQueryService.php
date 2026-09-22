@@ -8,8 +8,9 @@ use Sentai\Modules\Audit\Domain\Entities\AuditEvent;
 
 final readonly class AuditQueryService
 {
-    public function __construct(private AuditEventRepository $repository)
-    {}
+    public function __construct(
+        private AuditEventRepository $repository,
+    ) {}
 
     /**
      * @param  array<string, mixed>  $filters
