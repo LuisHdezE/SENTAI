@@ -2,7 +2,6 @@
 
 namespace Sentai\Modules\Inventory\Application\Services;
 
-use Illuminate\Support\Str;
 use Sentai\Modules\Inventory\Application\Contracts\AsnRepository;
 use Sentai\Modules\Inventory\Application\Contracts\InventoryAuditSink;
 use Sentai\Modules\Inventory\Application\Contracts\InventoryItemRepository;
@@ -95,7 +94,6 @@ final readonly class ReceiveAsnService
         $resolved = $this->resolveLines($lines, $asnLines);
         $this->assertQuantities($resolved, $asnLines);
 
-        $receiptId = (string) Str::ulid();
         $receiptLines = [];
 
         foreach ($resolved as $input) {
@@ -136,8 +134,7 @@ final readonly class ReceiveAsnService
             ];
         }
 
-        $this->receipts->storeReceipt(
-            $receiptId,
+        $receiptId = $this->receipts->storeReceipt(
             $asn->id,
             $asn->warehouseId,
             $reception->locationId,

@@ -17,16 +17,16 @@ interface ReceiptRepository
 
     /**
      * @param  list<array{asn_line_id: ?string, product_id: string, lot_ref: ?string, serial_ref: ?string, received_qty: string, inventory_item_id: string, discrepancy_note: ?string}>  $lines
+     * @return string the persisted receipt identifier
      */
     public function storeReceipt(
-        string $id,
         string $asnId,
         string $warehouseId,
         string $receptionLocationId,
         string $actorId,
         string $correlationId,
         array $lines,
-    ): void;
+    ): string;
 
     /** @return list<ReceiptLine> */
     public function linesForReceipt(string $receiptId): array;

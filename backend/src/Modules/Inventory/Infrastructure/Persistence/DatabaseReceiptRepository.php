@@ -23,14 +23,14 @@ final class DatabaseReceiptRepository implements ReceiptRepository
     }
 
     public function storeReceipt(
-        string $id,
         string $asnId,
         string $warehouseId,
         string $receptionLocationId,
         string $actorId,
         string $correlationId,
         array $lines,
-    ): void {
+    ): string {
+        $id = (string) Str::ulid();
         $now = now();
 
         DB::table('receipts')->insert([
@@ -67,6 +67,8 @@ final class DatabaseReceiptRepository implements ReceiptRepository
         if ($rows !== []) {
             DB::table('receipt_lines')->insert($rows);
         }
+
+        return $id;
     }
 
     public function linesForReceipt(string $receiptId): array
