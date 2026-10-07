@@ -7,6 +7,7 @@ use Sentai\Modules\Identity\Presentation\Http\Web\AdminIdentityController;
 use Sentai\Modules\Identity\Presentation\Http\Web\WebCsrfController;
 use Sentai\Modules\Identity\Presentation\Http\Web\WebLoginController;
 use Sentai\Modules\Identity\Presentation\Http\Web\WebLogoutController;
+use Sentai\Modules\Inventory\Presentation\Http\Web\InventoryController;
 use Sentai\Modules\MasterData\Presentation\Http\MasterDataController;
 
 Route::prefix('api/v1/auth/web')->group(function (): void {
@@ -61,5 +62,27 @@ Route::delete('/api/v1/admin/users/{userId}/roles/{roleId}', [AdminIdentityContr
 Route::get('/api/v1/audit/events', AuditEventController::class)
     ->middleware(['auth:web', 'capability:'.Capabilities::AUDIT_GLOBAL_READ])
     ->name('api.v1.listAuditEvents');
+
+Route::middleware(['auth:web'])->prefix('api/v1/inventory')->group(function (): void {
+    Route::get('/', [InventoryController::class, 'list'])
+        ->middleware('capability:'.Capabilities::INVENTORY_READ)
+        ->name('api.v1.listInventory');
+
+    Route::post('/adjust', [InventoryController::class, 'adjust'])
+        ->middleware('capability:'.Capabilities::INVENTORY_ADJUST)
+        ->name('api.v1.adjustInventory');
+
+    Route::post('/move', [InventoryController::class, 'move'])
+        ->middleware('capability:'.Capabilities::INVENTORY_ADJUST)
+        ->name('api.v1.moveInventory');
+});
+
+Route::post('/api/v1/locations/{id}/block', [InventoryController::class, 'blockLocation'])
+    ->middleware(['auth:web', 'capability:'.Capabilities::INVENTORY_LOCATION_BLOCK])
+    ->name('api.v1.blockLocation');
+
+Route::post('/api/v1/locations/{id}/unblock', [InventoryController::class, 'unblockLocation'])
+    ->middleware(['auth:web', 'capability:'.Capabilities::INVENTORY_LOCATION_BLOCK])
+    ->name('api.v1.unblockLocation');
 
 // Remaining browser business routes under /api/v1 are contract-driven and added incrementally.

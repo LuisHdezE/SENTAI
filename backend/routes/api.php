@@ -14,5 +14,6 @@ Route::prefix('v1')->group(function (): void {
             ->name('api.v1.mobileLogout');
     });
 
-    // Remaining contracted business operations are implemented in later API implementation increments.
+    // Mobile warehouse operations are contract-driven and added incrementally.
+    require __DIR__.'/inventory.php';
 });

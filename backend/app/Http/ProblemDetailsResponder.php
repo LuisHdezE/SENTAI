@@ -40,7 +40,9 @@ final class ProblemDetailsResponder
         }
 
         if ($throwable instanceof DomainConflict) {
-            return self::response($request, 'domain_conflict', 409, 'Domain conflict', $throwable->getMessage());
+            return self::response($request, 'domain_conflict', 409, 'Domain conflict', $throwable->getMessage(), [
+                'conflict_context' => $throwable->context(),
+            ]);
         }
 
         if ($throwable instanceof ResourceNotFound || $throwable instanceof ModelNotFoundException || $throwable instanceof NotFoundHttpException) {
